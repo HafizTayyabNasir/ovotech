@@ -5,5 +5,5 @@
 .links a:hover{color:#42B1E5;}
 
 @media(max-width:768px){
-  .inner{flex-direction:column;gap:8px;text-align:center;}
+  .topBar{display:none;}
 }
