@@ -9,11 +9,11 @@ export default function Navbar() {
 
   const handleDropdownClick = (e, menuName) => {
     if (typeof window !== "undefined" && window.innerWidth <= 768) {
+      e.preventDefault();
       if (openDropdown !== menuName) {
-        e.preventDefault();
         setOpenDropdown(menuName);
       } else {
-        setMenuOpen(false);
+        setOpenDropdown(null);
       }
     }
   };
