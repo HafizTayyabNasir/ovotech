@@ -1,4 +1,5 @@
 import InnerPageLayout from "@/components/InnerPageLayout";
+import Link from "next/link";
 
 export default function CareersPage() {
   return (
@@ -18,12 +19,12 @@ export default function CareersPage() {
       <div style={{ border: "1px solid #eee", padding: "24px", borderRadius: "8px", marginBottom: "16px" }}>
         <h3 style={{ fontSize: "20px", color: "#0A1E5C", marginBottom: "8px" }}>Senior Frontend Developer (Next.js/React)</h3>
         <p style={{ color: "#777", marginBottom: "16px", fontSize: "14px" }}>Remote (UK) • Full-time</p>
-        <button className="btn btn-outline" style={{ padding: "8px 16px" }}>Apply Now</button>
+        <Link href="/contact" className="btn btn-outline" style={{ padding: "8px 16px", display: "inline-block" }}>Apply Now</Link>
       </div>
       <div style={{ border: "1px solid #eee", padding: "24px", borderRadius: "8px", marginBottom: "16px" }}>
         <h3 style={{ fontSize: "20px", color: "#0A1E5C", marginBottom: "8px" }}>RPA Engineer (UiPath/Automation Anywhere)</h3>
         <p style={{ color: "#777", marginBottom: "16px", fontSize: "14px" }}>Manchester / Hybrid • Full-time</p>
-        <button className="btn btn-outline" style={{ padding: "8px 16px" }}>Apply Now</button>
+        <Link href="/contact" className="btn btn-outline" style={{ padding: "8px 16px", display: "inline-block" }}>Apply Now</Link>
       </div>
     </InnerPageLayout>
   );

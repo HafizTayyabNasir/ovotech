@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./HowItWorks.module.css";
 
 export default function HowItWorks() {
@@ -15,9 +16,9 @@ export default function HowItWorks() {
             Ovotech integrates with your existing systems and automates your
             workflows with accuracy and compliance.
           </p>
-          <a href="#" className="btn btn-outline dark">
+          <Link href="/how-it-works" className="btn btn-outline dark">
             See How it Works <span>&rarr;</span>
-          </a>
+          </Link>
         </div>
         <div className={styles.right}>
           <div className={styles.steps}>

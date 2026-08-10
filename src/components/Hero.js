@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -17,12 +18,12 @@ export default function Hero() {
             Improve patient care.
           </p>
           <div className={styles.btns}>
-            <a href="#" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary">
               Book a Demo <span>&rarr;</span>
-            </a>
-            <a href="#" className="btn btn-outline">
+            </Link>
+            <Link href="/solutions" className="btn btn-outline">
               Explore Solutions <span>&rarr;</span>
-            </a>
+            </Link>
           </div>
           <p className={styles.trustText}>
             Trusted by GP practices &amp; healthcare teams across the UK

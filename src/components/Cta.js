@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Cta.module.css";
 
 export default function Cta() {
@@ -14,9 +15,9 @@ export default function Cta() {
             Book a demo today and see how Ovotech can transform your GP
             practice.
           </p>
-          <a href="#" className="btn btn-cta">
+          <Link href="/contact" className="btn btn-cta">
             Book a Demo <span>&rarr;</span>
-          </a>
+          </Link>
         </div>
         <div className={styles.image}>
           <img src="/cta-man.png" alt="Healthcare professional" />

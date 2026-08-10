@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Solutions.module.css";
 
 const solutions = [
@@ -76,16 +77,16 @@ export default function Solutions() {
                 <span key={j}>{line}{j === 0 && <br />}</span>
               ))}</h3>
               <p>{s.desc}</p>
-              <a href="#" className={styles.learnLink}>
+              <Link href="/solutions" className={styles.learnLink}>
                 Learn More <span>&rarr;</span>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
         <div className="center-btn">
-          <a href="#" className="btn btn-outline dark">
+          <Link href="/solutions" className="btn btn-outline dark">
             View All Solutions <span>&rarr;</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

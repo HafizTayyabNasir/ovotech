@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Trusted.module.css";
 
 export default function Trusted() {
@@ -44,9 +45,9 @@ export default function Trusted() {
           </div>
         </div>
         <div className="center-btn">
-          <a href="#" className="btn btn-outline dark">
+          <Link href="/case-studies" className="btn btn-outline dark">
             View More Case Studies <span>&rarr;</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
