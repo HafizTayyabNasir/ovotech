@@ -1,49 +1,30 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:#1a1a2e;line-height:1.6;background:#fff;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ===== COMMON ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.section-label{display:block;text-align:center;font-size:12px;font-weight:700;letter-spacing:2px;color:#2563eb;margin-bottom:12px;text-transform:uppercase;}
+.section-title{text-align:center;font-size:38px;font-weight:800;color:#0A1E5C;margin-bottom:50px;line-height:1.2;}
+.section-title.left-align{text-align:left;}
+.center-btn{text-align:center;margin-top:40px;}
 
-html {
-  height: 100%;
-}
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;border:2px solid transparent;}
+.btn-primary{background:#0A1E5C;color:#fff;border-color:#0A1E5C;}
+.btn-primary:hover{background:#0d2872;}
+.btn-outline{background:transparent;color:#0A1E5C;border-color:#0A1E5C;}
+.btn-outline:hover{background:#0A1E5C;color:#fff;}
+.btn-outline.dark{border-color:#0A1E5C;color:#0A1E5C;}
+.btn-outline.dark:hover{background:#0A1E5C;color:#fff;}
+.btn-cta{background:#2563eb;color:#fff;border-color:#2563eb;padding:14px 32px;font-size:15px;}
+.btn-cta:hover{background:#1d4ed8;}
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .section-title{font-size:28px;}
 }
