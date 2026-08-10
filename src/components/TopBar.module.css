@@ -1,0 +1,9 @@
+.topBar{background:#fff;color:#0A1E5C;font-size:13px;padding:10px 0;}
+.inner{display:flex;justify-content:space-between;align-items:center;}
+.links{display:flex;gap:24px;}
+.links a{color:#0A1E5C;font-size:12px;transition:color .2s;font-weight:500;}
+.links a:hover{color:#42B1E5;}
+
+@media(max-width:768px){
+  .inner{flex-direction:column;gap:8px;text-align:center;}
+}
