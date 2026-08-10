@@ -77,6 +77,7 @@ export default function Navbar() {
                     <h4>NHS Accredited</h4>
                     <p>Fully compliant with DSPT and DCB0129 standards for clinical safety.</p>
                   </div>
+                  <img src="/testimonial-man.png" alt="Promo" className={styles.promoImg} />
                 </div>
               </div>
             </div>
@@ -107,6 +108,7 @@ export default function Navbar() {
                     <p>How AI is Transforming Primary Care in 2025.</p>
                     <Link href="/blog" style={{ color: "#fff", textDecoration: "underline", marginTop: "10px", display: "inline-block" }}>Read Article</Link>
                   </div>
+                  <img src="/hero-man.png" alt="Promo" className={styles.promoImg} />
                 </div>
               </div>
             </div>
