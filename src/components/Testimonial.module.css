@@ -9,5 +9,7 @@
 .info span{font-size:13px;color:#888;}
 
 @media(max-width:1024px){
-  .inner{flex-direction:column;}
+  .inner{flex-direction:column;text-align:center;}
+  .left blockquote{border-left:none;border-top:4px solid #0A1E5C;padding-left:0;padding-top:24px;}
+  .right{flex-direction:column;text-align:center;}
 }

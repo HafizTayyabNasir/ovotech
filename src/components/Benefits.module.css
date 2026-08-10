@@ -11,6 +11,8 @@
 @media(max-width:1024px){
   .inner{flex-direction:column;}
   .grid{grid-template-columns:repeat(2,1fr);}
+  .image{flex:unset;width:100%;display:flex;justify-content:center;}
+  .image img{width:100%;max-width:340px;}
 }
 @media(max-width:768px){
   .grid{grid-template-columns:1fr;}

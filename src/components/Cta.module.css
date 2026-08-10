@@ -7,7 +7,9 @@
 .image img{width:380px;height:auto;border-radius:20px;object-fit:cover;}
 
 @media(max-width:1024px){
-  .inner{flex-direction:column;}
+  .inner{flex-direction:column;text-align:center;}
+  .image{flex:unset;width:100%;display:flex;justify-content:center;}
+  .image img{width:100%;max-width:380px;}
 }
 @media(max-width:768px){
   .content h2{font-size:28px;}

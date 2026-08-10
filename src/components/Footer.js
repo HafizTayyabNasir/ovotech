@@ -7,12 +7,7 @@ export default function Footer() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.brand}>
           <div className={styles.logo}>
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="6" fill="#fff" />
-              <path d="M8 16L12 10H20L24 16L20 22H12L8 16Z" fill="#0A1E5C" />
-              <circle cx="16" cy="16" r="3" fill="#fff" />
-            </svg>
-            <span>OVOTECH</span>
+            <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "28px", width: "auto" }} />
           </div>
           <p>
             Ovotech helps GP practices and healthcare providers automate primary

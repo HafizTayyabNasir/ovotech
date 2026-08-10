@@ -6,7 +6,7 @@
 .card h3{font-size:18px;font-weight:700;color:#0A1E5C;margin-bottom:12px;line-height:1.3;white-space:pre-line;}
 .card p{font-size:14px;color:#666;line-height:1.6;margin-bottom:16px;}
 .learnLink{font-size:13px;font-weight:600;color:#0A1E5C;display:inline-flex;align-items:center;gap:4px;transition:gap .2s;}
-.learnLink:hover{gap:8px;color:#2563eb;}
+.learnLink:hover{gap:8px;color:#42B1E5;}
 
 @media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){.grid{grid-template-columns:1fr;}}

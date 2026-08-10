@@ -1,20 +1,29 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className={styles.navbar}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo}>
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <rect width="32" height="32" rx="6" fill="#0A1E5C" />
-            <path d="M8 16L12 10H20L24 16L20 22H12L8 16Z" fill="#fff" />
-            <circle cx="16" cy="16" r="3" fill="#0A1E5C" />
-          </svg>
-          <span className={styles.logoText}>OVOTECH</span>
+          <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "32px", width: "auto" }} />
         </Link>
         
-        <ul className={styles.navLinks}>
+        <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            {menuOpen ? (
+              <path d="M18 6L6 18M6 6l12 12" />
+            ) : (
+              <path d="M3 12h18M3 6h18M3 18h18" />
+            )}
+          </svg>
+        </button>
+
+        <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
           <li className={styles.hasDropdown}>
             <Link href="/solutions" className={styles.navLink}>
               Solutions{" "}
@@ -102,7 +111,7 @@ export default function Navbar() {
                     <Link href="/help-centre">Help Centre</Link>
                   </div>
                 </div>
-                <div className={styles.megaPromo} style={{ background: "linear-gradient(135deg, #2563eb, #1e3a8a)" }}>
+                <div className={styles.megaPromo} style={{ background: "linear-gradient(135deg, #42B1E5, #1e3a8a)" }}>
                   <div className={styles.promoContent}>
                     <h4>Latest Insight</h4>
                     <p>How AI is Transforming Primary Care in 2025.</p>
@@ -140,8 +149,13 @@ export default function Navbar() {
               </div>
             </div>
           </li>
+          <li className={styles.mobileCta}>
+            <Link href="/contact" className="btn btn-cta" style={{ width: "100%", justifyContent: "center" }} onClick={() => setMenuOpen(false)}>Book a Demo</Link>
+          </li>
         </ul>
-        <Link href="/contact" className="btn btn-primary">Book a Demo</Link>
+        <div className={styles.desktopCta}>
+          <Link href="/contact" className="btn btn-cta" style={{ padding: "10px 24px", fontSize: "14px" }}>Book a Demo</Link>
+        </div>
       </div>
     </nav>
   );

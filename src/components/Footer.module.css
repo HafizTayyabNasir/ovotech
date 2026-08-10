@@ -22,4 +22,6 @@
 }
 @media(max-width:768px){
   .linksGroup{flex-wrap:wrap;gap:32px;}
+  .bottomInner{flex-direction:column;gap:16px;text-align:center;}
+  .bottomInner a{margin:0 12px;}
 }

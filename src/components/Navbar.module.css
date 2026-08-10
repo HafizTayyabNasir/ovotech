@@ -1,11 +1,11 @@
-.navbar{background:#fff;padding:16px 0;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100;}
+.navbar{background:#0A1E5C;padding:16px 0;position:sticky;top:0;z-index:100;}
 .inner{display:flex;align-items:center;justify-content:space-between;position:relative;}
 .logo{display:flex;align-items:center;gap:10px;}
 .logoText{font-size:20px;font-weight:800;color:#0A1E5C;letter-spacing:1px;}
 
 .navLinks{display:flex;gap:28px;}
-.navLink{font-size:14px;font-weight:500;color:#333;display:flex;align-items:center;gap:5px;transition:color .2s;height:100%;padding:10px 0;}
-.navLink:hover{color:#0A1E5C;}
+.navLink{font-size:14px;font-weight:500;color:#fff;display:flex;align-items:center;gap:5px;transition:color .2s;height:100%;padding:10px 0;}
+.navLink:hover{color:#42B1E5;}
 .navLink svg{margin-top:2px;transition:transform .2s ease;}
 
 /* Mega Menu container */
@@ -56,7 +56,7 @@
   color:#0A1E5C;
   margin-bottom:20px;
   padding-bottom:10px;
-  border-bottom:2px solid #2563eb; /* Underline like the screenshot */
+  border-bottom:2px solid #42B1E5; /* Underline like the screenshot */
   display:inline-block;
   align-self:flex-start;
 }
@@ -68,7 +68,7 @@
   transition:color .2s;
 }
 .megaCol a:hover{
-  color:#2563eb;
+  color:#42B1E5;
 }
 
 /* Right side Promo Block */
@@ -125,11 +125,61 @@
   color:#0A1E5C;
 }
 
+.hamburger{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:8px;z-index:102;}
+.mobileCta{display:none;}
+.desktopCta{display:block;}
+
 @media(max-width:1024px){
   .navLinks{gap:16px;}
   .megaPromo{width:260px;}
 }
 
 @media(max-width:768px){
-  .navLinks{display:none;}
+  .hamburger{display:block;}
+  .desktopCta{display:none;}
+  .mobileCta{display:block;margin-top:20px;}
+  .navLinks{
+    position:fixed;
+    top:65px;
+    left:0;
+    width:100%;
+    height:calc(100vh - 65px);
+    background:#0A1E5C;
+    flex-direction:column;
+    padding:30px 24px;
+    gap:5px;
+    transform:translateX(100%);
+    transition:transform .3s ease;
+    overflow-y:auto;
+    z-index:101;
+    display:flex;
+  }
+  .navLinks.open{transform:translateX(0);}
+  
+  .navLink{font-size:16px;padding:12px 0;width:100%;justify-content:space-between;}
+  
+  .hasDropdown{position:relative;width:100%;}
+  .megaMenu{
+    position:static;
+    box-shadow:none;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    display:none;
+    border:none;
+    background:rgba(255,255,255,.05);
+    border-radius:8px;
+    margin:0 0 10px 0;
+  }
+  /* On mobile, we use focus-within or hover to simulate accordion, but a click is better. Hover works on mobile as a tap toggle in most browsers. */
+  .hasDropdown:hover .megaMenu,
+  .hasDropdown:focus-within .megaMenu{display:block;}
+  
+  .megaMenuInner{min-height:auto;}
+  .megaColumns{flex-direction:column;padding:20px;gap:20px;background:transparent;}
+  .megaCol{width:100%;}
+  .colHeader{color:#fff;border-color:rgba(255,255,255,.2);font-size:14px;margin-bottom:12px;padding-bottom:8px;}
+  .megaCol a{color:#cdd5f0;font-size:14px;}
+  .megaPromo{display:none;}
+  .megaBottom{display:none;}
 }

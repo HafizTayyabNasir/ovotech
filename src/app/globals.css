@@ -8,7 +8,7 @@ img{max-width:100%;display:block;}
 
 /* ===== COMMON ===== */
 .container{max-width:1200px;margin:0 auto;padding:0 24px;}
-.section-label{display:block;text-align:center;font-size:12px;font-weight:700;letter-spacing:2px;color:#2563eb;margin-bottom:12px;text-transform:uppercase;}
+.section-label{display:block;text-align:center;font-size:12px;font-weight:700;letter-spacing:2px;color:#42B1E5;margin-bottom:12px;text-transform:uppercase;}
 .section-title{text-align:center;font-size:38px;font-weight:800;color:#0A1E5C;margin-bottom:50px;line-height:1.2;}
 .section-title.left-align{text-align:left;}
 .center-btn{text-align:center;margin-top:40px;}
@@ -21,10 +21,12 @@ img{max-width:100%;display:block;}
 .btn-outline:hover{background:#0A1E5C;color:#fff;}
 .btn-outline.dark{border-color:#0A1E5C;color:#0A1E5C;}
 .btn-outline.dark:hover{background:#0A1E5C;color:#fff;}
-.btn-cta{background:#2563eb;color:#fff;border-color:#2563eb;padding:14px 32px;font-size:15px;}
-.btn-cta:hover{background:#1d4ed8;}
+.btn-cta{background:#42B1E5;color:#fff;border-color:#42B1E5;padding:14px 32px;font-size:15px;}
+.btn-cta:hover{background:#368ebd;}
 
-/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
+  .container{padding:0 16px;}
   .section-title{font-size:28px;}
+  .section-title.left-align{text-align:center;}
+  .section-label{text-align:center !important;}
 }

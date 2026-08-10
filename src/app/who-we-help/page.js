@@ -19,7 +19,7 @@ export default function WhoWeHelpPage() {
             <p style={{ color: "#666", marginBottom: "24px", lineHeight: "1.6" }}>
               Streamline daily operations, manage patient flow, and reduce the burden on your administrative staff with our specialized GP automation suite.
             </p>
-            <Link href="/who-we-help/gp-practices" style={{ color: "#2563eb", fontWeight: "600" }}>Learn more &rarr;</Link>
+            <Link href="/who-we-help/gp-practices" style={{ color: "#42B1E5", fontWeight: "600" }}>Learn more &rarr;</Link>
           </div>
 
           <div style={{ padding: "40px", border: "1px solid #e8edfb", borderRadius: "16px", background: "#f8faff" }}>
@@ -27,7 +27,7 @@ export default function WhoWeHelpPage() {
             <p style={{ color: "#666", marginBottom: "24px", lineHeight: "1.6" }}>
               Scale your operations efficiently across multiple practices. Standardize processes and improve data visibility across your entire network.
             </p>
-            <Link href="/who-we-help/primary-care-networks" style={{ color: "#2563eb", fontWeight: "600" }}>Learn more &rarr;</Link>
+            <Link href="/who-we-help/primary-care-networks" style={{ color: "#42B1E5", fontWeight: "600" }}>Learn more &rarr;</Link>
           </div>
 
           <div style={{ padding: "40px", border: "1px solid #e8edfb", borderRadius: "16px", background: "#f8faff" }}>
@@ -35,7 +35,7 @@ export default function WhoWeHelpPage() {
             <p style={{ color: "#666", marginBottom: "24px", lineHeight: "1.6" }}>
               Enterprise-grade automation solutions that meet strict NHS security and compliance standards, designed for large-scale healthcare delivery.
             </p>
-            <Link href="/who-we-help/nhs-providers" style={{ color: "#2563eb", fontWeight: "600" }}>Learn more &rarr;</Link>
+            <Link href="/who-we-help/nhs-providers" style={{ color: "#42B1E5", fontWeight: "600" }}>Learn more &rarr;</Link>
           </div>
 
         </div>
