@@ -156,7 +156,8 @@
   }
   .navLinks.open{transform:translateX(0);}
   
-  .navLink{font-size:16px;padding:12px 0;width:100%;justify-content:space-between;}
+  .navLinks li { flex-shrink: 0; }
+  .navLink{font-size:16px;padding:12px 0;width:100%;justify-content:space-between;height:auto;}
   
   .hasDropdown{position:relative;width:100%;}
   .megaMenu{
