@@ -5,6 +5,18 @@ import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const handleDropdownClick = (e, menuName) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 768) {
+      if (openDropdown !== menuName) {
+        e.preventDefault();
+        setOpenDropdown(menuName);
+      } else {
+        setMenuOpen(false);
+      }
+    }
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -24,8 +36,8 @@ export default function Navbar() {
         </button>
 
         <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
-          <li className={styles.hasDropdown}>
-            <Link href="/solutions" className={styles.navLink}>
+          <li className={`${styles.hasDropdown} ${openDropdown === 'solutions' ? styles.activeDropdown : ''}`}>
+            <Link href="/solutions" className={styles.navLink} onClick={(e) => handleDropdownClick(e, 'solutions')}>
               Solutions{" "}
               <svg width="10" height="6" viewBox="0 0 10 6">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" fill="none" />
@@ -64,8 +76,8 @@ export default function Navbar() {
             </div>
           </li>
 
-          <li className={styles.hasDropdown}>
-            <Link href="/who-we-help" className={styles.navLink}>
+          <li className={`${styles.hasDropdown} ${openDropdown === 'who-we-help' ? styles.activeDropdown : ''}`}>
+            <Link href="/who-we-help" className={styles.navLink} onClick={(e) => handleDropdownClick(e, 'who-we-help')}>
               Who We Help{" "}
               <svg width="10" height="6" viewBox="0 0 10 6">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" fill="none" />
@@ -94,8 +106,8 @@ export default function Navbar() {
 
           <li><Link href="/how-it-works" className={styles.navLink}>How it Works</Link></li>
           
-          <li className={styles.hasDropdown}>
-            <Link href="/resources" className={styles.navLink}>
+          <li className={`${styles.hasDropdown} ${openDropdown === 'resources' ? styles.activeDropdown : ''}`}>
+            <Link href="/resources" className={styles.navLink} onClick={(e) => handleDropdownClick(e, 'resources')}>
               Resources{" "}
               <svg width="10" height="6" viewBox="0 0 10 6">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" fill="none" />
@@ -123,8 +135,8 @@ export default function Navbar() {
             </div>
           </li>
 
-          <li className={styles.hasDropdown}>
-            <Link href="/about" className={styles.navLink}>
+          <li className={`${styles.hasDropdown} ${openDropdown === 'about' ? styles.activeDropdown : ''}`}>
+            <Link href="/about" className={styles.navLink} onClick={(e) => handleDropdownClick(e, 'about')}>
               About{" "}
               <svg width="10" height="6" viewBox="0 0 10 6">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" fill="none" />

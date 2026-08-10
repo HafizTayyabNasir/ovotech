@@ -173,7 +173,8 @@
   }
   /* On mobile, we use focus-within or hover to simulate accordion, but a click is better. Hover works on mobile as a tap toggle in most browsers. */
   .hasDropdown:hover .megaMenu,
-  .hasDropdown:focus-within .megaMenu{display:block;}
+  .hasDropdown:focus-within .megaMenu,
+  .hasDropdown.activeDropdown .megaMenu {display:block;}
   
   .megaMenuInner{min-height:auto;}
   .megaColumns{flex-direction:column;padding:20px;gap:20px;background:transparent;}
