@@ -3,7 +3,9 @@
 .logoLg{font-size:28px;font-weight:800;color:#999;letter-spacing:1px;}
 .nhs{color:#005eb8;font-size:34px;}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:40px;}
-.card{background:#fff;border-radius:16px;padding:32px 28px;border:1px solid #e8edfb;}
+.card{position:relative;background:#fff;border-radius:16px;padding:32px 28px;overflow:hidden;z-index:1;}
+.card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg, transparent 70%, #0A1E5C 85%, #2563eb 100%);animation:borderSpin 4s linear infinite;z-index:-2;}
+.card::after{content:"";position:absolute;inset:1px;background:#fff;border-radius:15px;z-index:-1;}
 .card h4{font-size:16px;font-weight:700;color:#0A1E5C;margin-bottom:10px;}
 .card p{font-size:14px;color:#666;line-height:1.6;}
 .stats{display:flex;justify-content:center;gap:80px;margin:40px 0;}
@@ -18,3 +20,4 @@
   .cards{grid-template-columns:1fr;}
   .stats{gap:40px;}
 }
+@keyframes borderSpin{100%{transform:rotate(360deg)}}

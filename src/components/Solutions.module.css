@@ -1,7 +1,9 @@
 .solutions{padding:100px 0;background:#fff;}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.card{background:#f8faff;border:1px solid #e8edfb;border-radius:16px;padding:32px 28px;transition:all .3s;}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,30,92,.08);border-color:#c7d2fe;}
+.card{position:relative;background:#f8faff;border-radius:16px;padding:32px 28px;transition:all .3s;overflow:hidden;z-index:1;}
+.card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg, transparent 70%, #0A1E5C 85%, #2563eb 100%);animation:borderSpin 4s linear infinite;z-index:-2;}
+.card::after{content:"";position:absolute;inset:1px;background:#f8faff;border-radius:15px;z-index:-1;transition:background 0.3s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,30,92,.08);}
 .icon{width:52px;height:52px;background:#e8edfb;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
 .card h3{font-size:18px;font-weight:700;color:#0A1E5C;margin-bottom:12px;line-height:1.3;white-space:pre-line;}
 .card p{font-size:14px;color:#666;line-height:1.6;margin-bottom:16px;}
@@ -10,3 +12,4 @@
 
 @media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){.grid{grid-template-columns:1fr;}}
+@keyframes borderSpin{100%{transform:rotate(360deg)}}
