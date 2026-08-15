@@ -1,16 +1,55 @@
+"use client";
 import Link from "next/link";
 import styles from "./Hero.module.css";
+import { useState, useEffect } from "react";
+
+const statements = [
+  "Intelligent AI & Automation",
+  "Reliable RPA Services",
+  "Smart Healthcare Workflows",
+  "Automated Patient Care"
+];
 
 export default function Hero() {
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+
+  useEffect(() => {
+    const typingSpeed = 100;
+    const deletingSpeed = 50;
+    const delay = 2000;
+    let timer;
+    const i = loopNum % statements.length;
+    const fullText = statements[i];
+
+    if (isDeleting) {
+      timer = setTimeout(() => {
+        setText(fullText.substring(0, text.length - 1));
+      }, deletingSpeed);
+    } else {
+      timer = setTimeout(() => {
+        setText(fullText.substring(0, text.length + 1));
+      }, typingSpeed);
+    }
+
+    if (!isDeleting && text === fullText) {
+      timer = setTimeout(() => setIsDeleting(true), delay);
+    } else if (isDeleting && text === "") {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+    }
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, loopNum]);
   return (
     <section className={styles.hero}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.content}>
           <span className={styles.badge}>HEALTHCARE AUTOMATION PLATFORM</span>
           <h1 className={styles.heading}>
-            Automate More.
+            Scale Your Business With
             <br />
-            <span className={styles.typeText}>Care Better.</span><span className={styles.cursor}>|</span>
+            <span className={styles.typeText}>{text}</span><span className={styles.cursor}>|</span>
           </h1>
           <p className={styles.desc}>
             Ovotech helps GP practices and healthcare providers automate
@@ -37,9 +76,11 @@ export default function Hero() {
         </div>
         <div className={styles.image}>
           <div className={styles.imgRing}>
-            <div className={`${styles.decorativeDot} ${styles.dot1}`}></div>
-            <div className={`${styles.decorativeDot} ${styles.dot2}`}></div>
-            <div className={`${styles.decorativeDot} ${styles.dot3}`}></div>
+            <div className={styles.orbit}>
+              <div className={`${styles.decorativeDot} ${styles.dot1}`}></div>
+              <div className={`${styles.decorativeDot} ${styles.dot2}`}></div>
+              <div className={`${styles.decorativeDot} ${styles.dot3}`}></div>
+            </div>
             <img src="/hero-banner-man.png" alt="Professional man working on laptop" />
           </div>
           <div className={`${styles.floatCard} ${styles.card1}`}>
