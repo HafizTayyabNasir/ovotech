@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const ctas = [
   {
@@ -23,27 +22,39 @@ const ctas = [
 
 export default function DualCta() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <section style={{ padding: "80px 0", background: "#fff" }}>
+      <div className="site-container">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", maxWidth: "800px", margin: "0 auto" }}>
           {ctas.map((cta, i) => (
-            <motion.div
+            <div
               key={i}
-              className={`rounded-2xl p-8 text-center border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${cta.primary ? "bg-primary text-white border-primary" : "bg-white text-text-heading border-border-light"}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className={`animate-fadeInUp delay-${(i + 1) * 200}`}
+              style={{
+                borderRadius: "20px", padding: "32px", textAlign: "center",
+                background: cta.primary ? "#362D7E" : "#fff",
+                color: cta.primary ? "#fff" : "#1A1A1A",
+                border: cta.primary ? "1px solid #362D7E" : "1px solid #E8E8EF",
+                transition: "all 0.3s", cursor: "pointer",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,0,0,0.1)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 ${cta.primary ? "bg-white/15 text-white" : "bg-primary/10 text-primary"}`}>
+              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: cta.primary ? "rgba(255,255,255,0.15)" : "rgba(54,45,126,0.1)", color: cta.primary ? "#fff" : "#362D7E" }}>
                 {cta.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2">{cta.title}</h3>
-              <p className={`text-sm leading-relaxed mb-6 ${cta.primary ? "text-white/70" : "text-text-muted"}`}>{cta.desc}</p>
-              <Link href={cta.href} className={`inline-flex items-center gap-2 font-semibold text-sm px-7 py-3 rounded-xl transition-all ${cta.primary ? "bg-white text-primary hover:bg-white/90" : "bg-primary text-white hover:bg-primary-dark"}`}>
+              <h3 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "8px" }}>{cta.title}</h3>
+              <p style={{ fontSize: "14px", lineHeight: 1.6, marginBottom: "24px", color: cta.primary ? "rgba(255,255,255,0.7)" : "#888" }}>{cta.desc}</p>
+              <Link href={cta.href} style={{
+                display: "inline-flex", alignItems: "center", gap: "8px", fontWeight: 600, fontSize: "14px", padding: "12px 28px", borderRadius: "12px", transition: "all 0.3s",
+                background: cta.primary ? "#fff" : "#362D7E",
+                color: cta.primary ? "#362D7E" : "#fff",
+              }}
+                onMouseEnter={e => { e.currentTarget.style.opacity = "0.9"; }}
+                onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
+              >
                 {cta.btnText} <span>→</span>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

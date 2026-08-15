@@ -1,14 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
-const statements = [
-  "Intelligent AI",
-  "Reliable RPA",
-  "Smart Workflows",
-  "Automated Care",
-];
+const statements = ["Intelligent AI", "Reliable RPA", "Smart Workflows", "Automated Care"];
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -18,35 +12,24 @@ export default function Hero() {
   const [formErrors, setFormErrors] = useState({});
 
   useEffect(() => {
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const delay = 2000;
+    const typingSpeed = 100, deletingSpeed = 50, delay = 2000;
     let timer;
     const i = loopNum % statements.length;
     const fullText = statements[i];
-
     if (isDeleting) {
       timer = setTimeout(() => setText(fullText.substring(0, text.length - 1)), deletingSpeed);
     } else {
       timer = setTimeout(() => setText(fullText.substring(0, text.length + 1)), typingSpeed);
     }
-
-    if (!isDeleting && text === fullText) {
-      timer = setTimeout(() => setIsDeleting(true), delay);
-    } else if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-    }
+    if (!isDeleting && text === fullText) timer = setTimeout(() => setIsDeleting(true), delay);
+    else if (isDeleting && text === "") { setIsDeleting(false); setLoopNum(loopNum + 1); }
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    if (formErrors[e.target.name]) {
-      setFormErrors({ ...formErrors, [e.target.name]: "" });
-    }
+    if (formErrors[e.target.name]) setFormErrors({ ...formErrors, [e.target.name]: "" });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = {};
@@ -55,149 +38,95 @@ export default function Hero() {
     else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Invalid email";
     if (!formData.phone.trim()) errors.phone = "Phone is required";
     setFormErrors(errors);
-    if (Object.keys(errors).length === 0) {
-      // TODO: Connect to form handler/API route
-      alert("Form submitted! Connect to your API route.");
-    }
+    if (Object.keys(errors).length === 0) alert("Form submitted!");
   };
 
-  const stats = [
-    { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>, value: "75%", label: "Time Saved" },
-    { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>, value: "60%", label: "Workload Reduced" },
-    { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>, value: "120+", label: "Practices Automated" },
-  ];
-
   return (
-    <section className="relative bg-gradient-to-br from-[#f8f7ff] via-white to-[#f0eeff] pt-16 pb-10 overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl" />
+    <section style={{ background: "linear-gradient(135deg, #f8f7ff 0%, #ffffff 40%, #f0eeff 100%)", paddingTop: "80px", paddingBottom: "40px", position: "relative", overflow: "hidden" }}>
+      {/* Decorative blurs */}
+      <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "400px", height: "400px", background: "rgba(54,45,126,0.06)", borderRadius: "50%", filter: "blur(80px)" }} />
+      <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: "300px", height: "300px", background: "rgba(108,92,231,0.06)", borderRadius: "50%", filter: "blur(80px)" }} />
 
-      <div className="container relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Left — Content */}
-          <motion.div
-            className="flex-1 max-w-xl"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest px-4 py-1.5 rounded-full mb-6 uppercase">
+      <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+        {/* Two column layout */}
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "60px" }}>
+          {/* Left */}
+          <div className="animate-fadeInLeft" style={{ flex: "1 1 480px", minWidth: "300px" }}>
+            <span style={{ display: "inline-block", background: "rgba(54,45,126,0.1)", color: "#362D7E", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", marginBottom: "24px", textTransform: "uppercase" }}>
               Healthcare Automation Platform
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.08] mb-5 text-text-heading">
+            <h1 style={{ fontSize: "clamp(36px, 5vw, 58px)", fontWeight: 800, lineHeight: 1.08, marginBottom: "20px", color: "#1A1A1A" }}>
               Scale Your Business With
               <br />
-              <span className="text-primary whitespace-nowrap">{text}</span>
-              <span className="font-light text-primary animate-pulse">|</span>
+              <span style={{ color: "#362D7E", whiteSpace: "nowrap" }}>{text}</span>
+              <span className="animate-blink" style={{ fontWeight: 300, color: "#362D7E" }}>|</span>
             </h1>
-            <p className="text-base text-text-body leading-relaxed mb-8 max-w-md">
-              Ovotech helps GP practices and healthcare providers automate
-              repetitive admin tasks using AI and RPA. Save time. Reduce costs.
-              Improve patient care.
+            <p style={{ fontSize: "16px", color: "#555", lineHeight: 1.7, marginBottom: "32px", maxWidth: "480px" }}>
+              Ovotech helps GP practices and healthcare providers automate repetitive admin tasks using AI and RPA. Save time. Reduce costs. Improve patient care.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <Link
-                href="/contact"
-                className="bg-primary text-white font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-primary-dark hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
-              >
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "40px" }}>
+              <Link href="/contact" style={{ background: "#362D7E", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}>
                 Book a Demo <span>→</span>
               </Link>
-              <Link
-                href="/solutions"
-                className="border-2 border-primary text-primary font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-primary hover:text-white transition-all inline-flex items-center justify-center gap-2"
-              >
+              <Link href="/solutions" style={{ border: "2px solid #362D7E", color: "#362D7E", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}>
                 Explore Solutions <span>→</span>
               </Link>
             </div>
-            <p className="text-sm text-text-muted mb-4">
-              Trusted by GP practices &amp; healthcare teams across the UK
-            </p>
-            <div className="flex items-center gap-6">
-              <span className="text-nhs-blue text-xl font-extrabold tracking-wide">NHS</span>
-              <span className="text-lg font-bold text-gray-400 tracking-wide">tpp</span>
-              <span className="text-lg font-bold text-gray-400 tracking-wide">emis</span>
-              <span className="text-lg font-bold text-gray-400 tracking-wide">systmone</span>
+            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Trusted by GP practices &amp; healthcare teams across the UK</p>
+            <div style={{ display: "flex", alignItems: "center", gap: "28px" }}>
+              <span style={{ color: "#005eb8", fontSize: "22px", fontWeight: 800, letterSpacing: "1px" }}>NHS</span>
+              <span style={{ fontSize: "18px", fontWeight: 700, color: "#bbb", letterSpacing: "1px" }}>tpp</span>
+              <span style={{ fontSize: "18px", fontWeight: 700, color: "#bbb", letterSpacing: "1px" }}>emis</span>
+              <span style={{ fontSize: "18px", fontWeight: 700, color: "#bbb", letterSpacing: "1px" }}>systmone</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Right — Lead Capture Form */}
-          <motion.div
-            className="w-full max-w-md"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          >
-            <div className="bg-white rounded-2xl shadow-2xl shadow-primary/10 p-8 border border-border-light">
-              <h3 className="text-xl font-bold text-text-heading mb-1">Get a Free Consultation</h3>
-              <p className="text-sm text-text-muted mb-6">Talk to our automation experts today</p>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Full Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm bg-bg-light placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all ${formErrors.name ? "border-red-400" : "border-border-light"}`}
-                  />
-                  {formErrors.name && <span className="text-red-500 text-xs mt-1 block">{formErrors.name}</span>}
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm bg-bg-light placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all ${formErrors.email ? "border-red-400" : "border-border-light"}`}
-                  />
-                  {formErrors.email && <span className="text-red-500 text-xs mt-1 block">{formErrors.email}</span>}
-                </div>
-                <div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm bg-bg-light placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all ${formErrors.phone ? "border-red-400" : "border-border-light"}`}
-                  />
-                  {formErrors.phone && <span className="text-red-500 text-xs mt-1 block">{formErrors.phone}</span>}
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-dark hover:shadow-lg transition-all text-sm"
-                >
+          {/* Right — Form */}
+          <div className="animate-fadeInRight delay-200" style={{ flex: "0 1 420px", minWidth: "300px" }}>
+            <div style={{ background: "#fff", borderRadius: "20px", boxShadow: "0 20px 60px rgba(54,45,126,0.12)", padding: "36px 32px", border: "1px solid #E8E8EF" }}>
+              <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#1A1A1A", marginBottom: "4px" }}>Get a Free Consultation</h3>
+              <p style={{ fontSize: "14px", color: "#888", marginBottom: "24px" }}>Talk to our automation experts today</p>
+              <form onSubmit={handleSubmit}>
+                {["name", "email", "phone"].map((field) => (
+                  <div key={field} style={{ marginBottom: "14px" }}>
+                    <input
+                      type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
+                      name={field}
+                      placeholder={field === "name" ? "Full Name" : field === "email" ? "Email Address" : "Phone Number"}
+                      value={formData[field]}
+                      onChange={handleChange}
+                      style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: `1.5px solid ${formErrors[field] ? "#ef4444" : "#E8E8EF"}`, fontSize: "14px", background: "#F7F7FA", outline: "none", transition: "border 0.2s" }}
+                    />
+                    {formErrors[field] && <span style={{ color: "#ef4444", fontSize: "12px", marginTop: "4px", display: "block" }}>{formErrors[field]}</span>}
+                  </div>
+                ))}
+                <button type="submit" style={{ width: "100%", background: "#362D7E", color: "#fff", fontWeight: 700, padding: "14px", borderRadius: "12px", border: "none", fontSize: "14px", cursor: "pointer", transition: "all 0.3s", marginTop: "4px" }}>
                   Book a Demo →
                 </button>
               </form>
-              <p className="text-xs text-text-muted text-center mt-4">
-                No spam. We respect your privacy.
-              </p>
+              <p style={{ fontSize: "12px", color: "#888", textAlign: "center", marginTop: "14px" }}>No spam. We respect your privacy.</p>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Stats row below hero */}
-        <motion.div
-          className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          {stats.map((s, i) => (
-            <div key={i} className="flex items-center gap-4 bg-white rounded-2xl px-6 py-5 shadow-md shadow-primary/5 border border-border-light">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+        {/* Stats Row */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px", marginTop: "56px" }}>
+          {[
+            { icon: "🕐", value: "75%", label: "Time Saved on Tasks" },
+            { icon: "📉", value: "60%", label: "Workload Reduced" },
+            { icon: "✅", value: "120+", label: "Practices Automated" },
+          ].map((s, i) => (
+            <div key={i} className={`animate-fadeInUp delay-${(i + 4) * 100}`} style={{ display: "flex", alignItems: "center", gap: "16px", background: "#fff", borderRadius: "16px", padding: "24px", boxShadow: "0 4px 20px rgba(54,45,126,0.06)", border: "1px solid #E8E8EF" }}>
+              <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(54,45,126,0.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>
                 {s.icon}
               </div>
               <div>
-                <div className="text-2xl font-extrabold text-primary">{s.value}</div>
-                <div className="text-sm text-text-muted font-medium">{s.label}</div>
+                <div style={{ fontSize: "26px", fontWeight: 800, color: "#362D7E" }}>{s.value}</div>
+                <div style={{ fontSize: "13px", color: "#888", fontWeight: 500 }}>{s.label}</div>
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

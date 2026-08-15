@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function TopBar() {
   return (
-    <div className="bg-primary text-white text-[13px] py-2.5 hidden md:block">
-      <div className="container flex justify-between items-center">
+    <div className="bg-primary text-white text-[13px] py-3 hidden md:block border-b border-white/10">
+      <div className="site-container flex justify-between items-center">
         <div className="flex items-center gap-2">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           <span className="font-medium">+44 (0) 800 123 4567</span>
@@ -18,7 +18,7 @@ export default function TopBar() {
             NHS Accredited
           </Link>
           <Link href="/security-compliance" className="hover:text-white/80 transition-colors font-medium flex items-center gap-1.5">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
             GDPR Compliant
           </Link>
         </div>

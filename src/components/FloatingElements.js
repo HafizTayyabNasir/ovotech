@@ -9,7 +9,15 @@ export default function FloatingElements() {
       {/* Floating Call Button */}
       <a
         href="tel:+448001234567"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary text-white rounded-full shadow-xl shadow-primary/30 flex items-center justify-center hover:bg-primary-dark hover:scale-110 transition-all"
+        className="animate-float"
+        style={{
+          position: "fixed", bottom: "24px", right: "24px", zIndex: 50,
+          width: "56px", height: "56px", background: "#362D7E", color: "#fff",
+          borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
+          boxShadow: "0 10px 25px rgba(54,45,126,0.4)", transition: "all 0.3s"
+        }}
+        onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.1)"; e.currentTarget.style.background = "#2a2265"; }}
+        onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.background = "#362D7E"; }}
         aria-label="Call now"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -19,21 +27,21 @@ export default function FloatingElements() {
 
       {/* Cookie Consent */}
       {!cookieAccepted && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border-light shadow-2xl p-4 sm:p-5">
-          <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-text-body text-center sm:text-left">
+        <div className="animate-fadeInUp" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 50, background: "#fff", borderTop: "1px solid #E8E8EF", boxShadow: "0 -10px 40px rgba(0,0,0,0.1)", padding: "16px 0" }}>
+          <div className="site-container" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
+            <p style={{ fontSize: "13px", color: "#555", margin: 0, flex: "1 1 300px" }}>
               We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
             </p>
-            <div className="flex gap-3 shrink-0">
+            <div style={{ display: "flex", gap: "12px", flexShrink: 0 }}>
               <button
                 onClick={() => setCookieAccepted(true)}
-                className="bg-primary text-white text-sm font-semibold px-6 py-2.5 rounded-lg hover:bg-primary-dark transition-colors"
+                style={{ background: "#362D7E", color: "#fff", fontSize: "13px", fontWeight: 600, padding: "8px 24px", borderRadius: "8px", border: "none", cursor: "pointer", transition: "background 0.2s" }}
               >
                 Accept
               </button>
               <button
                 onClick={() => setCookieAccepted(true)}
-                className="border border-border-light text-text-heading text-sm font-medium px-6 py-2.5 rounded-lg hover:bg-bg-light transition-colors"
+                style={{ background: "#fff", border: "1px solid #E8E8EF", color: "#1A1A1A", fontSize: "13px", fontWeight: 500, padding: "8px 24px", borderRadius: "8px", cursor: "pointer", transition: "background 0.2s" }}
               >
                 Decline
               </button>

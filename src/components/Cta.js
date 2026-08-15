@@ -1,48 +1,34 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function Cta() {
   return (
-    <section className="py-20 bg-primary relative overflow-hidden">
+    <section style={{ padding: "80px 0", background: "#362D7E", position: "relative", overflow: "hidden" }}>
       {/* Decorative shapes */}
-      <div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-white/5 translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute left-10 bottom-0 w-64 h-64 rounded-full bg-white/5 translate-y-1/2" />
-      <div className="absolute right-20 bottom-10 w-20 h-20 rounded-full border-2 border-white/10" />
+      <div style={{ position: "absolute", right: 0, top: 0, width: "400px", height: "400px", borderRadius: "50%", background: "rgba(255,255,255,0.05)", transform: "translate(50%, -50%)" }} />
+      <div style={{ position: "absolute", left: "40px", bottom: 0, width: "250px", height: "250px", borderRadius: "50%", background: "rgba(255,255,255,0.05)", transform: "translateY(50%)" }} />
+      <div style={{ position: "absolute", right: "80px", bottom: "40px", width: "80px", height: "80px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.1)" }} />
 
-      <div className="container relative z-10">
-        <motion.div
-          className="flex flex-col lg:flex-row items-center gap-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4">
-              Ready to Automate
-              <br />
-              Your Workflows?
+      <div className="site-container animate-fadeInUp" style={{ position: "relative", zIndex: 10 }}>
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
+          <div style={{ flex: "1 1 400px" }}>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#fff", lineHeight: 1.2, marginBottom: "16px" }}>
+              Ready to Automate<br />Your Workflows?
             </h2>
-            <p className="text-base text-white/70 leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-              Book a demo today and see how Ovotech can transform your GP
-              practice. Start saving time and reducing costs.
+            <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.8)", lineHeight: 1.7, marginBottom: "32px", maxWidth: "460px" }}>
+              Book a demo today and see how Ovotech can transform your GP practice. Start saving time and reducing costs.
             </p>
-            <Link
-              href="/contact"
-              className="bg-white text-primary font-bold text-sm px-8 py-4 rounded-xl hover:bg-white/90 hover:shadow-2xl transition-all inline-flex items-center gap-2"
+            <Link href="/contact" style={{ background: "#fff", color: "#362D7E", fontWeight: 700, fontSize: "14px", padding: "16px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 20px rgba(0,0,0,0.2)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
             >
               Book a Demo <span>→</span>
             </Link>
           </div>
-          <div className="shrink-0 hidden lg:block">
-            <img
-              src="/cta-man.png"
-              alt="Healthcare professional"
-              className="w-80 h-auto rounded-2xl opacity-90"
-            />
+          <div style={{ flex: "0 1 320px", display: "none", "@media(min-width: 1024px)": { display: "block" } }}>
+            <img src="/cta-man.png" alt="Healthcare professional" style={{ width: "100%", height: "auto", borderRadius: "20px", opacity: 0.9 }} />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

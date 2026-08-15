@@ -1,104 +1,57 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
-  {
-    q: "What is Ovotech and how does it work?",
-    a: "Ovotech is a healthcare automation platform that helps GP practices and healthcare providers automate repetitive administrative tasks using AI and RPA. We integrate with your existing GP software securely, configure workflows to match your practice, and let AI bots handle the rest.",
-  },
-  {
-    q: "Is Ovotech NHS accredited?",
-    a: "Yes, Ovotech is fully NHS accredited and compliant with DSPT and DCB0129 standards for clinical safety. We also adhere to GDPR regulations for data protection.",
-  },
-  {
-    q: "Which GP systems does Ovotech integrate with?",
-    a: "Ovotech integrates with major GP systems including TPP SystmOne, EMIS Web, and other NHS-approved clinical systems. Our integration is secure and doesn't require changes to your existing infrastructure.",
-  },
-  {
-    q: "How long does it take to set up Ovotech?",
-    a: "Setup typically takes 2-4 weeks depending on the complexity of your workflows. Our team handles the entire onboarding process, from initial assessment to going live, with minimal disruption to your practice.",
-  },
-  {
-    q: "What kind of support does Ovotech provide?",
-    a: "We provide dedicated support including a named account manager, 24/7 monitoring of automated processes, regular performance reviews, and access to our Help Centre with guides and documentation.",
-  },
-  {
-    q: "Can Ovotech scale across multiple practices?",
-    a: "Absolutely. Ovotech is designed to scale across Primary Care Networks (PCNs) and multi-site practices. Our platform can be centrally managed while allowing individual practice customisation.",
-  },
+  { q: "What is Ovotech and how does it work?", a: "Ovotech is a healthcare automation platform that helps GP practices and healthcare providers automate repetitive administrative tasks using AI and RPA. We integrate with your existing GP software securely, configure workflows to match your practice, and let AI bots handle the rest." },
+  { q: "Is Ovotech NHS accredited?", a: "Yes, Ovotech is fully NHS accredited and compliant with DSPT and DCB0129 standards for clinical safety. We also adhere to GDPR regulations for data protection." },
+  { q: "Which GP systems does Ovotech integrate with?", a: "Ovotech integrates with major GP systems including TPP SystmOne, EMIS Web, and other NHS-approved clinical systems. Our integration is secure and doesn't require changes to your existing infrastructure." },
+  { q: "How long does it take to set up Ovotech?", a: "Setup typically takes 2-4 weeks depending on the complexity of your workflows. Our team handles the entire onboarding process, from initial assessment to going live, with minimal disruption to your practice." },
+  { q: "What kind of support does Ovotech provide?", a: "We provide dedicated support including a named account manager, 24/7 monitoring of automated processes, regular performance reviews, and access to our Help Centre with guides and documentation." },
+  { q: "Can Ovotech scale across multiple practices?", a: "Absolutely. Ovotech is designed to scale across Primary Care Networks (PCNs) and multi-site practices. Our platform can be centrally managed while allowing individual practice customisation." },
 ];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-24 bg-bg-light relative overflow-hidden">
+    <section style={{ padding: "100px 0", background: "#F7F7FA", position: "relative", overflow: "hidden" }}>
       {/* Decorative bg */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
+      <div style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", width: "320px", height: "320px", background: "rgba(54,45,126,0.03)", borderRadius: "50%", filter: "blur(80px)" }} />
 
-      <div className="container relative z-10">
-        <div className="flex flex-col lg:flex-row gap-14">
+      <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "60px", alignItems: "flex-start" }}>
           {/* Left */}
-          <motion.div
-            className="lg:w-80 shrink-0"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-block text-xs font-bold tracking-[2px] text-primary mb-3 uppercase">
-              FAQ
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-text-heading leading-tight mb-5">
-              Frequently Asked
-              <br />
-              Questions
+          <div className="animate-fadeInLeft" style={{ flex: "0 1 340px", minWidth: "280px" }}>
+            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#362D7E", marginBottom: "12px", textTransform: "uppercase" }}>FAQ</span>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#1A1A1A", lineHeight: 1.2, marginBottom: "20px" }}>
+              Frequently Asked<br />Questions
             </h2>
-            <p className="text-text-body text-base leading-relaxed">
+            <p style={{ color: "#555", fontSize: "16px", lineHeight: 1.7 }}>
               Everything you need to know about Ovotech&apos;s healthcare automation platform.
             </p>
-          </motion.div>
+          </div>
 
           {/* Right — Accordion */}
-          <div className="flex-1">
+          <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 500px" }}>
             {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                className="border-b border-border-light"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.05 }}
-              >
+              <div key={i} style={{ borderBottom: "1px solid #E8E8EF" }}>
                 <button
-                  className="w-full flex items-center justify-between py-5 text-left group"
                   onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-                  aria-expanded={openIndex === i}
+                  style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 0", background: "none", border: "none", textAlign: "left", cursor: "pointer" }}
                 >
-                  <span className={`text-base font-semibold pr-4 transition-colors ${openIndex === i ? "text-primary" : "text-text-heading"} group-hover:text-primary`}>
+                  <span style={{ fontSize: "16px", fontWeight: 600, color: openIndex === i ? "#362D7E" : "#1A1A1A", paddingRight: "16px", transition: "color 0.2s" }}>
                     {faq.q}
                   </span>
-                  <div className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center transition-all ${openIndex === i ? "bg-primary text-white rotate-45" : "bg-bg-light text-text-heading"}`}>
+                  <div style={{ width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: openIndex === i ? "#362D7E" : "#E8E8EF", color: openIndex === i ? "#fff" : "#1A1A1A", transition: "all 0.3s", transform: openIndex === i ? "rotate(45deg)" : "rotate(0)" }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12h14"/></svg>
                   </div>
                 </button>
-                <AnimatePresence>
-                  {openIndex === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p className="text-sm text-text-body leading-relaxed pb-5 pr-12">
-                        {faq.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                <div style={{ overflow: "hidden", maxHeight: openIndex === i ? "500px" : "0", opacity: openIndex === i ? 1 : 0, transition: "all 0.3s ease-in-out" }}>
+                  <p style={{ fontSize: "14px", color: "#555", lineHeight: 1.6, paddingBottom: "20px", paddingRight: "48px" }}>
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>

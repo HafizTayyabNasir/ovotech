@@ -1,23 +1,10 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const stats = [
-  {
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>,
-    value: "75%",
-    label: "Time Saved on Admin Tasks",
-  },
-  {
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>,
-    value: "60%",
-    label: "Workload Reduced",
-  },
-  {
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>,
-    value: "45%",
-    label: "Faster Payment Cycles",
-  },
+  { icon: "⏱️", value: "75%", label: "Time Saved on Admin Tasks" },
+  { icon: "📉", value: "60%", label: "Workload Reduced" },
+  { icon: "💰", value: "45%", label: "Faster Payment Cycles" },
 ];
 
 const cases = [
@@ -28,77 +15,54 @@ const cases = [
 
 export default function Trusted() {
   return (
-    <section className="py-24 bg-bg-light">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-14"
-        >
-          <span className="inline-block text-xs font-bold tracking-[2px] text-primary mb-3 uppercase">
-            Trusted by NHS &amp; Private Teams
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-text-heading leading-tight">
+    <section style={{ padding: "100px 0", background: "#F7F7FA" }}>
+      <div className="site-container">
+        <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#362D7E", marginBottom: "12px", textTransform: "uppercase" }}>Trusted by NHS &amp; Private Teams</span>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#1A1A1A", lineHeight: 1.2 }}>
             Real Results. Real Impact.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Stats Row */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-        >
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px", marginBottom: "64px" }}>
           {stats.map((s, i) => (
-            <div key={i} className="bg-white rounded-2xl p-8 text-center shadow-lg shadow-primary/5 border border-border-light hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+            <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "32px", textAlign: "center", boxShadow: "0 10px 30px rgba(54,45,126,0.05)", border: "1px solid #E8E8EF", transition: "transform 0.3s", cursor: "pointer" }}
+              onMouseEnter={e => e.currentTarget.style.transform = "translateY(-6px)"}
+              onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
+            >
+              <div style={{ width: "64px", height: "64px", borderRadius: "16px", background: "rgba(54,45,126,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "32px", margin: "0 auto 16px" }}>
                 {s.icon}
               </div>
-              <div className="text-4xl font-extrabold text-primary mb-2">{s.value}</div>
-              <div className="text-sm text-text-muted font-medium">{s.label}</div>
+              <div style={{ fontSize: "40px", fontWeight: 800, color: "#362D7E", marginBottom: "8px" }}>{s.value}</div>
+              <div style={{ fontSize: "14px", color: "#555", fontWeight: 500 }}>{s.label}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Trust Logos */}
-        <motion.div
-          className="flex justify-center items-center gap-10 sm:gap-16 mb-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <span className="text-nhs-blue text-3xl font-extrabold tracking-wide">NHS</span>
-          <span className="text-2xl font-extrabold text-gray-300 tracking-wide">tpp</span>
-          <span className="text-2xl font-extrabold text-gray-300 tracking-wide">emis</span>
-          <span className="text-2xl font-extrabold text-gray-300 tracking-wide">systmone</span>
-        </motion.div>
+        <div className="animate-fadeInUp delay-400" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "40px", marginBottom: "64px" }}>
+          <span style={{ color: "#005eb8", fontSize: "32px", fontWeight: 800, letterSpacing: "1.5px" }}>NHS</span>
+          <span style={{ fontSize: "28px", fontWeight: 800, color: "#d1d5db", letterSpacing: "1px" }}>tpp</span>
+          <span style={{ fontSize: "28px", fontWeight: 800, color: "#d1d5db", letterSpacing: "1px" }}>emis</span>
+          <span style={{ fontSize: "28px", fontWeight: 800, color: "#d1d5db", letterSpacing: "1px" }}>systmone</span>
+        </div>
 
         {/* Case Study Cards */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginBottom: "40px" }}>
           {cases.map((c, i) => (
-            <div key={i} className="bg-white rounded-2xl p-7 border border-border-light hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <h4 className="text-base font-bold text-text-heading mb-2">{c.location}</h4>
-              <p className="text-sm text-text-body leading-relaxed">{c.text}</p>
+            <div key={i} className={`animate-fadeInUp delay-${(i + 5) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "28px", border: "1px solid #E8E8EF", transition: "all 0.3s", cursor: "pointer" }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+            >
+              <h4 style={{ fontSize: "16px", fontWeight: 700, color: "#1A1A1A", marginBottom: "8px" }}>{c.location}</h4>
+              <p style={{ fontSize: "14px", color: "#555", lineHeight: 1.6 }}>{c.text}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        <div className="text-center">
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 border-2 border-primary text-primary font-semibold text-sm px-7 py-3 rounded-xl hover:bg-primary hover:text-white transition-all"
-          >
+        <div style={{ textAlign: "center" }}>
+          <Link href="/case-studies" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #362D7E", color: "#362D7E", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
             View More Case Studies <span>→</span>
           </Link>
         </div>

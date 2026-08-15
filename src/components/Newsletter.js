@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -9,39 +8,33 @@ export default function Newsletter() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email || !consent) return;
-    alert("Subscribed! Connect to your newsletter API.");
+    alert("Subscribed!");
   };
 
   return (
-    <section className="py-16 bg-bg-light border-t border-border-light">
-      <div className="container">
-        <motion.div
-          className="max-w-xl mx-auto text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-xl font-bold text-text-heading mb-2">Stay Updated</h3>
-          <p className="text-sm text-text-muted mb-6">Get the latest healthcare automation insights delivered to your inbox.</p>
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-4">
+    <section style={{ padding: "64px 0", background: "#F7F7FA", borderTop: "1px solid #E8E8EF" }}>
+      <div className="site-container">
+        <div className="animate-fadeInUp" style={{ maxWidth: "560px", margin: "0 auto", textAlign: "center" }}>
+          <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#1A1A1A", marginBottom: "8px" }}>Stay Updated</h3>
+          <p style={{ fontSize: "14px", color: "#555", marginBottom: "24px" }}>Get the latest healthcare automation insights delivered to your inbox.</p>
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
             <input
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-xl border border-border-light bg-white text-sm placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+              style={{ flex: "1 1 240px", padding: "14px 16px", borderRadius: "12px", border: "1px solid #E8E8EF", background: "#fff", fontSize: "14px", outline: "none", transition: "border 0.2s" }}
               required
             />
-            <button type="submit" className="bg-primary text-white font-semibold text-sm px-7 py-3 rounded-xl hover:bg-primary-dark transition-all shrink-0">
+            <button type="submit" style={{ flexShrink: 0, background: "#362D7E", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", border: "none", cursor: "pointer", transition: "background 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#2a2265"} onMouseLeave={e => e.currentTarget.style.background = "#362D7E"}>
               Subscribe
             </button>
           </form>
-          <label className="flex items-start gap-2 justify-center text-xs text-text-muted cursor-pointer">
-            <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-primary" />
+          <label style={{ display: "flex", alignItems: "flex-start", gap: "8px", justifyContent: "center", fontSize: "12px", color: "#888", cursor: "pointer" }}>
+            <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} style={{ marginTop: "2px", accentColor: "#362D7E" }} />
             <span>I agree to receive marketing emails. You can unsubscribe at any time.</span>
           </label>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

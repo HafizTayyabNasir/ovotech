@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const tags = [
   "Prescription Automation",
@@ -13,73 +12,50 @@ const tags = [
 
 export default function TagsInfo() {
   return (
-    <section className="py-24 bg-white">
-      <div className="container">
-        <div className="flex flex-col lg:flex-row gap-14 items-start">
+    <section style={{ padding: "100px 0", background: "#fff" }}>
+      <div className="site-container">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "60px", alignItems: "flex-start" }}>
           {/* Left — Tags */}
-          <motion.div
-            className="flex-1"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-block text-xs font-bold tracking-[2px] text-primary mb-3 uppercase">
-              Complete Coverage
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-text-heading leading-tight mb-4">
-              Every Workflow,
-              <br />
-              Fully Automated.
+          <div className="animate-fadeInLeft" style={{ flex: "1 1 500px" }}>
+            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#362D7E", marginBottom: "12px", textTransform: "uppercase" }}>Complete Coverage</span>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#1A1A1A", lineHeight: 1.2, marginBottom: "16px" }}>
+              Every Workflow,<br />Fully Automated.
             </h2>
-            <p className="text-text-body text-base leading-relaxed mb-8 max-w-md">
-              From front desk to back office, our solutions cover every aspect of GP
-              practice administration.
+            <p style={{ color: "#555", fontSize: "16px", lineHeight: 1.7, marginBottom: "32px", maxWidth: "460px" }}>
+              From front desk to back office, our solutions cover every aspect of GP practice administration.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
               {tags.map((tag, i) => (
-                <motion.span
-                  key={i}
-                  className="inline-flex items-center gap-2 bg-primary/8 text-primary text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary hover:text-white transition-all cursor-pointer border border-primary/15"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                <span key={i} className={`animate-scaleIn delay-${(i + 1) * 50}`} style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(54,45,126,0.08)", color: "#362D7E", fontSize: "14px", fontWeight: 600, padding: "10px 20px", borderRadius: "30px", border: "1px solid rgba(54,45,126,0.15)", transition: "all 0.3s", cursor: "default" }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "#362D7E"; e.currentTarget.style.color = "#fff"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(54,45,126,0.08)"; e.currentTarget.style.color = "#362D7E"; }}
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
-                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
                   {tag}
-                </motion.span>
+                </span>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Right — Stat Cards */}
-          <motion.div
-            className="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col gap-5"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl p-8 flex-1 min-w-[220px]">
-              <div className="text-xs font-bold tracking-wider uppercase text-white/60 mb-3">Happiness Score</div>
-              <div className="text-4xl font-extrabold mb-1">96%</div>
-              <p className="text-sm text-white/60 mb-4">Client satisfaction rate</p>
-              <Link href="/case-studies" className="text-sm font-semibold text-white/80 hover:text-white inline-flex items-center gap-1.5 transition-colors">
+          <div className="animate-fadeInRight delay-200" style={{ flex: "0 1 340px", display: "flex", flexDirection: "column", gap: "20px", width: "100%" }}>
+            <div style={{ background: "linear-gradient(135deg, #362D7E 0%, #2a2265 100%)", color: "#fff", borderRadius: "20px", padding: "32px" }}>
+              <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "12px" }}>Happiness Score</div>
+              <div style={{ fontSize: "40px", fontWeight: 800, marginBottom: "4px" }}>96%</div>
+              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", marginBottom: "16px" }}>Client satisfaction rate</p>
+              <Link href="/case-studies" style={{ fontSize: "14px", fontWeight: 600, color: "rgba(255,255,255,0.9)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 View Results <span>→</span>
               </Link>
             </div>
-            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 flex-1 min-w-[220px]">
-              <div className="text-xs font-bold tracking-wider uppercase text-text-muted mb-3">Experts</div>
-              <div className="text-4xl font-extrabold text-primary mb-1">120+</div>
-              <p className="text-sm text-text-muted mb-4">Healthcare automation specialists</p>
-              <Link href="/about" className="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1.5 transition-colors">
+            <div style={{ background: "#fff", border: "2px solid rgba(54,45,126,0.1)", borderRadius: "20px", padding: "32px" }}>
+              <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", color: "#888", marginBottom: "12px" }}>Experts</div>
+              <div style={{ fontSize: "40px", fontWeight: 800, color: "#362D7E", marginBottom: "4px" }}>120+</div>
+              <p style={{ fontSize: "14px", color: "#888", marginBottom: "16px" }}>Healthcare automation specialists</p>
+              <Link href="/about" style={{ fontSize: "14px", fontWeight: 600, color: "#362D7E", display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 Meet the Team <span>→</span>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

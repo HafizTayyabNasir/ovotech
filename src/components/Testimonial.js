@@ -1,64 +1,49 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function Testimonial() {
   return (
-    <section className="py-24 bg-white">
-      <div className="container">
-        <motion.div
-          className="bg-gradient-to-br from-[#f8f7ff] to-[#f0eeff] rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
+    <section style={{ padding: "100px 0", background: "#fff" }}>
+      <div className="site-container">
+        <div className="animate-fadeInUp" style={{ background: "linear-gradient(135deg, #f8f7ff 0%, #f0eeff 100%)", borderRadius: "24px", padding: "48px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
           {/* Quote */}
-          <div className="flex-1">
-            <span className="inline-block text-xs font-bold tracking-[2px] text-primary mb-4 uppercase">
-              What Our Clients Say
-            </span>
+          <div style={{ flex: "1 1 400px" }}>
+            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#362D7E", marginBottom: "16px", textTransform: "uppercase" }}>What Our Clients Say</span>
             {/* Stars */}
-            <div className="flex items-center gap-1 mb-6">
+            <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "24px" }}>
               {[...Array(5)].map((_, i) => (
                 <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" strokeWidth="1">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               ))}
             </div>
-            <blockquote className="text-xl sm:text-2xl font-medium text-text-heading leading-relaxed mb-8 relative">
-              <span className="text-primary text-5xl font-serif absolute -top-4 -left-2 opacity-30">&ldquo;</span>
-              Ovotech has transformed the way we handle administrative tasks. Our
-              team saves hours every day, and our patients benefit from faster,
-              more accurate service.
+            <blockquote style={{ fontSize: "clamp(20px, 3vw, 24px)", fontWeight: 500, color: "#1A1A1A", lineHeight: 1.6, marginBottom: "32px", position: "relative" }}>
+              <span style={{ color: "#362D7E", fontSize: "60px", fontFamily: "serif", position: "absolute", top: "-20px", left: "-16px", opacity: 0.2 }}>&ldquo;</span>
+              Ovotech has transformed the way we handle administrative tasks. Our team saves hours every day, and our patients benefit from faster, more accurate service.
             </blockquote>
-            <div className="flex items-center gap-4">
-              <img
-                src="/testimonial-man.png"
-                alt="Dr. Sarah Mitchell"
-                className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
-              />
+            <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <img src="/testimonial-man.png" alt="Dr. Sarah Mitchell" style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", boxShadow: "0 0 0 2px rgba(54,45,126,0.2)" }} />
               <div>
-                <strong className="text-base font-bold text-text-heading block">Dr. Sarah Mitchell</strong>
-                <span className="text-sm text-text-muted">Practice Manager, MHGP Practice</span>
+                <strong style={{ fontSize: "16px", fontWeight: 700, color: "#1A1A1A", display: "block" }}>Dr. Sarah Mitchell</strong>
+                <span style={{ fontSize: "14px", color: "#888" }}>Practice Manager, MHGP Practice</span>
               </div>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="shrink-0 flex flex-col items-center lg:items-start gap-4">
-            <div className="bg-white rounded-2xl shadow-xl p-8 text-center border border-border-light">
-              <div className="text-5xl font-extrabold text-primary mb-2">81.8%</div>
-              <div className="text-sm text-text-muted font-medium mb-4">Net Promoter Score</div>
-              <Link
-                href="/case-studies"
-                className="bg-primary text-white font-semibold text-sm px-6 py-3 rounded-xl hover:bg-primary-dark hover:shadow-lg transition-all inline-flex items-center gap-2"
+          <div style={{ flex: "0 1 280px", margin: "0 auto" }}>
+            <div style={{ background: "#fff", borderRadius: "20px", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", padding: "32px", textAlign: "center", border: "1px solid #E8E8EF" }}>
+              <div style={{ fontSize: "48px", fontWeight: 800, color: "#362D7E", marginBottom: "8px" }}>81.8%</div>
+              <div style={{ fontSize: "14px", color: "#888", fontWeight: 500, marginBottom: "16px" }}>Net Promoter Score</div>
+              <Link href="/case-studies" style={{ background: "#362D7E", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "12px 24px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}
+                onMouseEnter={e => { e.currentTarget.style.background = "#2a2265"; e.currentTarget.style.boxShadow = "0 8px 16px rgba(54,45,126,0.2)"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = "#362D7E"; e.currentTarget.style.boxShadow = "none"; }}
               >
                 Read More Stories <span>→</span>
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
