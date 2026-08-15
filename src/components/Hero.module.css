@@ -3,8 +3,8 @@
 .content{flex:1;}
 .badge{display:inline-block;background:#e8edfb;color:#0A1E5C;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:6px 16px;border-radius:20px;margin-bottom:20px;}
 .heading{font-size:56px;font-weight:800;line-height:1.2;margin-bottom:20px;color:#0f172a;}
-.typeText{color:#2563eb;}
-.cursor{font-weight:300;color:#2563eb;animation:blink 1s step-end infinite;}
+.typeText{color:#163285;}
+.cursor{font-weight:300;color:#163285;animation:blink 1s step-end infinite;}
 .desc{font-size:16px;color:#555;line-height:1.7;margin-bottom:32px;max-width:480px;}
 .btns{display:flex;gap:16px;margin-bottom:40px;}
 .trustText{font-size:13px;color:#888;margin-bottom:16px;}

@@ -1,7 +1,7 @@
 .solutions{padding:100px 0;background:#fff;}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .card{position:relative;background:#f8faff;border-radius:16px;padding:32px 28px;transition:all .3s;overflow:hidden;z-index:1;}
-.card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg, transparent 70%, #0A1E5C 85%, #2563eb 100%);animation:borderSpin 4s linear infinite;z-index:-2;}
+.card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg, transparent 70%, #0A1E5C 85%, #2563eb 100%);animation:borderSpin 8s linear infinite;z-index:-2;}
 .card::after{content:"";position:absolute;inset:1px;background:#f8faff;border-radius:15px;z-index:-1;transition:background 0.3s;}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,30,92,.08);}
 .icon{width:52px;height:52px;background:#e8edfb;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}

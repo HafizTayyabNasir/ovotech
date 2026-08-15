@@ -1,4 +1,4 @@
-.navbar{background:#0A1E5C;padding:16px 0;position:sticky;top:0;z-index:100;}
+.navbar{background:#071540;padding:16px 0;position:sticky;top:0;z-index:100;}
 .inner{display:flex;align-items:center;justify-content:space-between;position:relative;}
 .logo{display:flex;align-items:center;gap:10px;}
 .logoText{font-size:20px;font-weight:800;color:#0A1E5C;letter-spacing:1px;}
@@ -144,7 +144,7 @@
     left:0;
     width:100%;
     height:calc(100vh - 65px);
-    background:#0A1E5C;
+    background:#071540;
     flex-direction:column;
     padding:30px 24px;
     gap:5px;
