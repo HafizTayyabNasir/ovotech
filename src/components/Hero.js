@@ -10,7 +10,7 @@ export default function Hero() {
           <h1 className={styles.heading}>
             Automate More.
             <br />
-            Care Better.
+            <span className={styles.typeText}>Care Better.</span><span className={styles.cursor}>|</span>
           </h1>
           <p className={styles.desc}>
             Ovotech helps GP practices and healthcare providers automate
@@ -37,7 +37,10 @@ export default function Hero() {
         </div>
         <div className={styles.image}>
           <div className={styles.imgRing}>
-            <img src="/hero-tech.png" alt="Healthcare system automation and RPA technology" />
+            <div className={`${styles.decorativeDot} ${styles.dot1}`}></div>
+            <div className={`${styles.decorativeDot} ${styles.dot2}`}></div>
+            <div className={`${styles.decorativeDot} ${styles.dot3}`}></div>
+            <img src="/hero-banner-man.png" alt="Professional man working on laptop" />
           </div>
           <div className={`${styles.floatCard} ${styles.card1}`}>
             <div className={`${styles.floatIcon} ${styles.blueIcon}`}>
