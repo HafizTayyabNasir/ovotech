@@ -2,8 +2,8 @@
 .inner{display:flex;align-items:center;gap:60px;}
 .content{flex:1;}
 .badge{display:inline-block;background:#e8edfb;color:#0A1E5C;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:6px 16px;border-radius:20px;margin-bottom:20px;}
-.heading{font-size:68px;font-weight:800;line-height:1.05;margin-bottom:20px;color:#0f172a;min-height:4.2em;}
-.typeText{color:#163285;}
+.heading{font-size:68px;font-weight:800;line-height:1.05;margin-bottom:20px;color:#0f172a;}
+.typeText{color:#163285;white-space:nowrap;}
 .cursor{font-weight:300;color:#163285;animation:blink 1s step-end infinite;}
 .desc{font-size:16px;color:#555;line-height:1.7;margin-bottom:32px;max-width:480px;}
 .btns{display:flex;gap:16px;margin-bottom:40px;}

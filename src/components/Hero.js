@@ -4,10 +4,10 @@ import styles from "./Hero.module.css";
 import { useState, useEffect } from "react";
 
 const statements = [
-  "Intelligent AI & Automation",
-  "Reliable RPA Services",
-  "Smart Healthcare Workflows",
-  "Automated Patient Care"
+  "Intelligent AI",
+  "Reliable RPA",
+  "Smart Workflows",
+  "Automated Care"
 ];
 
 export default function Hero() {
