@@ -36,7 +36,9 @@ export default function Hero() {
           </div>
         </div>
         <div className={styles.image}>
-          <img src="/hero-tech.png" alt="Healthcare system automation and RPA technology" />
+          <div className={styles.imgRing}>
+            <img src="/hero-tech.png" alt="Healthcare system automation and RPA technology" />
+          </div>
           <div className={`${styles.floatCard} ${styles.card1}`}>
             <div className={`${styles.floatIcon} ${styles.blueIcon}`}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">
