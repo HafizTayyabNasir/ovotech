@@ -2,7 +2,7 @@
 .inner{display:flex;align-items:center;gap:60px;}
 .content{flex:1;}
 .badge{display:inline-block;background:#e8edfb;color:#0A1E5C;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:6px 16px;border-radius:20px;margin-bottom:20px;}
-.heading{font-size:56px;font-weight:800;line-height:1.2;margin-bottom:20px;color:#0f172a;min-height:3.6em;}
+.heading{font-size:68px;font-weight:800;line-height:1.05;margin-bottom:20px;color:#0f172a;min-height:4.2em;}
 .typeText{color:#163285;}
 .cursor{font-weight:300;color:#163285;animation:blink 1s step-end infinite;}
 .desc{font-size:16px;color:#555;line-height:1.7;margin-bottom:32px;max-width:480px;}
@@ -37,7 +37,7 @@
 
 @media(max-width:1024px){.inner{flex-direction:column;}.image{margin-top:40px;}}
 @media(max-width:768px){
-  .heading{font-size:36px;}
+  .heading{font-size:42px;}
   .btns{flex-direction:column;width:100%;}
   .btns a{width:100%;justify-content:center;}
   .floatCard{padding:8px 12px;gap:8px;}
