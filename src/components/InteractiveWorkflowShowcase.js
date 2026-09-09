@@ -80,236 +80,220 @@ const workflowSteps = [
 
 export default function InteractiveWorkflowShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const sectionRef = useRef(null);
-  const isScrollingRef = useRef(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % workflowSteps.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [isPaused]);
+    const handleScroll = () => {
+      const el = containerRef.current;
+      if (!el) return;
 
-  useEffect(() => {
-    const handleWheel = (e) => {
-      const section = sectionRef.current;
-      if (!section) return;
+      const rect = el.getBoundingClientRect();
+      const totalScrollableHeight = el.clientHeight - window.innerHeight;
+      if (totalScrollableHeight <= 0) return;
 
-      const rect = section.getBoundingClientRect();
-      const isCenteredInView = rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.6;
+      // How far top of container has passed top of viewport
+      const currentScroll = -rect.top;
+      const progress = Math.max(0, Math.min(1, currentScroll / totalScrollableHeight));
 
-      if (!isCenteredInView) return;
+      const stepIndex = Math.min(
+        workflowSteps.length - 1,
+        Math.floor(progress * workflowSteps.length)
+      );
 
-      if (isScrollingRef.current) return;
-      if (Math.abs(e.deltaY) < 15) return;
-
-      const isScrollDown = e.deltaY > 0;
-
-      setActiveIndex((current) => {
-        if (isScrollDown && current < workflowSteps.length - 1) {
-          e.preventDefault();
-          section.scrollIntoView({ behavior: "smooth", block: "center" });
-          isScrollingRef.current = true;
-          setTimeout(() => { isScrollingRef.current = false; }, 700);
-          return current + 1;
-        }
-
-        if (!isScrollDown && current > 0) {
-          e.preventDefault();
-          section.scrollIntoView({ behavior: "smooth", block: "center" });
-          isScrollingRef.current = true;
-          setTimeout(() => { isScrollingRef.current = false; }, 700);
-          return current - 1;
-        }
-
-        return current;
-      });
+      setActiveIndex(stepIndex);
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const activeStep = workflowSteps[activeIndex];
 
   return (
-    <section
-      ref={sectionRef}
+    <div
+      ref={containerRef}
       style={{
-        background: "radial-gradient(ellipse at top, #0E1A3D 0%, #060D1F 100%)",
-        padding: "110px 0",
-        color: "#FFFFFF",
+        height: "300vh",
         position: "relative",
-        overflow: "hidden"
+        background: "#060D1F"
       }}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background grid overlay */}
-      <div
+      <section
         style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-          pointerEvents: "none",
-          opacity: 0.6
+          position: "sticky",
+          top: 0,
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          background: "radial-gradient(ellipse at top, #0E1A3D 0%, #060D1F 100%)",
+          color: "#FFFFFF",
+          overflow: "hidden",
+          width: "100%"
         }}
-      />
-
-      <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
-        {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span style={{ display: "inline-block", background: "rgba(54, 45, 126, 0.35)", color: "#A594FF", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(165,148,255,0.25)" }}>
-            OVOTECH WORKFLOW : HOW IT WORKS
-          </span>
-          <h2 style={{ fontSize: "clamp(30px, 4.5vw, 48px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
-            From incoming document to verified EMIS record in seconds.
-          </h2>
-        </div>
-
-        {/* Main 2-Column Showcase */}
+      >
+        {/* Background grid overlay */}
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "50px",
-            alignItems: "center"
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            pointerEvents: "none",
+            opacity: 0.6
           }}
-        >
-          {/* Left Column: Interactive UI Workspace Preview */}
-          <div style={{ display: "flex", gap: "24px", alignItems: "stretch" }}>
-            {/* Vertical Step Tracker Bar */}
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", width: "36px", flexShrink: 0, padding: "10px 0" }}>
-              {workflowSteps.map((step, i) => (
-                <button
-                  key={step.number}
-                  onClick={() => setActiveIndex(i)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    color: i === activeIndex ? "#A594FF" : "rgba(255,255,255,0.3)",
-                    fontSize: "13px",
-                    fontWeight: i === activeIndex ? 800 : 600,
-                    cursor: "pointer",
-                    transition: "all 0.3s",
-                    transform: i === activeIndex ? "scale(1.25)" : "scale(1)"
-                  }}
-                >
-                  {step.number}
-                </button>
-              ))}
-            </div>
+        />
 
-            {/* Main Interactive Screen Card */}
-            <div style={{ flex: 1, background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "24px", border: "1px solid rgba(255, 255, 255, 0.12)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
-              {/* Screen Top Status Bar */}
-              <div style={{ background: "rgba(255,255,255,0.06)", padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "12px", color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#16a34a" }} />
-                  <span>STEP {activeStep.number} OF 05</span>
-                </div>
-                <span style={{ color: "#A594FF", letterSpacing: "1px" }}>{activeStep.category}</span>
-              </div>
-
-              {/* Screen Image with Framer Motion AnimatePresence */}
-              <div style={{ position: "relative", minHeight: "360px", background: "#050B18" }}>
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeStep.number}
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.04 }}
-                    transition={{ duration: 0.4 }}
-                    style={{ width: "100%", height: "100%" }}
-                  >
-                    <img
-                      src={activeStep.image}
-                      alt={activeStep.title}
-                      style={{ width: "100%", height: "360px", objectFit: "cover", display: "block" }}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Screen Bottom Tag Bar */}
-              <div style={{ background: "rgba(9, 18, 42, 0.95)", padding: "16px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", fontSize: "12px", fontFamily: "monospace", color: "#A594FF", display: "flex", alignItems: "center", gap: "10px" }}>
-                <span style={{ color: "#16a34a" }}>▶</span> {activeStep.tag}
-              </div>
-            </div>
+        <div className="site-container" style={{ position: "relative", zIndex: 10, width: "100%" }}>
+          {/* Header */}
+          <div style={{ textAlign: "center", marginBottom: "36px" }}>
+            <span style={{ display: "inline-block", background: "rgba(54, 45, 126, 0.35)", color: "#A594FF", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(165,148,255,0.25)" }}>
+              OVOTECH WORKFLOW : HOW IT WORKS
+            </span>
+            <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
+              From incoming document to verified EMIS record in seconds.
+            </h2>
           </div>
 
-          {/* Right Column: 5 Numbered Cards */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            {workflowSteps.map((step, index) => {
-              const isActive = index === activeIndex;
-              return (
-                <div
-                  key={step.number}
-                  onClick={() => setActiveIndex(index)}
-                  style={{
-                    background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
-                    color: isActive ? "#060D1F" : "#FFFFFF",
-                    borderRadius: "18px",
-                    padding: "22px 26px",
-                    border: isActive ? "2px solid #A594FF" : "1px solid rgba(255, 255, 255, 0.08)",
-                    cursor: "pointer",
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    boxShadow: isActive ? "0 16px 36px rgba(0, 0, 0, 0.4)" : "none",
-                    transform: isActive ? "translateX(6px)" : "none",
-                    opacity: isActive ? 1 : 0.7
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <div
-                        style={{
-                          width: "32px",
-                          height: "32px",
-                          borderRadius: "10px",
-                          background: isActive ? "#060D1F" : "rgba(255,255,255,0.1)",
-                          color: isActive ? "#FFFFFF" : "#A594FF",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center"
-                        }}
-                      >
-                        {step.icon}
+          {/* Main 2-Column Showcase */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "40px",
+              alignItems: "center"
+            }}
+          >
+            {/* Left Column: Interactive UI Workspace Preview */}
+            <div style={{ display: "flex", gap: "20px", alignItems: "stretch" }}>
+              {/* Vertical Step Tracker Bar */}
+              <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", width: "36px", flexShrink: 0, padding: "10px 0" }}>
+                {workflowSteps.map((step, i) => (
+                  <button
+                    key={step.number}
+                    onClick={() => setActiveIndex(i)}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      color: i === activeIndex ? "#A594FF" : "rgba(255,255,255,0.3)",
+                      fontSize: "13px",
+                      fontWeight: i === activeIndex ? 800 : 600,
+                      cursor: "pointer",
+                      transition: "all 0.3s",
+                      transform: i === activeIndex ? "scale(1.25)" : "scale(1)"
+                    }}
+                  >
+                    {step.number}
+                  </button>
+                ))}
+              </div>
+
+              {/* Main Interactive Screen Card */}
+              <div style={{ flex: 1, background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "24px", border: "1px solid rgba(255, 255, 255, 0.12)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
+                {/* Screen Top Status Bar */}
+                <div style={{ background: "rgba(255,255,255,0.06)", padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "12px", color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#16a34a" }} />
+                    <span>STEP {activeStep.number} OF 05</span>
+                  </div>
+                  <span style={{ color: "#A594FF", letterSpacing: "1px" }}>{activeStep.category}</span>
+                </div>
+
+                {/* Screen Image with Framer Motion AnimatePresence */}
+                <div style={{ position: "relative", minHeight: "330px", background: "#050B18" }}>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeStep.number}
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.04 }}
+                      transition={{ duration: 0.35 }}
+                      style={{ width: "100%", height: "100%" }}
+                    >
+                      <img
+                        src={activeStep.image}
+                        alt={activeStep.title}
+                        style={{ width: "100%", height: "330px", objectFit: "cover", display: "block" }}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                {/* Screen Bottom Tag Bar */}
+                <div style={{ background: "rgba(9, 18, 42, 0.95)", padding: "14px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", fontSize: "12px", fontFamily: "monospace", color: "#A594FF", display: "flex", alignItems: "center", gap: "10px" }}>
+                  <span style={{ color: "#16a34a" }}>▶</span> {activeStep.tag}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: 5 Numbered Cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              {workflowSteps.map((step, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <div
+                    key={step.number}
+                    onClick={() => setActiveIndex(index)}
+                    style={{
+                      background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
+                      color: isActive ? "#060D1F" : "#FFFFFF",
+                      borderRadius: "16px",
+                      padding: "18px 22px",
+                      border: isActive ? "2px solid #A594FF" : "1px solid rgba(255, 255, 255, 0.08)",
+                      cursor: "pointer",
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                      boxShadow: isActive ? "0 16px 36px rgba(0, 0, 0, 0.4)" : "none",
+                      transform: isActive ? "translateX(6px)" : "none",
+                      opacity: isActive ? 1 : 0.7
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                        <div
+                          style={{
+                            width: "30px",
+                            height: "30px",
+                            borderRadius: "10px",
+                            background: isActive ? "#060D1F" : "rgba(255,255,255,0.1)",
+                            color: isActive ? "#FFFFFF" : "#A594FF",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                          }}
+                        >
+                          {step.icon}
+                        </div>
+                        <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1.2px", color: isActive ? "#362D7E" : "#A594FF" }}>
+                          {step.category}
+                        </span>
                       </div>
-                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1.2px", color: isActive ? "#362D7E" : "#A594FF" }}>
-                        {step.category}
+
+                      <span style={{ fontSize: "18px", fontWeight: 800, color: isActive ? "#362D7E" : "rgba(255,255,255,0.3)" }}>
+                        {step.number}
                       </span>
                     </div>
 
-                    <span style={{ fontSize: "20px", fontWeight: 800, color: isActive ? "#362D7E" : "rgba(255,255,255,0.3)" }}>
-                      {step.number}
-                    </span>
+                    <h3 style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#060D1F" : "#FFFFFF", marginBottom: "4px" }}>
+                      {step.title}
+                    </h3>
+
+                    {isActive && (
+                      <motion.p
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        transition={{ duration: 0.3 }}
+                        style={{ fontSize: "13px", color: "#555555", lineHeight: 1.5, marginTop: "6px" }}
+                      >
+                        {step.description}
+                      </motion.p>
+                    )}
                   </div>
-
-                  <h3 style={{ fontSize: "17px", fontWeight: 800, color: isActive ? "#060D1F" : "#FFFFFF", marginBottom: "6px" }}>
-                    {step.title}
-                  </h3>
-
-                  {isActive && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      transition={{ duration: 0.3 }}
-                      style={{ fontSize: "14px", color: "#555555", lineHeight: 1.6, marginTop: "8px" }}
-                    >
-                      {step.description}
-                    </motion.p>
-                  )}
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
