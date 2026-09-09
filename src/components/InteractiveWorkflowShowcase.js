@@ -98,6 +98,7 @@ export default function InteractiveWorkflowShowcase() {
 
     const handleWheel = (e) => {
       if (isScrollingRef.current) return;
+      if (Math.abs(e.deltaY) < 15) return;
 
       const isScrollDown = e.deltaY > 0;
 
@@ -105,14 +106,14 @@ export default function InteractiveWorkflowShowcase() {
         if (isScrollDown && current < workflowSteps.length - 1) {
           e.preventDefault();
           isScrollingRef.current = true;
-          setTimeout(() => { isScrollingRef.current = false; }, 400);
+          setTimeout(() => { isScrollingRef.current = false; }, 1000);
           return current + 1;
         }
 
         if (!isScrollDown && current > 0) {
           e.preventDefault();
           isScrollingRef.current = true;
-          setTimeout(() => { isScrollingRef.current = false; }, 400);
+          setTimeout(() => { isScrollingRef.current = false; }, 1000);
           return current - 1;
         }
 
