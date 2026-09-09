@@ -5,6 +5,7 @@ import StatsGrid from "../components/StatsGrid";
 import Solutions from "../components/Solutions";
 import InteractiveBenefits from "../components/InteractiveBenefits";
 import FeatureHighlights from "../components/FeatureHighlights";
+import InteractiveWorkflowShowcase from "../components/InteractiveWorkflowShowcase";
 import Benefits from "../components/Benefits";
 import Trusted from "../components/Trusted";
 import TagsInfo from "../components/TagsInfo";
@@ -29,6 +30,7 @@ export default function Home() {
       <Solutions />
       <InteractiveBenefits />
       <FeatureHighlights />
+      <InteractiveWorkflowShowcase />
       <Benefits />
       <Trusted />
       <TagsInfo />
