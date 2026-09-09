@@ -88,15 +88,20 @@ export default function InteractiveWorkflowShowcase() {
     if (isPaused) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % workflowSteps.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
     const handleWheel = (e) => {
+      const section = sectionRef.current;
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const isCenteredInView = rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.6;
+
+      if (!isCenteredInView) return;
+
       if (isScrollingRef.current) return;
       if (Math.abs(e.deltaY) < 15) return;
 
@@ -105,15 +110,17 @@ export default function InteractiveWorkflowShowcase() {
       setActiveIndex((current) => {
         if (isScrollDown && current < workflowSteps.length - 1) {
           e.preventDefault();
+          section.scrollIntoView({ behavior: "smooth", block: "center" });
           isScrollingRef.current = true;
-          setTimeout(() => { isScrollingRef.current = false; }, 1000);
+          setTimeout(() => { isScrollingRef.current = false; }, 700);
           return current + 1;
         }
 
         if (!isScrollDown && current > 0) {
           e.preventDefault();
+          section.scrollIntoView({ behavior: "smooth", block: "center" });
           isScrollingRef.current = true;
-          setTimeout(() => { isScrollingRef.current = false; }, 1000);
+          setTimeout(() => { isScrollingRef.current = false; }, 700);
           return current - 1;
         }
 
@@ -121,9 +128,9 @@ export default function InteractiveWorkflowShowcase() {
       });
     };
 
-    section.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("wheel", handleWheel, { passive: false });
     return () => {
-      section.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
