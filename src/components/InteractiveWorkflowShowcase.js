@@ -122,16 +122,16 @@ export default function InteractiveWorkflowShowcase() {
       <section
         style={{
           position: "sticky",
-          top: "76px",
-          height: "calc(100vh - 76px)",
+          top: "80px",
+          height: "calc(100vh - 80px)",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "flex-start",
           background: "radial-gradient(ellipse at top, #0E1A3D 0%, #060D1F 100%)",
           color: "#FFFFFF",
           overflow: "hidden",
           width: "100%",
-          padding: "16px 0",
+          padding: "24px 0",
           boxSizing: "border-box"
         }}
       >
@@ -149,11 +149,11 @@ export default function InteractiveWorkflowShowcase() {
 
         <div className="site-container" style={{ position: "relative", zIndex: 10, width: "100%" }}>
           {/* Header */}
-          <div style={{ textAlign: "center", marginBottom: "20px" }}>
-            <span style={{ display: "inline-block", background: "rgba(54, 45, 126, 0.35)", color: "#A594FF", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "4px 14px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "8px", border: "1px solid rgba(165,148,255,0.25)" }}>
+          <div style={{ textAlign: "center", marginBottom: "16px" }}>
+            <span style={{ display: "inline-block", background: "rgba(54, 45, 126, 0.35)", color: "#A594FF", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "4px 14px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "6px", border: "1px solid rgba(165,148,255,0.25)" }}>
               OVOTECH WORKFLOW : HOW IT WORKS
             </span>
-            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.18 }}>
+            <h2 style={{ fontSize: "clamp(20px, 3vw, 32px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
               From incoming document to verified EMIS record in seconds.
             </h2>
           </div>
@@ -162,8 +162,8 @@ export default function InteractiveWorkflowShowcase() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "28px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
               alignItems: "center"
             }}
           >
@@ -203,7 +203,7 @@ export default function InteractiveWorkflowShowcase() {
                 </div>
 
                 {/* Screen Image with Framer Motion AnimatePresence */}
-                <div style={{ position: "relative", height: "260px", background: "#050B18" }}>
+                <div style={{ position: "relative", height: "clamp(180px, 26vh, 250px)", background: "#050B18" }}>
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeStep.number}
@@ -216,7 +216,7 @@ export default function InteractiveWorkflowShowcase() {
                       <img
                         src={activeStep.image}
                         alt={activeStep.title}
-                        style={{ width: "100%", height: "260px", objectFit: "cover", display: "block" }}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
                     </motion.div>
                   </AnimatePresence>
