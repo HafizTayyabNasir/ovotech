@@ -22,43 +22,43 @@ export default function Navbar() {
 
   const navItems = [
     {
-      label: "Solutions", href: "/solutions", key: "solutions",
+      label: "Platform", href: "/solutions", key: "platform",
       columns: [
-        { header: "Administrative", links: [
-          { label: "Prescription Automation", href: "/solutions/prescription-automation", desc: "Automate repeat prescriptions & reduce manual effort" },
-          { label: "Referral Automation", href: "/solutions/referral-automation", desc: "Smart routing for incoming referrals & triage" },
-          { label: "Appointment Automation", href: "/solutions/appointment-automation", desc: "Scheduling, reminders & patient communication" },
+        { header: "Core Capabilities", links: [
+          { label: "Review Queue", href: "/solutions#review-queue", desc: "Workload management for incoming clinical documents" },
+          { label: "Clinical Review Workspace", href: "/solutions#clinical-review", desc: "Unified document, extracted info & SNOMED CT coding" },
+          { label: "Patient History Context", href: "/solutions#patient-history", desc: "Relevant patient records alongside documents" },
         ]},
-        { header: "Financial & Compliance", links: [
-          { label: "Invoice Automation", href: "/solutions/invoice-automation", desc: "Invoice generation, validation & processing" },
-          { label: "Policy Update Automation", href: "/solutions/policy-update-automation", desc: "Policy verifying, notifications & updates" },
-          { label: "Admin & Document Automation", href: "/solutions", desc: "Letters, documents, data entry & reporting" },
+        { header: "Integration & Governance", links: [
+          { label: "SNOMED CT Coding Support", href: "/solutions#snomed-coding", desc: "Assisted concept recognition & code suggestions" },
+          { label: "EMIS Web Integration", href: "/solutions#emis-integration", desc: "Structured write-back to patient clinical records" },
+          { label: "Value & KPI Tracking", href: "/solutions#kpi-tracking", desc: "Demonstrate time saved & released practice capacity" },
         ]},
       ],
-      promo: { title: "NPS 81.8%", text: "75% reduction in prescription processing time for our GP partners.", bg: "from-primary to-primary-dark" },
+      promo: { title: "EMIS Web Integration", text: "Seamless structured write-back to patient clinical records.", bg: "from-primary to-primary-dark" },
     },
     {
       label: "Who We Help", href: "/who-we-help", key: "who-we-help",
       columns: [
         { header: "Healthcare Providers", links: [
-          { label: "GP Practices", href: "/who-we-help/gp-practices", desc: "Tailored automation for general practices" },
-          { label: "Primary Care Networks", href: "/who-we-help/primary-care-networks", desc: "Scale automation across your network" },
-          { label: "NHS Healthcare Providers", href: "/who-we-help/nhs-providers", desc: "NHS-accredited compliant solutions" },
+          { label: "GP Practices", href: "/who-we-help/gp-practices", desc: "Tailored document processing for UK GP practices" },
+          { label: "Primary Care Networks", href: "/who-we-help/primary-care-networks", desc: "Scale clinical document workflows across PCNs" },
+          { label: "NHS Healthcare Providers", href: "/who-we-help/nhs-providers", desc: "NHS-accredited compliant document processing" },
         ]},
       ],
-      promo: { title: "NHS Accredited", text: "Fully compliant with DSPT and DCB0129 standards.", bg: "from-green-600 to-green-900" },
+      promo: { title: "NHS Accredited", text: "Assisted workflow platform built for UK primary care.", bg: "from-green-600 to-green-900" },
     },
     { label: "How it Works", href: "/how-it-works", key: "how-it-works" },
     {
       label: "Resources", href: "/resources", key: "resources",
       columns: [
         { header: "Learn & Discover", links: [
-          { label: "Case Studies", href: "/case-studies", desc: "Real results from real practices" },
-          { label: "Blog & Insights", href: "/blog", desc: "Latest articles on healthcare automation" },
+          { label: "Case Studies", href: "/case-studies", desc: "Real results from GP practice partners" },
+          { label: "Blog & Insights", href: "/blog", desc: "Latest updates on clinical document processing" },
           { label: "Help Centre", href: "/help-centre", desc: "Guides, FAQs & support resources" },
         ]},
       ],
-      promo: { title: "Latest Insight", text: "How AI is Transforming Primary Care in 2025.", bg: "from-primary to-blue-900" },
+      promo: { title: "Human Review", text: "Assisted workflow empowering authorized reviewers before record commit.", bg: "from-primary to-blue-900" },
     },
     {
       label: "About", href: "/about", key: "about",
@@ -69,8 +69,8 @@ export default function Navbar() {
           { label: "Contact Us", href: "/contact", desc: "Get in touch with our team" },
         ]},
         { header: "Legal", links: [
-          { label: "Security & Compliance", href: "/security-compliance", desc: "DSPT, DCB0129 & GDPR" },
-          { label: "Privacy Policy", href: "/privacy-policy", desc: "How we handle your data" },
+          { label: "Security & Compliance", href: "/security-compliance", desc: "DSPT, DCB0129 & GDPR compliance" },
+          { label: "Privacy Policy", href: "/privacy-policy", desc: "How we handle patient data" },
           { label: "Terms & Conditions", href: "/terms", desc: "Our service agreement" },
         ]},
       ],

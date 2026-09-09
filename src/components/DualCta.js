@@ -4,17 +4,17 @@ import Link from "next/link";
 const ctas = [
   {
     icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v-2M16 4v-2"/></svg>,
-    title: "Schedule a Demo",
-    desc: "See Ovotech in action with a personalised walkthrough.",
+    title: "Schedule a Practice Demo",
+    desc: "See how Ovotech streamlines document intake, SNOMED coding, and EMIS Web write-back.",
     btnText: "Book a Demo",
     href: "/contact",
     primary: true,
   },
   {
     icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>,
-    title: "Explore Solutions",
-    desc: "Browse our complete healthcare automation suite.",
-    btnText: "View Solutions",
+    title: "Explore Platform",
+    desc: "Browse Ovotech clinical document processing platform capabilities.",
+    btnText: "Platform Overview",
     href: "/solutions",
     primary: false,
   },

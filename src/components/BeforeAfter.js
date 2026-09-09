@@ -2,17 +2,17 @@
 import Link from "next/link";
 
 const withoutItems = [
-  "Manual data entry across multiple systems",
-  "Hours spent on prescription processing",
-  "Constant referral backlogs and delays",
-  "Invoicing errors and late payments",
+  "Manual reading and extraction of clinical correspondence",
+  "Repeated switching between document view and EMIS Web",
+  "Slow, manual search and selection of SNOMED CT codes",
+  "Document review backlogs and administrative strain",
 ];
 
 const withItems = [
-  "Automated data flow between systems",
-  "75% faster prescription processing",
-  "Smart referral routing with zero backlogs",
-  "Accurate invoicing and faster payment cycles",
+  "Structured Review Queue with clear document statuses",
+  "Unified workspace bringing document, context & coding together",
+  "Suggested SNOMED CT codes for rapid reviewer verification",
+  "Direct structured write-back to EMIS Web patient records",
 ];
 
 export default function BeforeAfter() {
@@ -20,12 +20,12 @@ export default function BeforeAfter() {
     <section style={{ padding: "100px 0", background: "#F7F7FA" }}>
       <div className="site-container">
         <div className="animate-fadeInUp" style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#362D7E", marginBottom: "12px", textTransform: "uppercase" }}>The Ovotech Difference</span>
+          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#362D7E", marginBottom: "12px", textTransform: "uppercase" }}>The Ovotech Impact</span>
           <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#1A1A1A", lineHeight: 1.2 }}>
-            Before vs After Automation
+            Before vs After Ovotech Workflow
           </h2>
-          <p style={{ color: "#555", marginTop: "16px", maxWidth: "540px", marginLeft: "auto", marginRight: "auto", fontSize: "16px", lineHeight: 1.7 }}>
-            See how GP practices transform their operations with Ovotech&apos;s intelligent automation.
+          <p style={{ color: "#555", marginTop: "16px", maxWidth: "580px", marginLeft: "auto", marginRight: "auto", fontSize: "16px", lineHeight: 1.7 }}>
+            See how GP practice teams streamline clinical document processing, SNOMED coding, and EMIS record entry.
           </p>
         </div>
 

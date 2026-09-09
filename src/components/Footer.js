@@ -2,12 +2,13 @@
 import Link from "next/link";
 
 const footerLinks = {
-  Solutions: [
-    { label: "Prescription Automation", href: "/solutions/prescription-automation" },
-    { label: "Referral Automation", href: "/solutions/referral-automation" },
-    { label: "Appointment Automation", href: "/solutions/appointment-automation" },
-    { label: "Invoice Automation", href: "/solutions/invoice-automation" },
-    { label: "Policy Update Automation", href: "/solutions/policy-update-automation" },
+  Platform: [
+    { label: "Review Queue", href: "/solutions#review-queue" },
+    { label: "Clinical Review", href: "/solutions#clinical-review" },
+    { label: "Patient History", href: "/solutions#patient-history" },
+    { label: "SNOMED CT Coding", href: "/solutions#snomed-coding" },
+    { label: "EMIS Web Integration", href: "/solutions#emis-integration" },
+    { label: "Dashboard & KPIs", href: "/solutions#kpi-tracking" },
   ],
   "Who We Help": [
     { label: "GP Practices", href: "/who-we-help/gp-practices" },
@@ -16,7 +17,7 @@ const footerLinks = {
   ],
   Resources: [
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Blog", href: "/blog" },
+    { label: "Blog & Insights", href: "/blog" },
     { label: "Help Centre", href: "/help-centre" },
   ],
   Company: [
@@ -37,7 +38,7 @@ export default function Footer() {
             <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "32px", width: "auto" }} />
           </div>
           <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginBottom: "24px" }}>
-            Ovotech helps GP practices and healthcare providers automate primary care administrative tasks.
+            Ovotech is an end-to-end clinical document processing and coding workflow platform designed specifically for UK GP practices.
           </p>
           <div style={{ display: "flex", gap: "12px" }}>
             {[

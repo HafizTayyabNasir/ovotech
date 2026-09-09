@@ -1,7 +1,10 @@
 import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import StatsGrid from "../components/StatsGrid";
 import Solutions from "../components/Solutions";
+import InteractiveBenefits from "../components/InteractiveBenefits";
+import FeatureHighlights from "../components/FeatureHighlights";
 import Benefits from "../components/Benefits";
 import Trusted from "../components/Trusted";
 import TagsInfo from "../components/TagsInfo";
@@ -22,7 +25,10 @@ export default function Home() {
       <TopBar />
       <Navbar />
       <Hero />
+      <StatsGrid />
       <Solutions />
+      <InteractiveBenefits />
+      <FeatureHighlights />
       <Benefits />
       <Trusted />
       <TagsInfo />
