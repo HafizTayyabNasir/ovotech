@@ -12,7 +12,7 @@ export default function WhoWeHelpPage() {
       />
       
       <section className="container" style={{ padding: "80px 24px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "30px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
           
           <div style={{ padding: "40px", border: "1px solid #e8edfb", borderRadius: "16px", background: "#f8faff" }}>
             <h3 style={{ fontSize: "24px", color: "#0A1E5C", marginBottom: "16px" }}>GP Practices</h3>

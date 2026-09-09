@@ -29,7 +29,7 @@ export default function BeforeAfter() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", maxWidth: "900px", margin: "0 auto 40px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px", maxWidth: "900px", margin: "0 auto 40px" }}>
           {/* Without */}
           <div className="animate-fadeInLeft" style={{ background: "#fff", borderRadius: "20px", padding: "32px", border: "1px solid #fee2e2", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px" }}>

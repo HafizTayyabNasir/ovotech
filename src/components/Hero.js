@@ -51,14 +51,14 @@ export default function Hero() {
         {/* Two column layout */}
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "60px" }}>
           {/* Left */}
-          <div className="animate-fadeInLeft" style={{ flex: "1 1 480px", minWidth: "300px" }}>
+          <div className="animate-fadeInLeft" style={{ flex: "1 1 480px", minWidth: "280px" }}>
             <span style={{ display: "inline-block", background: "rgba(54,45,126,0.1)", color: "#362D7E", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", marginBottom: "24px", textTransform: "uppercase" }}>
               UK GP Practice Platform
             </span>
-            <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.1, marginBottom: "20px", color: "#1A1A1A" }}>
+            <h1 style={{ fontSize: "clamp(32px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.1, marginBottom: "20px", color: "#1A1A1A" }}>
               Clinical Document Processing &amp;
               <br />
-              <span style={{ color: "#362D7E", whiteSpace: "nowrap" }}>{text}</span>
+              <span style={{ color: "#362D7E", display: "inline-block" }}>{text}</span>
               <span className="animate-blink" style={{ fontWeight: 300, color: "#362D7E" }}>|</span>
             </h1>
             <p style={{ fontSize: "16px", color: "#555", lineHeight: 1.7, marginBottom: "32px", maxWidth: "520px" }}>

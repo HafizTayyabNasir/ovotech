@@ -15,7 +15,7 @@ export default function ROICalculator() {
   const annualSavings = Math.round(weeklyHoursSaved * 52 * 18);
 
   return (
-    <section style={{ padding: "100px 0", background: "#FFFFFF", position: "relative" }}>
+    <section style={{ padding: "100px 0", background: "#FFFFFF", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
           <span style={{ display: "inline-block", background: "rgba(54,45,126,0.08)", color: "#362D7E", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px" }}>
@@ -30,7 +30,7 @@ export default function ROICalculator() {
         </div>
 
         <div style={{ background: "#F7F7FA", borderRadius: "24px", padding: "48px 36px", border: "1px solid #E8E8EF", boxShadow: "0 16px 40px rgba(54,45,126,0.06)", maxWidth: "1000px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px", alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "48px", alignItems: "center" }}>
 
             {/* Left Controls Sliders */}
             <div>

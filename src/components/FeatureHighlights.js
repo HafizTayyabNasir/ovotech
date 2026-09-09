@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function FeatureHighlights() {
   return (
-    <section style={{ padding: "110px 0", background: "#F8F8FC", position: "relative" }}>
+    <section style={{ padding: "110px 0", background: "#F8F8FC", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
         <div style={{ display: "flex", flexDirection: "column", gap: "100px" }}>
 
           {/* Block 1: Image Left, Text Right */}
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "60px",
             alignItems: "center"
           }}>
@@ -26,7 +26,7 @@ export default function FeatureHighlights() {
               <div style={{
                 position: "absolute",
                 top: "24px",
-                right: "-20px",
+                right: "12px",
                 background: "#FFFFFF",
                 padding: "12px 24px",
                 borderRadius: "16px",
@@ -34,7 +34,8 @@ export default function FeatureHighlights() {
                 border: "1px solid #E8E8EF",
                 display: "flex",
                 alignItems: "center",
-                gap: "10px"
+                gap: "10px",
+                zIndex: 5
               }}>
                 <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(54,45,126,0.1)", color: "#362D7E", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
                   ✓
@@ -67,7 +68,7 @@ export default function FeatureHighlights() {
           {/* Block 2: Text Left, Image Right */}
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "60px",
             alignItems: "center"
           }}>
@@ -100,7 +101,7 @@ export default function FeatureHighlights() {
               <div style={{
                 position: "absolute",
                 bottom: "24px",
-                left: "-20px",
+                left: "12px",
                 background: "#FFFFFF",
                 padding: "12px 24px",
                 borderRadius: "16px",
@@ -108,7 +109,8 @@ export default function FeatureHighlights() {
                 border: "1px solid #E8E8EF",
                 display: "flex",
                 alignItems: "center",
-                gap: "10px"
+                gap: "10px",
+                zIndex: 5
               }}>
                 <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(22,163,74,0.1)", color: "#16a34a", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
                   ★
