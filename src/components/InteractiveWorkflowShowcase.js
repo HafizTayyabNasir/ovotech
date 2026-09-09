@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const workflowSteps = [
@@ -81,6 +81,8 @@ const workflowSteps = [
 export default function InteractiveWorkflowShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const sectionRef = useRef(null);
+  const isScrollingRef = useRef(false);
 
   useEffect(() => {
     if (isPaused) return;
@@ -90,10 +92,45 @@ export default function InteractiveWorkflowShowcase() {
     return () => clearInterval(interval);
   }, [isPaused]);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const handleWheel = (e) => {
+      if (isScrollingRef.current) return;
+
+      const isScrollDown = e.deltaY > 0;
+
+      setActiveIndex((current) => {
+        if (isScrollDown && current < workflowSteps.length - 1) {
+          e.preventDefault();
+          isScrollingRef.current = true;
+          setTimeout(() => { isScrollingRef.current = false; }, 400);
+          return current + 1;
+        }
+
+        if (!isScrollDown && current > 0) {
+          e.preventDefault();
+          isScrollingRef.current = true;
+          setTimeout(() => { isScrollingRef.current = false; }, 400);
+          return current - 1;
+        }
+
+        return current;
+      });
+    };
+
+    section.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      section.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   const activeStep = workflowSteps[activeIndex];
 
   return (
     <section
+      ref={sectionRef}
       style={{
         background: "radial-gradient(ellipse at top, #0E1A3D 0%, #060D1F 100%)",
         padding: "110px 0",
