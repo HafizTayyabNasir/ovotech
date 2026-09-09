@@ -122,8 +122,8 @@ export default function InteractiveWorkflowShowcase() {
       <section
         style={{
           position: "sticky",
-          top: 0,
-          height: "100vh",
+          top: "70px",
+          height: "calc(100vh - 70px)",
           display: "flex",
           alignItems: "center",
           background: "radial-gradient(ellipse at top, #0E1A3D 0%, #060D1F 100%)",
