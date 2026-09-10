@@ -20,7 +20,7 @@ export default function BeforeAfter() {
     <section style={{ padding: "100px 0", background: "#F4F7FC" }}>
       <div className="site-container">
         <div className="animate-fadeInUp" style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#00A8E8", marginBottom: "12px", textTransform: "uppercase" }}>The Ovotech Impact</span>
+          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>The Ovotech Impact</span>
           <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.2 }}>
             Before vs After Ovotech Workflow
           </h2>
@@ -68,7 +68,7 @@ export default function BeforeAfter() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <Link href="/contact" style={{ background: "#00A8E8", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(0,168,232,0.3)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
             Start Your Transformation <span>→</span>
           </Link>
         </div>

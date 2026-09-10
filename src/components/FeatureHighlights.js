@@ -15,7 +15,7 @@ export default function FeatureHighlights() {
             alignItems: "center"
           }}>
             <div style={{ position: "relative" }}>
-              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,168,232,0.12)", border: "1px solid #E0E8F5" }}>
+              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(2,172,234,0.15)", border: "1px solid #E0E8F5" }}>
                 <img
                   src="/gp-doctor-consultation.png"
                   alt="Structured Clinical Consultation Notes"
@@ -37,7 +37,7 @@ export default function FeatureHighlights() {
                 gap: "10px",
                 zIndex: 5
               }}>
-                <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(0,168,232,0.1)", color: "#00A8E8", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(2,172,234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
                   ✓
                 </div>
                 <div>
@@ -48,7 +48,7 @@ export default function FeatureHighlights() {
             </div>
 
             <div>
-              <span style={{ display: "inline-block", background: "rgba(0,168,232,0.1)", color: "#00A8E8", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px" }}>
+              <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 Clinical Intelligence &amp; Record Integrity
               </span>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.18, marginBottom: "20px" }}>
@@ -58,7 +58,7 @@ export default function FeatureHighlights() {
                 Ovotech automatically parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing structured entries directly to EMIS Web.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#00A8E8", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(0,168,232,0.3)", transition: "all 0.3s" }}>
+                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
                   Explore Clinical Review Workspace <span>→</span>
                 </Link>
               </div>
@@ -83,7 +83,7 @@ export default function FeatureHighlights() {
                 Beyond our intelligent document platform, Ovotech provides primary care practices with dedicated workflow specialists and experienced clinical coders. We work alongside your team to clear backlogs, manage staff transitions, and ensure complete CQC inspection readiness.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-                <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #00A8E8", color: "#00A8E8", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
+                <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
                   Talk to Our Practice Support Team <span>→</span>
                 </Link>
               </div>

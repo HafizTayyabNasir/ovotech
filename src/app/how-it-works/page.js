@@ -61,14 +61,14 @@ export default function HowItWorksPage() {
       <section style={{ padding: "80px 0", background: "#fff" }}>
         <div className="site-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#00A8E8", textTransform: "uppercase" }}>Step-by-Step Workflow</span>
+            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>Step-by-Step Workflow</span>
             <h2 style={{ fontSize: "clamp(28px, 4vw, 38px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>The 8-Stage Document Processing Workflow</h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "1000px", margin: "0 auto" }}>
             {detailedSteps.map((s) => (
               <div key={s.step} style={{ background: "#F4F7FC", padding: "32px", borderRadius: "20px", border: "1px solid #E0E8F5" }}>
-                <span style={{ fontSize: "28px", fontWeight: 800, color: "#00A8E8", display: "block", marginBottom: "12px" }}>{s.step}</span>
+                <span style={{ fontSize: "28px", fontWeight: 800, color: "#02ACEA", display: "block", marginBottom: "12px" }}>{s.step}</span>
                 <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#0A1838", marginBottom: "8px" }}>{s.title}</h3>
                 <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6 }}>{s.desc}</p>
               </div>

@@ -28,7 +28,7 @@ export default function SpecialtyChips() {
       <div className="site-container">
         <div className="animate-fadeInUp" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "32px" }}>
           <div>
-            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#00A8E8", marginBottom: "8px", textTransform: "uppercase" }}>Specialties</span>
+            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "8px", textTransform: "uppercase" }}>Specialties</span>
             <h2 style={{ fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.2 }}>
               What We Automate
             </h2>
@@ -52,7 +52,7 @@ export default function SpecialtyChips() {
               key={i}
               className={`animate-fadeInRight delay-${Math.min((i + 1) * 100, 800)}`}
               style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: "12px", background: "#F4F7FC", borderRadius: "40px", padding: "14px 24px", border: "1px solid #E0E8F5", transition: "all 0.3s", cursor: "pointer" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(0,168,232,0.4)"; e.currentTarget.style.background = "rgba(0,168,232,0.08)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"; }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(2,172,234,0.4)"; e.currentTarget.style.background = "rgba(2,172,234,0.1)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = "#E0E8F5"; e.currentTarget.style.background = "#F4F7FC"; e.currentTarget.style.boxShadow = "none"; }}
             >
               <div style={{ fontSize: "20px" }}>{s.icon}</div>

@@ -12,7 +12,7 @@ export default function HelpCentrePage() {
           placeholder="Search for articles, guides, or FAQs..." 
           style={{ flex: 1, padding: "16px", borderRadius: "12px", border: "1px solid #E0E8F5", fontSize: "16px", outline: "none" }}
         />
-        <button style={{ background: "#00A8E8", color: "#fff", padding: "16px 28px", borderRadius: "12px", border: "none", fontWeight: 700, cursor: "pointer" }}>Search</button>
+        <button style={{ background: "#02ACEA", color: "#fff", padding: "16px 28px", borderRadius: "12px", border: "none", fontWeight: 700, cursor: "pointer" }}>Search</button>
       </div>
 
       <h2 style={{ fontSize: "24px", color: "#0A1838", marginBottom: "20px" }}>Popular Categories</h2>

@@ -125,20 +125,20 @@ export default function InteractiveBenefits() {
   const [activeTab, setActiveTab] = useState(benefitsData[0]);
 
   return (
-    <section style={{ background: "#F4F7FC", padding: "100px 0", color: "#0A1838", position: "relative", overflow: "hidden" }}>
+    <section style={{ background: "#09132B", padding: "100px 0", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
       {/* Decorative ambient glow */}
-      <div style={{ position: "absolute", top: "-150px", left: "20%", width: "500px", height: "500px", background: "rgba(0, 168, 232, 0.08)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "-150px", left: "20%", width: "500px", height: "500px", background: "rgba(2, 172, 234, 0.12)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
 
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Section Header */}
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
-          <span style={{ display: "inline-block", background: "rgba(0,168,232,0.12)", color: "#00A8E8", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(0,168,232,0.25)" }}>
+          <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.3)" }}>
             Ovotech Platform Capabilities
           </span>
-          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#0A1838", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
             Transforming Primary Care Document Workflows
           </h2>
-          <p style={{ color: "#475569", fontSize: "16px", marginTop: "14px", maxWidth: "620px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
+          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px", marginTop: "14px", maxWidth: "620px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
             Designed specifically for UK GP practices to elevate efficiency, ensure coding accuracy, and support practice staff.
           </p>
         </div>
@@ -162,12 +162,12 @@ export default function InteractiveBenefits() {
                   gap: "14px",
                   padding: "18px 24px",
                   borderRadius: "18px",
-                  background: isActive ? "#FFFFFF" : "#FFFFFF",
-                  border: isActive ? "2px solid #00A8E8" : "1px solid #E0E8F5",
+                  background: isActive ? "#060D1F" : "rgba(255,255,255,0.05)",
+                  border: isActive ? "2px solid #02ACEA" : "1px solid rgba(255,255,255,0.1)",
                   cursor: "pointer",
                   textAlign: "left",
                   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                  boxShadow: isActive ? "0 12px 30px rgba(0,168,232,0.2)" : "0 2px 8px rgba(0,0,0,0.03)",
+                  boxShadow: isActive ? "0 12px 30px rgba(2,172,234,0.25)" : "none",
                   transform: isActive ? "translateY(-2px)" : "none",
                 }}
               >
@@ -175,8 +175,8 @@ export default function InteractiveBenefits() {
                   width: "42px",
                   height: "42px",
                   borderRadius: "12px",
-                  background: isActive ? "#00A8E8" : "rgba(0,168,232,0.1)",
-                  color: isActive ? "#FFFFFF" : "#00A8E8",
+                  background: isActive ? "#02ACEA" : "rgba(2,172,234,0.15)",
+                  color: isActive ? "#FFFFFF" : "#02ACEA",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -189,7 +189,7 @@ export default function InteractiveBenefits() {
                   <span style={{
                     fontSize: "15px",
                     fontWeight: isActive ? 800 : 600,
-                    color: "#0A1838",
+                    color: "#FFFFFF",
                     display: "block",
                     lineHeight: 1.3
                   }}>
@@ -197,7 +197,7 @@ export default function InteractiveBenefits() {
                   </span>
                   <span style={{
                     fontSize: "11px",
-                    color: isActive ? "#00A8E8" : "#64748B",
+                    color: isActive ? "#02ACEA" : "rgba(255,255,255,0.5)",
                     fontWeight: 700,
                     textTransform: "uppercase",
                     letterSpacing: "0.5px"
@@ -212,12 +212,13 @@ export default function InteractiveBenefits() {
 
         {/* Active Content Card */}
         <div style={{
-          background: "#FFFFFF",
+          background: "rgba(255, 255, 255, 0.05)",
+          backdropFilter: "blur(16px)",
           borderRadius: "28px",
           padding: "48px",
-          color: "#1A1A1A",
+          color: "#FFFFFF",
           boxShadow: "0 24px 70px rgba(0, 0, 0, 0.45)",
-          border: "1px solid rgba(255, 255, 255, 0.2)"
+          border: "1px solid rgba(255, 255, 255, 0.12)"
         }}>
           <div style={{
             display: "grid",
@@ -226,7 +227,7 @@ export default function InteractiveBenefits() {
             alignItems: "center"
           }}>
             {/* Left Image with Floating Metric Chip */}
-            <div style={{ position: "relative", borderRadius: "22px", overflow: "hidden", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", border: "1px solid #E8E8EF" }}>
+            <div style={{ position: "relative", borderRadius: "22px", overflow: "hidden", boxShadow: "0 16px 40px rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.15)" }}>
               <img
                 src={activeTab.image}
                 alt={activeTab.title}
@@ -241,7 +242,7 @@ export default function InteractiveBenefits() {
                 position: "absolute",
                 bottom: "20px",
                 left: "20px",
-                background: "rgba(9, 18, 42, 0.9)",
+                background: "rgba(9, 18, 42, 0.92)",
                 backdropFilter: "blur(10px)",
                 color: "#FFFFFF",
                 padding: "10px 20px",
@@ -252,9 +253,9 @@ export default function InteractiveBenefits() {
                 alignItems: "center",
                 gap: "8px",
                 boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
-                border: "1px solid rgba(255,255,255,0.15)"
+                border: "1px solid rgba(2,172,234,0.3)"
               }}>
-                <span style={{ color: "#16a34a" }}>●</span> {activeTab.metric}
+                <span style={{ color: "#02ACEA" }}>●</span> {activeTab.metric}
               </div>
             </div>
 
@@ -264,31 +265,32 @@ export default function InteractiveBenefits() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "8px",
-                background: "rgba(0,168,232,0.1)",
-                color: "#00A8E8",
+                background: "rgba(2,172,234,0.15)",
+                color: "#02ACEA",
                 fontSize: "12px",
                 fontWeight: 700,
                 padding: "6px 16px",
                 borderRadius: "20px",
                 textTransform: "uppercase",
                 letterSpacing: "1.5px",
-                marginBottom: "16px"
+                marginBottom: "16px",
+                border: "1px solid rgba(2,172,234,0.3)"
               }}>
                 {activeTab.badge}
               </div>
 
-              <h3 style={{ fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 800, color: "#0A1838", marginBottom: "16px", lineHeight: 1.2 }}>
+              <h3 style={{ fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 800, color: "#FFFFFF", marginBottom: "16px", lineHeight: 1.2 }}>
                 {activeTab.title}
               </h3>
 
-              <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
+              <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "28px" }}>
                 {activeTab.description}
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "32px" }}>
                 {activeTab.bullets.map((bullet, idx) => (
-                  <div key={idx} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "15px", fontWeight: 600, color: "#0A1838" }}>
-                    <div style={{ width: "24px", height: "24px", borderRadius: "50%", background: "rgba(22, 163, 74, 0.12)", color: "#16a34a", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800, flexShrink: 0 }}>
+                  <div key={idx} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "15px", fontWeight: 600, color: "#FFFFFF" }}>
+                    <div style={{ width: "24px", height: "24px", borderRadius: "50%", background: "rgba(2, 172, 234, 0.2)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800, flexShrink: 0 }}>
                       ✓
                     </div>
                     {bullet}
@@ -296,7 +298,7 @@ export default function InteractiveBenefits() {
                 ))}
               </div>
 
-              <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#00A8E8", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(0,168,232,0.3)", transition: "all 0.3s" }}>
+              <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
                 Explore Platform Features <span>→</span>
               </Link>
             </div>

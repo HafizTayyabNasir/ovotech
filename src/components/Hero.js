@@ -48,22 +48,22 @@ export default function Hero() {
     <>
       <section style={{ background: "linear-gradient(135deg, #EBF6FF 0%, #FFFFFF 50%, #E6F4FE 100%)", paddingTop: "60px", paddingBottom: "60px", position: "relative", overflow: "hidden" }}>
         {/* Decorative Ambient Blue Glows */}
-        <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "450px", height: "450px", background: "rgba(0,168,232,0.12)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: "350px", height: "350px", background: "rgba(0,168,232,0.08)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "450px", height: "450px", background: "rgba(2,172,234,0.12)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: "350px", height: "350px", background: "rgba(2,172,234,0.08)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
 
         <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
             <div className="animate-fadeInLeft" style={{ flex: "1 1 520px", minWidth: "300px" }}>
-              <span style={{ display: "inline-block", color: "#00A8E8", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px" }}>
+              <span style={{ display: "inline-block", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px" }}>
                 MEDICAL AUTOMATION SERVICES
               </span>
 
               <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.15, marginBottom: "20px", color: "#0B193C" }}>
                 The Healthcare AI &amp; RPA Provider for
                 <br />
-                <span style={{ color: "#00A8E8", display: "inline-block" }}>{text}</span>
-                <span className="animate-blink" style={{ fontWeight: 300, color: "#00A8E8" }}>|</span>
+                <span style={{ color: "#02ACEA", display: "inline-block" }}>{text}</span>
+                <span className="animate-blink" style={{ fontWeight: 300, color: "#02ACEA" }}>|</span>
               </h1>
 
               <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.7, marginBottom: "16px", maxWidth: "560px" }}>
@@ -83,7 +83,7 @@ export default function Hero() {
                     placeholder="Name"
                     value={formData.name}
                     onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.name ? "#ef4444" : "#00A8E8"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(0,168,232,0.08)" }}
+                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.name ? "#ef4444" : "#02ACEA"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(2,172,234,0.08)" }}
                   />
                   <input
                     type="email"
@@ -91,7 +91,7 @@ export default function Hero() {
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.email ? "#ef4444" : "#00A8E8"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(0,168,232,0.08)" }}
+                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.email ? "#ef4444" : "#02ACEA"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(2,172,234,0.08)" }}
                   />
                   <input
                     type="tel"
@@ -99,14 +99,14 @@ export default function Hero() {
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.phone ? "#ef4444" : "#00A8E8"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(0,168,232,0.08)" }}
+                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.phone ? "#ef4444" : "#02ACEA"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(2,172,234,0.08)" }}
                   />
                 </div>
 
                 <button
                   type="submit"
                   style={{
-                    background: "#00A8E8",
+                    background: "#02ACEA",
                     color: "#FFFFFF",
                     fontSize: "14px",
                     fontWeight: 800,
@@ -116,7 +116,7 @@ export default function Hero() {
                     borderRadius: "30px",
                     border: "none",
                     cursor: "pointer",
-                    boxShadow: "0 6px 20px rgba(0,168,232,0.35)",
+                    boxShadow: "0 6px 20px rgba(2,172,234,0.35)",
                     transition: "all 0.3s ease"
                   }}
                 >
@@ -129,7 +129,7 @@ export default function Hero() {
             <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 400px", minWidth: "300px", position: "relative", display: "flex", justifyContent: "center" }}>
               <div style={{ position: "relative", width: "100%", maxWidth: "460px" }}>
                 {/* Sky blue background circle graphic */}
-                <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "380px", height: "380px", background: "rgba(0,168,232,0.12)", borderRadius: "50%", zIndex: 1 }} />
+                <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "380px", height: "380px", background: "rgba(2,172,234,0.12)", borderRadius: "50%", zIndex: 1 }} />
                 
                 {/* Floating Outline Icons */}
                 <div style={{ position: "absolute", top: "40px", left: "20px", fontSize: "28px", zIndex: 3 }}>🚀</div>
@@ -149,7 +149,7 @@ export default function Hero() {
       </section>
 
       {/* Full-width Cyan Stats Strip below Hero */}
-      <div style={{ background: "#00A8E8", color: "#FFFFFF", padding: "16px 0", borderTop: "1px solid rgba(255,255,255,0.2)" }}>
+      <div style={{ background: "#02ACEA", color: "#FFFFFF", padding: "16px 0", borderTop: "1px solid rgba(255,255,255,0.2)" }}>
         <div className="site-container">
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "20px", fontSize: "14px", fontWeight: 700 }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>

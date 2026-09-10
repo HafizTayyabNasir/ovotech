@@ -22,7 +22,7 @@ const ctas = [
 
 export default function DualCta() {
   return (
-    <section style={{ padding: "80px 0", background: "#fff" }}>
+    <section style={{ padding: "80px 0", background: "#060D1F" }}>
       <div className="site-container">
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", maxWidth: "800px", margin: "0 auto" }}>
           {ctas.map((cta, i) => (
@@ -31,24 +31,25 @@ export default function DualCta() {
               className={`animate-fadeInUp delay-${(i + 1) * 200}`}
               style={{
                 borderRadius: "20px", padding: "32px", textAlign: "center",
-                background: cta.primary ? "#09132B" : "#F4F7FC",
-                color: cta.primary ? "#fff" : "#0A1838",
-                border: cta.primary ? "1px solid #09132B" : "1px solid #E0E8F5",
+                background: cta.primary ? "#09132B" : "rgba(255, 255, 255, 0.05)",
+                color: "#FFFFFF",
+                border: cta.primary ? "1px solid rgba(2,172,234,0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
                 transition: "all 0.3s", cursor: "pointer",
               }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,168,232,0.12)"; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,172,234,0.2)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: cta.primary ? "rgba(0,168,232,0.15)" : "rgba(0,168,232,0.1)", color: cta.primary ? "#38BDF8" : "#00A8E8" }}>
+              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: "rgba(2,172,234,0.15)", color: "#02ACEA" }}>
                 {cta.icon}
               </div>
-              <h3 style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px" }}>{cta.title}</h3>
-              <p style={{ fontSize: "14px", lineHeight: 1.6, marginBottom: "24px", color: cta.primary ? "rgba(255,255,255,0.75)" : "#475569" }}>{cta.desc}</p>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px", color: "#FFFFFF" }}>{cta.title}</h3>
+              <p style={{ fontSize: "14px", lineHeight: 1.6, marginBottom: "24px", color: "rgba(255,255,255,0.75)" }}>{cta.desc}</p>
               <Link href={cta.href} style={{
                 display: "inline-flex", alignItems: "center", gap: "8px", fontWeight: 700, fontSize: "14px", padding: "12px 28px", borderRadius: "12px", transition: "all 0.3s",
-                background: cta.primary ? "#00A8E8" : "#0A1838",
+                background: cta.primary ? "#02ACEA" : "rgba(255,255,255,0.12)",
                 color: "#fff",
-                boxShadow: cta.primary ? "0 4px 14px rgba(0,168,232,0.3)" : "none"
+                border: cta.primary ? "none" : "1px solid rgba(2,172,234,0.5)",
+                boxShadow: cta.primary ? "0 4px 14px rgba(2,172,234,0.35)" : "none"
               }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = "0.9"; }}
                 onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}

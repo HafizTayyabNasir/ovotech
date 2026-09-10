@@ -18,7 +18,7 @@ export default function Trusted() {
     <section style={{ padding: "100px 0", background: "#F4F7FC" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#00A8E8", marginBottom: "12px", textTransform: "uppercase" }}>Trusted by NHS &amp; Private Teams</span>
+          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>Trusted by NHS &amp; Private Teams</span>
           <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.2 }}>
             Real Results. Real Impact.
           </h2>
@@ -27,14 +27,14 @@ export default function Trusted() {
         {/* Stats Row */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px", marginBottom: "64px" }}>
           {stats.map((s, i) => (
-            <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "32px", textAlign: "center", boxShadow: "0 10px 30px rgba(0,168,232,0.05)", border: "1px solid #E0E8F5", transition: "transform 0.3s", cursor: "pointer" }}
+            <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "32px", textAlign: "center", boxShadow: "0 10px 30px rgba(2,172,234,0.08)", border: "1px solid #E0E8F5", transition: "transform 0.3s", cursor: "pointer" }}
               onMouseEnter={e => e.currentTarget.style.transform = "translateY(-6px)"}
               onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
             >
-              <div style={{ width: "64px", height: "64px", borderRadius: "16px", background: "rgba(0,168,232,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "32px", margin: "0 auto 16px" }}>
+              <div style={{ width: "64px", height: "64px", borderRadius: "16px", background: "rgba(2,172,234,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "32px", margin: "0 auto 16px" }}>
                 {s.icon}
               </div>
-              <div style={{ fontSize: "40px", fontWeight: 800, color: "#00A8E8", marginBottom: "8px" }}>{s.value}</div>
+              <div style={{ fontSize: "40px", fontWeight: 800, color: "#02ACEA", marginBottom: "8px" }}>{s.value}</div>
               <div style={{ fontSize: "14px", color: "#64748B", fontWeight: 500 }}>{s.label}</div>
             </div>
           ))}
@@ -62,7 +62,7 @@ export default function Trusted() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <Link href="/case-studies" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #00A8E8", color: "#00A8E8", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
+          <Link href="/case-studies" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
             View More Case Studies <span>→</span>
           </Link>
         </div>

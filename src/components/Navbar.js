@@ -114,7 +114,7 @@ export default function Navbar() {
             <li key={item.key} className="relative group md:static">
               <Link
                 href={item.href}
-                className="text-[#0A1838] hover:text-[#00A8E8] flex items-center gap-1.5 transition-all"
+                className="text-[#0A1838] hover:text-[#02ACEA] flex items-center gap-1.5 transition-all"
                 style={{ fontSize: "14px", fontWeight: 600, padding: "10px 14px", borderRadius: "8px" }}
               >
                 {item.label}
@@ -139,7 +139,7 @@ export default function Navbar() {
                     <div className="flex-1 grid grid-cols-2" style={{ padding: "32px 40px", gap: "40px" }}>
                       {item.columns.map((col, ci) => (
                         <div key={ci}>
-                          <h3 style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#00A8E8", marginBottom: "16px", paddingBottom: "8px", borderBottom: "2px solid #00A8E8", display: "inline-block" }}>
+                          <h3 style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#02ACEA", marginBottom: "16px", paddingBottom: "8px", borderBottom: "2px solid #02ACEA", display: "inline-block" }}>
                             {col.header}
                           </h3>
                           <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -164,7 +164,7 @@ export default function Navbar() {
                           color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px", position: "relative", overflow: "hidden",
                         }}
                       >
-                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(0,168,232,0.15)" }} />
+                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(2,172,234,0.15)" }} />
                         <h4 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "10px", color: "#FFFFFF" }}>{item.promo.title}</h4>
                         <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6 }}>{item.promo.text}</p>
                       </div>
@@ -172,7 +172,7 @@ export default function Navbar() {
                   </div>
                   <div style={{ background: "#F4F7FC", padding: "16px 40px", display: "flex", alignItems: "center", gap: "20px", borderTop: "1px solid #E0E8F5" }}>
                     <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838" }}>Ready to transform your practice?</span>
-                    <Link href="/contact" style={{ background: "#00A8E8", color: "#fff", fontSize: "14px", fontWeight: 700, padding: "8px 20px", borderRadius: "8px" }}>
+                    <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontSize: "14px", fontWeight: 700, padding: "8px 20px", borderRadius: "8px" }}>
                       Let&apos;s Talk
                     </Link>
                   </div>
@@ -184,7 +184,7 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#00A8E8", color: "#FFFFFF", fontSize: "14px", fontWeight: 600, padding: "10px 24px", borderRadius: "30px", display: "inline-block", boxShadow: "0 4px 14px rgba(0, 168, 232, 0.25)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontSize: "14px", fontWeight: 600, padding: "10px 24px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.25)", transition: "all 0.3s" }}>
             Request a Demo
           </Link>
         </div>

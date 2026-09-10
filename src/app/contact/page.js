@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <label style={{ display: "block", marginBottom: "8px", fontSize: "14px", fontWeight: "600", color: "#0A1838" }}>Message (Optional)</label>
                 <textarea rows="4" style={{ width: "100%", padding: "12px", borderRadius: "8px", border: "1px solid #E0E8F5", background: "#fff" }} placeholder="How can we help?"></textarea>
               </div>
-              <button type="button" style={{ justifyContent: "center", width: "100%", marginTop: "10px", background: "#00A8E8", color: "#fff", padding: "14px", borderRadius: "12px", border: "none", fontWeight: 700, cursor: "pointer" }}>
+              <button type="button" style={{ justifyContent: "center", width: "100%", marginTop: "10px", background: "#02ACEA", color: "#fff", padding: "14px", borderRadius: "12px", border: "none", fontWeight: 700, cursor: "pointer" }}>
                 Submit Request
               </button>
             </form>

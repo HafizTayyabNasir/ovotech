@@ -19,12 +19,12 @@ export default function CareersPage() {
       <div style={{ border: "1px solid #E0E8F5", padding: "24px", borderRadius: "12px", marginBottom: "16px", background: "#fff" }}>
         <h3 style={{ fontSize: "20px", color: "#0A1838", marginBottom: "8px" }}>Senior Frontend Developer (Next.js/React)</h3>
         <p style={{ color: "#64748B", marginBottom: "16px", fontSize: "14px" }}>Remote (UK) • Full-time</p>
-        <Link href="/contact" style={{ padding: "8px 16px", display: "inline-block", background: "#00A8E8", color: "#fff", borderRadius: "8px", fontWeight: 600, fontSize: "14px" }}>Apply Now</Link>
+        <Link href="/contact" style={{ padding: "8px 16px", display: "inline-block", background: "#02ACEA", color: "#fff", borderRadius: "8px", fontWeight: 600, fontSize: "14px" }}>Apply Now</Link>
       </div>
       <div style={{ border: "1px solid #E0E8F5", padding: "24px", borderRadius: "12px", marginBottom: "16px", background: "#fff" }}>
         <h3 style={{ fontSize: "20px", color: "#0A1838", marginBottom: "8px" }}>RPA Engineer (UiPath/Automation Anywhere)</h3>
         <p style={{ color: "#64748B", marginBottom: "16px", fontSize: "14px" }}>Manchester / Hybrid • Full-time</p>
-        <Link href="/contact" style={{ padding: "8px 16px", display: "inline-block", background: "#00A8E8", color: "#fff", borderRadius: "8px", fontWeight: 600, fontSize: "14px" }}>Apply Now</Link>
+        <Link href="/contact" style={{ padding: "8px 16px", display: "inline-block", background: "#02ACEA", color: "#fff", borderRadius: "8px", fontWeight: 600, fontSize: "14px" }}>Apply Now</Link>
       </div>
     </InnerPageLayout>
   );
