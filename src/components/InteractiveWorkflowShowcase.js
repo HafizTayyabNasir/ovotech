@@ -111,8 +111,8 @@ export default function InteractiveWorkflowShowcase() {
   return (
     <section
       style={{
-        background: "radial-gradient(ellipse at top, #0F214A 0%, #09132B 100%)",
-        color: "#FFFFFF",
+        background: "#F4F7FC",
+        color: "#0A1838",
         padding: "90px 0",
         position: "relative",
         overflow: "hidden"
@@ -123,7 +123,7 @@ export default function InteractiveWorkflowShowcase() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(0, 168, 232, 0.08) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
           pointerEvents: "none",
           opacity: 0.5
@@ -133,13 +133,13 @@ export default function InteractiveWorkflowShowcase() {
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Section Header */}
         <div style={{ textAlign: "center", marginBottom: "44px" }}>
-          <span style={{ display: "inline-block", background: "rgba(0, 168, 232, 0.15)", color: "#38BDF8", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(56,189,248,0.3)" }}>
+          <span style={{ display: "inline-block", background: "rgba(0, 168, 232, 0.12)", color: "#00A8E8", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(0, 168, 232, 0.25)" }}>
             OVOTECH WORKFLOW : HOW IT WORKS
           </span>
-          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 12px" }}>
+          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#0A1838", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 12px" }}>
             From incoming document to verified EMIS record in seconds.
           </h2>
-          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.7)", maxWidth: "620px", margin: "0 auto" }}>
+          <p style={{ fontSize: "15px", color: "#475569", maxWidth: "620px", margin: "0 auto" }}>
             Click or watch the 5-step automated workflow preview in action below.
           </p>
         </div>

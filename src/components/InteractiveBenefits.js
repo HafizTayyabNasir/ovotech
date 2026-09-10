@@ -125,21 +125,20 @@ export default function InteractiveBenefits() {
   const [activeTab, setActiveTab] = useState(benefitsData[0]);
 
   return (
-    <section style={{ background: "linear-gradient(135deg, #09132B 0%, #060D1F 50%, #0F214A 100%)", padding: "110px 0", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
-      {/* Decorative ambient glows */}
-      <div style={{ position: "absolute", top: "-150px", left: "20%", width: "500px", height: "500px", background: "rgba(0, 168, 232, 0.18)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", bottom: "-150px", right: "10%", width: "450px", height: "450px", background: "rgba(14, 165, 233, 0.12)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
+    <section style={{ background: "#F4F7FC", padding: "100px 0", color: "#0A1838", position: "relative", overflow: "hidden" }}>
+      {/* Decorative ambient glow */}
+      <div style={{ position: "absolute", top: "-150px", left: "20%", width: "500px", height: "500px", background: "rgba(0, 168, 232, 0.08)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
 
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Section Header */}
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
-          <span style={{ display: "inline-block", background: "rgba(0,168,232,0.15)", color: "#38BDF8", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(56,189,248,0.3)" }}>
+          <span style={{ display: "inline-block", background: "rgba(0,168,232,0.12)", color: "#00A8E8", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(0,168,232,0.25)" }}>
             Ovotech Platform Capabilities
           </span>
-          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#0A1838", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
             Transforming Primary Care Document Workflows
           </h2>
-          <p style={{ color: "rgba(255, 255, 255, 0.75)", fontSize: "16px", marginTop: "14px", maxWidth: "620px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
+          <p style={{ color: "#475569", fontSize: "16px", marginTop: "14px", maxWidth: "620px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
             Designed specifically for UK GP practices to elevate efficiency, ensure coding accuracy, and support practice staff.
           </p>
         </div>
@@ -163,13 +162,12 @@ export default function InteractiveBenefits() {
                   gap: "14px",
                   padding: "18px 24px",
                   borderRadius: "18px",
-                  background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.06)",
-                  border: isActive ? "2px solid #00A8E8" : "1px solid rgba(255, 255, 255, 0.12)",
-                  backdropFilter: "blur(10px)",
+                  background: isActive ? "#FFFFFF" : "#FFFFFF",
+                  border: isActive ? "2px solid #00A8E8" : "1px solid #E0E8F5",
                   cursor: "pointer",
                   textAlign: "left",
                   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                  boxShadow: isActive ? "0 16px 36px rgba(0,0,0,0.35), 0 0 20px rgba(0,168,232,0.3)" : "none",
+                  boxShadow: isActive ? "0 12px 30px rgba(0,168,232,0.2)" : "0 2px 8px rgba(0,0,0,0.03)",
                   transform: isActive ? "translateY(-2px)" : "none",
                 }}
               >
@@ -177,8 +175,8 @@ export default function InteractiveBenefits() {
                   width: "42px",
                   height: "42px",
                   borderRadius: "12px",
-                  background: isActive ? "#00A8E8" : "rgba(255, 255, 255, 0.12)",
-                  color: "#FFFFFF",
+                  background: isActive ? "#00A8E8" : "rgba(0,168,232,0.1)",
+                  color: isActive ? "#FFFFFF" : "#00A8E8",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -191,7 +189,7 @@ export default function InteractiveBenefits() {
                   <span style={{
                     fontSize: "15px",
                     fontWeight: isActive ? 800 : 600,
-                    color: isActive ? "#0A1838" : "#FFFFFF",
+                    color: "#0A1838",
                     display: "block",
                     lineHeight: 1.3
                   }}>
@@ -199,7 +197,7 @@ export default function InteractiveBenefits() {
                   </span>
                   <span style={{
                     fontSize: "11px",
-                    color: isActive ? "#00A8E8" : "rgba(255,255,255,0.6)",
+                    color: isActive ? "#00A8E8" : "#64748B",
                     fontWeight: 700,
                     textTransform: "uppercase",
                     letterSpacing: "0.5px"

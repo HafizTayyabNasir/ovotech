@@ -29,16 +29,16 @@ const complianceCards = [
 
 export default function ComplianceSection() {
   return (
-    <section style={{ padding: "90px 0", background: "#060D1F", color: "#FFFFFF", position: "relative" }}>
+    <section style={{ padding: "90px 0", background: "#FFFFFF", color: "#0A1838", position: "relative" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
           <span style={{ display: "inline-block", background: "rgba(0,168,232,0.12)", color: "#00A8E8", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(0,168,232,0.25)" }}>
             TRUSTED NHS COMPLIANCE &amp; GOVERNANCE
           </span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.15 }}>
             Enterprise NHS Security &amp; Clinical Governance
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px", marginTop: "12px", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ color: "#475569", fontSize: "16px", marginTop: "12px", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }}>
             Ovotech is engineered to meet strict UK primary care information governance and clinical safety standards.
           </p>
         </div>
@@ -48,30 +48,29 @@ export default function ComplianceSection() {
             <div
               key={i}
               style={{
-                background: "rgba(255, 255, 255, 0.04)",
-                backdropFilter: "blur(10px)",
+                background: "#F4F7FC",
                 borderRadius: "20px",
                 padding: "32px 24px",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
+                border: "1px solid #E0E8F5",
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-4px)";
                 e.currentTarget.style.borderColor = "rgba(0,168,232,0.4)";
-                e.currentTarget.style.background = "rgba(255, 255, 255, 0.07)";
+                e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,168,232,0.12)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                e.currentTarget.style.background = "rgba(255, 255, 255, 0.04)";
+                e.currentTarget.style.borderColor = "#E0E8F5";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               <div style={{ fontSize: "32px", marginBottom: "16px" }}>{card.icon}</div>
               <span style={{ fontSize: "10px", fontWeight: 800, letterSpacing: "1.5px", color: "#00A8E8", display: "block", marginBottom: "8px" }}>
                 {card.badge}
               </span>
-              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#FFFFFF", marginBottom: "10px" }}>{card.title}</h3>
-              <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>{card.desc}</p>
+              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0A1838", marginBottom: "10px" }}>{card.title}</h3>
+              <p style={{ fontSize: "13px", color: "#64748B", lineHeight: 1.6 }}>{card.desc}</p>
             </div>
           ))}
         </div>
