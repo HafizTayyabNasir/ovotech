@@ -78,10 +78,10 @@ export default function Navbar() {
       className={`sticky top-0 z-[100] transition-all duration-300 ${scrolled ? "shadow-md shadow-black/5" : ""}`}
       style={{ background: "#FFFFFF", borderBottom: "1px solid #E0E8F5" }}
     >
-      <div className="site-container flex items-center justify-between relative" style={{ padding: "12px 24px", minHeight: "68px" }}>
+      <div className="site-container flex items-center justify-between relative" style={{ padding: "10px 24px", minHeight: "76px" }}>
         {/* Brand Logo */}
         <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 shrink-0 z-[102]">
-          <img src="/logo.png" alt="Ovotech Logo" style={{ height: "40px", width: "auto" }} />
+          <img src="/logo.png" alt="Ovotech Logo" style={{ height: "52px", width: "auto" }} />
         </Link>
 
         {/* Mobile Hamburger / Close Button */}
