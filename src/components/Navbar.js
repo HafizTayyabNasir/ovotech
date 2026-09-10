@@ -26,8 +26,9 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const navItems = [
+    { label: "Home", href: "/", key: "home" },
     {
-      label: "Platform", href: "/solutions", key: "platform",
+      label: "Solutions", href: "/solutions", key: "solutions",
       columns: [
         { header: "Core Capabilities", links: [
           { label: "Review Queue", href: "/solutions#review-queue", desc: "Workload management for incoming clinical documents" },
@@ -43,17 +44,20 @@ export default function Navbar() {
       promo: { title: "EMIS Web Integration", text: "Seamless structured write-back to patient clinical records.", bg: "from-primary to-primary-dark" },
     },
     {
-      label: "Who We Help", href: "/who-we-help", key: "who-we-help",
+      label: "About", href: "/about", key: "about",
       columns: [
-        { header: "Healthcare Providers", links: [
-          { label: "GP Practices", href: "/who-we-help/gp-practices", desc: "Tailored document processing for UK GP practices" },
-          { label: "Primary Care Networks", href: "/who-we-help/primary-care-networks", desc: "Scale clinical document workflows across PCNs" },
-          { label: "NHS Healthcare Providers", href: "/who-we-help/nhs-providers", desc: "NHS-accredited compliant document processing" },
+        { header: "Company", links: [
+          { label: "About Us", href: "/about", desc: "Our mission & story" },
+          { label: "Careers", href: "/careers", desc: "Join the Ovotech team" },
+          { label: "Contact Us", href: "/contact", desc: "Get in touch with our team" },
+        ]},
+        { header: "Legal & Compliance", links: [
+          { label: "Security & Compliance", href: "/security-compliance", desc: "DSPT, DCB0129 & GDPR compliance" },
+          { label: "Privacy Policy", href: "/privacy-policy", desc: "How we handle patient data" },
+          { label: "Terms & Conditions", href: "/terms", desc: "Our service agreement" },
         ]},
       ],
-      promo: { title: "NHS Accredited", text: "Assisted workflow platform built for UK primary care.", bg: "from-green-600 to-green-900" },
     },
-    { label: "How it Works", href: "/how-it-works", key: "how-it-works" },
     {
       label: "Resources", href: "/resources", key: "resources",
       columns: [
@@ -65,21 +69,8 @@ export default function Navbar() {
       ],
       promo: { title: "Human Review", text: "Assisted workflow empowering authorized reviewers before record commit.", bg: "from-primary to-blue-900" },
     },
-    {
-      label: "About", href: "/about", key: "about",
-      columns: [
-        { header: "Company", links: [
-          { label: "About Us", href: "/about", desc: "Our mission & story" },
-          { label: "Careers", href: "/careers", desc: "Join the Ovotech team" },
-          { label: "Contact Us", href: "/contact", desc: "Get in touch with our team" },
-        ]},
-        { header: "Legal", links: [
-          { label: "Security & Compliance", href: "/security-compliance", desc: "DSPT, DCB0129 & GDPR compliance" },
-          { label: "Privacy Policy", href: "/privacy-policy", desc: "How we handle patient data" },
-          { label: "Terms & Conditions", href: "/terms", desc: "Our service agreement" },
-        ]},
-      ],
-    },
+    { label: "Support", href: "/help-centre", key: "support" },
+    { label: "Contact", href: "/contact", key: "contact" },
   ];
 
   return (
@@ -87,10 +78,10 @@ export default function Navbar() {
       className={`sticky top-0 z-[100] transition-all duration-300 ${scrolled ? "shadow-md shadow-black/5" : ""}`}
       style={{ background: "#FFFFFF", borderBottom: "1px solid #E0E8F5" }}
     >
-      <div className="site-container flex items-center justify-between relative" style={{ padding: "14px 24px", minHeight: "64px" }}>
+      <div className="site-container flex items-center justify-between relative" style={{ padding: "12px 24px", minHeight: "68px" }}>
         {/* Brand Logo */}
         <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 shrink-0 z-[102]">
-          <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "32px", width: "auto" }} />
+          <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "34px", width: "auto" }} />
         </Link>
 
         {/* Mobile Hamburger / Close Button */}
@@ -109,13 +100,19 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Nav Links */}
-        <ul className="hidden md:flex md:items-center md:gap-1">
+        <ul className="hidden md:flex md:items-center md:gap-1.5">
           {navItems.map((item) => (
             <li key={item.key} className="relative group md:static">
               <Link
                 href={item.href}
-                className="text-[#0A1838] hover:text-[#02ACEA] flex items-center gap-1.5 transition-all"
-                style={{ fontSize: "14px", fontWeight: 600, padding: "10px 14px", borderRadius: "8px" }}
+                className="flex items-center gap-1.5 transition-all"
+                style={{
+                  fontSize: "14px",
+                  fontWeight: item.key === "home" ? 700 : 600,
+                  padding: "10px 14px",
+                  borderRadius: "8px",
+                  color: item.key === "home" ? "#02ACEA" : "#0A1838"
+                }}
               >
                 {item.label}
                 {item.columns && (
@@ -184,7 +181,7 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontSize: "14px", fontWeight: 600, padding: "10px 24px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.25)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontSize: "14px", fontWeight: 700, padding: "12px 26px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s" }}>
             Request a Demo
           </Link>
         </div>
