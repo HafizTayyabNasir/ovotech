@@ -81,7 +81,7 @@ export default function Navbar() {
       <div className="site-container flex items-center justify-between relative" style={{ padding: "12px 24px", minHeight: "68px" }}>
         {/* Brand Logo */}
         <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 shrink-0 z-[102]">
-          <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "34px", width: "auto" }} />
+          <img src="/logo.png" alt="Ovotech Logo" style={{ height: "40px", width: "auto" }} />
         </Link>
 
         {/* Mobile Hamburger / Close Button */}

@@ -35,7 +35,7 @@ export default function Footer() {
         {/* Brand */}
         <div style={{ flex: "0 1 280px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-            <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "32px", width: "auto" }} />
+            <img src="/logo-footer.png" alt="Ovotech Logo" style={{ height: "36px", width: "auto" }} />
           </div>
           <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: "24px" }}>
             Ovotech is an end-to-end clinical document processing and coding workflow platform designed specifically for UK GP practices.
