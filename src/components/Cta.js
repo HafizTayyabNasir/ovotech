@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Cta() {
   return (
-    <section style={{ padding: "80px 0", background: "#09132B", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "80px 0", background: "#0F1E36", position: "relative", overflow: "hidden" }}>
       {/* Decorative shapes */}
       <div style={{ position: "absolute", right: 0, top: 0, width: "400px", height: "400px", borderRadius: "50%", background: "rgba(2,172,234,0.12)", transform: "translate(50%, -50%)" }} />
       <div style={{ position: "absolute", left: "40px", bottom: 0, width: "250px", height: "250px", borderRadius: "50%", background: "rgba(2,172,234,0.08)", transform: "translateY(50%)" }} />

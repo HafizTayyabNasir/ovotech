@@ -15,11 +15,11 @@ const cases = [
 
 export default function Trusted() {
   return (
-    <section style={{ padding: "100px 0", background: "#F4F7FC" }}>
+    <section style={{ padding: "100px 0", background: "#f8fafc" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>Trusted by NHS &amp; Private Teams</span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2 }}>
             Real Results. Real Impact.
           </h2>
         </div>
@@ -27,7 +27,7 @@ export default function Trusted() {
         {/* Stats Row */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px", marginBottom: "64px" }}>
           {stats.map((s, i) => (
-            <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "32px", textAlign: "center", boxShadow: "0 10px 30px rgba(2,172,234,0.08)", border: "1px solid #E0E8F5", transition: "transform 0.3s", cursor: "pointer" }}
+            <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "32px", textAlign: "center", boxShadow: "0 10px 30px rgba(2,172,234,0.08)", border: "1px solid #e2e8f5", transition: "transform 0.3s", cursor: "pointer" }}
               onMouseEnter={e => e.currentTarget.style.transform = "translateY(-6px)"}
               onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
             >
@@ -51,11 +51,11 @@ export default function Trusted() {
         {/* Case Study Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginBottom: "40px" }}>
           {cases.map((c, i) => (
-            <div key={i} className={`animate-fadeInUp delay-${(i + 5) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "28px", border: "1px solid #E0E8F5", transition: "all 0.3s", cursor: "pointer" }}
+            <div key={i} className={`animate-fadeInUp delay-${(i + 5) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "28px", border: "1px solid #e2e8f5", transition: "all 0.3s", cursor: "pointer" }}
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <h4 style={{ fontSize: "16px", fontWeight: 700, color: "#0A1838", marginBottom: "8px" }}>{c.location}</h4>
+              <h4 style={{ fontSize: "16px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>{c.location}</h4>
               <p style={{ fontSize: "14px", color: "#64748B", lineHeight: 1.6 }}>{c.text}</p>
             </div>
           ))}

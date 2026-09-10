@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function FeatureHighlights() {
   return (
-    <section style={{ padding: "110px 0", background: "#F4F7FC", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "110px 0", background: "#f8fafc", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
         <div style={{ display: "flex", flexDirection: "column", gap: "100px" }}>
 
@@ -15,7 +15,7 @@ export default function FeatureHighlights() {
             alignItems: "center"
           }}>
             <div style={{ position: "relative" }}>
-              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(2,172,234,0.15)", border: "1px solid #E0E8F5" }}>
+              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(2,172,234,0.15)", border: "1px solid #e2e8f5" }}>
                 <img
                   src="/gp-doctor-consultation.png"
                   alt="Structured Clinical Consultation Notes"
@@ -31,7 +31,7 @@ export default function FeatureHighlights() {
                 padding: "12px 24px",
                 borderRadius: "16px",
                 boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
-                border: "1px solid #E0E8F5",
+                border: "1px solid #e2e8f5",
                 display: "flex",
                 alignItems: "center",
                 gap: "10px",
@@ -41,7 +41,7 @@ export default function FeatureHighlights() {
                   ✓
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0A1838" }}>EMIS Web Active</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0f172a" }}>EMIS Web Active</div>
                   <div style={{ fontSize: "11px", color: "#8896AB" }}>Structured Write-Back</div>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function FeatureHighlights() {
               <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 Clinical Intelligence &amp; Record Integrity
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
                 Structured Consultation Notes Ready for Action
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
@@ -76,7 +76,7 @@ export default function FeatureHighlights() {
               <span style={{ display: "inline-block", background: "rgba(22,163,74,0.1)", color: "#16a34a", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px" }}>
                 Expert Primary Care Support
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
                 Dedicated Clinical Workflow Partnership
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
@@ -90,7 +90,7 @@ export default function FeatureHighlights() {
             </div>
 
             <div style={{ order: 2, position: "relative" }}>
-              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.08)", border: "1px solid #E0E8F5" }}>
+              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.08)", border: "1px solid #e2e8f5" }}>
                 <img
                   src="/gp-team-support.png"
                   alt="Dedicated Practice Workflow Team Support"
@@ -106,7 +106,7 @@ export default function FeatureHighlights() {
                 padding: "12px 24px",
                 borderRadius: "16px",
                 boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
-                border: "1px solid #E0E8F5",
+                border: "1px solid #e2e8f5",
                 display: "flex",
                 alignItems: "center",
                 gap: "10px",
@@ -116,7 +116,7 @@ export default function FeatureHighlights() {
                   ★
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0A1838" }}>CQC Ready</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0f172a" }}>CQC Ready</div>
                   <div style={{ fontSize: "11px", color: "#8896AB" }}>Full Audit Compliance</div>
                 </div>
               </div>

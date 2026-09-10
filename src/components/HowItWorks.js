@@ -14,13 +14,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section style={{ padding: "100px 0", background: "#F4F7FC" }}>
+    <section style={{ padding: "100px 0", background: "#f8fafc" }}>
       <div className="site-container">
         <div style={{ display: "flex", flexWrap: "wrap", gap: "60px", alignItems: "flex-start" }}>
           {/* Left */}
           <div className="animate-fadeInLeft" style={{ flex: "0 1 340px", minWidth: "280px" }}>
             <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>How Ovotech Works</span>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.2, marginBottom: "20px" }}>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2, marginBottom: "20px" }}>
               Structured.<br />Assisted.<br />Integrated.
             </h2>
             <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>
@@ -37,7 +37,7 @@ export default function HowItWorks() {
           {/* Right — Steps */}
           <div style={{ flex: "1 1 500px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
             {steps.map((s, i) => (
-              <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "24px 20px", border: "1px solid #E0E8F5", textAlign: "center", transition: "transform 0.3s, box-shadow 0.3s", cursor: "default" }}
+              <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "24px 20px", border: "1px solid #e2e8f5", textAlign: "center", transition: "transform 0.3s, box-shadow 0.3s", cursor: "default" }}
                 onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)"; }}
                 onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
               >
@@ -45,7 +45,7 @@ export default function HowItWorks() {
                   {s.num}
                 </div>
                 <div style={{ fontSize: "30px", marginBottom: "12px" }}>{s.icon}</div>
-                <h4 style={{ fontSize: "15px", fontWeight: 700, color: "#0A1838", marginBottom: "6px" }}>{s.title}</h4>
+                <h4 style={{ fontSize: "15px", fontWeight: 700, color: "#0f172a", marginBottom: "6px" }}>{s.title}</h4>
                 <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.5 }}>{s.desc}</p>
               </div>
             ))}

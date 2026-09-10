@@ -29,7 +29,7 @@ const complianceCards = [
 
 export default function ComplianceSection() {
   return (
-    <section style={{ padding: "90px 0", background: "#09132B", color: "#FFFFFF", position: "relative" }}>
+    <section style={{ padding: "90px 0", background: "#0F1E36", color: "#FFFFFF", position: "relative" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
           <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.3)" }}>

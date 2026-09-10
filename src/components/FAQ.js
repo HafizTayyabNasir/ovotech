@@ -14,7 +14,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section style={{ padding: "100px 0", background: "#F4F7FC", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "100px 0", background: "#f8fafc", position: "relative", overflow: "hidden" }}>
       {/* Decorative bg */}
       <div style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", width: "320px", height: "320px", background: "rgba(2,172,234,0.08)", borderRadius: "50%", filter: "blur(80px)" }} />
 
@@ -23,7 +23,7 @@ export default function FAQ() {
           {/* Left */}
           <div className="animate-fadeInLeft" style={{ flex: "0 1 340px", minWidth: "280px" }}>
             <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>FAQ</span>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0A1838", lineHeight: 1.2, marginBottom: "20px" }}>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2, marginBottom: "20px" }}>
               Frequently Asked<br />Questions
             </h2>
             <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7 }}>
@@ -34,15 +34,15 @@ export default function FAQ() {
           {/* Right — Accordion */}
           <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 500px" }}>
             {faqs.map((faq, i) => (
-              <div key={i} style={{ borderBottom: "1px solid #E0E8F5" }}>
+              <div key={i} style={{ borderBottom: "1px solid #e2e8f5" }}>
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                   style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 0", background: "none", border: "none", textAlign: "left", cursor: "pointer" }}
                 >
-                  <span style={{ fontSize: "16px", fontWeight: 600, color: openIndex === i ? "#02ACEA" : "#0A1838", paddingRight: "16px", transition: "color 0.2s" }}>
+                  <span style={{ fontSize: "16px", fontWeight: 600, color: openIndex === i ? "#02ACEA" : "#0f172a", paddingRight: "16px", transition: "color 0.2s" }}>
                     {faq.q}
                   </span>
-                  <div style={{ width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: openIndex === i ? "#02ACEA" : "#E0E8F5", color: openIndex === i ? "#fff" : "#0A1838", transition: "all 0.3s", transform: openIndex === i ? "rotate(45deg)" : "rotate(0)" }}>
+                  <div style={{ width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: openIndex === i ? "#02ACEA" : "#e2e8f5", color: openIndex === i ? "#fff" : "#0f172a", transition: "all 0.3s", transform: openIndex === i ? "rotate(45deg)" : "rotate(0)" }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12h14"/></svg>
                   </div>
                 </button>

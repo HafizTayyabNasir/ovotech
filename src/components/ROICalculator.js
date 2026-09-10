@@ -15,7 +15,7 @@ export default function ROICalculator() {
   const annualSavings = Math.round(weeklyHoursSaved * 52 * 18);
 
   return (
-    <section style={{ padding: "100px 0", background: "#060D1F", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "100px 0", background: "#091222", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
           <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.3)" }}>
@@ -78,7 +78,7 @@ export default function ROICalculator() {
             </div>
 
             {/* Right Calculated Results */}
-            <div style={{ background: "#09132B", borderRadius: "20px", padding: "36px 30px", color: "#FFFFFF", border: "1px solid rgba(2,172,234,0.3)", boxShadow: "0 12px 30px rgba(0,0,0,0.3)" }}>
+            <div style={{ background: "#0F1E36", borderRadius: "20px", padding: "36px 30px", color: "#FFFFFF", border: "1px solid rgba(2,172,234,0.3)", boxShadow: "0 12px 30px rgba(0,0,0,0.3)" }}>
               <div style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#02ACEA", marginBottom: "20px" }}>
                 ESTIMATED PRACTICE IMPACT
               </div>

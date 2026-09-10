@@ -36,12 +36,12 @@ export default function StatsGrid() {
             <div
               key={i}
               style={{
-                background: "#F4F7FC",
+                background: "#f8fafc",
                 borderRadius: "20px",
                 padding: "48px 24px",
                 textAlign: "center",
                 transition: "all 0.3s ease-in-out",
-                border: "1px solid #E0E8F5",
+                border: "1px solid #e2e8f5",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.02)",
               }}
               onMouseEnter={(e) => {
@@ -52,7 +52,7 @@ export default function StatsGrid() {
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.02)";
-                e.currentTarget.style.borderColor = "#E0E8F5";
+                e.currentTarget.style.borderColor = "#e2e8f5";
               }}
             >
               <div
