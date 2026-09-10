@@ -57,15 +57,15 @@ export default function SolutionsPage() {
       />
       
       {/* Intro Banner */}
-      <section style={{ padding: "60px 0", background: "#f8f7ff", borderBottom: "1px solid #E8E8EF" }}>
+      <section style={{ padding: "60px 0", background: "#F4F7FC", borderBottom: "1px solid #E0E8F5" }}>
         <div className="site-container">
-          <div style={{ maxWidth: "800px", margin: "0 auto", background: "#fff", padding: "36px", borderRadius: "20px", border: "1px solid #E8E8EF", boxShadow: "0 10px 30px rgba(54,45,126,0.05)" }}>
-            <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "1.5px", color: "#362D7E", textTransform: "uppercase" }}>Key Product Positioning</span>
-            <h2 style={{ fontSize: "24px", fontWeight: 800, color: "#1A1A1A", marginTop: "8px", marginBottom: "12px" }}>Assisted Workflow, Not Autonomous Decision-Making</h2>
-            <p style={{ color: "#555", fontSize: "15px", lineHeight: 1.7, marginBottom: "16px" }}>
+          <div style={{ maxWidth: "800px", margin: "0 auto", background: "#fff", padding: "36px", borderRadius: "20px", border: "1px solid #E0E8F5", boxShadow: "0 10px 30px rgba(0,168,232,0.05)" }}>
+            <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "1.5px", color: "#00A8E8", textTransform: "uppercase" }}>Key Product Positioning</span>
+            <h2 style={{ fontSize: "24px", fontWeight: 800, color: "#0A1838", marginTop: "8px", marginBottom: "12px" }}>Assisted Workflow, Not Autonomous Decision-Making</h2>
+            <p style={{ color: "#475569", fontSize: "15px", lineHeight: 1.7, marginBottom: "16px" }}>
               Ovotech is an assisted clinical workflow platform. It supports practice teams by extracting clinical information, organising document content, and proposing SNOMED CT coding—while keeping authorised users fully in control to review and approve every record before EMIS Web write-back.
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", fontSize: "14px", fontWeight: 600, color: "#362D7E" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", fontSize: "14px", fontWeight: 600, color: "#00A8E8" }}>
               <span>✓ Document Intake</span>
               <span>✓ Extraction</span>
               <span>✓ Review Queue</span>
@@ -84,16 +84,16 @@ export default function SolutionsPage() {
         <div className="site-container">
           <div style={{ display: "flex", flexDirection: "column", gap: "48px", maxWidth: "960px", margin: "0 auto" }}>
             {platformModules.map((m, i) => (
-              <div key={m.id} id={m.id} style={{ background: "#F7F7FA", borderRadius: "24px", padding: "40px", border: "1px solid #E8E8EF", transition: "all 0.3s" }}>
-                <span style={{ display: "inline-block", background: "rgba(54,45,126,0.1)", color: "#362D7E", fontSize: "11px", fontWeight: 700, padding: "4px 14px", borderRadius: "12px", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "14px" }}>
+              <div key={m.id} id={m.id} style={{ background: "#F4F7FC", borderRadius: "24px", padding: "40px", border: "1px solid #E0E8F5", transition: "all 0.3s" }}>
+                <span style={{ display: "inline-block", background: "rgba(0,168,232,0.1)", color: "#00A8E8", fontSize: "11px", fontWeight: 700, padding: "4px 14px", borderRadius: "12px", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "14px" }}>
                   {m.tag}
                 </span>
-                <h3 style={{ fontSize: "24px", fontWeight: 800, color: "#1A1A1A", marginBottom: "12px" }}>{m.title}</h3>
-                <p style={{ color: "#555", fontSize: "16px", lineHeight: 1.7, marginBottom: "24px" }}>{m.desc}</p>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px", borderTop: "1px solid #E8E8EF", paddingTop: "20px" }}>
+                <h3 style={{ fontSize: "24px", fontWeight: 800, color: "#0A1838", marginBottom: "12px" }}>{m.title}</h3>
+                <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "24px" }}>{m.desc}</p>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px", borderTop: "1px solid #E0E8F5", paddingTop: "20px" }}>
                   {m.highlights.map((h, idx) => (
-                    <div key={idx} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", fontWeight: 600, color: "#362D7E" }}>
-                      <span style={{ color: "#16a34a" }}>✓</span> {h}
+                    <div key={idx} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", fontWeight: 600, color: "#0A1838" }}>
+                      <span style={{ color: "#00A8E8" }}>✓</span> {h}
                     </div>
                   ))}
                 </div>

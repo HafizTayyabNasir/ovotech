@@ -36,30 +36,30 @@ export default function StatsGrid() {
             <div
               key={i}
               style={{
-                background: "#F4F5F9",
+                background: "#F4F7FC",
                 borderRadius: "20px",
                 padding: "48px 24px",
                 textAlign: "center",
                 transition: "all 0.3s ease-in-out",
-                border: "1px solid #E8E8EF",
+                border: "1px solid #E0E8F5",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.02)",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 12px 30px rgba(54, 45, 126, 0.08)";
-                e.currentTarget.style.borderColor = "rgba(54, 45, 126, 0.15)";
+                e.currentTarget.style.boxShadow = "0 12px 30px rgba(0, 168, 232, 0.12)";
+                e.currentTarget.style.borderColor = "rgba(0, 168, 232, 0.3)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.02)";
-                e.currentTarget.style.borderColor = "#E8E8EF";
+                e.currentTarget.style.borderColor = "#E0E8F5";
               }}
             >
               <div
                 style={{
                   fontSize: "clamp(34px, 4vw, 46px)",
                   fontWeight: 800,
-                  color: "#0B1437",
+                  color: "#00A8E8",
                   lineHeight: 1,
                   marginBottom: "12px",
                   letterSpacing: "-1px",

@@ -32,7 +32,7 @@ export default function ComplianceSection() {
     <section style={{ padding: "90px 0", background: "#060D1F", color: "#FFFFFF", position: "relative" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
-          <span style={{ display: "inline-block", background: "rgba(255,255,255,0.1)", color: "#A594FF", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(255,255,255,0.15)" }}>
+          <span style={{ display: "inline-block", background: "rgba(0,168,232,0.12)", color: "#00A8E8", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(0,168,232,0.25)" }}>
             TRUSTED NHS COMPLIANCE &amp; GOVERNANCE
           </span>
           <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.15 }}>
@@ -57,7 +57,7 @@ export default function ComplianceSection() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.borderColor = "rgba(165,148,255,0.4)";
+                e.currentTarget.style.borderColor = "rgba(0,168,232,0.4)";
                 e.currentTarget.style.background = "rgba(255, 255, 255, 0.07)";
               }}
               onMouseLeave={(e) => {
@@ -67,7 +67,7 @@ export default function ComplianceSection() {
               }}
             >
               <div style={{ fontSize: "32px", marginBottom: "16px" }}>{card.icon}</div>
-              <span style={{ fontSize: "10px", fontWeight: 800, letterSpacing: "1.5px", color: "#A594FF", display: "block", marginBottom: "8px" }}>
+              <span style={{ fontSize: "10px", fontWeight: 800, letterSpacing: "1.5px", color: "#00A8E8", display: "block", marginBottom: "8px" }}>
                 {card.badge}
               </span>
               <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#FFFFFF", marginBottom: "10px" }}>{card.title}</h3>

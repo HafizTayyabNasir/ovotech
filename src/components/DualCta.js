@@ -31,23 +31,24 @@ export default function DualCta() {
               className={`animate-fadeInUp delay-${(i + 1) * 200}`}
               style={{
                 borderRadius: "20px", padding: "32px", textAlign: "center",
-                background: cta.primary ? "#362D7E" : "#fff",
-                color: cta.primary ? "#fff" : "#1A1A1A",
-                border: cta.primary ? "1px solid #362D7E" : "1px solid #E8E8EF",
+                background: cta.primary ? "#09132B" : "#F4F7FC",
+                color: cta.primary ? "#fff" : "#0A1838",
+                border: cta.primary ? "1px solid #09132B" : "1px solid #E0E8F5",
                 transition: "all 0.3s", cursor: "pointer",
               }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,0,0,0.1)"; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,168,232,0.12)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: cta.primary ? "rgba(255,255,255,0.15)" : "rgba(54,45,126,0.1)", color: cta.primary ? "#fff" : "#362D7E" }}>
+              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: cta.primary ? "rgba(0,168,232,0.15)" : "rgba(0,168,232,0.1)", color: cta.primary ? "#38BDF8" : "#00A8E8" }}>
                 {cta.icon}
               </div>
-              <h3 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "8px" }}>{cta.title}</h3>
-              <p style={{ fontSize: "14px", lineHeight: 1.6, marginBottom: "24px", color: cta.primary ? "rgba(255,255,255,0.7)" : "#888" }}>{cta.desc}</p>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px" }}>{cta.title}</h3>
+              <p style={{ fontSize: "14px", lineHeight: 1.6, marginBottom: "24px", color: cta.primary ? "rgba(255,255,255,0.75)" : "#475569" }}>{cta.desc}</p>
               <Link href={cta.href} style={{
-                display: "inline-flex", alignItems: "center", gap: "8px", fontWeight: 600, fontSize: "14px", padding: "12px 28px", borderRadius: "12px", transition: "all 0.3s",
-                background: cta.primary ? "#fff" : "#362D7E",
-                color: cta.primary ? "#362D7E" : "#fff",
+                display: "inline-flex", alignItems: "center", gap: "8px", fontWeight: 700, fontSize: "14px", padding: "12px 28px", borderRadius: "12px", transition: "all 0.3s",
+                background: cta.primary ? "#00A8E8" : "#0A1838",
+                color: "#fff",
+                boxShadow: cta.primary ? "0 4px 14px rgba(0,168,232,0.3)" : "none"
               }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = "0.9"; }}
                 onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}

@@ -2,16 +2,18 @@
 
 /* ===== CUSTOM THEME ===== */
 @theme {
-  --color-primary: #362D7E;
-  --color-primary-dark: #2a2265;
-  --color-primary-light: #4a3fa0;
-  --color-accent: #6C5CE7;
-  --color-bg-light: #F7F7FA;
+  --color-primary: #00A8E8;
+  --color-primary-dark: #0284C7;
+  --color-primary-light: #38BDF8;
+  --color-accent: #00B4D8;
+  --color-navy: #09132B;
+  --color-navy-dark: #060D1F;
+  --color-bg-light: #F4F7FC;
   --color-bg-white: #FFFFFF;
-  --color-text-heading: #1A1A1A;
-  --color-text-body: #555555;
-  --color-text-muted: #888888;
-  --color-border-light: #E8E8EF;
+  --color-text-heading: #0A1838;
+  --color-text-body: #475569;
+  --color-text-muted: #8896AB;
+  --color-border-light: #E0E8F5;
   --color-success: #16a34a;
   --color-nhs-blue: #005eb8;
   --font-sans: 'Inter', sans-serif;

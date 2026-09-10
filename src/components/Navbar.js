@@ -84,10 +84,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-[100] transition-all duration-300 ${scrolled ? "shadow-xl shadow-black/20" : ""}`}
-      style={{ background: scrolled ? "#1a1445" : "#362D7E" }}
+      className={`sticky top-0 z-[100] transition-all duration-300 ${scrolled ? "shadow-md shadow-black/5" : ""}`}
+      style={{ background: "#FFFFFF", borderBottom: "1px solid #E0E8F5" }}
     >
-      <div className="site-container flex items-center justify-between relative" style={{ padding: "16px 24px", minHeight: "64px" }}>
+      <div className="site-container flex items-center justify-between relative" style={{ padding: "14px 24px", minHeight: "64px" }}>
         {/* Brand Logo */}
         <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 shrink-0 z-[102]">
           <img src="/logo.webp" alt="Ovotech Logo" style={{ height: "32px", width: "auto" }} />
@@ -95,7 +95,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger / Close Button */}
         <button
-          className="md:hidden bg-transparent border-none text-white cursor-pointer z-[102] p-2 flex items-center justify-center focus:outline-none"
+          className="md:hidden bg-transparent border-none text-[#0A1838] cursor-pointer z-[102] p-2 flex items-center justify-center focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -114,8 +114,8 @@ export default function Navbar() {
             <li key={item.key} className="relative group md:static">
               <Link
                 href={item.href}
-                className="text-white/90 hover:text-white flex items-center gap-1.5 transition-all"
-                style={{ fontSize: "14px", fontWeight: 500, padding: "10px 14px", borderRadius: "8px" }}
+                className="text-[#0A1838] hover:text-[#00A8E8] flex items-center gap-1.5 transition-all"
+                style={{ fontSize: "14px", fontWeight: 600, padding: "10px 14px", borderRadius: "8px" }}
               >
                 {item.label}
                 {item.columns && (
@@ -131,15 +131,15 @@ export default function Navbar() {
                   className="absolute top-full left-0 w-full opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto"
                   style={{
                     background: "#fff", borderRadius: "0 0 16px 16px",
-                    boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
-                    border: "1px solid #eee", borderTop: "none",
+                    boxShadow: "0 25px 50px rgba(0,0,0,0.12)",
+                    border: "1px solid #E0E8F5", borderTop: "none",
                   }}
                 >
                   <div className="flex" style={{ minHeight: "280px" }}>
                     <div className="flex-1 grid grid-cols-2" style={{ padding: "32px 40px", gap: "40px" }}>
                       {item.columns.map((col, ci) => (
                         <div key={ci}>
-                          <h3 style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#362D7E", marginBottom: "16px", paddingBottom: "8px", borderBottom: "2px solid #362D7E", display: "inline-block" }}>
+                          <h3 style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#00A8E8", marginBottom: "16px", paddingBottom: "8px", borderBottom: "2px solid #00A8E8", display: "inline-block" }}>
                             {col.header}
                           </h3>
                           <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -147,10 +147,10 @@ export default function Navbar() {
                               <Link
                                 key={li} href={link.href}
                                 style={{ display: "block", padding: "10px 12px", borderRadius: "8px", transition: "background 0.2s" }}
-                                className="hover:bg-[#F7F7FA]"
+                                className="hover:bg-[#F4F7FC]"
                               >
-                                <span style={{ fontSize: "14px", fontWeight: 600, color: "#1A1A1A", display: "block" }}>{link.label}</span>
-                                <span style={{ fontSize: "12px", color: "#888", display: "block", marginTop: "2px" }}>{link.desc}</span>
+                                <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838", display: "block" }}>{link.label}</span>
+                                <span style={{ fontSize: "12px", color: "#64748B", display: "block", marginTop: "2px" }}>{link.desc}</span>
                               </Link>
                             ))}
                           </div>
@@ -160,19 +160,19 @@ export default function Navbar() {
                     {item.promo && (
                       <div
                         style={{
-                          width: "300px", background: `linear-gradient(135deg, ${item.promo.bg.includes("green") ? "#16a34a, #065f46" : item.promo.bg.includes("blue") ? "#362D7E, #1e3a8a" : "#362D7E, #2a2265"})`,
+                          width: "300px", background: `linear-gradient(135deg, #09132B 0%, #0F214A 100%)`,
                           color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px", position: "relative", overflow: "hidden",
                         }}
                       >
-                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(255,255,255,0.1)" }} />
-                        <h4 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "10px" }}>{item.promo.title}</h4>
+                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(0,168,232,0.15)" }} />
+                        <h4 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "10px", color: "#FFFFFF" }}>{item.promo.title}</h4>
                         <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6 }}>{item.promo.text}</p>
                       </div>
                     )}
                   </div>
-                  <div style={{ background: "#F7F7FA", padding: "16px 40px", display: "flex", alignItems: "center", gap: "20px", borderTop: "1px solid #E8E8EF" }}>
-                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#1A1A1A" }}>Ready to transform your practice?</span>
-                    <Link href="/contact" style={{ background: "#362D7E", color: "#fff", fontSize: "14px", fontWeight: 600, padding: "8px 20px", borderRadius: "8px" }}>
+                  <div style={{ background: "#F4F7FC", padding: "16px 40px", display: "flex", alignItems: "center", gap: "20px", borderTop: "1px solid #E0E8F5" }}>
+                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838" }}>Ready to transform your practice?</span>
+                    <Link href="/contact" style={{ background: "#00A8E8", color: "#fff", fontSize: "14px", fontWeight: 700, padding: "8px 20px", borderRadius: "8px" }}>
                       Let&apos;s Talk
                     </Link>
                   </div>
@@ -184,8 +184,8 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#fff", color: "#362D7E", fontSize: "14px", fontWeight: 700, padding: "10px 24px", borderRadius: "10px", display: "inline-block", transition: "all 0.3s" }}>
-            Book a Demo
+          <Link href="/contact" style={{ background: "#00A8E8", color: "#FFFFFF", fontSize: "14px", fontWeight: 700, padding: "10px 22px", borderRadius: "10px", display: "inline-block", boxShadow: "0 4px 14px rgba(0, 168, 232, 0.35)", transition: "all 0.3s" }}>
+            Request a Demo
           </Link>
         </div>
       </div>
@@ -195,7 +195,7 @@ export default function Navbar() {
         <div
           className="md:hidden fixed inset-0 top-[64px] z-[101]"
           style={{
-            background: "#060D1F",
+            background: "#09132B",
             height: "calc(100vh - 64px)",
             overflowY: "auto",
             padding: "24px 20px 40px 20px"

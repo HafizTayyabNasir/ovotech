@@ -111,7 +111,7 @@ export default function InteractiveWorkflowShowcase() {
   return (
     <section
       style={{
-        background: "radial-gradient(ellipse at top, #0E1A3D 0%, #060D1F 100%)",
+        background: "radial-gradient(ellipse at top, #0F214A 0%, #09132B 100%)",
         color: "#FFFFFF",
         padding: "90px 0",
         position: "relative",
@@ -133,7 +133,7 @@ export default function InteractiveWorkflowShowcase() {
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Section Header */}
         <div style={{ textAlign: "center", marginBottom: "44px" }}>
-          <span style={{ display: "inline-block", background: "rgba(54, 45, 126, 0.35)", color: "#A594FF", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(165,148,255,0.25)" }}>
+          <span style={{ display: "inline-block", background: "rgba(0, 168, 232, 0.15)", color: "#38BDF8", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(56,189,248,0.3)" }}>
             OVOTECH WORKFLOW : HOW IT WORKS
           </span>
           <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 12px" }}>
@@ -161,9 +161,9 @@ export default function InteractiveWorkflowShowcase() {
                 key={step.number}
                 onClick={() => handleStepClick(i)}
                 style={{
-                  background: isActive ? "#362D7E" : "rgba(255,255,255,0.06)",
+                  background: isActive ? "#00A8E8" : "rgba(255,255,255,0.06)",
                   color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.7)",
-                  border: isActive ? "1px solid #A594FF" : "1px solid rgba(255,255,255,0.1)",
+                  border: isActive ? "1px solid #38BDF8" : "1px solid rgba(255,255,255,0.1)",
                   padding: "8px 16px",
                   borderRadius: "20px",
                   fontSize: "13px",
@@ -175,7 +175,7 @@ export default function InteractiveWorkflowShowcase() {
                   gap: "8px"
                 }}
               >
-                <span style={{ color: isActive ? "#A594FF" : "rgba(255,255,255,0.4)", fontWeight: 800 }}>{step.number}</span>
+                <span style={{ color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.4)", fontWeight: 800 }}>{step.number}</span>
                 <span>{step.category}</span>
               </button>
             );
@@ -199,7 +199,7 @@ export default function InteractiveWorkflowShowcase() {
                 <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#16a34a" }} />
                 <span>STEP {activeStep.number} OF 05</span>
               </div>
-              <span style={{ color: "#A594FF", letterSpacing: "1px", textTransform: "uppercase" }}>{activeStep.category}</span>
+              <span style={{ color: "#38BDF8", letterSpacing: "1px", textTransform: "uppercase" }}>{activeStep.category}</span>
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
@@ -224,7 +224,7 @@ export default function InteractiveWorkflowShowcase() {
 
             {/* Bottom Controls Bar */}
             <div style={{ background: "rgba(9, 18, 42, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#A594FF", display: "flex", alignItems: "center", gap: "8px" }}>
+              <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#38BDF8", display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ color: "#16a34a" }}>▶</span> {activeStep.tag}
               </div>
 
@@ -287,7 +287,7 @@ export default function InteractiveWorkflowShowcase() {
                     color: isActive ? "#060D1F" : "#FFFFFF",
                     borderRadius: "16px",
                     padding: "16px 20px",
-                    border: isActive ? "2px solid #A594FF" : "1px solid rgba(255, 255, 255, 0.08)",
+                    border: isActive ? "2px solid #00A8E8" : "1px solid rgba(255, 255, 255, 0.08)",
                     cursor: "pointer",
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                     boxShadow: isActive ? "0 16px 36px rgba(0, 0, 0, 0.4)" : "none",
@@ -307,7 +307,7 @@ export default function InteractiveWorkflowShowcase() {
                         top: 0,
                         left: 0,
                         height: "3px",
-                        background: "#362D7E"
+                        background: "#00A8E8"
                       }}
                     />
                   )}
@@ -320,7 +320,7 @@ export default function InteractiveWorkflowShowcase() {
                           height: "28px",
                           borderRadius: "8px",
                           background: isActive ? "#060D1F" : "rgba(255,255,255,0.1)",
-                          color: isActive ? "#FFFFFF" : "#A594FF",
+                          color: isActive ? "#FFFFFF" : "#38BDF8",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center"
@@ -328,12 +328,12 @@ export default function InteractiveWorkflowShowcase() {
                       >
                         {step.icon}
                       </div>
-                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: isActive ? "#362D7E" : "#A594FF" }}>
+                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: isActive ? "#00A8E8" : "#38BDF8" }}>
                         {step.category}
                       </span>
                     </div>
 
-                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#362D7E" : "rgba(255,255,255,0.3)" }}>
+                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#00A8E8" : "rgba(255,255,255,0.3)" }}>
                       {step.number}
                     </span>
                   </div>
