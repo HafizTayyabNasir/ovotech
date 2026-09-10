@@ -184,8 +184,8 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#00A8E8", color: "#FFFFFF", fontSize: "13px", fontWeight: 800, padding: "12px 24px", borderRadius: "10px", display: "inline-block", boxShadow: "0 4px 14px rgba(0, 168, 232, 0.35)", letterSpacing: "0.5px", textTransform: "uppercase", transition: "all 0.3s" }}>
-            BOOK A FREE CONSULTATION
+          <Link href="/contact" style={{ background: "#00A8E8", color: "#FFFFFF", fontSize: "14px", fontWeight: 600, padding: "10px 24px", borderRadius: "30px", display: "inline-block", boxShadow: "0 4px 14px rgba(0, 168, 232, 0.25)", transition: "all 0.3s" }}>
+            Request a Demo
           </Link>
         </div>
       </div>

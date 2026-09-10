@@ -11,6 +11,8 @@ export default function Hero() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [formErrors, setFormErrors] = useState({});
 
+  const statements = ["Primary Care", "GP Practices", "NHS Providers", "PCN Networks"];
+
   useEffect(() => {
     const typingSpeed = 100, deletingSpeed = 50, delay = 2000;
     let timer;
@@ -30,6 +32,7 @@ export default function Hero() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (formErrors[e.target.name]) setFormErrors({ ...formErrors, [e.target.name]: "" });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = {};
@@ -38,95 +41,140 @@ export default function Hero() {
     else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Invalid email";
     if (!formData.phone.trim()) errors.phone = "Phone is required";
     setFormErrors(errors);
-    if (Object.keys(errors).length === 0) alert("Form submitted!");
+    if (Object.keys(errors).length === 0) alert("Consultation requested!");
   };
 
   return (
-    <section style={{ background: "linear-gradient(135deg, #F4F7FC 0%, #FFFFFF 50%, #E0F2FE 100%)", paddingTop: "80px", paddingBottom: "40px", position: "relative", overflow: "hidden" }}>
-      {/* Decorative blurs */}
-      <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "400px", height: "400px", background: "rgba(0,168,232,0.08)", borderRadius: "50%", filter: "blur(80px)" }} />
-      <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: "300px", height: "300px", background: "rgba(10,24,56,0.06)", borderRadius: "50%", filter: "blur(80px)" }} />
+    <>
+      <section style={{ background: "linear-gradient(135deg, #EBF6FF 0%, #FFFFFF 50%, #E6F4FE 100%)", paddingTop: "60px", paddingBottom: "60px", position: "relative", overflow: "hidden" }}>
+        {/* Decorative Ambient Blue Glows */}
+        <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "450px", height: "450px", background: "rgba(0,168,232,0.12)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: "350px", height: "350px", background: "rgba(0,168,232,0.08)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
 
-      <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
-        {/* Two column layout */}
-        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "60px" }}>
-          {/* Left */}
-          <div className="animate-fadeInLeft" style={{ flex: "1 1 480px", minWidth: "280px" }}>
-            <span style={{ display: "inline-block", background: "rgba(0,168,232,0.1)", color: "#00A8E8", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", marginBottom: "24px", textTransform: "uppercase" }}>
-              UK GP Practice Platform
-            </span>
-            <h1 style={{ fontSize: "clamp(32px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.1, marginBottom: "20px", color: "#0A1838" }}>
-              Clinical Document Processing &amp;
-              <br />
-              <span style={{ color: "#00A8E8", display: "inline-block" }}>{text}</span>
-              <span className="animate-blink" style={{ fontWeight: 300, color: "#00A8E8" }}>|</span>
-            </h1>
-            <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "32px", maxWidth: "520px" }}>
-              Ovotech brings clinical correspondence intake, SNOMED CT coding, patient history context, and human verification into one streamlined workflow with direct EMIS Web write-back.
-            </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "40px" }}>
-              <Link href="/contact" style={{ background: "#00A8E8", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(0,168,232,0.35)", transition: "all 0.3s" }}>
-                Book a Platform Demo <span>→</span>
-              </Link>
-              <Link href="/solutions" style={{ border: "2px solid #00A8E8", color: "#00A8E8", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}>
-                Explore Platform <span>→</span>
-              </Link>
-            </div>
-            <p style={{ fontSize: "13px", color: "#8896AB", marginBottom: "16px" }}>Built for UK GP practices with clinical system integration</p>
-            <div style={{ display: "flex", alignItems: "center", gap: "28px" }}>
-              <span style={{ color: "#005eb8", fontSize: "22px", fontWeight: 800, letterSpacing: "1px" }}>NHS</span>
-              <span style={{ fontSize: "18px", fontWeight: 800, color: "#005eb8", letterSpacing: "0.5px" }}>EMIS Web</span>
-              <span style={{ fontSize: "16px", fontWeight: 700, color: "#0A1838", letterSpacing: "0.5px" }}>SNOMED CT</span>
-            </div>
-          </div>
+        <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
+            {/* Left Content Column */}
+            <div className="animate-fadeInLeft" style={{ flex: "1 1 520px", minWidth: "300px" }}>
+              <span style={{ display: "inline-block", color: "#00A8E8", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px" }}>
+                MEDICAL AUTOMATION SERVICES
+              </span>
 
-          {/* Right — Form */}
-          <div className="animate-fadeInRight delay-200" style={{ flex: "0 1 420px", minWidth: "300px" }}>
-            <div style={{ background: "#fff", borderRadius: "20px", boxShadow: "0 20px 60px rgba(0,168,232,0.12)", padding: "36px 32px", border: "1px solid #E0E8F5" }}>
-              <h3 style={{ fontSize: "20px", fontWeight: 800, color: "#0A1838", marginBottom: "4px" }}>Request a Practice Demo</h3>
-              <p style={{ fontSize: "14px", color: "#64748B", marginBottom: "24px" }}>See how Ovotech optimizes clinical review</p>
-              <form onSubmit={handleSubmit}>
-                {["name", "email", "phone"].map((field) => (
-                  <div key={field} style={{ marginBottom: "14px" }}>
-                    <input
-                      type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
-                      name={field}
-                      placeholder={field === "name" ? "Full Name" : field === "email" ? "Practice Email" : "Phone Number"}
-                      value={formData[field]}
-                      onChange={handleChange}
-                      style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: `1.5px solid ${formErrors[field] ? "#ef4444" : "#E0E8F5"}`, fontSize: "14px", background: "#F4F7FC", outline: "none", transition: "border 0.2s" }}
-                    />
-                    {formErrors[field] && <span style={{ color: "#ef4444", fontSize: "12px", marginTop: "4px", display: "block" }}>{formErrors[field]}</span>}
-                  </div>
-                ))}
-                <button type="submit" style={{ width: "100%", background: "#00A8E8", color: "#fff", fontWeight: 700, padding: "14px", borderRadius: "12px", border: "none", fontSize: "14px", cursor: "pointer", boxShadow: "0 4px 14px rgba(0,168,232,0.3)", transition: "all 0.3s", marginTop: "4px" }}>
-                  Book Demo →
+              <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.15, marginBottom: "20px", color: "#0B193C" }}>
+                The Healthcare AI &amp; RPA Provider for
+                <br />
+                <span style={{ color: "#00A8E8", display: "inline-block" }}>{text}</span>
+                <span className="animate-blink" style={{ fontWeight: 300, color: "#00A8E8" }}>|</span>
+              </h1>
+
+              <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.7, marginBottom: "16px", maxWidth: "560px" }}>
+                Ovotech is the UK&apos;s premier healthcare automation and RPA provider – deploying the best practices in medical billing, repeat prescriptions, and coding for physicians looking to outsource clinical and operational workloads to an expert automated platform.
+              </p>
+
+              <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.7, marginBottom: "32px", maxWidth: "560px" }}>
+                Our certified medical coders and AI systems help healthcare organizations recover clinical hours, clear processing queues, and resolve document workflow bottlenecks.
+              </p>
+
+              {/* Consultation Form Fields */}
+              <form onSubmit={handleSubmit} style={{ maxWidth: "600px" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.name ? "#ef4444" : "#00A8E8"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(0,168,232,0.08)" }}
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.email ? "#ef4444" : "#00A8E8"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(0,168,232,0.08)" }}
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.phone ? "#ef4444" : "#00A8E8"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(0,168,232,0.08)" }}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  style={{
+                    background: "#00A8E8",
+                    color: "#FFFFFF",
+                    fontSize: "14px",
+                    fontWeight: 800,
+                    letterSpacing: "0.5px",
+                    textTransform: "uppercase",
+                    padding: "14px 32px",
+                    borderRadius: "30px",
+                    border: "none",
+                    cursor: "pointer",
+                    boxShadow: "0 6px 20px rgba(0,168,232,0.35)",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  BOOK A FREE CONSULTATION
                 </button>
               </form>
-              <p style={{ fontSize: "12px", color: "#8896AB", textAlign: "center", marginTop: "14px" }}>Assisted workflow built for GP administrative &amp; coding teams.</p>
+            </div>
+
+            {/* Right Doctor Image Column */}
+            <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 400px", minWidth: "300px", position: "relative", display: "flex", justifyContent: "center" }}>
+              <div style={{ position: "relative", width: "100%", maxWidth: "460px" }}>
+                {/* Sky blue background circle graphic */}
+                <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "380px", height: "380px", background: "rgba(0,168,232,0.12)", borderRadius: "50%", zIndex: 1 }} />
+                
+                {/* Floating Outline Icons */}
+                <div style={{ position: "absolute", top: "40px", left: "20px", fontSize: "28px", zIndex: 3 }}>🚀</div>
+                <div style={{ position: "absolute", top: "60px", right: "20px", fontSize: "28px", zIndex: 3 }}>🧠</div>
+                <div style={{ position: "absolute", bottom: "80px", left: "10px", fontSize: "28px", zIndex: 3 }}>☁️</div>
+
+                {/* Doctor Image */}
+                <img
+                  src="/hero-doctor.png"
+                  alt="Healthcare AI & RPA Doctor"
+                  style={{ width: "100%", height: "auto", position: "relative", zIndex: 2, display: "block", filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.1))" }}
+                />
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Stats Row */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px", marginTop: "56px" }}>
-          {[
-            { icon: "📄", value: "8-Step", label: "Structured Workflow" },
-            { icon: "🏥", value: "EMIS Web", label: "Clinical System Integration" },
-            { icon: "🛡️", value: "100%", label: "Human Verification & Control" },
-          ].map((s, i) => (
-            <div key={i} className={`animate-fadeInUp delay-${(i + 4) * 100}`} style={{ display: "flex", alignItems: "center", gap: "16px", background: "#fff", borderRadius: "16px", padding: "24px", boxShadow: "0 4px 20px rgba(0,168,232,0.08)", border: "1px solid #E0E8F5" }}>
-              <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(0,168,232,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>
-                {s.icon}
-              </div>
-              <div>
-                <div style={{ fontSize: "24px", fontWeight: 800, color: "#0A1838" }}>{s.value}</div>
-                <div style={{ fontSize: "13px", color: "#64748B", fontWeight: 500 }}>{s.label}</div>
-              </div>
+      {/* Full-width Cyan Stats Strip below Hero */}
+      <div style={{ background: "#00A8E8", color: "#FFFFFF", padding: "16px 0", borderTop: "1px solid rgba(255,255,255,0.2)" }}>
+        <div className="site-container">
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "20px", fontSize: "14px", fontWeight: 700 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>15 Years of Experience</span>
             </div>
-          ))}
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>20+ GP Practices</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 15l-2 5l-2.5 -1.5l-2.5 1.5l1 -5.5l-4 -3.5l5.5 -.5l2 -5l2 5l5.5 .5l-4 3.5l1 5.5z"/></svg>
+              <span>5 Industry Awards</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>9 Developed Softwares</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>3 Countries Worldwide</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
