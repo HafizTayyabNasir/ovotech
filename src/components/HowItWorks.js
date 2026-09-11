@@ -2,14 +2,12 @@
 import Link from "next/link";
 
 const steps = [
-  { num: 1, icon: "📥", title: "Document Intake", desc: "Clinical correspondence enters the Ovotech workflow." },
-  { num: 2, icon: "🔍", title: "Extraction", desc: "Platform identifies relevant patient & clinical details." },
-  { num: 3, icon: "📋", title: "Review Queue", desc: "Documents enter a central queue with clear status." },
-  { num: 4, icon: "🖥️", title: "Clinical Review", desc: "Single workspace combining document, data & coding." },
-  { num: 5, icon: "🩺", title: "Patient History", desc: "Contextual patient record displayed alongside doc." },
-  { num: 6, icon: "🏷️", title: "SNOMED CT", desc: "System proposes relevant SNOMED CT clinical codes." },
-  { num: 7, icon: "👤", title: "Human Review", desc: "Authorised user verifies, amends and approves decisions." },
-  { num: 8, icon: "🏥", title: "EMIS Write-Back", desc: "Approved data written directly to EMIS Web record." },
+  { num: 1, icon: "📥", title: "Document Intake", desc: "Clinical correspondence enters the Ovotech workflow from hospital feeds or documents." },
+  { num: 2, icon: "🔍", title: "Information Extraction", desc: "Platform identifies relevant clinical facts, diagnoses, medications & patient IDs." },
+  { num: 3, icon: "📋", title: "Review Queue", desc: "Incoming documents enter a structured queue with clear processing status and priority." },
+  { num: 4, icon: "🖥️", title: "Clinical Review", desc: "Unified workspace displaying document, extracted info, SNOMED codes & Patient History." },
+  { num: 5, icon: "👤", title: "Human Approval", desc: "Authorised reviewer verifies, amends, and approves coding decisions before commit." },
+  { num: 6, icon: "🏥", title: "EMIS Write-Back", desc: "Approved clinical data written directly into the patient's EMIS Web record." },
 ];
 
 export default function HowItWorks() {

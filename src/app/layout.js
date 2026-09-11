@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Ovotech - Healthcare Automation Platform",
+  title: "Ovotech - Clinical Document Processing & Coding Platform",
   description:
-    "Ovotech helps GP practices and healthcare providers automate repetitive admin tasks using AI and RPA. Save time. Reduce costs. Improve patient care.",
+    "Ovotech is a clinical document processing and coding workflow platform designed specifically for UK GP practices, from intake to EMIS Web write-back.",
 };
 
 export default function RootLayout({ children }) {

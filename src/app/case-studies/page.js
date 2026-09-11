@@ -7,8 +7,8 @@ export default function CaseStudiesPage() {
   return (
     <>
       <PageHeader 
-        title="Case Studies & Success Stories" 
-        description="See how healthcare providers are transforming their operations and saving thousands of hours with Ovotech." 
+        title="Practice Operational Impact" 
+        description="Explore how Ovotech releases administrative capacity, speeds document turnaround, and maintains clinical record quality in UK GP practices." 
       />
       
       {/* Reuse the Trusted component which has case studies and stats */}

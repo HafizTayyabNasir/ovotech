@@ -10,24 +10,24 @@ export default function BlogPage() {
       <div style={{ display: "grid", gap: "40px" }}>
         
         <article style={{ borderBottom: "1px solid #E0E8F5", paddingBottom: "30px" }}>
-          <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: "700", textTransform: "uppercase" }}>Industry News</span>
-          <h2 style={{ fontSize: "28px", color: "#0A1838", margin: "10px 0" }}>How AI is Transforming Primary Care in 2025</h2>
-          <p style={{ color: "#64748B", marginBottom: "16px" }}>Discover the latest trends in healthcare technology and how artificial intelligence is helping practices manage patient demand.</p>
-          <Link href="#" style={{ color: "#02ACEA", fontWeight: "600", fontSize: "14px" }}>Read Article &rarr;</Link>
+          <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: "700", textTransform: "uppercase" }}>Clinical Coding</span>
+          <h2 style={{ fontSize: "28px", color: "#0A1838", margin: "10px 0" }}>Standardising SNOMED CT Concept Mapping in Primary Care</h2>
+          <p style={{ color: "#64748B", marginBottom: "16px" }}>How assisted clinical entity recognition helps UK GP practices achieve uniform SNOMED CT coding across hospital correspondence.</p>
+          <Link href="/solutions" style={{ color: "#02ACEA", fontWeight: "600", fontSize: "14px" }}>Read Article &rarr;</Link>
         </article>
 
         <article style={{ borderBottom: "1px solid #E0E8F5", paddingBottom: "30px" }}>
-          <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: "700", textTransform: "uppercase" }}>Product Update</span>
-          <h2 style={{ fontSize: "28px", color: "#0A1838", margin: "10px 0" }}>New Feature: Enhanced Referral Triage</h2>
-          <p style={{ color: "#64748B", marginBottom: "16px" }}>We've updated our referral automation engine to better handle complex, multi-department referral documents.</p>
-          <Link href="#" style={{ color: "#02ACEA", fontWeight: "600", fontSize: "14px" }}>Read Article &rarr;</Link>
+          <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: "700", textTransform: "uppercase" }}>Workflow Feature</span>
+          <h2 style={{ fontSize: "28px", color: "#0A1838", margin: "10px 0" }}>Optimising Practice Correspondence with Review Queues</h2>
+          <p style={{ color: "#64748B", marginBottom: "16px" }}>Explore how structured Review Queues give practice teams complete visibility over document intake and pending clinical reviews.</p>
+          <Link href="/solutions#review-queue" style={{ color: "#02ACEA", fontWeight: "600", fontSize: "14px" }}>Read Article &rarr;</Link>
         </article>
 
         <article>
-          <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: "700", textTransform: "uppercase" }}>Case Study Highlight</span>
-          <h2 style={{ fontSize: "28px", color: "#0A1838", margin: "10px 0" }}>Saving 40 Hours a Week on Prescriptions</h2>
-          <p style={{ color: "#64748B", marginBottom: "16px" }}>Learn how a busy London GP practice reclaimed an entire full-time equivalent role by automating their repeat prescriptions.</p>
-          <Link href="#" style={{ color: "#02ACEA", fontWeight: "600", fontSize: "14px" }}>Read Article &rarr;</Link>
+          <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: "700", textTransform: "uppercase" }}>Clinical Governance</span>
+          <h2 style={{ fontSize: "28px", color: "#0A1838", margin: "10px 0" }}>Human Review Centrality in EMIS Web Write-Back</h2>
+          <p style={{ color: "#64748B", marginBottom: "16px" }}>Why mandatory clinician and coder verification protects data integrity and patient safety during clinical record commit.</p>
+          <Link href="/how-it-works" style={{ color: "#02ACEA", fontWeight: "600", fontSize: "14px" }}>Read Article &rarr;</Link>
         </article>
 
       </div>

@@ -6,7 +6,7 @@ const faqs = [
   { q: "Does Ovotech make autonomous clinical decisions?", a: "No. Ovotech is an assisted workflow platform rather than an autonomous decision-making system. The platform supports practice teams by extracting details and suggesting coding, but authorised reviewers retain complete control to verify and approve all information before it is committed to patient records." },
   { q: "Which clinical system does Ovotech integrate with?", a: "Ovotech currently focuses on integration with EMIS Web, enabling structured write-back of approved clinical information and SNOMED CT codes directly into the patient's record." },
   { q: "What is the Clinical Review workspace?", a: "The Clinical Review workspace is the main working area of Ovotech. It brings together the original document, extracted clinical data, suggested SNOMED CT codes, patient history, and final actions on a single screen to eliminate unnecessary system switching." },
-  { q: "Is Ovotech NHS accredited and compliant?", a: "Yes, Ovotech adheres to strict NHS security and clinical governance standards, including DSPT and DCB0129 clinical risk management guidelines." },
+  { q: "What compliance standards does Ovotech adhere to?", a: "Ovotech strictly adheres to confirmed UK primary care information governance and security standards, including DSPT (Data Security and Protection Toolkit), DTAC, Cyber Essentials, and ISO 27001." },
   { q: "Can Ovotech demonstrate practice time saved and ROI?", a: "Yes. Ovotech provides Value & KPI tracking based on document volumes, staff involved in coding, and processing times to demonstrate operational impact, estimated hours saved, and released capacity." },
 ];
 

@@ -7,22 +7,22 @@ export default function AboutPage() {
     <>
       <PageHeader 
         title="About Ovotech" 
-        description="We are on a mission to revolutionize healthcare administration through intelligent automation, giving medical professionals more time for what matters most — patient care." 
+        description="Empowering UK GP practices with a clinical document processing and coding workflow platform designed to streamline correspondence and protect practice capacity." 
       />
       
       <section className="container" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto", fontSize: "16px", color: "#475569", lineHeight: "1.8" }}>
           <h2 style={{ fontSize: "32px", color: "#0A1838", marginBottom: "24px" }}>Our Story</h2>
           <p style={{ marginBottom: "20px" }}>
-            Founded in 2023, Ovotech was born from a simple observation: doctors and medical staff were spending too much time on paperwork and not enough time with patients. We realized that many of these repetitive tasks could be automated using modern AI and Robotic Process Automation (RPA) technologies.
+            Ovotech was founded to address a critical challenge facing UK primary care: administrative coders and clinicians spending valuable hours manually reading hospital correspondence, navigating complex clinical systems, and searching for SNOMED CT codes.
           </p>
           <p style={{ marginBottom: "40px" }}>
-            Today, we partner with GP practices, Primary Care Networks, and NHS Healthcare Providers across the UK to streamline their operations, reduce administrative burden, and ultimately improve the quality of patient care.
+            We designed Ovotech specifically around the clinical document lifecycle of UK GP practices—bringing document intake, entity extraction, review queues, clinical review, patient history context, and EMIS Web write-back together into one seamless, human-assisted workspace.
           </p>
           
           <h2 style={{ fontSize: "32px", color: "#0A1838", marginBottom: "24px" }}>Our Mission</h2>
           <p>
-            To empower healthcare providers with cutting-edge automation solutions that eliminate manual admin work, reduce costs, and enhance the patient experience.
+            To empower UK GP practices with structured, assisted clinical correspondence workflows that eliminate document backlogs, enhance coding accuracy, and keep human reviewers in control of every record entry.
           </p>
         </div>
       </section>

@@ -2,16 +2,16 @@
 import { useRef } from "react";
 
 const specialties = [
-  { icon: "💊", label: "Prescription" },
-  { icon: "🔄", label: "Referral" },
-  { icon: "📅", label: "Appointment" },
-  { icon: "📄", label: "Invoice" },
-  { icon: "📝", label: "Policy Update" },
-  { icon: "📂", label: "Admin & Docs" },
-  { icon: "🏥", label: "GP Practices" },
-  { icon: "🏢", label: "PCN Networks" },
-  { icon: "🇬🇧", label: "NHS Providers" },
-  { icon: "🤖", label: "RPA Bots" },
+  { icon: "📄", label: "Clinic Letters" },
+  { icon: "🏥", label: "Discharge Summaries" },
+  { icon: "🔬", label: "Diagnostic Reports" },
+  { icon: "📋", label: "Review Queue" },
+  { icon: "🖥️", label: "Clinical Review" },
+  { icon: "🩺", label: "Patient History Context" },
+  { icon: "🏷️", label: "SNOMED CT Coding" },
+  { icon: "👤", label: "Human Approval" },
+  { icon: "🔗", label: "EMIS Web Integration" },
+  { icon: "🇬🇧", label: "UK GP Practices" },
 ];
 
 export default function SpecialtyChips() {
@@ -28,9 +28,9 @@ export default function SpecialtyChips() {
       <div className="site-container">
         <div className="animate-fadeInUp" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "32px" }}>
           <div>
-            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "8px", textTransform: "uppercase" }}>Specialties</span>
+            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "8px", textTransform: "uppercase" }}>Clinical Document Scope</span>
             <h2 style={{ fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2 }}>
-              What We Automate
+              Supported Correspondence &amp; Workflow Capabilities
             </h2>
           </div>
           <div style={{ display: "flex", gap: "8px" }}>

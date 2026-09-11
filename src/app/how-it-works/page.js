@@ -12,36 +12,26 @@ const detailedSteps = [
   {
     step: "02",
     title: "Information Extraction & Parsing",
-    desc: "The platform reads and processes the incoming document to automatically extract key clinical entities, diagnoses, procedures, medications, and patient identification numbers.",
+    desc: "The platform parses the document content to extract clinical entities, diagnoses, procedures, medications, and patient identification numbers.",
   },
   {
     step: "03",
     title: "Review Queue Placement",
-    desc: "Documents requiring action are organized into a central Review Queue, allowing practice teams to see pending document volume, processing status, and urgency.",
+    desc: "Incoming items enter a central Review Queue, giving practice teams complete visibility over document volume, processing status, and priority.",
   },
   {
     step: "04",
-    title: "Clinical Review Workspace Access",
-    desc: "Opening a document loads the Clinical Review workspace, presenting the original document side-by-side with extracted clinical entities and proposed actions.",
+    title: "Clinical Review & Patient History",
+    desc: "Opening a item loads the Clinical Review workspace, presenting original document, extracted facts, proposed SNOMED CT codes, and contextual Patient History side-by-side.",
   },
   {
     step: "05",
-    title: "Patient History Contextualization",
-    desc: "Relevant patient medical history and current active conditions are displayed alongside the document so the reviewer has complete context.",
+    title: "Human Approval & Verification",
+    desc: "An authorised practice staff member or clinician checks extracted details and SNOMED codes, making any required amendments before final sign-off.",
   },
   {
     step: "06",
-    title: "SNOMED CT Code Suggestion",
-    desc: "Ovotech maps identified clinical concepts to standard UK SNOMED CT terms and presents suggested codes for reviewer verification.",
-  },
-  {
-    step: "07",
-    title: "Human Review & Verification",
-    desc: "An authorised practice staff member or clinician checks the extracted details and SNOMED codes, making any required amendments before final sign-off.",
-  },
-  {
-    step: "08",
-    title: "Clinical Record Write-Back (EMIS Web)",
+    title: "EMIS Web Record Write-Back",
     desc: "Upon final approval, Ovotech writes structured clinical data and SNOMED CT codes directly into the patient's record via EMIS Web clinical system integration.",
   },
 ];
@@ -62,7 +52,7 @@ export default function HowItWorksPage() {
         <div className="site-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>Step-by-Step Workflow</span>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 38px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>The 8-Stage Document Processing Workflow</h2>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 38px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>The Core 6-Stage Document Processing Workflow</h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "1000px", margin: "0 auto" }}>

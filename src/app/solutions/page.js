@@ -67,11 +67,9 @@ export default function SolutionsPage() {
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", fontSize: "14px", fontWeight: 600, color: "#02ACEA" }}>
               <span>✓ Document Intake</span>
-              <span>✓ Extraction</span>
+              <span>✓ Information Extraction</span>
               <span>✓ Review Queue</span>
-              <span>✓ Clinical Review</span>
-              <span>✓ Patient History</span>
-              <span>✓ SNOMED Coding</span>
+              <span>✓ Clinical Review &amp; Patient History</span>
               <span>✓ Human Approval</span>
               <span>✓ EMIS Write-Back</span>
             </div>

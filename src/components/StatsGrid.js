@@ -2,20 +2,20 @@
 
 const stats = [
   {
-    value: "250+",
-    label: "Practices served",
+    value: "High Volume",
+    label: "Clinical Document Intake",
   },
   {
-    value: "3M+",
-    label: "Documents processed",
+    value: "Sub-2 Min",
+    label: "Letter Turnaround Time",
   },
   {
-    value: "100k+",
-    label: "Hours saved",
+    value: "FTE Released",
+    label: "Admin Capacity Recovered",
   },
   {
-    value: "10M+",
-    label: "Codes added",
+    value: "SNOMED CT",
+    label: "Assisted Coding Precision",
   },
 ];
 

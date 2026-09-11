@@ -6,8 +6,8 @@ const workflowSteps = [
   {
     number: "01",
     category: "DOCUMENT INTAKE",
-    title: "Clinical Document Ingestion",
-    description: "Incoming hospital correspondence (clinic letters, discharge summaries) enters the Ovotech workflow from EHR feeds or scanned documents.",
+    title: "Clinical Correspondence Ingestion",
+    description: "Incoming hospital correspondence (clinic letters, discharge summaries) enters the Ovotech workflow from EHR feeds or document repositories.",
     tag: "DOCUMENT RECEIVED — PDF / HL7 / FHIR",
     image: "/step1-intake.png",
     icon: (
@@ -22,8 +22,8 @@ const workflowSteps = [
   {
     number: "02",
     category: "INFORMATION EXTRACTION",
-    title: "Clinical Entity & Fact Extraction",
-    description: "The platform reads and parses incoming correspondence to extract diagnoses, medications, procedures, and patient NHS details side-by-side.",
+    title: "Clinical Entity & Fact Parsing",
+    description: "The platform reads and parses incoming correspondence to extract diagnoses, medications, procedures, and patient NHS identification.",
     tag: "ENTITIES MATCHED — DIAGNOSES & DRUGS",
     image: "/step2-extraction.png",
     icon: (
@@ -37,24 +37,26 @@ const workflowSteps = [
   },
   {
     number: "03",
-    category: "SNOMED CT CODING",
-    title: "Automated Code Suggestions",
-    description: "Extracted clinical concepts are mapped to official UK SNOMED CT codes and terms for rapid verification by authorised practice reviewers.",
-    tag: "SNOMED CT: 19829001 — VERIFIED",
-    image: "/step3-snomed.png",
+    category: "REVIEW QUEUE",
+    title: "Workload Review Queue Management",
+    description: "Organises incoming clinical correspondence into a structured queue with clear processing status, urgency indicators, and patient matching.",
+    tag: "QUEUE ITEM: PENDING REVIEW",
+    image: "/clinical-workspace-review.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
-        <line x1="7" y1="7" x2="7.01" y2="7"/>
+        <rect x="3" y="4" width="18" height="16" rx="2"/>
+        <line x1="7" y1="8" x2="17" y2="8"/>
+        <line x1="7" y1="12" x2="17" y2="12"/>
+        <line x1="7" y1="16" x2="13" y2="16"/>
       </svg>
     )
   },
   {
     number: "04",
-    category: "PATIENT CONTEXT",
-    title: "Patient Record Contextualisation",
-    description: "Presents historical medical records, active problems, and medication timeline alongside the document to confirm clinical appropriateness.",
-    tag: "EMIS CONTEXT: ACTIVE PROBLEM LIST",
+    category: "CLINICAL REVIEW",
+    title: "Clinical Review & Patient History",
+    description: "Single workspace presenting original letter, extracted facts, proposed SNOMED CT codes, and contextual Patient History side-by-side.",
+    tag: "PATIENT HISTORY CONTEXT DISPLAYED",
     image: "/step4-patient-history.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -64,9 +66,23 @@ const workflowSteps = [
   },
   {
     number: "05",
-    category: "SYSTEM WRITE-BACK",
-    title: "Human Approval & EMIS Integration",
-    description: "Authorised reviewer verifies and approves details with one click, writing structured clinical data directly into the patient's EMIS Web record.",
+    category: "HUMAN APPROVAL",
+    title: "Authorised Reviewer Sign-Off",
+    description: "Assisted workflow where authorized practice staff verify, adjust, and explicitly approve extracted data before any system commit.",
+    tag: "REVIEWER SIGN-OFF PENDING",
+    image: "/step3-snomed.png",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+        <line x1="7" y1="7" x2="7.01" y2="7"/>
+      </svg>
+    )
+  },
+  {
+    number: "06",
+    category: "EMIS WRITE-BACK",
+    title: "Structured EMIS Record Write-Back",
+    description: "Upon reviewer sign-off, approved clinical information and SNOMED CT codes write back directly into the EMIS Web patient record.",
     tag: "STATUS 200 — COMMITTED TO EMIS WEB",
     image: "/step5-emis-writeback.png",
     icon: (
@@ -140,11 +156,11 @@ export default function InteractiveWorkflowShowcase() {
             From incoming document to verified EMIS record in seconds.
           </h2>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
-            Click or watch the 5-step automated workflow preview in action below.
+            Click or watch the 6-step clinical document workflow preview in action below.
           </p>
         </div>
 
-        {/* 5 Step Selector Pill Bar (Mobile & Desktop) */}
+        {/* 6 Step Selector Pill Bar (Mobile & Desktop) */}
         <div
           style={{
             display: "flex",
@@ -197,7 +213,7 @@ export default function InteractiveWorkflowShowcase() {
             <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "12px", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#16a34a" }} />
-                <span>STEP {activeStep.number} OF 05</span>
+                <span>STEP {activeStep.number} OF 06</span>
               </div>
               <span style={{ color: "#02ACEA", letterSpacing: "1px", textTransform: "uppercase" }}>{activeStep.category}</span>
             </div>

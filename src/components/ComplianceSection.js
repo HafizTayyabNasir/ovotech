@@ -2,28 +2,28 @@
 
 const complianceCards = [
   {
-    badge: "NHS IG STANDARD",
+    badge: "NHS IG TOOLKIT",
     title: "DSPT Compliant",
-    desc: "Fully compliant with the NHS Data Security and Protection Toolkit (DSPT) standards for primary care organizations.",
+    desc: "Maintains full compliance with the NHS Data Security and Protection Toolkit (DSPT) for UK primary care data governance.",
     icon: "🛡️",
   },
   {
-    badge: "CLINICAL RISK MANAGEMENT",
-    title: "DCB0129 Approved",
-    desc: "Adheres to official UK DCB0129 clinical risk management standards with CSO oversight for health IT manufacturer safety.",
+    badge: "ASSESSMENT CRITERIA",
+    title: "DTAC Assessed",
+    desc: "Evaluated under the NHS Digital Technology Assessment Criteria (DTAC) covering clinical safety, data protection, and security.",
     icon: "🏥",
   },
   {
-    badge: "DATA PRIVACY",
-    title: "UK GDPR & DPA 2018",
-    desc: "Strict data processor controls, patient record confidentiality, and encrypted data transport standards.",
+    badge: "INFORMATION SECURITY",
+    title: "ISO 27001",
+    desc: "Certified Information Security Management System standards ensuring systematic encryption, access controls, and data integrity.",
     icon: "🔒",
   },
   {
-    badge: "CLINICAL SYSTEM INTEGRATION",
-    title: "EMIS Web Integration",
-    desc: "Structured write-back directly into EMIS Web patient records with complete audit logging and human reviewer sign-off.",
-    icon: "🔗",
+    badge: "CYBER GOVERNANCE",
+    title: "Cyber Essentials",
+    desc: "Validated operational cyber security hygiene, protecting clinical correspondence infrastructure against cyber threats.",
+    icon: "💻",
   },
 ];
 

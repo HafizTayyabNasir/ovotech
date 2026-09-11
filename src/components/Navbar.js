@@ -52,7 +52,7 @@ export default function Navbar() {
           { label: "Contact Us", href: "/contact", desc: "Get in touch with our team" },
         ]},
         { header: "Legal & Compliance", links: [
-          { label: "Security & Compliance", href: "/security-compliance", desc: "DSPT, DCB0129 & GDPR compliance" },
+          { label: "Security & Compliance", href: "/security-compliance", desc: "DSPT, DTAC, ISO 27001 & Cyber Essentials" },
           { label: "Privacy Policy", href: "/privacy-policy", desc: "How we handle patient data" },
           { label: "Terms & Conditions", href: "/terms", desc: "Our service agreement" },
         ]},

@@ -22,7 +22,7 @@ export default function CareersPage() {
         <Link href="/contact" style={{ padding: "8px 16px", display: "inline-block", background: "#02ACEA", color: "#fff", borderRadius: "8px", fontWeight: 600, fontSize: "14px" }}>Apply Now</Link>
       </div>
       <div style={{ border: "1px solid #E0E8F5", padding: "24px", borderRadius: "12px", marginBottom: "16px", background: "#fff" }}>
-        <h3 style={{ fontSize: "20px", color: "#0A1838", marginBottom: "8px" }}>RPA Engineer (UiPath/Automation Anywhere)</h3>
+        <h3 style={{ fontSize: "20px", color: "#0A1838", marginBottom: "8px" }}>Clinical Data &amp; Integration Engineer (EMIS Web / FHIR)</h3>
         <p style={{ color: "#64748B", marginBottom: "16px", fontSize: "14px" }}>Manchester / Hybrid • Full-time</p>
         <Link href="/contact" style={{ padding: "8px 16px", display: "inline-block", background: "#02ACEA", color: "#fff", borderRadius: "8px", fontWeight: 600, fontSize: "14px" }}>Apply Now</Link>
       </div>

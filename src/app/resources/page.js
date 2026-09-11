@@ -8,14 +8,14 @@ export default function ResourcesPage() {
     <>
       <PageHeader 
         title="Resources & Insights" 
-        description="Latest news, product updates, and insights on healthcare automation." 
+        description="Explore guides, clinical coding insights, and workflow resources for UK GP practices." 
       />
       
       <section className="container" style={{ padding: "80px 24px" }}>
         <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "28px", color: "#0A1838", marginBottom: "20px" }}>Resource Center</h2>
           <p style={{ color: "#475569", marginBottom: "40px" }}>
-            Explore our knowledge base to learn more about how RPA and AI are shaping the future of healthcare.
+            Explore our knowledge base to learn how clinical document processing, SNOMED CT coding, and EMIS Web write-back optimize practice workflows.
           </p>
           
           <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
