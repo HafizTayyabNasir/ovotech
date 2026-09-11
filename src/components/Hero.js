@@ -128,6 +128,9 @@ export default function Hero() {
             {/* Right Doctor Image Column */}
             <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 400px", minWidth: "300px", position: "relative", display: "flex", justifyContent: "center" }}>
               <div style={{ position: "relative", width: "100%", maxWidth: "460px" }}>
+            {/* Right Banner Image Column */}
+            <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 500px", minWidth: "300px", position: "relative", display: "flex", justifyContent: "center" }}>
+              <div style={{ position: "relative", width: "100%", maxWidth: "560px" }}>
                 {/* Sky blue background circle graphic */}
                 <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "380px", height: "380px", background: "rgba(2,172,234,0.12)", borderRadius: "50%", zIndex: 1 }} />
                 
@@ -135,12 +138,17 @@ export default function Hero() {
                 <div style={{ position: "absolute", top: "40px", left: "20px", fontSize: "28px", zIndex: 3 }}>📋</div>
                 <div style={{ position: "absolute", top: "60px", right: "20px", fontSize: "28px", zIndex: 3 }}>🩺</div>
                 <div style={{ position: "absolute", bottom: "80px", left: "10px", fontSize: "28px", zIndex: 3 }}>🏥</div>
+                <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "420px", height: "420px", background: "rgba(2,172,234,0.12)", borderRadius: "50%", zIndex: 1 }} />
 
                 {/* Doctor Image */}
+                {/* Banner Image */}
                 <img
                   src="/hero-doctor.png"
                   alt="Clinical Document Processing & Coding Platform"
                   style={{ width: "100%", height: "auto", position: "relative", zIndex: 2, display: "block", filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.1))" }}
+                  src="/hero-banner.jpg"
+                  alt="Ovotech Clinical Correspondence & Coding Platform"
+                  style={{ width: "100%", height: "auto", borderRadius: "20px", position: "relative", zIndex: 2, display: "block", boxShadow: "0 20px 40px rgba(9, 18, 34, 0.15)", border: "1px solid rgba(2, 172, 234, 0.2)" }}
                 />
               </div>
             </div>
