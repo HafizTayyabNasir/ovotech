@@ -4,36 +4,42 @@ import Link from "next/link";
 const coreProductAreas = [
   {
     id: "review-queue",
+    href: "/solutions/review-queue",
     icon: "📋",
     title: "Review Queue",
     desc: "A central workspace showing clinical documents requiring review, processing status, and patient info for systematic workload management.",
   },
   {
     id: "clinical-review",
+    href: "/solutions/clinical-review",
     icon: "🖥️",
     title: "Clinical Review Workspace",
     desc: "Presents original documents, extracted clinical info, SNOMED CT suggestions, and patient context in one workspace without screen switching.",
   },
   {
     id: "patient-history",
+    href: "/solutions/patient-history",
     icon: "🩺",
     title: "Patient History Context",
     desc: "Provides relevant patient record context alongside documents to verify whether extracted information and coding are appropriate.",
   },
   {
     id: "snomed-coding",
+    href: "/solutions/snomed-coding",
     icon: "🏷️",
     title: "SNOMED CT Coding Support",
     desc: "Identifies clinical concepts in documents and proposes appropriate SNOMED CT codes for reviewer verification and approval.",
   },
   {
     id: "emis-integration",
+    href: "/solutions/emis-integration",
     icon: "🔗",
     title: "EMIS Web Integration",
     desc: "Supports structured write-back of approved clinical information directly into the patient's record via EMIS Web integration.",
   },
   {
     id: "kpi-tracking",
+    href: "/solutions/kpi-tracking",
     icon: "📊",
     title: "Value & KPI Tracking",
     desc: "Demonstrates practice operational impact with estimated time saved, capacity released, and potential cost savings metrics.",
@@ -65,7 +71,7 @@ export default function Solutions() {
               </div>
               <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0f172a", marginBottom: "10px", lineHeight: 1.3 }}>{s.title}</h3>
               <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, marginBottom: "18px" }}>{s.desc}</p>
-              <Link href="/solutions" style={{ fontSize: "13px", fontWeight: 700, color: "#02ACEA", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+              <Link href={s.href} style={{ fontSize: "13px", fontWeight: 700, color: "#02ACEA", display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 Learn More <span>→</span>
               </Link>
             </div>

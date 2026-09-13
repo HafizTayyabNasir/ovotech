@@ -31,14 +31,14 @@ export default function Navbar() {
       label: "Solutions", href: "/solutions", key: "solutions",
       columns: [
         { header: "Core Capabilities", links: [
-          { label: "Review Queue", href: "/solutions#review-queue", desc: "Workload management for incoming clinical documents" },
-          { label: "Clinical Review Workspace", href: "/solutions#clinical-review", desc: "Unified document, extracted info & SNOMED CT coding" },
-          { label: "Patient History Context", href: "/solutions#patient-history", desc: "Relevant patient records alongside documents" },
+          { label: "Review Queue", href: "/solutions/review-queue", desc: "Workload management for incoming clinical documents" },
+          { label: "Clinical Review Workspace", href: "/solutions/clinical-review", desc: "Unified document, extracted info & SNOMED CT coding" },
+          { label: "Patient History Context", href: "/solutions/patient-history", desc: "Relevant patient records alongside documents" },
         ]},
         { header: "Integration & Governance", links: [
-          { label: "SNOMED CT Coding Support", href: "/solutions#snomed-coding", desc: "Assisted concept recognition & code suggestions" },
-          { label: "EMIS Web Integration", href: "/solutions#emis-integration", desc: "Structured write-back to patient clinical records" },
-          { label: "Value & KPI Tracking", href: "/solutions#kpi-tracking", desc: "Demonstrate time saved & released practice capacity" },
+          { label: "SNOMED CT Coding Support", href: "/solutions/snomed-coding", desc: "Assisted concept recognition & code suggestions" },
+          { label: "EMIS Web Integration", href: "/solutions/emis-integration", desc: "Structured write-back to patient clinical records" },
+          { label: "Value & KPI Tracking", href: "/solutions/kpi-tracking", desc: "Demonstrate time saved & released practice capacity" },
         ]},
       ],
       promo: { title: "EMIS Web Integration", text: "Seamless structured write-back to patient clinical records.", bg: "from-primary to-primary-dark" },
