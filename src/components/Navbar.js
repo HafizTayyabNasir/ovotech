@@ -143,7 +143,7 @@ export default function Navbar() {
                             {col.links.map((link, li) => (
                               <Link
                                 key={li} href={link.href}
-                                style={{ display: "block", padding: "10px 12px", borderRadius: "8px", transition: "background 0.2s" }}
+                                style={{ display: "block", padding: "10px 12px", borderRadius: "8px", transition: "background: 0.2s" }}
                                 className="hover:bg-[#F4F7FC]"
                               >
                                 <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838", display: "block" }}>{link.label}</span>

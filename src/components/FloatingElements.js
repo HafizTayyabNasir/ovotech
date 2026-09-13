@@ -35,13 +35,13 @@ export default function FloatingElements() {
             <div style={{ display: "flex", gap: "12px", flexShrink: 0 }}>
               <button
                 onClick={() => setCookieAccepted(true)}
-                style={{ background: "#362D7E", color: "#fff", fontSize: "13px", fontWeight: 600, padding: "8px 24px", borderRadius: "8px", border: "none", cursor: "pointer", transition: "background 0.2s" }}
+                style={{ background: "#362D7E", color: "#fff", fontSize: "13px", fontWeight: 600, padding: "8px 24px", borderRadius: "8px", border: "none", cursor: "pointer", transition: "background: 0.2s" }}
               >
                 Accept
               </button>
               <button
                 onClick={() => setCookieAccepted(true)}
-                style={{ background: "#fff", border: "1px solid #E8E8EF", color: "#1A1A1A", fontSize: "13px", fontWeight: 500, padding: "8px 24px", borderRadius: "8px", cursor: "pointer", transition: "background 0.2s" }}
+                style={{ background: "#fff", border: "1px solid #E8E8EF", color: "#1A1A1A", fontSize: "13px", fontWeight: 500, padding: "8px 24px", borderRadius: "8px", cursor: "pointer", transition: "background: 0.2s" }}
               >
                 Decline
               </button>

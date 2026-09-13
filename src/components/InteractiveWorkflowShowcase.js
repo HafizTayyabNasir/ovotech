@@ -261,7 +261,7 @@ export default function InteractiveWorkflowShowcase() {
                     justifyContent: "center",
                     cursor: "pointer",
                     fontSize: "16px",
-                    transition: "background 0.2s"
+                    transition: "background: 0.2s"
                   }}
                 >
                   ‹
@@ -281,7 +281,7 @@ export default function InteractiveWorkflowShowcase() {
                     justifyContent: "center",
                     cursor: "pointer",
                     fontSize: "16px",
-                    transition: "background 0.2s"
+                    transition: "background: 0.2s"
                   }}
                 >
                   ›

@@ -23,10 +23,10 @@ export default function Newsletter() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={{ flex: "1 1 240px", padding: "14px 16px", borderRadius: "12px", border: "1px solid #e2e8f5", background: "#fff", fontSize: "14px", outline: "none", transition: "border 0.2s" }}
+              style={{ flex: "1 1 240px", padding: "14px 16px", borderRadius: "12px", border: "1px solid #e2e8f5", background: "#fff", fontSize: "14px", outline: "none", transition: "border: 0.2s" }}
               required
             />
-            <button type="submit" style={{ flexShrink: 0, background: "#02ACEA", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", border: "none", cursor: "pointer", transition: "background 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#0284C7"} onMouseLeave={e => e.currentTarget.style.background = "#02ACEA"}>
+            <button type="submit" style={{ flexShrink: 0, background: "#02ACEA", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", border: "none", cursor: "pointer", transition: "background: 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#0284C7"} onMouseLeave={e => e.currentTarget.style.background = "#02ACEA"}>
               Subscribe
             </button>
           </form>

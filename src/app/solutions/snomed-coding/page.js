@@ -94,7 +94,7 @@ export default function SnomedCodingPage() {
         <div className="site-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ fontSize: "12px", fontWeight: 700, color: "#02ACEA", textTransform: "uppercase", letterSpacing: "1.5px" }}>Coding Capabilities</span>
-            <h2 style={{ fontSize: "clamp(26px, 3vw, 36px)", fontWeight 800, color: "#0A1838", marginTop: "8px" }}>Primary Care Standard Clinical Coding</h2>
+            <h2 style={{ fontSize: "clamp(26px, 3vw, 36px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>Primary Care Standard Clinical Coding</h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "28px" }}>
@@ -103,7 +103,7 @@ export default function SnomedCodingPage() {
                 <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(2,172,234,0.12)", fontSize: "24px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
                   {c.icon}
                 </div>
-                <h3 style={{ fontSize: "18px", fontWeight 800, color: "#0A1838", marginBottom: "10px" }}>{c.title}</h3>
+                <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0A1838", marginBottom: "10px" }}>{c.title}</h3>
                 <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6 }}>{c.desc}</p>
               </div>
             ))}
@@ -115,7 +115,7 @@ export default function SnomedCodingPage() {
       <section style={{ padding: "60px 0", background: "#0F1E36", color: "#FFFFFF" }}>
         <div className="site-container" style={{ textAlign: "center" }}>
           <span style={{ fontSize: "11px", fontWeight: 700, color: "#02ACEA", textTransform: "uppercase", letterSpacing: "1.5px" }}>Next Solution Module</span>
-          <h3 style={{ fontSize: "24px", fontWeight 800, marginTop: "8px", marginBottom: "20px", color: "#FFFFFF" }}>Explore EMIS Web Integration</h3>
+          <h3 style={{ fontSize: "24px", fontWeight: 800, marginTop: "8px", marginBottom: "20px", color: "#FFFFFF" }}>Explore EMIS Web Integration</h3>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "560px", margin: "0 auto 28px" }}>
             See how verified SNOMED CT codes are written back directly into patient records with full audit trail logging.
           </p>

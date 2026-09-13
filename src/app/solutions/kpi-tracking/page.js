@@ -58,10 +58,10 @@ export default function KpiTrackingPage() {
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: 600, color: "#0A1838" }}>
                   <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> Real-time document backlog &amp; throughput monitoring
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight 600, color: "#0A1838" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: 600, color: "#0A1838" }}>
                   <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> Automated ROI &amp; hours-saved capacity calculations
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight 600, color: "#0A1838" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: 600, color: "#0A1838" }}>
                   <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> One-click CQC inspection audit exports
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function KpiTrackingPage() {
                 <img src="/hero-tech.png" alt="Analytics Dashboard Interface" style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }} />
               </div>
               <div style={{ position: "absolute", top: "24px", right: "-12px", background: "#FFFFFF", padding: "14px 20px", borderRadius: "16px", boxShadow: "0 12px 35px rgba(0,0,0,0.12)", border: "1px solid #E0E8F5" }}>
-                <div style={{ fontSize: "12px", fontWeight 800, color: "#02ACEA" }}>Weekly Impact</div>
+                <div style={{ fontSize: "12px", fontWeight: 800, color: "#02ACEA" }}>Weekly Impact</div>
                 <div style={{ fontSize: "16px", fontWeight: 800, color: "#0A1838" }}>+32 Hrs Released</div>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function KpiTrackingPage() {
         <div className="site-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ fontSize: "12px", fontWeight: 700, color: "#02ACEA", textTransform: "uppercase", letterSpacing: "1.5px" }}>Analytics Highlights</span>
-            <h2 style={{ fontSize: "clamp(26px, 3vw, 36px)", fontWeight 800, color: "#0A1838", marginTop: "8px" }}>Data-Driven Practice Management</h2>
+            <h2 style={{ fontSize: "clamp(26px, 3vw, 36px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>Data-Driven Practice Management</h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "28px" }}>
@@ -103,7 +103,7 @@ export default function KpiTrackingPage() {
                 <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(2,172,234,0.12)", fontSize: "24px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
                   {c.icon}
                 </div>
-                <h3 style={{ fontSize: "18px", fontWeight 800, color: "#0A1838", marginBottom: "10px" }}>{c.title}</h3>
+                <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0A1838", marginBottom: "10px" }}>{c.title}</h3>
                 <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6 }}>{c.desc}</p>
               </div>
             ))}
@@ -115,7 +115,7 @@ export default function KpiTrackingPage() {
       <section style={{ padding: "60px 0", background: "#0F1E36", color: "#FFFFFF" }}>
         <div className="site-container" style={{ textAlign: "center" }}>
           <span style={{ fontSize: "11px", fontWeight: 700, color: "#02ACEA", textTransform: "uppercase", letterSpacing: "1.5px" }}>Complete Platform Suite</span>
-          <h3 style={{ fontSize: "24px", fontWeight 800, marginTop: "8px", marginBottom: "20px", color: "#FFFFFF" }}>Ready to Experience Ovotech in Your Practice?</h3>
+          <h3 style={{ fontSize: "24px", fontWeight: 800, marginTop: "8px", marginBottom: "20px", color: "#FFFFFF" }}>Ready to Experience Ovotech in Your Practice?</h3>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "560px", margin: "0 auto 28px" }}>
             Get in touch with our UK clinical workflow specialists for a customized walkthrough and trial for your GP practice.
           </p>

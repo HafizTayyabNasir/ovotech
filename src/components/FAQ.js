@@ -39,7 +39,7 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                   style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 0", background: "none", border: "none", textAlign: "left", cursor: "pointer" }}
                 >
-                  <span style={{ fontSize: "16px", fontWeight: 600, color: openIndex === i ? "#02ACEA" : "#0f172a", paddingRight: "16px", transition: "color 0.2s" }}>
+                  <span style={{ fontSize: "16px", fontWeight: 600, color: openIndex === i ? "#02ACEA" : "#0f172a", paddingRight: "16px", transition: "color: 0.2s" }}>
                     {faq.q}
                   </span>
                   <div style={{ width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: openIndex === i ? "#02ACEA" : "#e2e8f5", color: openIndex === i ? "#fff" : "#0f172a", transition: "all 0.3s", transform: openIndex === i ? "rotate(45deg)" : "rotate(0)" }}>

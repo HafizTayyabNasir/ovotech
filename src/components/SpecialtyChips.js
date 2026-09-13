@@ -34,10 +34,10 @@ export default function SpecialtyChips() {
             </h2>
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
-            <button onClick={() => scroll(-1)} style={{ width: "40px", height: "40px", borderRadius: "50%", border: "1px solid #e2e8f5", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f8fafc"} onMouseLeave={e => e.currentTarget.style.background = "#fff"}>
+            <button onClick={() => scroll(-1)} style={{ width: "40px", height: "40px", borderRadius: "50%", border: "1px solid #e2e8f5", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "background: 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f8fafc"} onMouseLeave={e => e.currentTarget.style.background = "#fff"}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
-            <button onClick={() => scroll(1)} style={{ width: "40px", height: "40px", borderRadius: "50%", border: "1px solid #e2e8f5", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f8fafc"} onMouseLeave={e => e.currentTarget.style.background = "#fff"}>
+            <button onClick={() => scroll(1)} style={{ width: "40px", height: "40px", borderRadius: "50%", border: "1px solid #e2e8f5", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "background: 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f8fafc"} onMouseLeave={e => e.currentTarget.style.background = "#fff"}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
             </button>
           </div>
