@@ -101,8 +101,10 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex md:items-center md:gap-1.5">
+        <ul className="hidden md:flex md:items-center md:gap-1.5 h-full">
           {navItems.map((item) => (
             <li key={item.key} className="relative group md:static">
+            <li key={item.key} className="relative group md:static h-full flex items-center">
               <Link
                 href={item.href}
                 className="flex items-center gap-1.5 transition-all"
@@ -126,6 +128,7 @@ export default function Navbar() {
               {item.columns && (
                 <div
                   className="absolute top-full left-0 w-full opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto"
+                  className="absolute top-full left-0 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto before:content-[''] before:absolute before:-top-6 before:left-0 before:w-full before:h-6 before:block"
                   style={{
                     background: "#fff", borderRadius: "0 0 16px 16px",
                     boxShadow: "0 25px 50px rgba(0,0,0,0.12)",
