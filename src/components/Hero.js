@@ -59,12 +59,19 @@ export default function Hero() {
               <stop offset="0%" stopColor="#0B2545" stopOpacity="0.82" />
               <stop offset="55%" stopColor="#134074" stopOpacity="0.72" />
               <stop offset="100%" stopColor="#02ACEA" stopOpacity="0.55" />
+              <stop offset="0%" stopColor="#07152B" stopOpacity="0.94" />
+              <stop offset="50%" stopColor="#0B2545" stopOpacity="0.88" />
+              <stop offset="80%" stopColor="#134074" stopOpacity="0.80" />
+              <stop offset="100%" stopColor="#02ACEA" stopOpacity="0.65" />
             </linearGradient>
 
             <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#02ACEA" stopOpacity="0.45" />
               <stop offset="70%" stopColor="rgba(2, 172, 234, 0.2)" stopOpacity="0.2" />
               <stop offset="100%" stopColor="rgba(11, 37, 69, 0)" stopOpacity="0" />
+              <stop offset="0%" stopColor="#0B2545" stopOpacity="0.60" />
+              <stop offset="60%" stopColor="rgba(2, 172, 234, 0.3)" stopOpacity="0.30" />
+              <stop offset="100%" stopColor="rgba(7, 21, 43, 0)" stopOpacity="0" />
             </linearGradient>
           </defs>
 
