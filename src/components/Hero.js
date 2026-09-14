@@ -44,31 +44,87 @@ export default function Hero() {
 
   return (
     <>
-      <section style={{ background: "linear-gradient(135deg, #EBF6FF 0%, #FFFFFF 50%, #E6F4FE 100%)", paddingTop: "60px", paddingBottom: "60px", position: "relative", overflow: "hidden" }}>
-        {/* Decorative Ambient Blue Glows */}
-        <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "450px", height: "450px", background: "rgba(2,172,234,0.12)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: "350px", height: "350px", background: "rgba(2,172,234,0.08)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
+      <section style={{ position: "relative", minHeight: "680px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#09132B" }}>
+        {/* Background Video Autoplay */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: 1,
+            opacity: 0.85
+          }}
+        >
+          <source src="/HomeBanner.mp4" type="video/mp4" />
+        </video>
+
+        {/* Translucent Dark Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(9, 19, 43, 0.45)",
+            zIndex: 2
+          }}
+        />
+
+        {/* Curved Brand Gradient Overlay (inspired by reference design, using Ovotech brand blues) */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            width: "62%",
+            background: "linear-gradient(135deg, rgba(9, 19, 43, 0.96) 0%, rgba(15, 30, 54, 0.92) 70%, rgba(2, 172, 234, 0.35) 100%)",
+            clipPath: "ellipse(100% 120% at 0% 50%)",
+            zIndex: 3,
+            backdropFilter: "blur(4px)"
+          }}
+          className="hidden md:block"
+        />
+
+        {/* Mobile Full Gradient Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(9, 19, 43, 0.95) 0%, rgba(15, 30, 54, 0.85) 100%)",
+            zIndex: 3
+          }}
+          className="md:hidden"
+        />
+
+        {/* Ambient Cyan Glow Accents */}
+        <div style={{ position: "absolute", top: "-100px", left: "-100px", width: "450px", height: "450px", background: "rgba(2,172,234,0.2)", borderRadius: "50%", filter: "blur(100px)", pointerEvents: "none", zIndex: 4 }} />
 
         <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
             <div className="animate-fadeInLeft" style={{ flex: "1 1 520px", minWidth: "300px" }}>
-              <span style={{ display: "inline-block", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px" }}>
+              <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
               </span>
 
-              <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.15, marginBottom: "20px", color: "#0B193C" }}>
+              <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.15, marginBottom: "20px", color: "#FFFFFF" }}>
                 Clinical Correspondence &amp; Coding Platform for
                 <br />
                 <span style={{ color: "#02ACEA", display: "inline-block" }}>{text}</span>
                 <span className="animate-blink" style={{ fontWeight: 300, color: "#02ACEA" }}>|</span>
               </h1>
 
-              <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.7, marginBottom: "16px", maxWidth: "560px" }}>
+              <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: "16px", maxWidth: "580px" }}>
                 Ovotech brings clinical document intake, entity extraction, review queues, clinical review, patient history context, and EMIS Web write-back into one unified platform for UK GP practices.
               </p>
 
-              <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.7, marginBottom: "32px", maxWidth: "560px" }}>
+              <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "32px", maxWidth: "580px" }}>
                 Designed specifically around UK primary care correspondence, our assisted SNOMED CT coding workspace empowers practice teams to clear backlogs while keeping human approval central to every record write-back.
               </p>
 
@@ -81,7 +137,7 @@ export default function Hero() {
                     placeholder="Name"
                     value={formData.name}
                     onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.name ? "#ef4444" : "#02ACEA"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(2,172,234,0.08)" }}
+                    style={{ flex: "1 1 160px", padding: "14px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.name ? "#ef4444" : "rgba(2,172,234,0.4)"}`, background: "rgba(255,255,255,0.95)", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}
                   />
                   <input
                     type="email"
@@ -89,7 +145,7 @@ export default function Hero() {
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.email ? "#ef4444" : "#02ACEA"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(2,172,234,0.08)" }}
+                    style={{ flex: "1 1 160px", padding: "14px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.email ? "#ef4444" : "rgba(2,172,234,0.4)"}`, background: "rgba(255,255,255,0.95)", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}
                   />
                   <input
                     type="tel"
@@ -97,7 +153,7 @@ export default function Hero() {
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "12px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.phone ? "#ef4444" : "#02ACEA"}`, background: "#FFFFFF", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 2px 8px rgba(2,172,234,0.08)" }}
+                    style={{ flex: "1 1 160px", padding: "14px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.phone ? "#ef4444" : "rgba(2,172,234,0.4)"}`, background: "rgba(255,255,255,0.95)", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}
                   />
                 </div>
 
@@ -114,7 +170,7 @@ export default function Hero() {
                     borderRadius: "30px",
                     border: "none",
                     cursor: "pointer",
-                    boxShadow: "0 6px 20px rgba(2,172,234,0.35)",
+                    boxShadow: "0 6px 20px rgba(2,172,234,0.4)",
                     transition: "all 0.3s ease"
                   }}
                 >
@@ -123,18 +179,50 @@ export default function Hero() {
               </form>
             </div>
 
-            {/* Right Banner Image Column */}
-            <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 500px", minWidth: "300px", position: "relative", display: "flex", justifyContent: "center" }}>
-              <div style={{ position: "relative", width: "100%", maxWidth: "560px" }}>
-                {/* Sky blue background circle graphic */}
-                <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "420px", height: "420px", background: "rgba(2,172,234,0.12)", borderRadius: "50%", zIndex: 1 }} />
+            {/* Right Side Glass Feature Badge / Video Accent Column */}
+            <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 440px", minWidth: "300px", position: "relative", display: "flex", justifyContent: "flex-end" }}>
+              <div
+                style={{
+                  background: "rgba(9, 19, 43, 0.65)",
+                  backdropFilter: "blur(16px)",
+                  borderRadius: "24px",
+                  padding: "36px",
+                  border: "1px solid rgba(2, 172, 234, 0.3)",
+                  boxShadow: "0 20px 50px rgba(0, 0, 0, 0.4)",
+                  maxWidth: "460px",
+                  width: "100%",
+                  color: "#FFFFFF"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(2,172,234,0.2)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>
+                    🛡️
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#FFFFFF", margin: 0 }}>
+                      EMIS Web Write-Back
+                    </h3>
+                    <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px" }}>
+                      Human Verified Workflow
+                    </span>
+                  </div>
+                </div>
 
-                {/* Banner Image */}
-                <img
-                  src="/hero-banner.jpg"
-                  alt="Ovotech Clinical Correspondence & Coding Platform"
-                  style={{ width: "100%", height: "auto", borderRadius: "20px", position: "relative", zIndex: 2, display: "block", boxShadow: "0 20px 40px rgba(9, 18, 34, 0.15)", border: "1px solid rgba(2, 172, 234, 0.2)" }}
-                />
+                <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.8)", lineHeight: 1.6, marginBottom: "20px" }}>
+                  Automated clinical concept extraction with 100% human-in-the-loop verification before structured record commit.
+                </p>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px", borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: "16px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>
+                    <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> Sub-2 minute letter turnaround
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>
+                    <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> Standardised SNOMED CT coding
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>
+                    <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> DSPT &amp; DTAC NHS Compliant
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -142,7 +230,7 @@ export default function Hero() {
       </section>
 
       {/* Full-width Cyan Workflow Strip below Hero */}
-      <div style={{ background: "#02ACEA", color: "#FFFFFF", padding: "18px 0", borderTop: "1px solid rgba(255,255,255,0.2)" }}>
+      <div style={{ background: "#02ACEA", color: "#FFFFFF", padding: "18px 0", borderTop: "1px solid rgba(255,255,255,0.2)", position: "relative", zIndex: 10 }}>
         <div className="site-container">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-0 md:divide-x md:divide-white/30 text-[12px] sm:text-[13px] font-bold text-center">
             <div className="flex items-center justify-center gap-2 px-2">
