@@ -12,39 +12,39 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section style={{ padding: "110px 0", background: "#FFFFFF" }}>
+    <section style={{ padding: "100px 0", background: "#f8fafc" }}>
       <div className="site-container">
         <div style={{ display: "flex", flexWrap: "wrap", gap: "60px", alignItems: "flex-start" }}>
           {/* Left */}
           <div className="animate-fadeInLeft" style={{ flex: "0 1 340px", minWidth: "280px" }}>
-            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase", background: "rgba(2,172,234,0.1)", padding: "4px 14px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.25)" }}>How Ovotech Works</span>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0F172A", lineHeight: 1.18, marginBottom: "20px" }}>
+            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>How Ovotech Works</span>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2, marginBottom: "20px" }}>
               Structured.<br />Assisted.<br />Integrated.
             </h2>
             <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>
               Ovotech brings the entire clinical document lifecycle into one structured workflow—giving GP practice teams visibility, consistency, and control.
             </p>
-            <Link href="/how-it-works" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.color = "#FFFFFF"; }}
+            <Link href="/how-it-works" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.color = "#fff"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#02ACEA"; }}
             >
               Detailed Workflow Guide <span>→</span>
             </Link>
           </div>
 
-          {/* Right — Connected Steps */}
+          {/* Right — Steps */}
           <div style={{ flex: "1 1 500px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
             {steps.map((s, i) => (
-              <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#FFFFFF", borderRadius: "20px", padding: "28px 22px", border: "1px solid #E2E8F5", textAlign: "center", transition: "transform 0.3s, box-shadow 0.3s, border-color 0.3s", cursor: "default" }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 12px 30px rgba(2,172,234,0.12)"; e.currentTarget.style.borderColor = "#02ACEA"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "#E2E8F5"; }}
+              <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "24px 20px", border: "1px solid #e2e8f5", textAlign: "center", transition: "transform 0.3s, box-shadow 0.3s", cursor: "default" }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)"; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
               >
-                <div style={{ width: "32px", height: "32px", background: "#02ACEA", color: "#FFFFFF", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800, margin: "0 auto 14px", boxShadow: "0 4px 12px rgba(2,172,234,0.3)" }}>
+                <div style={{ width: "32px", height: "32px", background: "#02ACEA", color: "#fff", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 700, margin: "0 auto 12px" }}>
                   {s.num}
                 </div>
                 <div style={{ fontSize: "30px", marginBottom: "12px" }}>{s.icon}</div>
-                <h4 style={{ fontSize: "15px", fontWeight: 800, color: "#0F172A", marginBottom: "6px" }}>{s.title}</h4>
-                <p style={{ fontSize: "13px", color: "#64748B", lineHeight: 1.5 }}>{s.desc}</p>
+                <h4 style={{ fontSize: "15px", fontWeight: 700, color: "#0f172a", marginBottom: "6px" }}>{s.title}</h4>
+                <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.5 }}>{s.desc}</p>
               </div>
             ))}
           </div>

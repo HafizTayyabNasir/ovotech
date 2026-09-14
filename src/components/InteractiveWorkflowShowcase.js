@@ -98,6 +98,7 @@ export default function InteractiveWorkflowShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Auto advance steps every 4.5 seconds unless paused by user interaction
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -126,85 +127,90 @@ export default function InteractiveWorkflowShowcase() {
   return (
     <section
       style={{
-        background: "#FFFFFF",
-        color: "#0F172A",
-        padding: "110px 0",
+        background: "#091222",
+        color: "#FFFFFF",
+        padding: "90px 0",
         position: "relative",
         overflow: "hidden"
       }}
     >
+      {/* Background grid pattern */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "radial-gradient(rgba(2, 172, 234, 0.12) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          pointerEvents: "none",
+          opacity: 0.5
+        }}
+      />
+
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Section Header */}
-        <div style={{ textAlign: "center", marginBottom: "52px" }}>
-          <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.1)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(2, 172, 234, 0.25)" }}>
+        <div style={{ textAlign: "center", marginBottom: "44px" }}>
+          <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(2, 172, 234, 0.3)" }}>
             OVOTECH WORKFLOW : HOW IT WORKS
           </span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, color: "#0F172A", letterSpacing: "-0.5px", lineHeight: 1.18, maxWidth: "800px", margin: "0 auto 16px" }}>
+          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 12px" }}>
             From incoming document to verified EMIS record in seconds.
           </h2>
-          <p style={{ fontSize: "16px", color: "#475569", maxWidth: "640px", margin: "0 auto" }}>
-            Explore the connected 6-step clinical document workflow preview in action.
+          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
+            Click or watch the 6-step clinical document workflow preview in action below.
           </p>
         </div>
 
-        {/* 6 Step Selector Pill Bar with Visual Flow Connection */}
-        <div style={{ position: "relative", marginBottom: "40px" }}>
-          {/* Subtle connecting line */}
-          <div style={{ position: "absolute", top: "50%", left: "10%", right: "10%", height: "2px", background: "#E2E8F5", zIndex: 1, transform: "translateY(-50%)" }} className="hidden md:block" />
-
-          <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              position: "relative",
-              zIndex: 2
-            }}
-          >
-            {workflowSteps.map((step, i) => {
-              const isActive = i === activeIndex;
-              return (
-                <button
-                  key={step.number}
-                  onClick={() => handleStepClick(i)}
-                  style={{
-                    background: isActive ? "#02ACEA" : "#FFFFFF",
-                    color: isActive ? "#FFFFFF" : "#475569",
-                    border: isActive ? "2px solid #02ACEA" : "1px solid #E2E8F5",
-                    padding: "10px 20px",
-                    borderRadius: "20px",
-                    fontSize: "13px",
-                    fontWeight: isActive ? 700 : 600,
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    boxShadow: isActive ? "0 8px 20px rgba(2,172,234,0.3)" : "0 2px 6px rgba(0,0,0,0.03)"
-                  }}
-                >
-                  <span style={{ color: isActive ? "#FFFFFF" : "#02ACEA", fontWeight: 800 }}>{step.number}</span>
-                  <span>{step.category}</span>
-                </button>
-              );
-            })}
-          </div>
+        {/* 6 Step Selector Pill Bar (Mobile & Desktop) */}
+        <div
+          style={{
+            display: "flex",
+            gap: "8px",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            marginBottom: "32px"
+          }}
+        >
+          {workflowSteps.map((step, i) => {
+            const isActive = i === activeIndex;
+            return (
+              <button
+                key={step.number}
+                onClick={() => handleStepClick(i)}
+                style={{
+                  background: isActive ? "#02ACEA" : "rgba(255,255,255,0.06)",
+                  color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.7)",
+                  border: isActive ? "1px solid #02ACEA" : "1px solid rgba(255,255,255,0.1)",
+                  padding: "8px 16px",
+                  borderRadius: "20px",
+                  fontSize: "13px",
+                  fontWeight: isActive ? 700 : 500,
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px"
+                }}
+              >
+                <span style={{ color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.4)", fontWeight: 800 }}>{step.number}</span>
+                <span>{step.category}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Main 2-Column Showcase */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "40px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "36px",
             alignItems: "center"
           }}
         >
-          {/* Left Column: Clinical Browser Visual Showcase */}
-          <div style={{ background: "#FFFFFF", borderRadius: "20px", border: "1px solid #E2E8F5", overflow: "hidden", boxShadow: "0 20px 48px rgba(2,172,234,0.12)" }}>
+          {/* Left Column: UI Workspace Screen Card */}
+          <div style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "24px", border: "1px solid rgba(255, 255, 255, 0.12)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
             {/* Status Bar */}
-            <div style={{ background: "#F8FAFC", padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #E2E8F5", fontSize: "12px", color: "#475569", fontWeight: 700 }}>
+            <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "12px", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#16a34a" }} />
                 <span>STEP {activeStep.number} OF 06</span>
@@ -213,14 +219,14 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
-            <div style={{ position: "relative", minHeight: "360px", background: "#F8FAFC" }}>
+            <div style={{ position: "relative", height: "340px", background: "#050B18" }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep.number}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.3 }}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.35 }}
                   style={{ width: "100%", height: "100%" }}
                 >
                   <img
@@ -233,33 +239,30 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Bottom Controls Bar */}
-            <div style={{ background: "#F8FAFC", padding: "14px 20px", borderTop: "1px solid #E2E8F5", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#02ACEA", fontWeight: 700, display: "flex", alignItems: "center", gap: "8px" }}>
+            <div style={{ background: "rgba(15, 30, 54, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#02ACEA", display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ color: "#16a34a" }}>▶</span> {activeStep.tag}
               </div>
 
               {/* Prev / Next Navigation Arrows */}
-              <div style={{ display: "flex", gap: "8px" }}>
+              <div style={{ display: "flex", gap: "6px" }}>
                 <button
                   onClick={handlePrev}
                   aria-label="Previous step"
                   style={{
-                    background: "#FFFFFF",
-                    border: "1px solid #E2E8F5",
-                    color: "#0F172A",
+                    background: "rgba(255,255,255,0.1)",
+                    border: "none",
+                    color: "#FFF",
                     borderRadius: "8px",
-                    width: "34px",
-                    height: "34px",
+                    width: "32px",
+                    height: "32px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     cursor: "pointer",
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    transition: "all 0.2s"
+                    fontSize: "16px",
+                    transition: "background: 0.2s"
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#02ACEA"; e.currentTarget.style.color = "#02ACEA"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = "#E2E8F5"; e.currentTarget.style.color = "#0F172A"; }}
                 >
                   ‹
                 </button>
@@ -267,22 +270,19 @@ export default function InteractiveWorkflowShowcase() {
                   onClick={handleNext}
                   aria-label="Next step"
                   style={{
-                    background: "#FFFFFF",
-                    border: "1px solid #E2E8F5",
-                    color: "#0F172A",
+                    background: "rgba(255,255,255,0.1)",
+                    border: "none",
+                    color: "#FFF",
                     borderRadius: "8px",
-                    width: "34px",
-                    height: "34px",
+                    width: "32px",
+                    height: "32px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     cursor: "pointer",
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    transition: "all 0.2s"
+                    fontSize: "16px",
+                    transition: "background: 0.2s"
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#02ACEA"; e.currentTarget.style.color = "#02ACEA"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = "#E2E8F5"; e.currentTarget.style.color = "#0F172A"; }}
                 >
                   ›
                 </button>
@@ -290,8 +290,8 @@ export default function InteractiveWorkflowShowcase() {
             </div>
           </div>
 
-          {/* Right Column: Clean Interactive Step List */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {/* Right Column: 5 Interactive Cards with Progress Line */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {workflowSteps.map((step, index) => {
               const isActive = index === activeIndex;
               return (
@@ -299,15 +299,15 @@ export default function InteractiveWorkflowShowcase() {
                   key={step.number}
                   onClick={() => handleStepClick(index)}
                   style={{
-                    background: isActive ? "#F0F9FF" : "#FFFFFF",
-                    color: "#0F172A",
+                    background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
+                    color: isActive ? "#091222" : "#FFFFFF",
                     borderRadius: "16px",
-                    padding: "18px 22px",
-                    border: isActive ? "2px solid #02ACEA" : "1px solid #E2E8F5",
+                    padding: "16px 20px",
+                    border: isActive ? "2px solid #02ACEA" : "1px solid rgba(255, 255, 255, 0.08)",
                     cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    boxShadow: isActive ? "0 10px 24px rgba(2,172,234,0.15)" : "0 2px 6px rgba(0,0,0,0.02)",
-                    transform: isActive ? "translateX(4px)" : "none",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    boxShadow: isActive ? "0 16px 36px rgba(0, 0, 0, 0.4)" : "none",
+                    transform: isActive ? "translateX(6px)" : "none",
                     position: "relative",
                     overflow: "hidden"
                   }}
@@ -332,10 +332,10 @@ export default function InteractiveWorkflowShowcase() {
                     <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                       <div
                         style={{
-                          width: "30px",
-                          height: "30px",
+                          width: "28px",
+                          height: "28px",
                           borderRadius: "8px",
-                          background: isActive ? "#02ACEA" : "rgba(2,172,234,0.1)",
+                          background: isActive ? "#091222" : "rgba(255,255,255,0.1)",
                           color: isActive ? "#FFFFFF" : "#02ACEA",
                           display: "flex",
                           alignItems: "center",
@@ -344,17 +344,17 @@ export default function InteractiveWorkflowShowcase() {
                       >
                         {step.icon}
                       </div>
-                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: "#02ACEA" }}>
+                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: isActive ? "#02ACEA" : "#02ACEA" }}>
                         {step.category}
                       </span>
                     </div>
 
-                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#02ACEA" : "#94A3B8" }}>
+                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#02ACEA" : "rgba(255,255,255,0.3)" }}>
                       {step.number}
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "16px", fontWeight: 800, color: "#0F172A", marginBottom: "4px" }}>
+                  <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#091222" : "#FFFFFF", marginBottom: "2px" }}>
                     {step.title}
                   </h3>
 
@@ -362,8 +362,8 @@ export default function InteractiveWorkflowShowcase() {
                     <motion.p
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
-                      transition={{ duration: 0.25 }}
-                      style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, marginTop: "8px" }}
+                      transition={{ duration: 0.3 }}
+                      style={{ fontSize: "13px", color: "#555555", lineHeight: 1.5, marginTop: "6px" }}
                     >
                       {step.description}
                     </motion.p>

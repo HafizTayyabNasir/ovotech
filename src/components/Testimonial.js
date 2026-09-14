@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function Testimonial() {
   return (
-    <section style={{ padding: "110px 0", background: "#FFFFFF" }}>
+    <section style={{ padding: "100px 0", background: "#fff" }}>
       <div className="site-container">
-        <div className="animate-fadeInUp" style={{ background: "#F0F9FF", borderRadius: "24px", padding: "52px 48px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px", border: "1px solid #BAE6FD", boxShadow: "0 10px 30px rgba(2,172,234,0.08)" }}>
+        <div className="animate-fadeInUp" style={{ background: "linear-gradient(135deg, #f8fafc 0%, #EBF3FA 100%)", borderRadius: "24px", padding: "48px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px", border: "1px solid #e2e8f5" }}>
           {/* Content */}
           <div style={{ flex: "1 1 400px" }}>
-            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "16px", textTransform: "uppercase", background: "#FFFFFF", padding: "4px 14px", borderRadius: "20px", border: "1px solid #BAE6FD" }}>Clinical Governance &amp; Control</span>
+            <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "16px", textTransform: "uppercase" }}>Clinical Governance &amp; Control</span>
             
-            <h3 style={{ fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 800, color: "#0F172A", lineHeight: 1.3, marginBottom: "16px" }}>
+            <h3 style={{ fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.3, marginBottom: "16px" }}>
               Assisted Extraction with Mandatory Human Approval
             </h3>
 
@@ -19,11 +19,11 @@ export default function Testimonial() {
             </p>
 
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#02ACEA", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
+              <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(2,172,234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
                 ✓
               </div>
               <div>
-                <strong style={{ fontSize: "15px", fontWeight: 800, color: "#0F172A", display: "block" }}>100% Reviewer Oversight</strong>
+                <strong style={{ fontSize: "15px", fontWeight: 700, color: "#0f172a", display: "block" }}>100% Reviewer Oversight</strong>
                 <span style={{ fontSize: "13px", color: "#64748B" }}>Complete audit trail &amp; clinical governance</span>
               </div>
             </div>
@@ -31,12 +31,12 @@ export default function Testimonial() {
 
           {/* CTA Box */}
           <div style={{ flex: "0 1 280px", margin: "0 auto" }}>
-            <div style={{ background: "#FFFFFF", borderRadius: "20px", boxShadow: "0 10px 30px rgba(0,0,0,0.05)", padding: "32px", textAlign: "center", border: "1px solid #E2E8F5" }}>
-              <div style={{ fontSize: "26px", fontWeight: 800, color: "#02ACEA", marginBottom: "8px" }}>Human Approval</div>
-              <div style={{ fontSize: "13px", color: "#64748B", fontWeight: 600, marginBottom: "20px" }}>Central to Every Document Commit</div>
-              <Link href="/how-it-works" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "12px 24px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "#028EC7"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "#02ACEA"; }}
+            <div style={{ background: "#fff", borderRadius: "20px", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", padding: "32px", textAlign: "center", border: "1px solid #e2e8f5" }}>
+              <div style={{ fontSize: "28px", fontWeight: 800, color: "#02ACEA", marginBottom: "8px" }}>Human Approval</div>
+              <div style={{ fontSize: "14px", color: "#64748B", fontWeight: 500, marginBottom: "20px" }}>Central to Every Document Commit</div>
+              <Link href="/how-it-works" style={{ background: "#02ACEA", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "12px 24px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}
+                onMouseEnter={e => { e.currentTarget.style.background = "#0284C7"; e.currentTarget.style.boxShadow = "0 8px 16px rgba(2,172,234,0.25)"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.boxShadow = "none"; }}
               >
                 View Workflow <span>→</span>
               </Link>

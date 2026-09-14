@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function FeatureHighlights() {
   return (
-    <section style={{ padding: "110px 0", background: "#FFFFFF", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "110px 0", background: "#f8fafc", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
         <div style={{ display: "flex", flexDirection: "column", gap: "100px" }}>
 
@@ -15,7 +15,7 @@ export default function FeatureHighlights() {
             alignItems: "center"
           }}>
             <div style={{ position: "relative" }}>
-              <div style={{ borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 50px rgba(2,172,234,0.12)", border: "1px solid #E2E8F5" }}>
+              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(2,172,234,0.15)", border: "1px solid #e2e8f5" }}>
                 <img
                   src="/gp-doctor-consultation.png"
                   alt="Structured Clinical Consultation Notes"
@@ -30,8 +30,8 @@ export default function FeatureHighlights() {
                 background: "#FFFFFF",
                 padding: "12px 24px",
                 borderRadius: "16px",
-                boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
-                border: "1px solid #BAE6FD",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+                border: "1px solid #e2e8f5",
                 display: "flex",
                 alignItems: "center",
                 gap: "10px",
@@ -41,24 +41,24 @@ export default function FeatureHighlights() {
                   ✓
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0F172A" }}>EMIS Web Active</div>
-                  <div style={{ fontSize: "11px", color: "#64748B" }}>Structured Write-Back</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0f172a" }}>EMIS Web Active</div>
+                  <div style={{ fontSize: "11px", color: "#8896AB" }}>Structured Write-Back</div>
                 </div>
               </div>
             </div>
 
             <div>
-              <span style={{ display: "inline-block", background: "rgba(2,172,234,0.1)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.25)" }}>
+              <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 Clinical Intelligence &amp; Record Integrity
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0F172A", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
                 Structured Consultation Notes Ready for Action
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
                 Ovotech automatically parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing structured entries directly to EMIS Web.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#028EC7"} onMouseLeave={e => e.currentTarget.style.background = "#02ACEA"}>
+                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
                   Explore Clinical Review Workspace <span>→</span>
                 </Link>
               </div>
@@ -73,24 +73,24 @@ export default function FeatureHighlights() {
             alignItems: "center"
           }}>
             <div style={{ order: 1 }}>
-              <span style={{ display: "inline-block", background: "rgba(22,163,74,0.1)", color: "#16a34a", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(22,163,74,0.25)" }}>
+              <span style={{ display: "inline-block", background: "rgba(22,163,74,0.1)", color: "#16a34a", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px" }}>
                 Expert Primary Care Support
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0F172A", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
                 Dedicated Clinical Workflow Partnership
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
                 Beyond our intelligent document platform, Ovotech provides primary care practices with dedicated workflow specialists and experienced clinical coders. We work alongside your team to clear backlogs, manage staff transitions, and ensure complete CQC inspection readiness.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-                <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }} onMouseEnter={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.color = "#FFFFFF"; }} onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#02ACEA"; }}>
+                <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
                   Talk to Our Practice Support Team <span>→</span>
                 </Link>
               </div>
             </div>
 
             <div style={{ order: 2, position: "relative" }}>
-              <div style={{ borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.06)", border: "1px solid #E2E8F5" }}>
+              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.08)", border: "1px solid #e2e8f5" }}>
                 <img
                   src="/gp-team-support.png"
                   alt="Dedicated Practice Workflow Team Support"
@@ -105,8 +105,8 @@ export default function FeatureHighlights() {
                 background: "#FFFFFF",
                 padding: "12px 24px",
                 borderRadius: "16px",
-                boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
-                border: "1px solid #E2E8F5",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+                border: "1px solid #e2e8f5",
                 display: "flex",
                 alignItems: "center",
                 gap: "10px",
@@ -116,8 +116,8 @@ export default function FeatureHighlights() {
                   ★
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0F172A" }}>CQC Ready</div>
-                  <div style={{ fontSize: "11px", color: "#64748B" }}>Full Audit Compliance</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0f172a" }}>CQC Ready</div>
+                  <div style={{ fontSize: "11px", color: "#8896AB" }}>Full Audit Compliance</div>
                 </div>
               </div>
             </div>
