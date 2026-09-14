@@ -45,6 +45,7 @@ export default function Hero() {
   return (
     <>
       <section style={{ position: "relative", minHeight: "680px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#09132B" }}>
+      <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#09132B" }}>
         {/* Background Video Autoplay */}
         <video
           autoPlay
@@ -80,6 +81,39 @@ export default function Hero() {
           }}
           className="hidden md:block"
         />
+        {/* SVG Layered Organic Wave Curve Overlay (Exact e18innovation.com curved layout with Ovotech brand blues) */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
+          style={{ zIndex: 3 }}
+          viewBox="0 0 1440 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="ovotechMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#09132B" stopOpacity="0.98" />
+              <stop offset="60%" stopColor="#0F1E36" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#02ACEA" stopOpacity="0.88" />
+            </linearGradient>
+
+            <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#02ACEA" stopOpacity="0.4" />
+              <stop offset="70%" stopColor="rgba(2, 172, 234, 0.15)" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="rgba(9, 19, 43, 0)" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+
+          {/* Outer Translucent Wave Arc Layer */}
+          <path
+            d="M 0,0 L 840,0 C 730,260 670,540 460,800 L 0,800 Z"
+            fill="url(#ovotechWaveArcGradient)"
+          />
+
+          {/* Main Solid Organic Curve Layer */}
+          <path
+            d="M 0,0 L 760,0 C 640,240 590,520 390,800 L 0,800 Z"
+            fill="url(#ovotechMainGradient)"
+          />
+        </svg>
 
         {/* Mobile Full Gradient Overlay */}
         <div
@@ -87,15 +121,23 @@ export default function Hero() {
             position: "absolute",
             inset: 0,
             background: "linear-gradient(180deg, rgba(9, 19, 43, 0.95) 0%, rgba(15, 30, 54, 0.85) 100%)",
+            background: "linear-gradient(180deg, rgba(9, 19, 43, 0.95) 0%, rgba(15, 30, 54, 0.88) 100%)",
             zIndex: 3
           }}
           className="md:hidden"
         />
 
+        {/* Ambient Cyan Glow Accents */}
+        <div style={{ position: "absolute", top: "-100px", left: "-100px", width: "450px", height: "450px", background: "rgba(2,172,234,0.2)", borderRadius: "50%", filter: "blur(100px)", pointerEvents: "none", zIndex: 4 }} />
+
+        {/* Hero Main Content Container */}
+        <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1400px", margin: "0 auto", paddingLeft: "clamp(20px, 3vw, 40px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
+            <div className="animate-fadeInLeft" style={{ flex: "1 1 520px", minWidth: "300px" }}>
             <div className="animate-fadeInLeft" style={{ flex: "1 1 560px", minWidth: "300px" }}>
+            <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "620px" }}>
               <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
               </span>
