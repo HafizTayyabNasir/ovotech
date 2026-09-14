@@ -66,6 +66,7 @@ export default function Hero() {
         </video>
 
         {/* SVG Layered Organic Wave Curve Overlay (Exact e18innovation.com curved layout with Ovotech brand blues) */}
+        {/* SVG Layered Organic Wave Curve Overlay (Lighter & Semi-Transparent Blue Gradient) */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
           style={{ zIndex: 3 }}
@@ -77,12 +78,18 @@ export default function Hero() {
               <stop offset="0%" stopColor="#09132B" stopOpacity="0.98" />
               <stop offset="60%" stopColor="#0F1E36" stopOpacity="0.95" />
               <stop offset="100%" stopColor="#02ACEA" stopOpacity="0.88" />
+              <stop offset="0%" stopColor="#0B2545" stopOpacity="0.82" />
+              <stop offset="55%" stopColor="#134074" stopOpacity="0.72" />
+              <stop offset="100%" stopColor="#02ACEA" stopOpacity="0.55" />
             </linearGradient>
 
             <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#02ACEA" stopOpacity="0.4" />
               <stop offset="70%" stopColor="rgba(2, 172, 234, 0.15)" stopOpacity="0.15" />
               <stop offset="100%" stopColor="rgba(9, 19, 43, 0)" stopOpacity="0" />
+              <stop offset="0%" stopColor="#02ACEA" stopOpacity="0.45" />
+              <stop offset="70%" stopColor="rgba(2, 172, 234, 0.2)" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="rgba(11, 37, 69, 0)" stopOpacity="0" />
             </linearGradient>
           </defs>
 
@@ -105,6 +112,7 @@ export default function Hero() {
             position: "absolute",
             inset: 0,
             background: "linear-gradient(180deg, rgba(9, 19, 43, 0.95) 0%, rgba(15, 30, 54, 0.88) 100%)",
+            background: "linear-gradient(180deg, rgba(11, 37, 69, 0.90) 0%, rgba(19, 64, 116, 0.82) 100%)",
             zIndex: 3
           }}
           className="md:hidden"
@@ -112,6 +120,8 @@ export default function Hero() {
 
         {/* Hero Main Content Container */}
         <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+        {/* Hero Main Content Container with slight left margin */}
+        <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(20px, 3vw, 40px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
             <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "620px" }}>
@@ -131,6 +141,7 @@ export default function Hero() {
               </p>
 
               <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "32px", maxWidth: "580px" }}>
+              <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "36px", maxWidth: "580px" }}>
                 Designed specifically around UK primary care correspondence, our assisted SNOMED CT coding workspace empowers practice teams to clear backlogs while keeping human approval central to every record write-back.
               </p>
 
@@ -165,7 +176,14 @@ export default function Hero() {
 
                 <button
                   type="submit"
+              {/* Action Buttons */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
+                <Link
+                  href="/contact"
                   style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
                     background: "#02ACEA",
                     color: "#FFFFFF",
                     fontSize: "14px",
@@ -173,6 +191,7 @@ export default function Hero() {
                     letterSpacing: "0.5px",
                     textTransform: "uppercase",
                     padding: "14px 32px",
+                    padding: "16px 36px",
                     borderRadius: "30px",
                     border: "none",
                     cursor: "pointer",
@@ -183,6 +202,27 @@ export default function Hero() {
                   REQUEST A PLATFORM DEMO
                 </button>
               </form>
+                  REQUEST A PLATFORM DEMO <span>→</span>
+                </Link>
+                <Link
+                  href="/solutions"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    background: "rgba(255,255,255,0.08)",
+                    color: "#FFFFFF",
+                    fontSize: "14px",
+                    fontWeight: 700,
+                    padding: "16px 28px",
+                    borderRadius: "30px",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  EXPLORE SOLUTIONS
+                </Link>
+              </div>
             </div>
 
             {/* Right Side Glass Feature Badge / Video Accent Column */}
