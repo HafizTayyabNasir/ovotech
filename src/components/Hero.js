@@ -122,9 +122,11 @@ export default function Hero() {
         <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Hero Main Content Container with slight left margin */}
         <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(20px, 3vw, 40px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
+        <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(12px, 2vw, 24px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
             <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "620px" }}>
+            <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "640px" }}>
               <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
               </span>
