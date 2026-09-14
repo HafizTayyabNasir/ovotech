@@ -6,8 +6,6 @@ export default function Hero() {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
-  const [formErrors, setFormErrors] = useState({});
 
   const statements = ["Primary Care", "GP Practices", "NHS Providers", "PCN Networks"];
 
@@ -25,22 +23,6 @@ export default function Hero() {
     else if (isDeleting && text === "") { setIsDeleting(false); setLoopNum(loopNum + 1); }
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum]);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    if (formErrors[e.target.name]) setFormErrors({ ...formErrors, [e.target.name]: "" });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const errors = {};
-    if (!formData.name.trim()) errors.name = "Name is required";
-    if (!formData.email.trim()) errors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Invalid email";
-    if (!formData.phone.trim()) errors.phone = "Phone is required";
-    setFormErrors(errors);
-    if (Object.keys(errors).length === 0) alert("Consultation requested!");
-  };
 
   return (
     <>
@@ -65,7 +47,6 @@ export default function Hero() {
           <source src="/HomeBanner.mp4" type="video/mp4" />
         </video>
 
-        {/* SVG Layered Organic Wave Curve Overlay (Exact e18innovation.com curved layout with Ovotech brand blues) */}
         {/* SVG Layered Organic Wave Curve Overlay (Lighter & Semi-Transparent Blue Gradient) */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
@@ -75,18 +56,12 @@ export default function Hero() {
         >
           <defs>
             <linearGradient id="ovotechMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#09132B" stopOpacity="0.98" />
-              <stop offset="60%" stopColor="#0F1E36" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#02ACEA" stopOpacity="0.88" />
               <stop offset="0%" stopColor="#0B2545" stopOpacity="0.82" />
               <stop offset="55%" stopColor="#134074" stopOpacity="0.72" />
               <stop offset="100%" stopColor="#02ACEA" stopOpacity="0.55" />
             </linearGradient>
 
             <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#02ACEA" stopOpacity="0.4" />
-              <stop offset="70%" stopColor="rgba(2, 172, 234, 0.15)" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="rgba(9, 19, 43, 0)" stopOpacity="0" />
               <stop offset="0%" stopColor="#02ACEA" stopOpacity="0.45" />
               <stop offset="70%" stopColor="rgba(2, 172, 234, 0.2)" stopOpacity="0.2" />
               <stop offset="100%" stopColor="rgba(11, 37, 69, 0)" stopOpacity="0" />
@@ -111,21 +86,16 @@ export default function Hero() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(9, 19, 43, 0.95) 0%, rgba(15, 30, 54, 0.88) 100%)",
             background: "linear-gradient(180deg, rgba(11, 37, 69, 0.90) 0%, rgba(19, 64, 116, 0.82) 100%)",
             zIndex: 3
           }}
           className="md:hidden"
         />
 
-        {/* Hero Main Content Container */}
-        <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Hero Main Content Container with slight left margin */}
-        <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(20px, 3vw, 40px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
         <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(12px, 2vw, 24px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
-            <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "620px" }}>
             <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "640px" }}>
               <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
@@ -142,42 +112,10 @@ export default function Hero() {
                 Ovotech brings clinical document intake, entity extraction, review queues, clinical review, patient history context, and EMIS Web write-back into one unified platform for UK GP practices.
               </p>
 
-              <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "32px", maxWidth: "580px" }}>
               <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "36px", maxWidth: "580px" }}>
                 Designed specifically around UK primary care correspondence, our assisted SNOMED CT coding workspace empowers practice teams to clear backlogs while keeping human approval central to every record write-back.
               </p>
 
-              {/* Consultation Form Fields */}
-              <form onSubmit={handleSubmit} style={{ maxWidth: "600px" }}>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "14px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.name ? "#ef4444" : "rgba(2,172,234,0.4)"}`, background: "rgba(255,255,255,0.95)", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "14px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.email ? "#ef4444" : "rgba(2,172,234,0.4)"}`, background: "rgba(255,255,255,0.95)", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    style={{ flex: "1 1 160px", padding: "14px 20px", borderRadius: "30px", border: `1.5px solid ${formErrors.phone ? "#ef4444" : "rgba(2,172,234,0.4)"}`, background: "rgba(255,255,255,0.95)", fontSize: "14px", color: "#0B193C", outline: "none", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}
-                  />
-                </div>
-
-                <button
-                  type="submit"
               {/* Action Buttons */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
                 <Link
@@ -192,18 +130,12 @@ export default function Hero() {
                     fontWeight: 800,
                     letterSpacing: "0.5px",
                     textTransform: "uppercase",
-                    padding: "14px 32px",
                     padding: "16px 36px",
                     borderRadius: "30px",
-                    border: "none",
-                    cursor: "pointer",
                     boxShadow: "0 6px 20px rgba(2,172,234,0.4)",
                     transition: "all 0.3s ease"
                   }}
                 >
-                  REQUEST A PLATFORM DEMO
-                </button>
-              </form>
                   REQUEST A PLATFORM DEMO <span>→</span>
                 </Link>
                 <Link
