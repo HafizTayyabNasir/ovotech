@@ -36,42 +36,42 @@ export default function StatsGrid() {
             <div
               key={i}
               style={{
-                background: "#f8fafc",
+                background: "#FFFFFF",
                 borderRadius: "20px",
-                padding: "48px 24px",
+                padding: "40px 24px",
                 textAlign: "center",
                 transition: "all 0.3s ease-in-out",
-                border: "1px solid #e2e8f5",
-                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.02)",
+                border: "1px solid #E2E8F5",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.02)",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 12px 30px rgba(2, 172, 234, 0.15)";
-                e.currentTarget.style.borderColor = "rgba(2, 172, 234, 0.4)";
+                e.currentTarget.style.boxShadow = "0 14px 30px rgba(2, 172, 234, 0.12)";
+                e.currentTarget.style.borderColor = "#02ACEA";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.02)";
-                e.currentTarget.style.borderColor = "#e2e8f5";
+                e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.02)";
+                e.currentTarget.style.borderColor = "#E2E8F5";
               }}
             >
               <div
                 style={{
-                  fontSize: "clamp(34px, 4vw, 46px)",
+                  fontSize: "clamp(32px, 3.5vw, 44px)",
                   fontWeight: 800,
                   color: "#02ACEA",
                   lineHeight: 1,
                   marginBottom: "12px",
-                  letterSpacing: "-1px",
+                  letterSpacing: "-0.5px",
                 }}
               >
                 {stat.value}
               </div>
               <div
                 style={{
-                  fontSize: "15px",
-                  fontWeight: 600,
-                  color: "#555555",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  color: "#475569",
                   lineHeight: 1.4,
                 }}
               >

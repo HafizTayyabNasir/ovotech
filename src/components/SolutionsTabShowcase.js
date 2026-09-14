@@ -100,9 +100,9 @@ export default function SolutionsTabShowcase() {
   const activeModule = modulesData[activeTab];
 
   return (
-    <div style={{ background: "#FFFFFF", borderRadius: "24px", border: "1px solid #E0E8F5", boxShadow: "0 20px 50px rgba(10,24,56,0.06)", overflow: "hidden" }}>
+    <div style={{ background: "#FFFFFF", borderRadius: "24px", border: "1px solid #E2E8F5", boxShadow: "0 20px 50px rgba(2,172,234,0.08)", overflow: "hidden" }}>
       {/* Navigation Bar / Tabs */}
-      <div style={{ display: "flex", overflowX: "auto", background: "#F4F7FC", borderBottom: "1px solid #E0E8F5", padding: "8px 12px", gap: "8px" }} className="no-scrollbar">
+      <div style={{ display: "flex", overflowX: "auto", background: "#F8FAFC", borderBottom: "1px solid #E2E8F5", padding: "8px 12px", gap: "8px" }} className="no-scrollbar">
         {modulesData.map((m, idx) => {
           const isActive = idx === activeTab;
           return (
@@ -113,10 +113,10 @@ export default function SolutionsTabShowcase() {
                 flex: "1",
                 minWidth: "160px",
                 padding: "14px 18px",
-                borderRadius: "14px",
-                border: "none",
+                borderRadius: "12px",
+                border: isActive ? "1px solid #BAE6FD" : "none",
                 background: isActive ? "#FFFFFF" : "transparent",
-                boxShadow: isActive ? "0 4px 14px rgba(0,0,0,0.06)" : "none",
+                boxShadow: isActive ? "0 4px 14px rgba(2,172,234,0.12)" : "none",
                 cursor: "pointer",
                 textAlign: "center",
                 transition: "all 0.25s ease",
@@ -126,7 +126,7 @@ export default function SolutionsTabShowcase() {
               <div style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", color: isActive ? "#02ACEA" : "#64748B", marginBottom: "4px" }}>
                 {m.tag}
               </div>
-              <div style={{ fontSize: "14px", fontWeight: 800, color: isActive ? "#0A1838" : "#475569", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: "14px", fontWeight: 800, color: isActive ? "#0F172A" : "#475569", whiteSpace: "nowrap" }}>
                 {m.title.split(" ")[0]} {m.title.split(" ")[1] || ""}
               </div>
             </button>
@@ -139,13 +139,13 @@ export default function SolutionsTabShowcase() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "48px", alignItems: "center" }}>
           {/* Text Left */}
           <div>
-            <span style={{ display: "inline-block", background: "rgba(2,172,234,0.12)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.25)" }}>
+            <span style={{ display: "inline-block", background: "rgba(2,172,234,0.1)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.25)" }}>
               {activeModule.tag}
             </span>
-            <h3 style={{ fontSize: "28px", fontWeight: 800, color: "#0A1838", marginBottom: "8px", lineHeight: 1.25 }}>
+            <h3 style={{ fontSize: "28px", fontWeight: 800, color: "#0F172A", marginBottom: "8px", lineHeight: 1.25 }}>
               {activeModule.title}
             </h3>
-            <p style={{ fontSize: "15px", fontWeight: 600, color: "#02ACEA", marginBottom: "16px" }}>
+            <p style={{ fontSize: "15px", fontWeight: 700, color: "#02ACEA", marginBottom: "16px" }}>
               {activeModule.subtitle}
             </p>
             <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
@@ -154,8 +154,8 @@ export default function SolutionsTabShowcase() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "32px" }}>
               {activeModule.highlights.map((h, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "14px", fontWeight: 600, color: "#0A1838" }}>
-                  <div style={{ width: "22px", height: "22px", borderRadius: "50%", background: "rgba(2,172,234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: 800, shrink: 0 }}>
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "14px", fontWeight: 600, color: "#0F172A" }}>
+                  <div style={{ width: "22px", height: "22px", borderRadius: "50%", background: "rgba(2,172,234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: 800, flexShrink: 0 }}>
                     ✓
                   </div>
                   <span>{h}</span>
@@ -176,9 +176,11 @@ export default function SolutionsTabShowcase() {
                   fontSize: "14px",
                   padding: "12px 24px",
                   borderRadius: "12px",
-                  boxShadow: "0 6px 20px rgba(2,172,234,0.3)",
+                  boxShadow: "0 6px 20px rgba(2,172,234,0.35)",
                   transition: "all 0.3s"
                 }}
+                onMouseEnter={e => e.currentTarget.style.background = "#028EC7"}
+                onMouseLeave={e => e.currentTarget.style.background = "#02ACEA"}
               >
                 Learn More About {activeModule.title.split(" ")[0]} <span>→</span>
               </Link>
@@ -188,13 +190,13 @@ export default function SolutionsTabShowcase() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "6px",
-                  color: "#0A1838",
+                  color: "#02ACEA",
                   fontWeight: 700,
                   fontSize: "14px",
                   padding: "12px 20px",
                   borderRadius: "12px",
-                  border: "1px solid #E0E8F5",
-                  background: "#F4F7FC"
+                  border: "2px solid #02ACEA",
+                  background: "#FFFFFF"
                 }}
               >
                 Request Live Demo
@@ -204,7 +206,7 @@ export default function SolutionsTabShowcase() {
 
           {/* Image Right */}
           <div style={{ position: "relative" }}>
-            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid #E0E8F5", boxShadow: "0 16px 40px rgba(10,24,56,0.1)" }}>
+            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid #E2E8F5", boxShadow: "0 16px 40px rgba(2,172,234,0.1)" }}>
               <img
                 src={activeModule.image}
                 alt={activeModule.title}
@@ -218,15 +220,15 @@ export default function SolutionsTabShowcase() {
                 bottom: "20px",
                 left: "20px",
                 right: "20px",
-                background: "rgba(10, 24, 56, 0.88)",
-                backdropFilter: "blur(12px)",
+                background: "#FFFFFF",
                 padding: "14px 20px",
-                borderRadius: "16px",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
-                color: "#FFFFFF",
+                borderRadius: "14px",
+                border: "1px solid #BAE6FD",
+                color: "#0F172A",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between"
+                justifyContent: "space-between",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.08)"
               }}
             >
               <div>
@@ -245,4 +247,3 @@ export default function SolutionsTabShowcase() {
     </div>
   );
 }
-

@@ -17,11 +17,11 @@ const withItems = [
 
 export default function BeforeAfter() {
   return (
-    <section style={{ padding: "100px 0", background: "#f8fafc" }}>
+    <section style={{ padding: "110px 0", background: "#FFFFFF" }}>
       <div className="site-container">
         <div className="animate-fadeInUp" style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>The Ovotech Impact</span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2 }}>
+          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase", background: "rgba(2,172,234,0.1)", padding: "4px 14px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.25)" }}>The Ovotech Impact</span>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0F172A", lineHeight: 1.2 }}>
             Before vs After Ovotech Workflow
           </h2>
           <p style={{ color: "#475569", marginTop: "16px", maxWidth: "580px", marginLeft: "auto", marginRight: "auto", fontSize: "16px", lineHeight: 1.7 }}>
@@ -29,19 +29,19 @@ export default function BeforeAfter() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px", maxWidth: "900px", margin: "0 auto 40px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px", maxWidth: "920px", margin: "0 auto 48px" }}>
           {/* Without */}
-          <div className="animate-fadeInLeft" style={{ background: "#fff", borderRadius: "20px", padding: "32px", border: "1px solid #fee2e2", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)" }}>
+          <div className="animate-fadeInLeft" style={{ background: "#FFFFFF", borderRadius: "20px", padding: "36px", border: "1px solid #FEE2E2", boxShadow: "0 4px 16px rgba(239,68,68,0.04)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px" }}>
-              <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "#fee2e2", color: "#ef4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "#FEE2E2", color: "#EF4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
-              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0f172a" }}>Without Ovotech</h3>
+              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0F172A" }}>Without Ovotech</h3>
             </div>
             <ul style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {withoutItems.map((item, i) => (
                 <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M18 6L6 18M6 6l12 12"/></svg>
                   <span style={{ fontSize: "14px", color: "#475569", lineHeight: 1.5 }}>{item}</span>
                 </li>
               ))}
@@ -49,18 +49,18 @@ export default function BeforeAfter() {
           </div>
 
           {/* With */}
-          <div className="animate-fadeInRight delay-200" style={{ background: "#fff", borderRadius: "20px", padding: "32px", border: "1px solid #dcfce7", boxShadow: "0 0 0 2px rgba(187, 247, 208, 0.5)" }}>
+          <div className="animate-fadeInRight delay-200" style={{ background: "#F0F9FF", borderRadius: "20px", padding: "36px", border: "2px solid #BAE6FD", boxShadow: "0 10px 30px rgba(2,172,234,0.12)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px" }}>
-              <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "#dcfce7", color: "#16a34a", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+              <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "#02ACEA", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
               </div>
-              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0f172a" }}>With Ovotech</h3>
+              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0F172A" }}>With Ovotech</h3>
             </div>
             <ul style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {withItems.map((item, i) => (
                 <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-                  <span style={{ fontSize: "14px", color: "#475569", lineHeight: 1.5 }}>{item}</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#02ACEA" strokeWidth="2" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                  <span style={{ fontSize: "14px", color: "#0F172A", fontWeight: 600, lineHeight: 1.5 }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -68,7 +68,7 @@ export default function BeforeAfter() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#028EC7"} onMouseLeave={e => e.currentTarget.style.background = "#02ACEA"}>
             Start Your Transformation <span>→</span>
           </Link>
         </div>

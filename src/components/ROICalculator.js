@@ -6,30 +6,26 @@ export default function ROICalculator() {
   const [listSize, setListSize] = useState(12000);
   const [dailyLetters, setDailyLetters] = useState(65);
 
-  // Calculations:
-  // Average manual review + SNOMED coding time: ~6 mins per document.
-  // Ovotech assisted time: ~1.5 mins per document.
-  // Time saved per letter: 4.5 minutes.
   const weeklyHoursSaved = Math.round((dailyLetters * 5 * 4.5) / 60);
   const fteReleased = (weeklyHoursSaved / 37.5).toFixed(1);
   const annualSavings = Math.round(weeklyHoursSaved * 52 * 18);
 
   return (
-    <section style={{ padding: "100px 0", background: "#091222", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "110px 0", background: "#FFFFFF", color: "#0F172A", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
-          <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.3)" }}>
+          <span style={{ display: "inline-block", background: "rgba(2,172,234,0.1)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.25)" }}>
             PRACTICE IMPACT &amp; SAVINGS CALCULATOR
           </span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, color: "#0F172A", lineHeight: 1.15 }}>
             Calculate Your Practice Capacity &amp; Time Released
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px", marginTop: "12px", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ color: "#475569", fontSize: "16px", marginTop: "12px", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }}>
             See how much administrative staff time and capacity Ovotech releases for your GP practice.
           </p>
         </div>
 
-        <div style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(16px)", borderRadius: "24px", padding: "48px 36px", border: "1px solid rgba(255,255,255,0.12)", boxShadow: "0 16px 40px rgba(0,0,0,0.3)", maxWidth: "1000px", margin: "0 auto" }}>
+        <div style={{ background: "#FFFFFF", borderRadius: "24px", padding: "48px 36px", border: "1px solid #E2E8F5", boxShadow: "0 20px 50px rgba(2,172,234,0.1)", maxWidth: "1000px", margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "48px", alignItems: "center" }}>
 
             {/* Left Controls Sliders */}
@@ -37,7 +33,7 @@ export default function ROICalculator() {
               {/* Slider 1: List Size */}
               <div style={{ marginBottom: "36px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
-                  <label style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF" }}>Practice Patient List Size</label>
+                  <label style={{ fontSize: "15px", fontWeight: 700, color: "#0F172A" }}>Practice Patient List Size</label>
                   <span style={{ fontSize: "18px", fontWeight: 800, color: "#02ACEA" }}>{listSize.toLocaleString()} Patients</span>
                 </div>
                 <input
@@ -49,7 +45,7 @@ export default function ROICalculator() {
                   onChange={(e) => setListSize(Number(e.target.value))}
                   style={{ width: "100%", accentColor: "#02ACEA", cursor: "pointer", height: "8px", borderRadius: "4px" }}
                 />
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "6px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", color: "#64748B", marginTop: "6px" }}>
                   <span>3,000</span>
                   <span>40,000+</span>
                 </div>
@@ -58,7 +54,7 @@ export default function ROICalculator() {
               {/* Slider 2: Daily Letters */}
               <div style={{ marginBottom: "24px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
-                  <label style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF" }}>Daily Clinical Letters Received</label>
+                  <label style={{ fontSize: "15px", fontWeight: 700, color: "#0F172A" }}>Daily Clinical Letters Received</label>
                   <span style={{ fontSize: "18px", fontWeight: 800, color: "#02ACEA" }}>{dailyLetters} Docs / Day</span>
                 </div>
                 <input
@@ -70,7 +66,7 @@ export default function ROICalculator() {
                   onChange={(e) => setDailyLetters(Number(e.target.value))}
                   style={{ width: "100%", accentColor: "#02ACEA", cursor: "pointer", height: "8px", borderRadius: "4px" }}
                 />
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "6px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", color: "#64748B", marginTop: "6px" }}>
                   <span>15 docs</span>
                   <span>200+ docs</span>
                 </div>
@@ -78,29 +74,29 @@ export default function ROICalculator() {
             </div>
 
             {/* Right Calculated Results */}
-            <div style={{ background: "#0F1E36", borderRadius: "20px", padding: "36px 30px", color: "#FFFFFF", border: "1px solid rgba(2,172,234,0.3)", boxShadow: "0 12px 30px rgba(0,0,0,0.3)" }}>
-              <div style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#02ACEA", marginBottom: "20px" }}>
+            <div style={{ background: "#F0F9FF", borderRadius: "20px", padding: "36px 30px", color: "#0F172A", border: "1px solid #BAE6FD", boxShadow: "0 10px 24px rgba(2,172,234,0.08)" }}>
+              <div style={{ fontSize: "12px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1.5px", color: "#02ACEA", marginBottom: "20px" }}>
                 ESTIMATED PRACTICE IMPACT
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginBottom: "32px" }}>
                 <div>
-                  <div style={{ fontSize: "38px", fontWeight: 800, color: "#FFFFFF", lineHeight: 1 }}>{weeklyHoursSaved} Hours</div>
-                  <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", marginTop: "4px" }}>Time Saved Per Week</div>
+                  <div style={{ fontSize: "38px", fontWeight: 800, color: "#0F172A", lineHeight: 1 }}>{weeklyHoursSaved} Hours</div>
+                  <div style={{ fontSize: "13px", color: "#475569", marginTop: "4px" }}>Time Saved Per Week</div>
                 </div>
 
                 <div>
                   <div style={{ fontSize: "32px", fontWeight: 800, color: "#02ACEA", lineHeight: 1 }}>{fteReleased} FTE</div>
-                  <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", marginTop: "4px" }}>Staff Admin Capacity Released</div>
+                  <div style={{ fontSize: "13px", color: "#475569", marginTop: "4px" }}>Staff Admin Capacity Released</div>
                 </div>
 
                 <div>
                   <div style={{ fontSize: "28px", fontWeight: 800, color: "#16a34a", lineHeight: 1 }}>£{annualSavings.toLocaleString()}</div>
-                  <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", marginTop: "4px" }}>Estimated Annual Capacity Savings</div>
+                  <div style={{ fontSize: "13px", color: "#475569", marginTop: "4px" }}>Estimated Annual Capacity Savings</div>
                 </div>
               </div>
 
-              <Link href="/contact" style={{ display: "block", textAlign: "center", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px", borderRadius: "12px", boxShadow: "0 4px 14px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
+              <Link href="/contact" style={{ display: "block", textAlign: "center", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px", borderRadius: "12px", boxShadow: "0 4px 14px rgba(2,172,234,0.35)", transition: "all 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#028EC7"} onMouseLeave={e => e.currentTarget.style.background = "#02ACEA"}>
                 Get Detailed Practice ROI Report →
               </Link>
             </div>

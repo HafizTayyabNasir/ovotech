@@ -8,11 +8,11 @@
   --color-accent: #02ACEA;
   --color-navy: #0F1E36;
   --color-navy-dark: #091222;
-  --color-bg-light: #f8fafc;
+  --color-bg-light: #FFFFFF;
   --color-bg-white: #FFFFFF;
   --color-text-heading: #0f172a;
   --color-text-body: #475569;
-  --color-text-muted: #8896AB;
+  --color-text-muted: #64748B;
   --color-border-light: #e2e8f5;
   --color-success: #16a34a;
   --color-nhs-blue: #005eb8;
@@ -27,7 +27,7 @@
 }
 
 :root {
-  --background: #f8fafc;
+  --background: #FFFFFF;
   --foreground: #0f172a;
   --brand-navy: #0F1E36;
   --brand-dark: #091222;
@@ -37,7 +37,7 @@
   --brand-card: #ffffff;
 }
 
-/* ===== MINIMAL BASE (does NOT override Tailwind utilities) ===== */
+/* ===== MINIMAL BASE ===== */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -62,7 +62,7 @@
   img { max-width: 100%; display: block; }
 }
 
-/* ===== CONTAINER (custom, won't clash with Tailwind) ===== */
+/* ===== CONTAINER ===== */
 @layer components {
   .site-container {
     max-width: 1200px;

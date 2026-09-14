@@ -22,37 +22,38 @@ const ctas = [
 
 export default function DualCta() {
   return (
-    <section style={{ padding: "80px 0", background: "#091222" }}>
+    <section style={{ padding: "100px 0", background: "#FFFFFF" }}>
       <div className="site-container">
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", maxWidth: "800px", margin: "0 auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", maxWidth: "840px", margin: "0 auto" }}>
           {ctas.map((cta, i) => (
             <div
               key={i}
               className={`animate-fadeInUp delay-${(i + 1) * 200}`}
               style={{
-                borderRadius: "20px", padding: "32px", textAlign: "center",
-                background: cta.primary ? "#0F1E36" : "rgba(255, 255, 255, 0.05)",
-                color: "#FFFFFF",
-                border: cta.primary ? "1px solid rgba(2,172,234,0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
+                borderRadius: "20px", padding: "36px 32px", textAlign: "center",
+                background: cta.primary ? "#F0F9FF" : "#FFFFFF",
+                color: "#0F172A",
+                border: cta.primary ? "2px solid #02ACEA" : "1px solid #E2E8F5",
+                boxShadow: cta.primary ? "0 10px 30px rgba(2,172,234,0.12)" : "0 2px 8px rgba(0,0,0,0.03)",
                 transition: "all 0.3s", cursor: "pointer",
               }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,172,234,0.2)"; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; }}
             >
-              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: "rgba(2,172,234,0.15)", color: "#02ACEA" }}>
+              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: cta.primary ? "#02ACEA" : "rgba(2,172,234,0.1)", color: cta.primary ? "#FFFFFF" : "#02ACEA" }}>
                 {cta.icon}
               </div>
-              <h3 style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px", color: "#FFFFFF" }}>{cta.title}</h3>
-              <p style={{ fontSize: "14px", lineHeight: 1.6, marginBottom: "24px", color: "rgba(255,255,255,0.75)" }}>{cta.desc}</p>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, marginBottom: "10px", color: "#0F172A" }}>{cta.title}</h3>
+              <p style={{ fontSize: "14px", lineHeight: 1.6, marginBottom: "24px", color: "#475569" }}>{cta.desc}</p>
               <Link href={cta.href} style={{
                 display: "inline-flex", alignItems: "center", gap: "8px", fontWeight: 700, fontSize: "14px", padding: "12px 28px", borderRadius: "12px", transition: "all 0.3s",
-                background: cta.primary ? "#02ACEA" : "rgba(255,255,255,0.12)",
-                color: "#fff",
-                border: cta.primary ? "none" : "1px solid rgba(2,172,234,0.5)",
+                background: cta.primary ? "#02ACEA" : "#FFFFFF",
+                color: cta.primary ? "#FFFFFF" : "#02ACEA",
+                border: cta.primary ? "none" : "2px solid #02ACEA",
                 boxShadow: cta.primary ? "0 4px 14px rgba(2,172,234,0.35)" : "none"
               }}
-                onMouseEnter={e => { e.currentTarget.style.opacity = "0.9"; }}
-                onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
+                onMouseEnter={e => { if (cta.primary) e.currentTarget.style.background = "#028EC7"; else e.currentTarget.style.background = "#F0F9FF"; }}
+                onMouseLeave={e => { if (cta.primary) e.currentTarget.style.background = "#02ACEA"; else e.currentTarget.style.background = "#FFFFFF"; }}
               >
                 {cta.btnText} <span>→</span>
               </Link>
