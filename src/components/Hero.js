@@ -59,21 +59,11 @@ export default function Hero() {
             height: "100%",
             objectFit: "cover",
             zIndex: 1,
-            opacity: 0.85
+            opacity: 1
           }}
         >
           <source src="/HomeBanner.mp4" type="video/mp4" />
         </video>
-
-        {/* Translucent Dark Overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "rgba(9, 19, 43, 0.45)",
-            zIndex: 2
-          }}
-        />
 
         {/* Curved Brand Gradient Overlay (inspired by reference design, using Ovotech brand blues) */}
         <div
