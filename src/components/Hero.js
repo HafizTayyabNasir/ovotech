@@ -70,13 +70,13 @@ export default function Hero() {
 
           {/* Outer Translucent Wave Arc Layer */}
           <path
-            d="M 0,0 L 840,0 C 730,260 670,540 460,800 L 0,800 Z"
+            d="M 0,0 L 840,0 C 530,250 530,550 840,800 L 0,800 Z"
             fill="url(#ovotechWaveArcGradient)"
           />
 
-          {/* Main Solid Organic Curve Layer */}
+          {/* Main Solid Organic Curve Layer (Wide Top & Bottom, Narrow Center) */}
           <path
-            d="M 0,0 L 760,0 C 640,240 590,520 390,800 L 0,800 Z"
+            d="M 0,0 L 760,0 C 470,250 470,550 760,800 L 0,800 Z"
             fill="url(#ovotechMainGradient)"
           />
         </svg>
