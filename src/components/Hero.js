@@ -92,13 +92,10 @@ export default function Hero() {
           className="md:hidden"
         />
 
-        {/* Ambient Cyan Glow Accents */}
-        <div style={{ position: "absolute", top: "-100px", left: "-100px", width: "450px", height: "450px", background: "rgba(2,172,234,0.2)", borderRadius: "50%", filter: "blur(100px)", pointerEvents: "none", zIndex: 4 }} />
-
-        <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+        <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1400px", margin: "0 auto", paddingLeft: "clamp(20px, 3vw, 40px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
-            <div className="animate-fadeInLeft" style={{ flex: "1 1 520px", minWidth: "300px" }}>
+            <div className="animate-fadeInLeft" style={{ flex: "1 1 560px", minWidth: "300px" }}>
               <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
               </span>
