@@ -1,5 +1,4 @@
-"use client";
-import Link from "next/link";
+﻿"use client";
 import { useState, useEffect } from "react";
 
 export default function Hero() {
@@ -47,7 +46,6 @@ export default function Hero() {
           <source src="/HomeBanner.mp4" type="video/mp4" />
         </video>
 
-        {/* SVG Layered Organic Wave Curve Overlay (Lighter & Semi-Transparent Blue Gradient) */}
         {/* SVG Layered Organic Wave Curve Overlay */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
@@ -76,7 +74,6 @@ export default function Hero() {
             fill="url(#ovotechWaveArcGradient)"
           />
 
-          {/* Main Solid Organic Curve Layer (Wide Top & Bottom, Narrow Center) */}
           {/* Main Solid Organic Curve Layer */}
           <path
             d="M 0,0 L 760,0 C 470,250 470,550 760,800 L 0,800 Z"
@@ -95,7 +92,6 @@ export default function Hero() {
           className="md:hidden"
         />
 
-        {/* Hero Main Content Container with slight left margin */}
         {/* Hero Main Content Container */}
         <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(12px, 2vw, 24px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
@@ -112,61 +108,10 @@ export default function Hero() {
                 <span className="animate-blink" style={{ fontWeight: 300, color: "#02ACEA" }}>|</span>
               </h1>
 
-              <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: "16px", maxWidth: "580px" }}>
-                Ovotech brings clinical document intake, entity extraction, review queues, clinical review, patient history context, and EMIS Web write-back into one unified platform for UK GP practices.
-              <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)", lineHeight: 1.6, marginBottom: "32px", maxWidth: "620px" }}>
               <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)", lineHeight: 1.6, marginBottom: "16px", maxWidth: "620px" }}>
                 Ovotech unifies document intake, assisted SNOMED CT coding, and EMIS Web write-back into one workspace—empowering GP practice teams to clear backlogs with 100% human oversight.
               </p>
-
-              <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "36px", maxWidth: "580px" }}>
-                Designed specifically around UK primary care correspondence, our assisted SNOMED CT coding workspace empowers practice teams to clear backlogs while keeping human approval central to every record write-back.
-              </p>
-
-              {/* Action Buttons */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-                <Link
-                  href="/contact"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    background: "#02ACEA",
-                    color: "#FFFFFF",
-                    fontSize: "14px",
-                    fontWeight: 800,
-                    letterSpacing: "0.5px",
-                    textTransform: "uppercase",
-                    padding: "16px 36px",
-                    borderRadius: "30px",
-                    boxShadow: "0 6px 20px rgba(2,172,234,0.4)",
-                    transition: "all 0.3s ease"
-                  }}
-                >
-                  REQUEST A PLATFORM DEMO <span>→</span>
-                </Link>
-                <Link
-                  href="/solutions"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    background: "rgba(255,255,255,0.08)",
-                    color: "#FFFFFF",
-                    fontSize: "14px",
-                    fontWeight: 700,
-                    padding: "16px 28px",
-                    borderRadius: "30px",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    transition: "all 0.3s ease"
-                  }}
-                >
-                  EXPLORE SOLUTIONS
-                </Link>
-              </div>
             </div>
-
-
           </div>
         </div>
       </section>

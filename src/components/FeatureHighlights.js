@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 
 export default function FeatureHighlights() {
@@ -54,8 +54,6 @@ export default function FeatureHighlights() {
               <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
                 Structured Consultation Notes Ready for Action
               </h2>
-              <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
-                Ovotech automatically parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing structured entries directly to EMIS Web.
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
                 Ovotech parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing entries directly to EMIS Web.
               </p>
@@ -81,8 +79,6 @@ export default function FeatureHighlights() {
               <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
                 Dedicated Clinical Workflow Partnership
               </h2>
-              <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
-                Beyond our intelligent document platform, Ovotech provides primary care practices with dedicated workflow specialists and experienced clinical coders. We work alongside your team to clear backlogs, manage staff transitions, and ensure complete CQC inspection readiness.
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
                 Ovotech provides primary care practices with dedicated workflow specialists and experienced clinical coders to clear backlogs, manage staff transitions, and maintain CQC inspection readiness.
               </p>
