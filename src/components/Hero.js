@@ -97,7 +97,7 @@ export default function Hero() {
         <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(12px, 2vw, 24px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
-            <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "640px" }}>
+            <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "760px" }}>
               <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
               </span>
@@ -160,52 +160,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right Side Glass Feature Badge / Video Accent Column */}
-            <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 440px", minWidth: "300px", position: "relative", display: "flex", justifyContent: "flex-end" }}>
-              <div
-                style={{
-                  background: "rgba(9, 19, 43, 0.65)",
-                  backdropFilter: "blur(16px)",
-                  borderRadius: "24px",
-                  padding: "36px",
-                  border: "1px solid rgba(2, 172, 234, 0.3)",
-                  boxShadow: "0 20px 50px rgba(0, 0, 0, 0.4)",
-                  maxWidth: "460px",
-                  width: "100%",
-                  color: "#FFFFFF"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
-                  <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(2,172,234,0.2)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>
-                    🛡️
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#FFFFFF", margin: 0 }}>
-                      EMIS Web Write-Back
-                    </h3>
-                    <span style={{ fontSize: "12px", color: "#02ACEA", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px" }}>
-                      Human Verified Workflow
-                    </span>
-                  </div>
-                </div>
 
-                <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.8)", lineHeight: 1.6, marginBottom: "20px" }}>
-                  Automated clinical concept extraction with 100% human-in-the-loop verification before structured record commit.
-                </p>
-
-                <div style={{ display: "flex", flexDirection: "column", gap: "10px", borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: "16px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>
-                    <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> Sub-2 minute letter turnaround
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>
-                    <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> Standardised SNOMED CT coding
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>
-                    <span style={{ color: "#02ACEA", fontWeight: 800 }}>✓</span> DSPT &amp; DTAC NHS Compliant
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
