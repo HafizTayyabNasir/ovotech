@@ -153,21 +153,10 @@ export default function InteractiveBenefits() {
           {benefitsData.map((item) => {
             const isActive = activeTab.id === item.id;
             return (
-              <button
               <div
                 key={item.id}
-                onClick={() => setActiveTab(item)}
                 className="animated-border-wrapper"
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "14px",
-                  padding: "18px 24px",
-                  borderRadius: "18px",
-                  background: isActive ? "#091222" : "rgba(255,255,255,0.05)",
-                  border: isActive ? "2px solid #02ACEA" : "1px solid rgba(255,255,255,0.1)",
-                  cursor: "pointer",
-                  textAlign: "left",
                   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                   boxShadow: isActive ? "0 12px 30px rgba(2,172,234,0.25)" : "none",
                   transform: isActive ? "translateY(-2px)" : "none",
