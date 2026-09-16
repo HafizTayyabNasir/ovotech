@@ -2,7 +2,6 @@ import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import StatsGrid from "../components/StatsGrid";
-import WaveWorkflow from "../components/WaveWorkflow";
 import Solutions from "../components/Solutions";
 import InteractiveBenefits from "../components/InteractiveBenefits";
 import FeatureHighlights from "../components/FeatureHighlights";
@@ -25,7 +24,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <StatsGrid />
-      <WaveWorkflow />
       <Solutions />
       <InteractiveBenefits />
       <FeatureHighlights />
