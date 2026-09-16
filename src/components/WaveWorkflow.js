@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const workflowSteps = [
@@ -11,20 +10,6 @@ const workflowSteps = [
   "EMIS Write-Back",
 ];
 
-// Extra floating phrases that pass by in the background
-const floatingPhrases = [
-  "NHS Clinical Correspondence",
-  "SNOMED CT Coding",
-  "Patient Record Verified",
-  "Discharge Summary Parsed",
-  "Medication List Extracted",
-  "Diagnoses Identified",
-  "EMIS Web Integration",
-  "Structured Write-Back",
-  "Practice Workflow Optimised",
-  "Human Oversight Confirmed",
-  "Coding Accuracy Assured",
-  "Document Queue Managed",
 // Full sentences that flow along wave paths — each sentence contains a workflow step keyword
 const waveSentences = [
   { text: "Process incoming clinical correspondence through automated Document Intake pipeline", keyword: "Document Intake" },
@@ -37,8 +22,6 @@ const waveSentences = [
 
 export default function WaveWorkflow() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const containerRef = useRef(null);
   const [statusText, setStatusText] = useState("ANALYZING");
   const canvasRef = useRef(null);
   const animRef = useRef(null);
@@ -47,13 +30,9 @@ export default function WaveWorkflow() {
   // Cycle through the 6 steps
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsProcessing(true);
       setStatusText("PROCESSING");
       setTimeout(() => {
         setActiveStepIndex((prev) => (prev + 1) % workflowSteps.length);
-        setIsProcessing(false);
-      }, 800);
-    }, 3000);
         setStatusText("ANALYZING");
       }, 600);
     }, 3500);
@@ -205,7 +184,6 @@ export default function WaveWorkflow() {
 
   return (
     <section
-      ref={containerRef}
       style={{
         background: "linear-gradient(180deg, #050C1A 0%, #0B1929 50%, #091222 100%)",
         padding: "90px 0 80px",
@@ -267,13 +245,10 @@ export default function WaveWorkflow() {
       <div
         style={{
           position: "relative",
-          height: "160px",
           height: "180px",
           overflow: "hidden",
         }}
       >
-        {/* Horizontal guide lines (wave paths) */}
-        <svg
         {/* Canvas for wave text */}
         <canvas
           ref={canvasRef}
@@ -283,41 +258,11 @@ export default function WaveWorkflow() {
             left: 0,
             width: "100%",
             height: "100%",
-            top: 0,
-            left: 0,
             zIndex: 5,
             pointerEvents: "none",
-            zIndex: 1,
           }}
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 160"
-        >
-          {/* Wave path lines */}
-          {[0, 1, 2].map((i) => (
-            <path
-              key={i}
-              d={`M0,${60 + i * 20} Q360,${40 + i * 20} 720,${60 + i * 20} T1440,${60 + i * 20}`}
-              fill="none"
-              stroke={`rgba(2, 172, 234, ${0.06 + i * 0.03})`}
-              strokeWidth="1"
-            />
-          ))}
-        </svg>
         />
 
-        {/* Floating text elements — background phrases */}
-        {floatingPhrases.map((phrase, i) => (
-          <FloatingText
-            key={`float-${i}`}
-            text={phrase}
-            delay={i * 2.2}
-            duration={12 + (i % 4) * 3}
-            yOffset={10 + (i % 5) * 28}
-            waveHeight={6 + (i % 3) * 4}
-          />
-        ))}
-
-        {/* Central oval pill */}
         {/* Central oval pill — sits on top of canvas */}
         <div
           style={{
@@ -328,15 +273,12 @@ export default function WaveWorkflow() {
             zIndex: 20,
           }}
         >
-          {/* Glow ring behind pill */}
           {/* Outer glow ring */}
           <div
             style={{
               position: "absolute",
-              inset: "-12px",
               inset: "-14px",
               borderRadius: "40px",
-              background: "rgba(2, 172, 234, 0.08)",
               background: "rgba(2, 172, 234, 0.06)",
               animation: "pulse-ring 2.5s ease-in-out infinite",
             }}
@@ -345,25 +287,19 @@ export default function WaveWorkflow() {
           {/* Pill box */}
           <div
             style={{
-              background: "rgba(2, 172, 234, 0.12)",
               background: "rgba(8, 20, 40, 0.85)",
               border: "2px solid rgba(2, 172, 234, 0.6)",
               borderRadius: "32px",
-              padding: "14px 36px",
-              backdropFilter: "blur(16px)",
-              minWidth: "220px",
               padding: "12px 32px",
               backdropFilter: "blur(20px)",
               minWidth: "200px",
               textAlign: "center",
               boxShadow:
-                "0 0 40px rgba(2, 172, 234, 0.15), inset 0 0 20px rgba(2, 172, 234, 0.05)",
                 "0 0 50px rgba(2, 172, 234, 0.2), 0 0 100px rgba(2, 172, 234, 0.06), inset 0 0 30px rgba(2, 172, 234, 0.05)",
               position: "relative",
               overflow: "hidden",
             }}
           >
-            {/* Shimmer effect */}
             {/* Shimmer */}
             <div
               style={{
@@ -373,7 +309,6 @@ export default function WaveWorkflow() {
                 width: "200%",
                 height: "100%",
                 background:
-                  "linear-gradient(90deg, transparent, rgba(2, 172, 234, 0.1), transparent)",
                   "linear-gradient(90deg, transparent, rgba(2, 172, 234, 0.08), transparent)",
                 animation: "shimmerSlide 3s ease-in-out infinite",
                 pointerEvents: "none",
@@ -388,9 +323,6 @@ export default function WaveWorkflow() {
                 letterSpacing: "0.5px",
                 position: "relative",
                 zIndex: 2,
-                transition: "all 0.4s ease",
-                opacity: isProcessing ? 0.4 : 1,
-                transform: isProcessing ? "scale(0.95)" : "scale(1)",
                 transition: "all 0.3s ease",
                 display: "inline-block",
               }}
@@ -399,7 +331,6 @@ export default function WaveWorkflow() {
             </span>
           </div>
 
-          {/* Status indicator below pill */}
           {/* Status indicator */}
           <div
             style={{
@@ -416,10 +347,8 @@ export default function WaveWorkflow() {
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
-                background: isProcessing ? "#FBBF24" : "#16a34a",
                 background: statusText === "ANALYZING" ? "#02ACEA" : "#FBBF24",
                 display: "inline-block",
-                animation: isProcessing ? "blink 0.6s step-end infinite" : "none",
               }}
             />
             <span
@@ -427,26 +356,16 @@ export default function WaveWorkflow() {
                 fontSize: "10px",
                 fontWeight: 700,
                 letterSpacing: "2px",
-                color: isProcessing
-                  ? "rgba(251, 191, 36, 0.9)"
-                  : "rgba(22, 163, 74, 0.9)",
                 color: statusText === "ANALYZING"
                   ? "rgba(2, 172, 234, 0.9)"
                   : "rgba(251, 191, 36, 0.9)",
                 textTransform: "uppercase",
               }}
             >
-              {isProcessing ? "PROCESSING" : `STEP ${activeStepIndex + 1} OF 6`}
               {statusText}
             </span>
           </div>
         </div>
-
-        {/* Active step text arriving from right with wave */}
-        <ActiveStepWave
-          text={workflowSteps[activeStepIndex]}
-          stepIndex={activeStepIndex}
-        />
       </div>
 
       {/* Bottom step indicators */}
@@ -505,56 +424,5 @@ export default function WaveWorkflow() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* Floating background text component */
-function FloatingText({ text, delay, duration, yOffset, waveHeight }) {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: `${yOffset}px`,
-        left: 0,
-        whiteSpace: "nowrap",
-        fontSize: "clamp(13px, 1.4vw, 16px)",
-        fontWeight: 400,
-        color: "rgba(255, 255, 255, 0.12)",
-        letterSpacing: "0.5px",
-        pointerEvents: "none",
-        zIndex: 5,
-        animation: `waveFloat ${duration}s linear ${delay}s infinite`,
-        willChange: "transform",
-      }}
-    >
-      {text}
-    </div>
-  );
-}
-
-/* Active step text that waves in from the right towards center */
-function ActiveStepWave({ text, stepIndex }) {
-  return (
-    <div
-      key={`active-${stepIndex}-${text}`}
-      style={{
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        whiteSpace: "nowrap",
-        fontSize: "clamp(14px, 1.6vw, 18px)",
-        fontWeight: 600,
-        color: "rgba(2, 172, 234, 0.5)",
-        letterSpacing: "1px",
-        pointerEvents: "none",
-        zIndex: 8,
-        animation: `waveFloatActive 3s ease-out forwards`,
-        marginTop: "-10px",
-        marginLeft: "-60px",
-        willChange: "transform, opacity",
-      }}
-    >
-      {text}
-    </div>
   );
 }
