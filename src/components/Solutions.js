@@ -68,18 +68,45 @@ export default function Solutions() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
           {coreProductAreas.map((s, i) => (
-            <div key={i} id={s.id} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#f8fafc", borderRadius: "20px", padding: "36px 28px", transition: "all 0.3s", cursor: "pointer", border: "1px solid #e2e8f5" }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,172,234,0.15)"; e.currentTarget.style.borderColor = "rgba(2,172,234,0.3)"; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "#e2e8f5"; }}
+            <div
+              key={i}
+              id={s.id}
+              className={`animate-fadeInUp delay-${(i + 1) * 100} animated-border-wrapper`}
+              style={{
+                "--border-radius": "20px",
+                transition: "all 0.3s",
+                cursor: "pointer",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
+                height: "100%",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-6px)";
+                e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,172,234,0.15)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.05)";
+              }}
             >
-              <div style={{ width: "60px", height: "60px", background: "rgba(2,172,234,0.15)", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px", fontSize: "28px" }}>
-                {s.icon}
+              <div
+                className="animated-border-inner"
+                style={{
+                  background: "#f8fafc",
+                  padding: "36px 28px",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                }}
+              >
+                <div style={{ width: "60px", height: "60px", background: "rgba(2,172,234,0.15)", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px", fontSize: "28px" }}>
+                  {s.icon}
+                </div>
+                <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0f172a", marginBottom: "10px", lineHeight: 1.3 }}>{s.title}</h3>
+                <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, marginBottom: "18px", flex: 1 }}>{s.desc}</p>
+                <Link href={s.href} style={{ fontSize: "13px", fontWeight: 700, color: "#02ACEA", display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "auto" }}>
+                  Learn More <span>→</span>
+                </Link>
               </div>
-              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0f172a", marginBottom: "10px", lineHeight: 1.3 }}>{s.title}</h3>
-              <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, marginBottom: "18px" }}>{s.desc}</p>
-              <Link href={s.href} style={{ fontSize: "13px", fontWeight: 700, color: "#02ACEA", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                Learn More <span>→</span>
-              </Link>
             </div>
           ))}
         </div>
