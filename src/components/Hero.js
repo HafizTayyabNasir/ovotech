@@ -111,6 +111,8 @@ export default function Hero() {
 
               <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: "16px", maxWidth: "580px" }}>
                 Ovotech brings clinical document intake, entity extraction, review queues, clinical review, patient history context, and EMIS Web write-back into one unified platform for UK GP practices.
+              <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)", lineHeight: 1.6, marginBottom: "32px", maxWidth: "620px" }}>
+                Ovotech unifies document intake, assisted SNOMED CT coding, and EMIS Web write-back into one workspace—empowering GP practice teams to clear backlogs with 100% human oversight.
               </p>
 
               <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "36px", maxWidth: "580px" }}>

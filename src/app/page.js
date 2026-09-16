@@ -6,7 +6,6 @@ import Solutions from "../components/Solutions";
 import InteractiveBenefits from "../components/InteractiveBenefits";
 import FeatureHighlights from "../components/FeatureHighlights";
 import InteractiveWorkflowShowcase from "../components/InteractiveWorkflowShowcase";
-import ROICalculator from "../components/ROICalculator";
 import ComplianceSection from "../components/ComplianceSection";
 import BeforeAfter from "../components/BeforeAfter";
 import Benefits from "../components/Benefits";
@@ -29,7 +28,6 @@ export default function Home() {
       <InteractiveBenefits />
       <FeatureHighlights />
       <InteractiveWorkflowShowcase />
-      <ROICalculator />
       <ComplianceSection />
       <BeforeAfter />
       <Benefits />

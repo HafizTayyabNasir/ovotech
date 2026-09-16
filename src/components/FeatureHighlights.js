@@ -56,6 +56,8 @@ export default function FeatureHighlights() {
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
                 Ovotech automatically parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing structured entries directly to EMIS Web.
+              <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
+                Ovotech parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing entries directly to EMIS Web.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
                 <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
@@ -81,6 +83,8 @@ export default function FeatureHighlights() {
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.8, marginBottom: "28px" }}>
                 Beyond our intelligent document platform, Ovotech provides primary care practices with dedicated workflow specialists and experienced clinical coders. We work alongside your team to clear backlogs, manage staff transitions, and ensure complete CQC inspection readiness.
+              <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
+                Ovotech provides primary care practices with dedicated workflow specialists and experienced clinical coders to clear backlogs, manage staff transitions, and maintain CQC inspection readiness.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
                 <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
