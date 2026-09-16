@@ -158,6 +158,7 @@ export default function InteractiveWorkflowShowcase() {
           background: "#091222",
           color: "#FFFFFF",
           padding: "60px 0",
+          padding: "20px 0", /* Reduced padding */
           overflow: "hidden"
         }}
       >
@@ -177,12 +178,16 @@ export default function InteractiveWorkflowShowcase() {
           {/* Section Header */}
           <div style={{ textAlign: "center", marginBottom: "44px" }}>
             <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(2, 172, 234, 0.3)" }}>
+          <div style={{ textAlign: "center", marginBottom: "3vh" }}>
+            <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "4px 16px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "8px", border: "1px solid rgba(2, 172, 234, 0.3)" }}>
               OVOTECH WORKFLOW : HOW IT WORKS
             </span>
             <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 12px" }}>
+            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 8px" }}>
               From incoming document to verified EMIS record in seconds.
             </h2>
             <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
+            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
               Scroll to explore the 6-step clinical document workflow preview.
             </p>
           </div>
@@ -193,6 +198,7 @@ export default function InteractiveWorkflowShowcase() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "36px",
+            gap: "24px",
             alignItems: "center"
           }}
         >
@@ -281,22 +287,29 @@ export default function InteractiveWorkflowShowcase() {
 
           {/* Right Column: 5 Interactive Cards with Progress Line */}
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          {/* Right Column: 6 Interactive Cards with scroll-driven logic */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
             {workflowSteps.map((step, index) => {
               const isActive = index === activeIndex;
+
               return (
                 <div
                   key={step.number}
+                  key={index}
                   onClick={() => handleStepClick(index)}
                   style={{
                     background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
                     color: isActive ? "#091222" : "#FFFFFF",
                     borderRadius: "16px",
                     padding: "16px 20px",
+                    padding: "12px 16px",
                     border: isActive ? "2px solid #02ACEA" : "1px solid rgba(255, 255, 255, 0.08)",
                     cursor: "pointer",
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                     boxShadow: isActive ? "0 16px 36px rgba(0, 0, 0, 0.4)" : "none",
                     transform: isActive ? "translateX(6px)" : "none",
+                    transition: "all 0.3s ease",
+                    boxShadow: isActive ? "0 20px 40px rgba(0,0,0,0.3)" : "none",
                     position: "relative",
                     overflow: "hidden"
                   }}
