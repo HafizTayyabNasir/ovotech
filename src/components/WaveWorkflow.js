@@ -11,12 +11,15 @@ const workflowSteps = [
 ];
 
 // Full sentences that flow along wave paths — each sentence contains a workflow step keyword
+// Full sentences that flow along the single wave line — each contains a workflow step keyword
 const waveSentences = [
   { text: "Process incoming clinical correspondence through automated Document Intake pipeline", keyword: "Document Intake" },
   { text: "Run Entity Extraction on discharge summaries to identify diagnoses and medications", keyword: "Entity Extraction" },
   { text: "Organise parsed documents into structured Review Queue with urgency indicators", keyword: "Review Queue" },
   { text: "Present extracted facts and SNOMED codes side by side for Clinical Review", keyword: "Clinical Review" },
   { text: "Authorised staff verify and provide Human Approval before system commit", keyword: "Human Approval" },
+  { text: "Present extracted facts and SNOMED codes side by side for Clinical Review workspace", keyword: "Clinical Review" },
+  { text: "Authorised staff verify and provide Human Approval before any system commit", keyword: "Human Approval" },
   { text: "Write approved clinical data directly into patient records via EMIS Write-Back", keyword: "EMIS Write-Back" },
 ];
 
@@ -26,6 +29,7 @@ export default function WaveWorkflow() {
   const canvasRef = useRef(null);
   const animRef = useRef(null);
   const linesRef = useRef([]);
+  const stateRef = useRef({ sentenceIndex: 0, xOffset: 0 });
 
   // Cycle through the 6 steps
   useEffect(() => {
@@ -41,6 +45,8 @@ export default function WaveWorkflow() {
 
   // Canvas-based wave text animation
   const initLines = useCallback((canvas) => {
+  // Canvas wave animation — single line, sentences one after another
+  const initCanvas = useCallback((canvas) => {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     const dpr = window.devicePixelRatio || 1;
@@ -52,6 +58,7 @@ export default function WaveWorkflow() {
       canvas.style.width = rect.width + "px";
       canvas.style.height = rect.height + "px";
       ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
     window.addEventListener("resize", resize);
@@ -68,15 +75,27 @@ export default function WaveWorkflow() {
       x: canvas.width / dpr + i * 200,
       opacity: 0.15 + (i % 3) * 0.03,
     }));
+    // Single stream state: chain of sentences flowing left
+    // We'll place all sentences in a continuous ribbon and scroll them
+    const GAP = 120; // gap between sentences
+    const SPEED = 1.0;
+    const AMPLITUDE = 12; // wave height (small)
+    const FREQUENCY = 0.006;
 
     linesRef.current = lineConfigs;
+    // Build a long ribbon: sentence0 ~~~gap~~~ sentence1 ~~~gap~~~ sentence2 ...
+    // We'll keep scrolling and loop
+    let scrollX = 0;
 
     const pillCenterX = () => canvas.width / dpr / 2;
     const pillCenterY = () => canvas.height / dpr / 2;
     const pillWidth = 200;
     const pillHeight = 48;
+    const pillW = 200;
+    const pillH = 48;
 
     let frameId;
+
     const animate = () => {
       const w = canvas.width / dpr;
       const h = canvas.height / dpr;
@@ -84,9 +103,14 @@ export default function WaveWorkflow() {
 
       const cx = pillCenterX();
       const cy = pillCenterY();
+      const cy = h / 2;
+      const cx = w / 2;
+      const time = Date.now() * 0.0003;
 
       // Draw wave guide lines
       for (let li = 0; li < 4; li++) {
+      // Draw 3 subtle wave guide lines (visual wave curves)
+      for (let li = 0; li < 3; li++) {
         ctx.beginPath();
         const baseY = 20 + li * 30;
         const amp = 10 + (li % 2) * 5;
@@ -96,10 +120,16 @@ export default function WaveWorkflow() {
           const distFromCenter = Math.abs(px - cx) / (w / 2);
           const convergeFactor = 1 - (1 - distFromCenter) * 0.6;
           const y = cy + (baseY - h / 2) * convergeFactor + Math.sin(px * freq + li * 0.8 + Date.now() * 0.0003) * amp * convergeFactor;
+        const lineAmp = AMPLITUDE * (0.5 + li * 0.4);
+        const lineFreq = FREQUENCY * (0.8 + li * 0.15);
+        const linePhase = li * 1.5 + time;
+        for (let px = 0; px <= w; px += 2) {
+          const y = cy + Math.sin(px * lineFreq + linePhase) * lineAmp;
           if (px === 0) ctx.moveTo(px, y);
           else ctx.lineTo(px, y);
         }
         ctx.strokeStyle = `rgba(2, 172, 234, ${0.06 + li * 0.02})`;
+        ctx.strokeStyle = `rgba(2, 172, 234, ${0.04 + li * 0.025})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -108,39 +138,67 @@ export default function WaveWorkflow() {
       linesRef.current.forEach((line) => {
         // Move text left
         line.x -= line.speed;
+      // Measure all sentences to know total ribbon length
+      ctx.font = `400 15px 'Inter', system-ui, sans-serif`;
+      let totalRibbonWidth = 0;
+      const sentenceWidths = waveSentences.map((s) => {
+        const w = ctx.measureText(s.text).width;
+        totalRibbonWidth += w + GAP;
+        return w;
+      });
 
         // Reset when fully off-screen left
         const textWidth = ctx.measureText(line.text).width || line.text.length * 8;
         if (line.x + textWidth < -100) {
           line.x = w + 100 + Math.random() * 200;
         }
+      // Scroll
+      scrollX += SPEED;
+      if (scrollX > totalRibbonWidth) {
+        scrollX -= totalRibbonWidth;
+      }
 
         // Calculate wave Y with convergence near center
         const distFromCenter = Math.abs(line.x + textWidth / 2 - cx) / (w / 2);
         const convergeFactor = Math.max(0.15, distFromCenter);
         const waveY = cy + (line.yBase - h / 2) * convergeFactor + Math.sin((line.x * line.frequency) + line.phase + Date.now() * 0.0004) * line.amplitude * convergeFactor;
+      // Draw each sentence in the ribbon
+      let ribbonX = -scrollX + w + 100; // start off-screen right
 
         // Draw each character
         ctx.font = `400 14px 'Inter', system-ui, sans-serif`;
         ctx.fillStyle = `rgba(255, 255, 255, ${line.opacity})`;
+      waveSentences.forEach((sentence, si) => {
+        const textW = sentenceWidths[si];
 
         let charX = line.x;
         const chars = line.text.split("");
         const keywordStart = line.text.indexOf(line.keyword);
         const keywordEnd = keywordStart + line.keyword.length;
+        // If this segment wraps, draw it at the wrapped position too
+        const drawPositions = [ribbonX];
+        // Also draw a wrapped copy so the loop is seamless
+        drawPositions.push(ribbonX + totalRibbonWidth);
 
         chars.forEach((char, ci) => {
           const charDistFromCenter = Math.abs(charX - cx) / (w / 2);
           const charConverge = Math.max(0.15, charDistFromCenter);
           const charY = cy + (line.yBase - h / 2) * charConverge + Math.sin((charX * line.frequency) + line.phase + Date.now() * 0.0004) * line.amplitude * charConverge;
+        drawPositions.forEach((startX) => {
+          // Only draw if visible
+          if (startX > w + 50 || startX + textW < -50) return;
 
           // Check if char is inside the pill region
           const inPillX = Math.abs(charX - cx) < pillWidth / 2;
           const inPillY = Math.abs(charY - cy) < pillHeight / 2;
           const isInPill = inPillX && inPillY;
+          const keywordStart = sentence.text.indexOf(sentence.keyword);
+          const keywordEnd = keywordStart + sentence.keyword.length;
 
           // Check if this character is part of the keyword
           const isKeyword = ci >= keywordStart && ci < keywordEnd;
+          let charX = startX;
+          const chars = sentence.text.split("");
 
           if (isInPill && isKeyword) {
             // Bold + brighter inside pill
@@ -157,10 +215,40 @@ export default function WaveWorkflow() {
             ctx.font = `400 14px 'Inter', system-ui, sans-serif`;
             ctx.fillStyle = `rgba(255, 255, 255, ${line.opacity})`;
           }
+          chars.forEach((char, ci) => {
+            // Wave Y position
+            const waveY = cy + Math.sin(charX * FREQUENCY + time) * AMPLITUDE;
 
           ctx.fillText(char, charX, charY);
           charX += ctx.measureText(char).width;
+            // Check if char is inside the pill region
+            const inPillX = Math.abs(charX - cx) < pillW / 2;
+            const inPillY = Math.abs(waveY - cy) < pillH / 2;
+            const isInPill = inPillX && inPillY;
+
+            // Is this character part of the keyword?
+            const isKeyword = ci >= keywordStart && ci < keywordEnd;
+
+            if (isInPill && isKeyword) {
+              ctx.font = `800 17px 'Inter', system-ui, sans-serif`;
+              ctx.fillStyle = `rgba(255, 255, 255, 0.95)`;
+            } else if (isInPill) {
+              ctx.font = `400 15px 'Inter', system-ui, sans-serif`;
+              ctx.fillStyle = `rgba(255, 255, 255, 0.08)`;
+            } else if (isKeyword) {
+              ctx.font = `600 15px 'Inter', system-ui, sans-serif`;
+              ctx.fillStyle = `rgba(2, 172, 234, 0.35)`;
+            } else {
+              ctx.font = `400 15px 'Inter', system-ui, sans-serif`;
+              ctx.fillStyle = `rgba(255, 255, 255, 0.15)`;
+            }
+
+            ctx.fillText(char, charX, waveY);
+            charX += ctx.measureText(char).width;
+          });
         });
+
+        ribbonX += textW + GAP;
       });
 
       frameId = requestAnimationFrame(animate);
@@ -181,6 +269,8 @@ export default function WaveWorkflow() {
     const cleanup = initLines(canvas);
     return cleanup;
   }, [initLines]);
+    return initCanvas(canvas);
+  }, [initCanvas]);
 
   return (
     <section
@@ -250,6 +340,7 @@ export default function WaveWorkflow() {
         }}
       >
         {/* Canvas for wave text */}
+        {/* Canvas for single-line wave text */}
         <canvas
           ref={canvasRef}
           style={{
@@ -264,6 +355,7 @@ export default function WaveWorkflow() {
         />
 
         {/* Central oval pill — sits on top of canvas */}
+        {/* Central oval pill */}
         <div
           style={{
             position: "absolute",
@@ -274,6 +366,7 @@ export default function WaveWorkflow() {
           }}
         >
           {/* Outer glow ring */}
+          {/* Outer glow */}
           <div
             style={{
               position: "absolute",
@@ -285,6 +378,7 @@ export default function WaveWorkflow() {
           />
 
           {/* Pill box */}
+          {/* Pill */}
           <div
             style={{
               background: "rgba(8, 20, 40, 0.85)",
@@ -332,6 +426,7 @@ export default function WaveWorkflow() {
           </div>
 
           {/* Status indicator */}
+          {/* Status */}
           <div
             style={{
               textAlign: "center",
