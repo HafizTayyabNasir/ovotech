@@ -158,3 +158,48 @@
   50%  { transform: translateX(0vw) translateY(0px); opacity: 0; }
   100% { transform: translateX(0vw) translateY(0px); opacity: 0; }
 }
+
+@keyframes spin-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-border-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px; /* matching the card radius */
+  padding: 1px; /* width of the animated border */
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.animated-border-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 80%,
+    #02ACEA 100%
+  );
+  animation: spin-border 3s linear infinite;
+  z-index: -1;
+}
+
+.animated-border-wrapper:hover::before {
+  animation-duration: 1.5s;
+}
+
+.animated-border-inner {
+  position: relative;
+  border-radius: 17px; /* just inside the wrapper */
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+}
+
