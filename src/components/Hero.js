@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from "react";
+import ParticlesBackground from "./ParticlesBackground";
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -25,7 +26,12 @@ export default function Hero() {
 
   return (
     <>
-      <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#09132B" }}>
+      <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#B332D2" }}>
+        {/* Interactive Particles Background */}
+        <div style={{ position: "absolute", inset: 0, zIndex: 2 }}>
+          <ParticlesBackground color="#ffffff" />
+        </div>
+        
         {/* Background Video Autoplay */}
         <video
           autoPlay
@@ -55,15 +61,15 @@ export default function Hero() {
         >
           <defs>
             <linearGradient id="ovotechMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#050C1A" stopOpacity="0.98" />
-              <stop offset="45%" stopColor="#07152B" stopOpacity="0.94" />
-              <stop offset="75%" stopColor="#0B2545" stopOpacity="0.88" />
-              <stop offset="100%" stopColor="#134074" stopOpacity="0.75" />
+              <stop offset="0%" stopColor="#B332D2" stopOpacity="0.98" />
+              <stop offset="45%" stopColor="#B332D2" stopOpacity="0.94" />
+              <stop offset="75%" stopColor="#B332D2" stopOpacity="0.88" />
+              <stop offset="100%" stopColor="#B332D2" stopOpacity="0.75" />
             </linearGradient>
 
             <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#07152B" stopOpacity="0.80" />
-              <stop offset="50%" stopColor="#0B2545" stopOpacity="0.55" />
+              <stop offset="0%" stopColor="#B332D2" stopOpacity="0.80" />
+              <stop offset="50%" stopColor="#B332D2" stopOpacity="0.55" />
               <stop offset="100%" stopColor="rgba(2, 172, 234, 0.15)" stopOpacity="0.15" />
             </linearGradient>
           </defs>
@@ -86,7 +92,7 @@ export default function Hero() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(11, 37, 69, 0.90) 0%, rgba(19, 64, 116, 0.82) 100%)",
+            background: "linear-gradient(180deg, rgba(179, 50, 210, 0.90) 0%, rgba(179, 50, 210, 0.82) 100%)",
             zIndex: 3
           }}
           className="md:hidden"

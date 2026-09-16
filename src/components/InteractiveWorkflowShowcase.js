@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const workflowSteps = [
@@ -96,107 +96,96 @@ const workflowSteps = [
 
 export default function InteractiveWorkflowShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef(null);
 
-  // Auto advance steps every 4.5 seconds unless paused by user interaction
+  // Scroll spy logic
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % workflowSteps.length);
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [isPaused]);
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      
+      // Calculate how far we've scrolled into the tall container
+      const { top, height } = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      const scrollDistance = -top;
+      const scrollableHeight = height - windowHeight;
+      
+      if (scrollDistance < 0) {
+        setActiveIndex(0);
+      } else if (scrollDistance >= scrollableHeight) {
+        setActiveIndex(workflowSteps.length - 1);
+      } else {
+        const progress = scrollDistance / scrollableHeight;
+        const newIndex = Math.min(
+          workflowSteps.length - 1,
+          Math.floor(progress * workflowSteps.length)
+        );
+        setActiveIndex(newIndex);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleStepClick = (index) => {
     setActiveIndex(index);
-    setIsPaused(true);
+    // Note: click doesn't auto-scroll the page in this simple implementation, 
+    // it just changes the state visually if they manage to click it while pinned.
   };
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + workflowSteps.length) % workflowSteps.length);
-    setIsPaused(true);
   };
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % workflowSteps.length);
-    setIsPaused(true);
   };
 
   const activeStep = workflowSteps[activeIndex];
 
   return (
-    <section
-      style={{
-        background: "#091222",
-        color: "#FFFFFF",
-        padding: "90px 0",
-        position: "relative",
-        overflow: "hidden"
-      }}
-    >
-      {/* Background grid pattern */}
+    <section ref={containerRef} style={{ height: "400vh", position: "relative", background: "#B332D2" }}>
       <div
         style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "radial-gradient(rgba(2, 172, 234, 0.12) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-          pointerEvents: "none",
-          opacity: 0.5
+          position: "sticky",
+          top: 0,
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          background: "#B332D2",
+          color: "#FFFFFF",
+          padding: "60px 0",
+          overflow: "hidden"
         }}
-      />
-
-      <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
-        {/* Section Header */}
-        <div style={{ textAlign: "center", marginBottom: "44px" }}>
-          <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(2, 172, 234, 0.3)" }}>
-            OVOTECH WORKFLOW : HOW IT WORKS
-          </span>
-          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 12px" }}>
-            From incoming document to verified EMIS record in seconds.
-          </h2>
-          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
-            Click or watch the 6-step clinical document workflow preview in action below.
-          </p>
-        </div>
-
-        {/* 6 Step Selector Pill Bar (Mobile & Desktop) */}
+      >
+        {/* Background grid pattern */}
         <div
           style={{
-            display: "flex",
-            gap: "8px",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            marginBottom: "32px"
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "radial-gradient(rgba(2, 172, 234, 0.12) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            pointerEvents: "none",
+            opacity: 0.5
           }}
-        >
-          {workflowSteps.map((step, i) => {
-            const isActive = i === activeIndex;
-            return (
-              <button
-                key={step.number}
-                onClick={() => handleStepClick(i)}
-                style={{
-                  background: isActive ? "#02ACEA" : "rgba(255,255,255,0.06)",
-                  color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.7)",
-                  border: isActive ? "1px solid #02ACEA" : "1px solid rgba(255,255,255,0.1)",
-                  padding: "8px 16px",
-                  borderRadius: "20px",
-                  fontSize: "13px",
-                  fontWeight: isActive ? 700 : 500,
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px"
-                }}
-              >
-                <span style={{ color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.4)", fontWeight: 800 }}>{step.number}</span>
-                <span>{step.category}</span>
-              </button>
-            );
-          })}
-        </div>
+        />
+
+        <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+          {/* Section Header */}
+          <div style={{ textAlign: "center", marginBottom: "44px" }}>
+            <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "12px", border: "1px solid rgba(2, 172, 234, 0.3)" }}>
+              OVOTECH WORKFLOW : HOW IT WORKS
+            </span>
+            <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 12px" }}>
+              From incoming document to verified EMIS record in seconds.
+            </h2>
+            <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
+              Scroll to explore the 6-step clinical document workflow preview.
+            </p>
+          </div>
 
         {/* Main 2-Column Showcase */}
         <div
@@ -219,7 +208,7 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
-            <div style={{ position: "relative", height: "340px", background: "#050B18" }}>
+            <div style={{ position: "relative", height: "340px", background: "#B332D2" }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep.number}
@@ -239,7 +228,7 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Bottom Controls Bar */}
-            <div style={{ background: "rgba(15, 30, 54, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ background: "rgba(179, 50, 210, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#02ACEA", display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ color: "#16a34a" }}>▶</span> {activeStep.tag}
               </div>
@@ -300,7 +289,7 @@ export default function InteractiveWorkflowShowcase() {
                   onClick={() => handleStepClick(index)}
                   style={{
                     background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
-                    color: isActive ? "#091222" : "#FFFFFF",
+                    color: isActive ? "#B332D2" : "#FFFFFF",
                     borderRadius: "16px",
                     padding: "16px 20px",
                     border: isActive ? "2px solid #02ACEA" : "1px solid rgba(255, 255, 255, 0.08)",
@@ -312,21 +301,7 @@ export default function InteractiveWorkflowShowcase() {
                     overflow: "hidden"
                   }}
                 >
-                  {/* Progress Line for Active Card */}
-                  {isActive && !isPaused && (
-                    <motion.div
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
-                      transition={{ duration: 4.5, ease: "linear" }}
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        height: "3px",
-                        background: "#02ACEA"
-                      }}
-                    />
-                  )}
+                  {/* Removed auto-playing progress line since it's now driven by scroll */}
 
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "4px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -335,7 +310,7 @@ export default function InteractiveWorkflowShowcase() {
                           width: "28px",
                           height: "28px",
                           borderRadius: "8px",
-                          background: isActive ? "#091222" : "rgba(255,255,255,0.1)",
+                          background: isActive ? "#B332D2" : "rgba(255,255,255,0.1)",
                           color: isActive ? "#FFFFFF" : "#02ACEA",
                           display: "flex",
                           alignItems: "center",
@@ -354,7 +329,7 @@ export default function InteractiveWorkflowShowcase() {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#091222" : "#FFFFFF", marginBottom: "2px" }}>
+                  <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#B332D2" : "#FFFFFF", marginBottom: "2px" }}>
                     {step.title}
                   </h3>
 
@@ -373,6 +348,7 @@ export default function InteractiveWorkflowShowcase() {
             })}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
