@@ -146,7 +146,6 @@ export default function InteractiveWorkflowShowcase() {
   const activeStep = workflowSteps[activeIndex];
 
   return (
-    <section ref={containerRef} style={{ height: "400vh", position: "relative", background: "#B332D2" }}>
     <section ref={containerRef} style={{ height: "400vh", position: "relative", background: "#091222" }}>
       <div
         style={{
@@ -156,7 +155,6 @@ export default function InteractiveWorkflowShowcase() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          background: "#B332D2",
           background: "#091222",
           color: "#FFFFFF",
           padding: "60px 0",
@@ -210,7 +208,6 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
-            <div style={{ position: "relative", height: "340px", background: "#B332D2" }}>
             <div style={{ position: "relative", height: "340px", background: "#091222" }}>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -292,7 +289,6 @@ export default function InteractiveWorkflowShowcase() {
                   onClick={() => handleStepClick(index)}
                   style={{
                     background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
-                    color: isActive ? "#B332D2" : "#FFFFFF",
                     color: isActive ? "#091222" : "#FFFFFF",
                     borderRadius: "16px",
                     padding: "16px 20px",
@@ -314,7 +310,6 @@ export default function InteractiveWorkflowShowcase() {
                           width: "28px",
                           height: "28px",
                           borderRadius: "8px",
-                          background: isActive ? "#B332D2" : "rgba(255,255,255,0.1)",
                           background: isActive ? "#091222" : "rgba(255,255,255,0.1)",
                           color: isActive ? "#FFFFFF" : "#02ACEA",
                           display: "flex",
@@ -334,7 +329,6 @@ export default function InteractiveWorkflowShowcase() {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#B332D2" : "#FFFFFF", marginBottom: "2px" }}>
                   <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#091222" : "#FFFFFF", marginBottom: "2px" }}>
                     {step.title}
                   </h3>
