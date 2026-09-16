@@ -171,10 +171,11 @@
 .animated-border-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 18px; /* matching the card radius */
-  padding: 1px; /* width of the animated border */
+  border-radius: var(--border-radius, 18px); /* matching the card radius */
+  padding: 2px; /* width of the animated border */
   z-index: 1;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex; /* ensures inner button fills it properly */
 }
 
 .animated-border-wrapper::before {
@@ -189,18 +190,21 @@
   background: conic-gradient(
     from 0deg,
     transparent 0%,
-    transparent 80%,
-    #02ACEA 100%
+    transparent 50%,
+    #02ACEA 85%,
+    #00FFFF 95%,
+    #FFFFFF 100%
   );
-  animation: spin-border 3s linear infinite;
+  animation: spin-border 4s linear infinite;
   z-index: -1;
 }
 
 .animated-border-inner {
   position: relative;
-  border-radius: 17px; /* just inside the wrapper */
+  border-radius: calc(var(--border-radius, 18px) - 2px); /* just inside the wrapper */
   z-index: 2;
   height: 100%;
   width: 100%;
+  flex: 1;
 }
 

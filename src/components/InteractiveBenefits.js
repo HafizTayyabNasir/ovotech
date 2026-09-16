@@ -218,16 +218,23 @@ export default function InteractiveBenefits() {
         </div>
 
         {/* Active Content Card */}
-        <div style={{
-          background: "rgba(255, 255, 255, 0.05)",
-          backdropFilter: "blur(16px)",
-          borderRadius: "28px",
-          padding: "48px",
-          color: "#FFFFFF",
-          boxShadow: "0 24px 70px rgba(0, 0, 0, 0.45)",
-          border: "1px solid rgba(255, 255, 255, 0.12)"
-        }}>
-          <div style={{
+        <div
+          className="animated-border-wrapper"
+          style={{
+            "--border-radius": "28px",
+            boxShadow: "0 24px 70px rgba(0, 0, 0, 0.45)",
+          }}
+        >
+          <div
+            className="animated-border-inner"
+            style={{
+              background: "rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(16px)",
+              padding: "48px",
+              color: "#FFFFFF",
+            }}
+          >
+            <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "48px",
@@ -308,6 +315,7 @@ export default function InteractiveBenefits() {
               <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
                 Explore Platform Features <span>→</span>
               </Link>
+            </div>
             </div>
           </div>
         </div>
