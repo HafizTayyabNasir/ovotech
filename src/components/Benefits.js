@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-// sample
 const features = [
   { icon: "🖥️", title: "Single Clinical Workspace", desc: "Review original documents, extracted details, and SNOMED CT suggestions in one window." },
   { icon: "🏥", title: "EMIS Web Integration", desc: "Structured write-back of approved clinical information directly into patient records." },
