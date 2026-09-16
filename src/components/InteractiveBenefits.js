@@ -230,6 +230,7 @@ export default function InteractiveBenefits() {
             style={{
               background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(16px)",
+              background: "#15243C",
               padding: "48px",
               color: "#FFFFFF",
             }}
