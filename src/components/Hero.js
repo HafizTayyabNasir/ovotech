@@ -48,6 +48,7 @@ export default function Hero() {
         </video>
 
         {/* SVG Layered Organic Wave Curve Overlay (Lighter & Semi-Transparent Blue Gradient) */}
+        {/* SVG Layered Organic Wave Curve Overlay */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
           style={{ zIndex: 3 }}
@@ -76,6 +77,7 @@ export default function Hero() {
           />
 
           {/* Main Solid Organic Curve Layer (Wide Top & Bottom, Narrow Center) */}
+          {/* Main Solid Organic Curve Layer */}
           <path
             d="M 0,0 L 760,0 C 470,250 470,550 760,800 L 0,800 Z"
             fill="url(#ovotechMainGradient)"
@@ -94,6 +96,7 @@ export default function Hero() {
         />
 
         {/* Hero Main Content Container with slight left margin */}
+        {/* Hero Main Content Container */}
         <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", marginLeft: "auto", marginRight: "auto", paddingLeft: "clamp(12px, 2vw, 24px)", paddingRight: "clamp(20px, 3vw, 40px)" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
