@@ -42,7 +42,7 @@ export default function Benefits() {
                     <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.5 }}>{f.desc}</p>
                   </div>
                 </div>
-              ))}
+              ))}s
             </div>
             <Link href="/how-it-works" style={{ background: "#02ACEA", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
               See Workflow Details <span>→</span>
