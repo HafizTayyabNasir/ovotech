@@ -78,8 +78,10 @@ export default function WaveWorkflow() {
     // Single stream state: chain of sentences flowing left
     // We'll place all sentences in a continuous ribbon and scroll them
     const GAP = 120; // gap between sentences
+    const GAP = 120;
     const SPEED = 1.0;
     const AMPLITUDE = 12; // wave height (small)
+    const AMPLITUDE = 12;
     const FREQUENCY = 0.006;
 
     linesRef.current = lineConfigs;
@@ -94,6 +96,7 @@ export default function WaveWorkflow() {
     const pillW = 200;
     const pillH = 48;
 
+    let scrollX = 0;
     let frameId;
 
     const animate = () => {
@@ -110,6 +113,7 @@ export default function WaveWorkflow() {
       // Draw wave guide lines
       for (let li = 0; li < 4; li++) {
       // Draw 3 subtle wave guide lines (visual wave curves)
+      // Draw 3 subtle wave guide lines
       for (let li = 0; li < 3; li++) {
         ctx.beginPath();
         const baseY = 20 + li * 30;
@@ -130,6 +134,7 @@ export default function WaveWorkflow() {
         }
         ctx.strokeStyle = `rgba(2, 172, 234, ${0.06 + li * 0.02})`;
         ctx.strokeStyle = `rgba(2, 172, 234, ${0.04 + li * 0.025})`;
+        ctx.strokeStyle = "rgba(2, 172, 234, " + (0.04 + li * 0.025) + ")";
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -140,11 +145,16 @@ export default function WaveWorkflow() {
         line.x -= line.speed;
       // Measure all sentences to know total ribbon length
       ctx.font = `400 15px 'Inter', system-ui, sans-serif`;
+      // Measure ribbon
+      ctx.font = "400 15px 'Inter', system-ui, sans-serif";
       let totalRibbonWidth = 0;
       const sentenceWidths = waveSentences.map((s) => {
         const w = ctx.measureText(s.text).width;
         totalRibbonWidth += w + GAP;
         return w;
+        const tw = ctx.measureText(s.text).width;
+        totalRibbonWidth += tw + GAP;
+        return tw;
       });
 
         // Reset when fully off-screen left
@@ -164,12 +174,14 @@ export default function WaveWorkflow() {
         const waveY = cy + (line.yBase - h / 2) * convergeFactor + Math.sin((line.x * line.frequency) + line.phase + Date.now() * 0.0004) * line.amplitude * convergeFactor;
       // Draw each sentence in the ribbon
       let ribbonX = -scrollX + w + 100; // start off-screen right
+      let ribbonX = -scrollX + w + 100;
 
         // Draw each character
         ctx.font = `400 14px 'Inter', system-ui, sans-serif`;
         ctx.fillStyle = `rgba(255, 255, 255, ${line.opacity})`;
       waveSentences.forEach((sentence, si) => {
         const textW = sentenceWidths[si];
+        const drawPositions = [ribbonX, ribbonX + totalRibbonWidth];
 
         let charX = line.x;
         const chars = line.text.split("");
@@ -232,15 +244,23 @@ export default function WaveWorkflow() {
             if (isInPill && isKeyword) {
               ctx.font = `800 17px 'Inter', system-ui, sans-serif`;
               ctx.fillStyle = `rgba(255, 255, 255, 0.95)`;
+              ctx.font = "800 17px 'Inter', system-ui, sans-serif";
+              ctx.fillStyle = "rgba(255, 255, 255, 0.95)";
             } else if (isInPill) {
               ctx.font = `400 15px 'Inter', system-ui, sans-serif`;
               ctx.fillStyle = `rgba(255, 255, 255, 0.08)`;
+              ctx.font = "400 15px 'Inter', system-ui, sans-serif";
+              ctx.fillStyle = "rgba(255, 255, 255, 0.08)";
             } else if (isKeyword) {
               ctx.font = `600 15px 'Inter', system-ui, sans-serif`;
               ctx.fillStyle = `rgba(2, 172, 234, 0.35)`;
+              ctx.font = "600 15px 'Inter', system-ui, sans-serif";
+              ctx.fillStyle = "rgba(2, 172, 234, 0.35)";
             } else {
               ctx.font = `400 15px 'Inter', system-ui, sans-serif`;
               ctx.fillStyle = `rgba(255, 255, 255, 0.15)`;
+              ctx.font = "400 15px 'Inter', system-ui, sans-serif";
+              ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
             }
 
             ctx.fillText(char, charX, waveY);
@@ -289,6 +309,7 @@ export default function WaveWorkflow() {
           inset: 0,
           backgroundImage:
             "radial-gradient(rgba(2, 172, 234, 0.08) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(2, 172, 234, 0.08) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
           pointerEvents: "none",
         }}
@@ -341,6 +362,7 @@ export default function WaveWorkflow() {
       >
         {/* Canvas for wave text */}
         {/* Canvas for single-line wave text */}
+      <div style={{ position: "relative", height: "180px", overflow: "hidden" }}>
         <canvas
           ref={canvasRef}
           style={{
@@ -390,6 +412,7 @@ export default function WaveWorkflow() {
               textAlign: "center",
               boxShadow:
                 "0 0 50px rgba(2, 172, 234, 0.2), 0 0 100px rgba(2, 172, 234, 0.06), inset 0 0 30px rgba(2, 172, 234, 0.05)",
+              boxShadow: "0 0 50px rgba(2, 172, 234, 0.2), 0 0 100px rgba(2, 172, 234, 0.06), inset 0 0 30px rgba(2, 172, 234, 0.05)",
               position: "relative",
               overflow: "hidden",
             }}
@@ -404,6 +427,7 @@ export default function WaveWorkflow() {
                 height: "100%",
                 background:
                   "linear-gradient(90deg, transparent, rgba(2, 172, 234, 0.08), transparent)",
+                background: "linear-gradient(90deg, transparent, rgba(2, 172, 234, 0.08), transparent)",
                 animation: "shimmerSlide 3s ease-in-out infinite",
                 pointerEvents: "none",
               }}
@@ -454,6 +478,7 @@ export default function WaveWorkflow() {
                 color: statusText === "ANALYZING"
                   ? "rgba(2, 172, 234, 0.9)"
                   : "rgba(251, 191, 36, 0.9)",
+                color: statusText === "ANALYZING" ? "rgba(2, 172, 234, 0.9)" : "rgba(251, 191, 36, 0.9)",
                 textTransform: "uppercase",
               }}
             >
@@ -491,6 +516,9 @@ export default function WaveWorkflow() {
                   i === activeStepIndex
                     ? "1px solid #02ACEA"
                     : "1px solid rgba(255,255,255,0.1)",
+                background: i === activeStepIndex ? "#02ACEA" : "rgba(255,255,255,0.06)",
+                color: i === activeStepIndex ? "#FFFFFF" : "rgba(255,255,255,0.5)",
+                border: i === activeStepIndex ? "1px solid #02ACEA" : "1px solid rgba(255,255,255,0.1)",
                 padding: "8px 16px",
                 borderRadius: "20px",
                 fontSize: "12px",
@@ -509,6 +537,7 @@ export default function WaveWorkflow() {
                     i === activeStepIndex
                       ? "#FFFFFF"
                       : "rgba(255,255,255,0.3)",
+                  color: i === activeStepIndex ? "#FFFFFF" : "rgba(255,255,255,0.3)",
                 }}
               >
                 {i + 1}.
