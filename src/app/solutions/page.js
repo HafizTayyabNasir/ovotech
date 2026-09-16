@@ -103,7 +103,7 @@ export default function SolutionsPage() {
       />
 
       {/* Quick Jump Navigation Bar */}
-      <section style={{ background: "#B332D2", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "16px 0" }}>
+      <section style={{ background: "#0F1E36", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "16px 0" }}>
         <div className="site-container">
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px", alignItems: "center" }}>
             <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginRight: "6px" }}>

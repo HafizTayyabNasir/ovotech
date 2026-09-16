@@ -112,7 +112,7 @@ export default function SnomedCodingPage() {
       </section>
 
       {/* Related Solution Navigation */}
-      <section style={{ padding: "60px 0", background: "#B332D2", color: "#FFFFFF" }}>
+      <section style={{ padding: "60px 0", background: "#0F1E36", color: "#FFFFFF" }}>
         <div className="site-container" style={{ textAlign: "center" }}>
           <span style={{ fontSize: "11px", fontWeight: 700, color: "#02ACEA", textTransform: "uppercase", letterSpacing: "1.5px" }}>Next Solution Module</span>
           <h3 style={{ fontSize: "24px", fontWeight: 800, marginTop: "8px", marginBottom: "20px", color: "#FFFFFF" }}>Explore EMIS Web Integration</h3>

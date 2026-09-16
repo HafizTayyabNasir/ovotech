@@ -16,10 +16,16 @@ import FAQ from "../components/FAQ";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import FloatingElements from "../components/FloatingElements";
+import ParticlesBackground from "../components/ParticlesBackground";
 
 export default function Home() {
   return (
     <>
+      {/* Global Fixed Particles Animation */}
+      <div style={{ position: "fixed", inset: 0, zIndex: 9999, pointerEvents: "none" }}>
+        <ParticlesBackground color="#02ACEA" />
+      </div>
+
       <TopBar />
       <Navbar />
       <Hero />
