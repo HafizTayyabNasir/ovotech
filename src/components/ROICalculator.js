@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import ParticlesBackground from "./ParticlesBackground";
 
 export default function ROICalculator() {
   const [listSize, setListSize] = useState(12000);
@@ -17,6 +18,8 @@ export default function ROICalculator() {
   return (
     <section style={{ padding: "100px 0", background: "#091222", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
+      <ParticlesBackground color="#02ACEA" />
+      <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
           <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.3)" }}>
             PRACTICE IMPACT &amp; SAVINGS CALCULATOR

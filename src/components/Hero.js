@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 
+import ParticlesBackground from "./ParticlesBackground";
+
 export default function Hero() {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -26,6 +28,9 @@ export default function Hero() {
   return (
     <>
       <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#09132B" }}>
+        {/* Interactive Particles Background */}
+        <ParticlesBackground color="#02ACEA" />
+
         {/* Background Video Autoplay */}
         <video
           autoPlay

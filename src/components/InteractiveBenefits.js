@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import ParticlesBackground from "./ParticlesBackground";
 
 const benefitsData = [
   {
@@ -126,6 +127,7 @@ export default function InteractiveBenefits() {
 
   return (
     <section style={{ background: "#0F1E36", padding: "100px 0", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
+      <ParticlesBackground color="#02ACEA" />
       {/* Decorative ambient glow */}
       <div style={{ position: "absolute", top: "-150px", left: "20%", width: "500px", height: "500px", background: "rgba(2, 172, 234, 0.12)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
 

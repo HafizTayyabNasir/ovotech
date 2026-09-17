@@ -20,10 +20,15 @@ const ctas = [
   },
 ];
 
+import ParticlesBackground from "./ParticlesBackground";
+
 export default function DualCta() {
   return (
     <section style={{ padding: "80px 0", background: "#091222" }}>
       <div className="site-container">
+    <section style={{ padding: "80px 0", background: "#091222", position: "relative", overflow: "hidden" }}>
+      <ParticlesBackground color="#02ACEA" />
+      <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", maxWidth: "800px", margin: "0 auto" }}>
           {ctas.map((cta, i) => (
             <div

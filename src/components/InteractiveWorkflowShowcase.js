@@ -94,11 +94,14 @@ const workflowSteps = [
   }
 ];
 
+import ParticlesBackground from "./ParticlesBackground";
+
 export default function InteractiveWorkflowShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
 
   // Scroll spy logic
+  // Use scroll position to determine active step
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return;
@@ -107,12 +110,18 @@ export default function InteractiveWorkflowShowcase() {
       const { top, height } = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
+      // Calculate how far we've scrolled into the 400vh container
+      // top is 0 when the top of the container hits the top of the viewport
       const scrollDistance = -top;
       const scrollableHeight = height - windowHeight;
       
       if (scrollDistance < 0) {
         setActiveIndex(0);
       } else if (scrollDistance >= scrollableHeight) {
+        return;
+      }
+      
+      if (scrollDistance >= scrollableHeight) {
         setActiveIndex(workflowSteps.length - 1);
       } else {
         const progress = scrollDistance / scrollableHeight;
@@ -121,7 +130,16 @@ export default function InteractiveWorkflowShowcase() {
           Math.floor(progress * workflowSteps.length)
         );
         setActiveIndex(newIndex);
+        return;
       }
+      
+      const progress = scrollDistance / scrollableHeight;
+      const newIndex = Math.min(
+        workflowSteps.length - 1,
+        Math.floor(progress * workflowSteps.length)
+      );
+      
+      setActiveIndex(newIndex);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -133,6 +151,14 @@ export default function InteractiveWorkflowShowcase() {
     setActiveIndex(index);
     // Note: click doesn't auto-scroll the page in this simple implementation, 
     // it just changes the state visually if they manage to click it while pinned.
+    
+    // Optional: smooth scroll the window to the corresponding chunk of the 400vh container
+    if (containerRef.current) {
+      const { top } = containerRef.current.getBoundingClientRect();
+      const scrollableHeight = containerRef.current.offsetHeight - window.innerHeight;
+      const targetScroll = window.scrollY + top + (index / workflowSteps.length) * scrollableHeight;
+      window.scrollTo({ top: targetScroll, behavior: "smooth" });
+    }
   };
 
   const handlePrev = () => {
@@ -161,6 +187,7 @@ export default function InteractiveWorkflowShowcase() {
           overflow: "hidden"
         }}
       >
+        <ParticlesBackground color="#02ACEA" />
         {/* Background grid pattern */}
         <div
           style={{
