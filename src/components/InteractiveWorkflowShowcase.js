@@ -188,7 +188,7 @@ export default function InteractiveWorkflowShowcase() {
           }}
         />
 
-        <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8" style={{ position: "relative", zIndex: 10 }}>
           {/* Section Header */}
           <div style={{ textAlign: "center", marginBottom: "3vh" }}>
             <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "4px 16px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "8px", border: "1px solid rgba(2, 172, 234, 0.3)" }}>
@@ -203,7 +203,7 @@ export default function InteractiveWorkflowShowcase() {
           </div>
 
         {/* Main 3-Column Showcase */}
-        <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-stretch lg:justify-between w-full">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center lg:items-stretch lg:justify-between w-full">
           
           {/* 1. Animated Vertical Timeline Bar (Hidden on Mobile) */}
           <div className="hidden lg:flex flex-col justify-between items-center relative py-8" style={{ width: "80px", minHeight: "450px" }}>
