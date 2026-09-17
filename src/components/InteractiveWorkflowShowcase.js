@@ -213,7 +213,7 @@ export default function InteractiveWorkflowShowcase() {
               <motion.div
                 initial={false}
                 animate={{ height: `${(activeIndex / (workflowSteps.length - 1)) * 100}%` }}
-                style={{ width: "100%", background: "#a855f7", boxShadow: "0 0 15px #a855f7", transformOrigin: "top" }}
+                style={{ width: "100%", background: "#02ACEA", boxShadow: "0 0 15px #02ACEA", transformOrigin: "top" }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             </div>
@@ -225,8 +225,8 @@ export default function InteractiveWorkflowShowcase() {
                 <div key={index} className="relative z-10 flex flex-col items-center justify-center w-full" style={{ height: `${100 / workflowSteps.length}%` }}>
                   {/* Number */}
                   <span style={{ 
-                    position: "absolute", left: "-5px", 
-                    color: isActive ? "#a855f7" : "rgba(255,255,255,0.3)", 
+                    position: "absolute", left: "4px", 
+                    color: isActive ? "#02ACEA" : "rgba(255,255,255,0.3)", 
                     fontSize: "12px", fontWeight: 700, transition: "0.3s" 
                   }}>
                     {step.number}
@@ -236,18 +236,17 @@ export default function InteractiveWorkflowShowcase() {
                     initial={false}
                     animate={{
                       scale: isActive ? 1.3 : 1,
-                      backgroundColor: isActive ? "#1e1b4b" : "#0f172a",
-                      borderColor: isActive ? "#a855f7" : "#334155"
+                      backgroundColor: isActive ? "rgba(2, 172, 234, 0.15)" : "#0f172a",
+                      borderColor: isActive ? "#02ACEA" : "#334155"
                     }}
                     style={{
                       width: "24px", height: "24px", borderRadius: "50%", border: "2px solid",
                       display: "flex", alignItems: "center", justifyContent: "center",
-                      boxShadow: isActive ? "0 0 20px 4px rgba(168,85,247,0.4)" : "none",
-                      marginLeft: "18px"
+                      boxShadow: isActive ? "0 0 20px 4px rgba(2, 172, 234, 0.4)" : "none"
                     }}
                   >
                     {isActive && (
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#02ACEA" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="7 10 12 5 17 10" />
                         <polyline points="7 14 12 19 17 14" />
                       </svg>
