@@ -32,7 +32,7 @@ export default function Testimonials() {
     <section style={{ padding: "100px 0", background: "#ffffff", overflow: "hidden" }}>
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.5px" }}>
+          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#24144B", letterSpacing: "-0.5px" }}>
             What Our <span style={{ color: "#02ACEA" }}>Clients</span> Say
           </h2>
         </div>
@@ -82,7 +82,7 @@ export default function Testimonials() {
                     width: "48px",
                     height: "48px",
                     borderRadius: "50%",
-                    background: "#0f172a",
+                    background: "#24144B",
                     color: "#ffffff",
                     display: "flex",
                     alignItems: "center",
@@ -96,7 +96,7 @@ export default function Testimonials() {
                 )}
                 
                 <div>
-                  <h4 style={{ fontSize: "16px", fontWeight: 800, color: "#0f172a", marginBottom: "4px" }}>{t.name}</h4>
+                  <h4 style={{ fontSize: "16px", fontWeight: 800, color: "#24144B", marginBottom: "4px" }}>{t.name}</h4>
                   <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.4 }}>{t.role}</p>
                 </div>
               </div>

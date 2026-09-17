@@ -175,7 +175,7 @@ export default function InteractiveWorkflowShowcase() {
           overflow: "hidden"
         }}
       >
-        <ParticlesBackground color="#02ACEA" />
+        <ParticlesBackground color="#8A60E5" />
         {/* Background grid pattern */}
         <div
           style={{
@@ -238,7 +238,7 @@ export default function InteractiveWorkflowShowcase() {
                       initial={false}
                       animate={{
                         scale: isActive ? 1.3 : 1,
-                        backgroundColor: isActive ? "rgba(2, 172, 234, 0.15)" : "#0f172a",
+                        backgroundColor: isActive ? "rgba(2, 172, 234, 0.15)" : "#24144B",
                         borderColor: isActive ? "#02ACEA" : "#334155"
                       }}
                       style={{
@@ -260,7 +260,7 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* 2. Left Column: UI Workspace Screen Card */}
-            <div className="flex-1 w-full max-w-[320px] shrink-0" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "32px", border: "4px solid #1e293b", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
+            <div className="flex-1 w-full max-w-[320px] shrink-0" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "32px", border: "4px solid #3E2382", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
             {/* Status Bar */}
             <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "11px", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>

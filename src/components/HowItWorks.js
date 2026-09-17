@@ -18,7 +18,7 @@ export default function HowItWorks() {
           {/* Left */}
           <div className="animate-fadeInLeft" style={{ flex: "0 1 340px", minWidth: "280px" }}>
             <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>How Ovotech Works</span>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2, marginBottom: "20px" }}>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#24144B", lineHeight: 1.2, marginBottom: "20px" }}>
               Structured.<br />Assisted.<br />Integrated.
             </h2>
             <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>
@@ -43,7 +43,7 @@ export default function HowItWorks() {
                   {s.num}
                 </div>
                 <div style={{ fontSize: "30px", marginBottom: "12px" }}>{s.icon}</div>
-                <h4 style={{ fontSize: "15px", fontWeight: 700, color: "#0f172a", marginBottom: "6px" }}>{s.title}</h4>
+                <h4 style={{ fontSize: "15px", fontWeight: 700, color: "#24144B", marginBottom: "6px" }}>{s.title}</h4>
                 <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.5 }}>{s.desc}</p>
               </div>
             ))}

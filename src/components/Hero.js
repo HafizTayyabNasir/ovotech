@@ -29,7 +29,7 @@ export default function Hero() {
     <>
       <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#301A65" }}>
         {/* Interactive Particles Background */}
-        <ParticlesBackground color="#02ACEA" />
+        <ParticlesBackground color="#8A60E5" />
 
         {/* Background Video Autoplay */}
         <video
@@ -60,15 +60,15 @@ export default function Hero() {
         >
           <defs>
             <linearGradient id="ovotechMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#050C1A" stopOpacity="0.98" />
-              <stop offset="45%" stopColor="#07152B" stopOpacity="0.94" />
-              <stop offset="75%" stopColor="#0B2545" stopOpacity="0.88" />
+              <stop offset="0%" stopColor="#180D31" stopOpacity="0.98" />
+              <stop offset="45%" stopColor="#180D31" stopOpacity="0.94" />
+              <stop offset="75%" stopColor="#3E2382" stopOpacity="0.88" />
               <stop offset="100%" stopColor="#134074" stopOpacity="0.75" />
             </linearGradient>
 
             <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#07152B" stopOpacity="0.80" />
-              <stop offset="50%" stopColor="#0B2545" stopOpacity="0.55" />
+              <stop offset="0%" stopColor="#180D31" stopOpacity="0.80" />
+              <stop offset="50%" stopColor="#3E2382" stopOpacity="0.55" />
               <stop offset="100%" stopColor="rgba(2, 172, 234, 0.15)" stopOpacity="0.15" />
             </linearGradient>
           </defs>
@@ -90,7 +90,7 @@ export default function Hero() {
 
         {/* Interactive Particles Background inside Blue Section */}
         <div className="absolute inset-0 hidden md:block" style={{ zIndex: 4, maskImage: "linear-gradient(to right, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 62%)", WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 62%)" }}>
-          <ParticlesBackground color="#02ACEA" />
+          <ParticlesBackground color="#8A60E5" />
         </div>
 
         {/* Mobile Full Gradient Overlay */}

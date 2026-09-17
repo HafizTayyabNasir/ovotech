@@ -41,7 +41,7 @@ export default function FeatureHighlights() {
                   ✓
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0f172a" }}>EMIS Web Active</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#24144B" }}>EMIS Web Active</div>
                   <div style={{ fontSize: "11px", color: "#8896AB" }}>Structured Write-Back</div>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function FeatureHighlights() {
               <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.3)" }}>
                 Clinical Intelligence &amp; Record Integrity
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#24144B", lineHeight: 1.18, marginBottom: "20px" }}>
                 Structured Consultation Notes Ready for Action
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
@@ -76,7 +76,7 @@ export default function FeatureHighlights() {
               <span style={{ display: "inline-block", background: "rgba(22,163,74,0.1)", color: "#16a34a", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px" }}>
                 Expert Primary Care Support
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#24144B", lineHeight: 1.18, marginBottom: "20px" }}>
                 Dedicated Clinical Workflow Partnership
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
@@ -116,7 +116,7 @@ export default function FeatureHighlights() {
                   ★
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#0f172a" }}>CQC Ready</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#24144B" }}>CQC Ready</div>
                   <div style={{ fontSize: "11px", color: "#8896AB" }}>Full Audit Compliance</div>
                 </div>
               </div>

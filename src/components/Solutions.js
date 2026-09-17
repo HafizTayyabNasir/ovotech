@@ -58,7 +58,7 @@ export default function Solutions() {
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>Core Product Areas</span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#24144B", lineHeight: 1.2 }}>
             End-to-End Clinical Document Processing<br />&amp; Coding Workflow Platform
           </h2>
           <p style={{ color: "#475569", marginTop: "16px", maxWidth: "640px", marginLeft: "auto", marginRight: "auto", fontSize: "16px", lineHeight: 1.7 }}>
@@ -101,7 +101,7 @@ export default function Solutions() {
                 <div style={{ width: "60px", height: "60px", background: "rgba(2,172,234,0.15)", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px", fontSize: "28px" }}>
                   {s.icon}
                 </div>
-                <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0f172a", marginBottom: "10px", lineHeight: 1.3 }}>{s.title}</h3>
+                <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#24144B", marginBottom: "10px", lineHeight: 1.3 }}>{s.title}</h3>
                 <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, marginBottom: "18px", flex: 1 }}>{s.desc}</p>
                 <Link href={s.href} style={{ fontSize: "13px", fontWeight: 700, color: "#02ACEA", display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "auto" }}>
                   Learn More <span>→</span>

@@ -65,7 +65,7 @@ export default function ComplianceSection() {
   const [activeTab, setActiveTab] = useState(complianceData[0]);
 
   return (
-    <section style={{ background: "#ffffff", padding: "100px 0", color: "#0f172a", position: "relative", overflow: "hidden" }}>
+    <section style={{ background: "#ffffff", padding: "100px 0", color: "#24144B", position: "relative", overflow: "hidden" }}>
       {/* Ambient ambient glow (adjusted for light theme) */}
       <div style={{ position: "absolute", top: "-150px", right: "20%", width: "500px", height: "500px", background: "rgba(2, 172, 234, 0.08)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
 
@@ -75,7 +75,7 @@ export default function ComplianceSection() {
           <span style={{ display: "inline-block", background: "rgba(2,172,234,0.1)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.2)" }}>
             TRUSTED NHS COMPLIANCE &amp; GOVERNANCE
           </span>
-          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 800, color: "#24144B", letterSpacing: "-0.5px", lineHeight: 1.15 }}>
             Enterprise NHS Security &amp; Clinical Governance
           </h2>
           <p style={{ color: "#475569", fontSize: "16px", marginTop: "14px", maxWidth: "620px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
@@ -137,7 +137,7 @@ export default function ComplianceSection() {
                     <span style={{
                       fontSize: "15px",
                       fontWeight: isActive ? 800 : 600,
-                      color: "#0f172a",
+                      color: "#24144B",
                       display: "block",
                       lineHeight: 1.3
                     }}>
@@ -173,7 +173,7 @@ export default function ComplianceSection() {
             style={{
               background: "#ffffff",
               padding: "48px",
-              color: "#0f172a",
+              color: "#24144B",
             }}
           >
             <div style={{
@@ -200,7 +200,7 @@ export default function ComplianceSection() {
                   left: "20px",
                   background: "rgba(255, 255, 255, 0.92)",
                   backdropFilter: "blur(10px)",
-                  color: "#0f172a",
+                  color: "#24144B",
                   padding: "10px 20px",
                   borderRadius: "14px",
                   fontSize: "13px",
@@ -235,7 +235,7 @@ export default function ComplianceSection() {
                   {activeTab.badge}
                 </div>
 
-                <h3 style={{ fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 800, color: "#0f172a", marginBottom: "16px", lineHeight: 1.2 }}>
+                <h3 style={{ fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 800, color: "#24144B", marginBottom: "16px", lineHeight: 1.2 }}>
                   {activeTab.title}
                 </h3>
 
@@ -245,7 +245,7 @@ export default function ComplianceSection() {
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "32px" }}>
                   {activeTab.bullets.map((bullet, idx) => (
-                    <div key={idx} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "15px", fontWeight: 600, color: "#0f172a" }}>
+                    <div key={idx} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "15px", fontWeight: 600, color: "#24144B" }}>
                       <div style={{ width: "24px", height: "24px", borderRadius: "50%", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800, flexShrink: 0 }}>
                         ✓
                       </div>

@@ -28,7 +28,7 @@ export default function DualCta() {
     <section style={{ padding: "80px 0", background: "#301A65" }}>
       <div className="site-container">
     <section style={{ padding: "80px 0", background: "#301A65", position: "relative", overflow: "hidden" }}>
-      <ParticlesBackground color="#02ACEA" />
+      <ParticlesBackground color="#8A60E5" />
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", maxWidth: "800px", margin: "0 auto" }}>
           {ctas.map((cta, i) => (
@@ -37,7 +37,7 @@ export default function DualCta() {
               className={`animate-fadeInUp delay-${(i + 1) * 200}`}
               style={{
                 borderRadius: "20px", padding: "32px", textAlign: "center",
-                background: cta.primary ? "#0F1E36" : "rgba(255, 255, 255, 0.05)",
+                background: cta.primary ? "#24144B" : "rgba(255, 255, 255, 0.05)",
                 color: "#FFFFFF",
                 border: cta.primary ? "1px solid rgba(2,172,234,0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
                 transition: "all 0.3s", cursor: "pointer",

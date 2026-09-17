@@ -86,7 +86,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger / Close Button */}
         <button
-          className="md:hidden bg-transparent border-none text-[#0A1838] cursor-pointer z-[102] p-2 flex items-center justify-center focus:outline-none"
+          className="md:hidden bg-transparent border-none text-[#301A65] cursor-pointer z-[102] p-2 flex items-center justify-center focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -111,7 +111,7 @@ export default function Navbar() {
                   fontWeight: item.key === "home" ? 700 : 600,
                   padding: "10px 14px",
                   borderRadius: "8px",
-                  color: item.key === "home" ? "#02ACEA" : "#0A1838"
+                  color: item.key === "home" ? "#02ACEA" : "#301A65"
                 }}
               >
                 {item.label}
@@ -146,7 +146,7 @@ export default function Navbar() {
                                 style={{ display: "block", padding: "10px 12px", borderRadius: "8px", transition: "background: 0.2s" }}
                                 className="hover:bg-[#F4F7FC]"
                               >
-                                <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838", display: "block" }}>{link.label}</span>
+                                <span style={{ fontSize: "14px", fontWeight: 600, color: "#301A65", display: "block" }}>{link.label}</span>
                                 <span style={{ fontSize: "12px", color: "#64748B", display: "block", marginTop: "2px" }}>{link.desc}</span>
                               </Link>
                             ))}
@@ -157,7 +157,7 @@ export default function Navbar() {
                     {item.promo && (
                       <div
                         style={{
-                          width: "300px", background: `linear-gradient(135deg, #301A65 0%, #0F214A 100%)`,
+                          width: "300px", background: `linear-gradient(135deg, #301A65 0%, #3E2382 100%)`,
                           color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px", position: "relative", overflow: "hidden",
                         }}
                       >
@@ -168,7 +168,7 @@ export default function Navbar() {
                     )}
                   </div>
                   <div style={{ background: "#F4F7FC", padding: "16px 40px", display: "flex", alignItems: "center", gap: "20px", borderTop: "1px solid #E0E8F5" }}>
-                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838" }}>Ready to transform your practice?</span>
+                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#301A65" }}>Ready to transform your practice?</span>
                     <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontSize: "14px", fontWeight: 700, padding: "8px 20px", borderRadius: "8px" }}>
                       Let&apos;s Talk
                     </Link>

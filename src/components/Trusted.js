@@ -19,7 +19,7 @@ export default function Trusted() {
       <div className="site-container">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>Primary Care Alignment</span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#24144B", lineHeight: 1.2 }}>
             Clinical Workflow Excellence &amp; Governance
           </h2>
         </div>
@@ -34,7 +34,7 @@ export default function Trusted() {
               <div style={{ width: "64px", height: "64px", borderRadius: "16px", background: "rgba(2,172,234,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "32px", margin: "0 auto 16px" }}>
                 {s.icon}
               </div>
-              <div style={{ fontSize: "22px", fontWeight: 800, color: "#0f172a", marginBottom: "8px" }}>{s.title}</div>
+              <div style={{ fontSize: "22px", fontWeight: 800, color: "#24144B", marginBottom: "8px" }}>{s.title}</div>
               <div style={{ fontSize: "14px", color: "#64748B", fontWeight: 500 }}>{s.label}</div>
             </div>
           ))}
@@ -43,7 +43,7 @@ export default function Trusted() {
         {/* System & Standards Integration Bar */}
         <div className="animate-fadeInUp delay-400" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "40px", marginBottom: "64px" }}>
           <span style={{ fontSize: "14px", fontWeight: 800, color: "#02ACEA", letterSpacing: "1px", textTransform: "uppercase" }}>Confirmed Compliance &amp; System Integration:</span>
-          <span style={{ fontSize: "20px", fontWeight: 800, color: "#0f172a", letterSpacing: "1px" }}>EMIS Web</span>
+          <span style={{ fontSize: "20px", fontWeight: 800, color: "#24144B", letterSpacing: "1px" }}>EMIS Web</span>
           <span style={{ fontSize: "18px", fontWeight: 700, color: "#475569" }}>DSPT</span>
           <span style={{ fontSize: "18px", fontWeight: 700, color: "#475569" }}>DTAC</span>
           <span style={{ fontSize: "18px", fontWeight: 700, color: "#475569" }}>ISO 27001</span>
@@ -57,7 +57,7 @@ export default function Trusted() {
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <h4 style={{ fontSize: "16px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>{c.title}</h4>
+              <h4 style={{ fontSize: "16px", fontWeight: 700, color: "#24144B", marginBottom: "8px" }}>{c.title}</h4>
               <p style={{ fontSize: "14px", color: "#64748B", lineHeight: 1.6 }}>{c.text}</p>
             </div>
           ))}

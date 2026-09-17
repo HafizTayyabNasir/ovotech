@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export default function ParticlesBackground({ color = "#02ACEA" }) {
+export default function ParticlesBackground({ color = "#8A60E5" }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {

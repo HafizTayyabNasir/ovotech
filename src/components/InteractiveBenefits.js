@@ -126,8 +126,8 @@ export default function InteractiveBenefits() {
   const [activeTab, setActiveTab] = useState(benefitsData[0]);
 
   return (
-    <section style={{ background: "#0F1E36", padding: "100px 0", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
-      <ParticlesBackground color="#02ACEA" />
+    <section style={{ background: "#24144B", padding: "100px 0", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
+      <ParticlesBackground color="#8A60E5" />
       {/* Decorative ambient glow */}
       <div style={{ position: "absolute", top: "-150px", left: "20%", width: "500px", height: "500px", background: "rgba(2, 172, 234, 0.12)", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none" }} />
 
@@ -173,7 +173,7 @@ export default function InteractiveBenefits() {
                     alignItems: "center",
                     gap: "14px",
                     padding: "18px 24px",
-                    background: isActive ? "#301A65" : "#15243C",
+                    background: isActive ? "#301A65" : "#3E2382",
                     border: "none",
                     cursor: "pointer",
                     textAlign: "left",
@@ -232,7 +232,7 @@ export default function InteractiveBenefits() {
             style={{
               background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(16px)",
-              background: "#15243C",
+              background: "#3E2382",
               padding: "48px",
               color: "#FFFFFF",
             }}

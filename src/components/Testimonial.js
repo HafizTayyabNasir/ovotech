@@ -10,7 +10,7 @@ export default function Testimonial() {
           <div style={{ flex: "1 1 400px" }}>
             <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "16px", textTransform: "uppercase" }}>Clinical Governance &amp; Control</span>
             
-            <h3 style={{ fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 800, color: "#0f172a", lineHeight: 1.3, marginBottom: "16px" }}>
+            <h3 style={{ fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 800, color: "#24144B", lineHeight: 1.3, marginBottom: "16px" }}>
               Assisted Extraction with Mandatory Human Approval
             </h3>
 
@@ -23,7 +23,7 @@ export default function Testimonial() {
                 ✓
               </div>
               <div>
-                <strong style={{ fontSize: "15px", fontWeight: 700, color: "#0f172a", display: "block" }}>100% Reviewer Oversight</strong>
+                <strong style={{ fontSize: "15px", fontWeight: 700, color: "#24144B", display: "block" }}>100% Reviewer Oversight</strong>
                 <span style={{ fontSize: "13px", color: "#64748B" }}>Complete audit trail &amp; clinical governance</span>
               </div>
             </div>
