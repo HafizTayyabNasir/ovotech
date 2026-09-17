@@ -7,8 +7,6 @@ export default function PageHeader({ title, description }) {
     <>
       <TopBar />
       <Navbar />
-      <header style={{ background: "#0F1E36", color: "#FFFFFF", padding: "64px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.1)" }}>
-        <div className="site-container" style={{ textAlign: "center" }}>
       <header style={{ background: "#0F1E36", color: "#FFFFFF", padding: "64px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", position: "relative", overflow: "hidden" }}>
         <ParticlesBackground color="#02ACEA" />
         <div className="site-container" style={{ textAlign: "center", position: "relative", zIndex: 10 }}>

@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ParticlesBackground from "./ParticlesBackground";
@@ -95,8 +94,6 @@ const workflowSteps = [
     )
   }
 ];
-
-import ParticlesBackground from "./ParticlesBackground";
 
 export default function InteractiveWorkflowShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
