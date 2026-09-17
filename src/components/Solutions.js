@@ -81,7 +81,7 @@ export default function Solutions() {
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,172,234,0.15)";
+                e.currentTarget.style.boxShadow = "0 16px 40px rgba(138,96,229,0.15)";
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = "translateY(0)";
@@ -98,7 +98,7 @@ export default function Solutions() {
                   height: "100%",
                 }}
               >
-                <div style={{ width: "60px", height: "60px", background: "rgba(2,172,234,0.15)", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px", fontSize: "28px" }}>
+                <div style={{ width: "60px", height: "60px", background: "rgba(138,96,229,0.15)", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px", fontSize: "28px" }}>
                   {s.icon}
                 </div>
                 <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#24144B", marginBottom: "10px", lineHeight: 1.3 }}>{s.title}</h3>

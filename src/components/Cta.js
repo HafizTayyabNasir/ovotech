@@ -7,9 +7,9 @@ export default function Cta() {
     <section style={{ padding: "80px 0", background: "#24144B", position: "relative", overflow: "hidden" }}>
       <ParticlesBackground color="#8A60E5" />
       {/* Decorative shapes */}
-      <div style={{ position: "absolute", right: 0, top: 0, width: "400px", height: "400px", borderRadius: "50%", background: "rgba(2,172,234,0.12)", transform: "translate(50%, -50%)" }} />
-      <div style={{ position: "absolute", left: "40px", bottom: 0, width: "250px", height: "250px", borderRadius: "50%", background: "rgba(2,172,234,0.08)", transform: "translateY(50%)" }} />
-      <div style={{ position: "absolute", right: "80px", bottom: "40px", width: "80px", height: "80px", borderRadius: "50%", border: "2px solid rgba(2,172,234,0.25)" }} />
+      <div style={{ position: "absolute", right: 0, top: 0, width: "400px", height: "400px", borderRadius: "50%", background: "rgba(138,96,229,0.12)", transform: "translate(50%, -50%)" }} />
+      <div style={{ position: "absolute", left: "40px", bottom: 0, width: "250px", height: "250px", borderRadius: "50%", background: "rgba(138,96,229,0.08)", transform: "translateY(50%)" }} />
+      <div style={{ position: "absolute", right: "80px", bottom: "40px", width: "80px", height: "80px", borderRadius: "50%", border: "2px solid rgba(138,96,229,0.25)" }} />
 
       <div className="site-container animate-fadeInUp" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
@@ -20,9 +20,9 @@ export default function Cta() {
             <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.8)", lineHeight: 1.7, marginBottom: "32px", maxWidth: "460px" }}>
               Book a demo today and see how Ovotech can transform your GP practice. Start saving time and reducing costs.
             </p>
-            <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "16px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 25px rgba(2,172,234,0.5)"; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(2,172,234,0.35)"; }}
+            <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "16px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(138,96,229,0.35)", transition: "all 0.3s" }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 25px rgba(138,96,229,0.5)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(138,96,229,0.35)"; }}
             >
               Book a Demo <span>→</span>
             </Link>

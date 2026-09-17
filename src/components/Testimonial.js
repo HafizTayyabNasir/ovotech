@@ -19,7 +19,7 @@ export default function Testimonial() {
             </p>
 
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(2,172,234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
+              <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(138,96,229,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
                 ✓
               </div>
               <div>
@@ -35,7 +35,7 @@ export default function Testimonial() {
               <div style={{ fontSize: "28px", fontWeight: 800, color: "#02ACEA", marginBottom: "8px" }}>Human Approval</div>
               <div style={{ fontSize: "14px", color: "#64748B", fontWeight: 500, marginBottom: "20px" }}>Central to Every Document Commit</div>
               <Link href="/how-it-works" style={{ background: "#02ACEA", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "12px 24px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", transition: "all 0.3s" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "#0284C7"; e.currentTarget.style.boxShadow = "0 8px 16px rgba(2,172,234,0.25)"; }}
+                onMouseEnter={e => { e.currentTarget.style.background = "#0284C7"; e.currentTarget.style.boxShadow = "0 8px 16px rgba(138,96,229,0.25)"; }}
                 onMouseLeave={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.boxShadow = "none"; }}
               >
                 View Workflow <span>→</span>

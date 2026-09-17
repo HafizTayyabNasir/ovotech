@@ -16,7 +16,7 @@ export default function FAQ() {
   return (
     <section style={{ padding: "100px 0", background: "#f8fafc", position: "relative", overflow: "hidden" }}>
       {/* Decorative bg */}
-      <div style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", width: "320px", height: "320px", background: "rgba(2,172,234,0.08)", borderRadius: "50%", filter: "blur(80px)" }} />
+      <div style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", width: "320px", height: "320px", background: "rgba(138,96,229,0.08)", borderRadius: "50%", filter: "blur(80px)" }} />
 
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "60px", alignItems: "flex-start" }}>

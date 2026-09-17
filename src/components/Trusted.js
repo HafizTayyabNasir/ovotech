@@ -27,11 +27,11 @@ export default function Trusted() {
         {/* Pillars Row */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px", marginBottom: "64px" }}>
           {pillars.map((s, i) => (
-            <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "32px", textAlign: "center", boxShadow: "0 10px 30px rgba(2,172,234,0.08)", border: "1px solid #e2e8f5", transition: "transform 0.3s", cursor: "pointer" }}
+            <div key={i} className={`animate-fadeInUp delay-${(i + 1) * 100}`} style={{ background: "#fff", borderRadius: "20px", padding: "32px", textAlign: "center", boxShadow: "0 10px 30px rgba(138,96,229,0.08)", border: "1px solid #e2e8f5", transition: "transform 0.3s", cursor: "pointer" }}
               onMouseEnter={e => e.currentTarget.style.transform = "translateY(-6px)"}
               onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
             >
-              <div style={{ width: "64px", height: "64px", borderRadius: "16px", background: "rgba(2,172,234,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "32px", margin: "0 auto 16px" }}>
+              <div style={{ width: "64px", height: "64px", borderRadius: "16px", background: "rgba(138,96,229,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "32px", margin: "0 auto 16px" }}>
                 {s.icon}
               </div>
               <div style={{ fontSize: "22px", fontWeight: 800, color: "#24144B", marginBottom: "8px" }}>{s.title}</div>

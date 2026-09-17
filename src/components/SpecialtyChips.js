@@ -52,7 +52,7 @@ export default function SpecialtyChips() {
               key={i}
               className={`animate-fadeInRight delay-${Math.min((i + 1) * 100, 800)}`}
               style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: "12px", background: "#f8fafc", borderRadius: "40px", padding: "14px 24px", border: "1px solid #e2e8f5", transition: "all 0.3s", cursor: "pointer" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(2,172,234,0.4)"; e.currentTarget.style.background = "rgba(2,172,234,0.1)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"; }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(138,96,229,0.4)"; e.currentTarget.style.background = "rgba(138,96,229,0.1)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = "#e2e8f5"; e.currentTarget.style.background = "#f8fafc"; e.currentTarget.style.boxShadow = "none"; }}
             >
               <div style={{ fontSize: "20px" }}>{s.icon}</div>

@@ -15,7 +15,7 @@ export default function FeatureHighlights() {
             alignItems: "center"
           }}>
             <div style={{ position: "relative" }}>
-              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(2,172,234,0.15)", border: "1px solid #e2e8f5" }}>
+              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(138,96,229,0.15)", border: "1px solid #e2e8f5" }}>
                 <img
                   src="/gp-doctor-consultation.png"
                   alt="Structured Clinical Consultation Notes"
@@ -37,7 +37,7 @@ export default function FeatureHighlights() {
                 gap: "10px",
                 zIndex: 5
               }}>
-                <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(2,172,234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(138,96,229,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
                   ✓
                 </div>
                 <div>
@@ -48,7 +48,7 @@ export default function FeatureHighlights() {
             </div>
 
             <div>
-              <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(2,172,234,0.3)" }}>
+              <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(138,96,229,0.3)" }}>
                 Clinical Intelligence &amp; Record Integrity
               </span>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#24144B", lineHeight: 1.18, marginBottom: "20px" }}>
@@ -58,7 +58,7 @@ export default function FeatureHighlights() {
                 Ovotech parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing entries directly to EMIS Web.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
+                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(138,96,229,0.35)", transition: "all 0.3s" }}>
                   Explore Clinical Review Workspace <span>→</span>
                 </Link>
               </div>

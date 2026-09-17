@@ -69,7 +69,7 @@ export default function Hero() {
             <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#180D31" stopOpacity="0.80" />
               <stop offset="50%" stopColor="#3E2382" stopOpacity="0.55" />
-              <stop offset="100%" stopColor="rgba(2, 172, 234, 0.15)" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="rgba(138, 96, 229, 0.15)" stopOpacity="0.15" />
             </linearGradient>
           </defs>
 
@@ -109,7 +109,7 @@ export default function Hero() {
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
             <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "760px" }}>
-              <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2,172,234,0.3)" }}>
+              <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(138,96,229,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
               </span>
 

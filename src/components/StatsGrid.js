@@ -46,8 +46,8 @@ export default function StatsGrid() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 12px 30px rgba(2, 172, 234, 0.15)";
-                e.currentTarget.style.borderColor = "rgba(2, 172, 234, 0.4)";
+                e.currentTarget.style.boxShadow = "0 12px 30px rgba(138, 96, 229, 0.15)";
+                e.currentTarget.style.borderColor = "rgba(138, 96, 229, 0.4)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";

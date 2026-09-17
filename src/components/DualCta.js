@@ -39,13 +39,13 @@ export default function DualCta() {
                 borderRadius: "20px", padding: "32px", textAlign: "center",
                 background: cta.primary ? "#24144B" : "rgba(255, 255, 255, 0.05)",
                 color: "#FFFFFF",
-                border: cta.primary ? "1px solid rgba(2,172,234,0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
+                border: cta.primary ? "1px solid rgba(138,96,229,0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
                 transition: "all 0.3s", cursor: "pointer",
               }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,172,234,0.2)"; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(138,96,229,0.2)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: "rgba(2,172,234,0.15)", color: "#02ACEA" }}>
+              <div style={{ width: "56px", height: "56px", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", background: "rgba(138,96,229,0.15)", color: "#02ACEA" }}>
                 {cta.icon}
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px", color: "#FFFFFF" }}>{cta.title}</h3>
@@ -54,8 +54,8 @@ export default function DualCta() {
                 display: "inline-flex", alignItems: "center", gap: "8px", fontWeight: 700, fontSize: "14px", padding: "12px 28px", borderRadius: "12px", transition: "all 0.3s",
                 background: cta.primary ? "#02ACEA" : "rgba(255,255,255,0.12)",
                 color: "#fff",
-                border: cta.primary ? "none" : "1px solid rgba(2,172,234,0.5)",
-                boxShadow: cta.primary ? "0 4px 14px rgba(2,172,234,0.35)" : "none"
+                border: cta.primary ? "none" : "1px solid rgba(138,96,229,0.5)",
+                boxShadow: cta.primary ? "0 4px 14px rgba(138,96,229,0.35)" : "none"
               }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = "0.9"; }}
                 onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}

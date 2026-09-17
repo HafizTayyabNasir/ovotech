@@ -139,7 +139,7 @@ export default function SolutionsTabShowcase() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "48px", alignItems: "center" }}>
           {/* Text Left */}
           <div>
-            <span style={{ display: "inline-block", background: "rgba(2,172,234,0.12)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.25)" }}>
+            <span style={{ display: "inline-block", background: "rgba(138,96,229,0.12)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px", border: "1px solid rgba(138,96,229,0.25)" }}>
               {activeModule.tag}
             </span>
             <h3 style={{ fontSize: "28px", fontWeight: 800, color: "#301A65", marginBottom: "8px", lineHeight: 1.25 }}>
@@ -155,7 +155,7 @@ export default function SolutionsTabShowcase() {
             <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "32px" }}>
               {activeModule.highlights.map((h, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "14px", fontWeight: 600, color: "#301A65" }}>
-                  <div style={{ width: "22px", height: "22px", borderRadius: "50%", background: "rgba(2,172,234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: 800, shrink: 0 }}>
+                  <div style={{ width: "22px", height: "22px", borderRadius: "50%", background: "rgba(138,96,229,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: 800, shrink: 0 }}>
                     ✓
                   </div>
                   <span>{h}</span>
@@ -176,7 +176,7 @@ export default function SolutionsTabShowcase() {
                   fontSize: "14px",
                   padding: "12px 24px",
                   borderRadius: "12px",
-                  boxShadow: "0 6px 20px rgba(2,172,234,0.3)",
+                  boxShadow: "0 6px 20px rgba(138,96,229,0.3)",
                   transition: "all 0.3s"
                 }}
               >

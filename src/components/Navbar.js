@@ -161,7 +161,7 @@ export default function Navbar() {
                           color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px", position: "relative", overflow: "hidden",
                         }}
                       >
-                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(2,172,234,0.15)" }} />
+                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(138,96,229,0.15)" }} />
                         <h4 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "10px", color: "#FFFFFF" }}>{item.promo.title}</h4>
                         <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6 }}>{item.promo.text}</p>
                       </div>
@@ -181,7 +181,7 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontSize: "14px", fontWeight: 700, padding: "12px 26px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontSize: "14px", fontWeight: 700, padding: "12px 26px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(138, 96, 229, 0.3)", transition: "all 0.3s" }}>
             Request a Demo
           </Link>
         </div>

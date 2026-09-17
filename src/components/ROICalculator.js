@@ -21,7 +21,7 @@ export default function ROICalculator() {
       <ParticlesBackground color="#8A60E5" />
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
-          <span style={{ display: "inline-block", background: "rgba(2,172,234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.3)" }}>
+          <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 18px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(138,96,229,0.3)" }}>
             PRACTICE IMPACT &amp; SAVINGS CALCULATOR
           </span>
           <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.15 }}>
@@ -81,7 +81,7 @@ export default function ROICalculator() {
             </div>
 
             {/* Right Calculated Results */}
-            <div style={{ background: "#24144B", borderRadius: "20px", padding: "36px 30px", color: "#FFFFFF", border: "1px solid rgba(2,172,234,0.3)", boxShadow: "0 12px 30px rgba(0,0,0,0.3)" }}>
+            <div style={{ background: "#24144B", borderRadius: "20px", padding: "36px 30px", color: "#FFFFFF", border: "1px solid rgba(138,96,229,0.3)", boxShadow: "0 12px 30px rgba(0,0,0,0.3)" }}>
               <div style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#02ACEA", marginBottom: "20px" }}>
                 ESTIMATED PRACTICE IMPACT
               </div>
@@ -103,7 +103,7 @@ export default function ROICalculator() {
                 </div>
               </div>
 
-              <Link href="/contact" style={{ display: "block", textAlign: "center", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px", borderRadius: "12px", boxShadow: "0 4px 14px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
+              <Link href="/contact" style={{ display: "block", textAlign: "center", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px", borderRadius: "12px", boxShadow: "0 4px 14px rgba(138,96,229,0.35)", transition: "all 0.3s" }}>
                 Get Detailed Practice ROI Report →
               </Link>
             </div>

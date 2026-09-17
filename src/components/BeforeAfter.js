@@ -68,7 +68,7 @@ export default function BeforeAfter() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(2,172,234,0.35)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(138,96,229,0.35)", transition: "all 0.3s" }}>
             Start Your Transformation <span>→</span>
           </Link>
         </div>

@@ -191,8 +191,8 @@
     from 0deg,
     transparent 0%,
     transparent 50%,
-    #02ACEA 85%,
-    #00FFFF 95%,
+    #8A60E5 85%,
+    #C084FC 95%,
     #FFFFFF 100%
   );
   animation: spin-border 4s linear infinite;

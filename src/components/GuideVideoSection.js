@@ -6,14 +6,14 @@ export default function GuideVideoSection() {
   return (
     <section style={{ position: "relative", padding: "100px 0", background: "#301A65", overflow: "hidden" }}>
       {/* Background Glow */}
-      <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "1000px", height: "500px", background: "radial-gradient(ellipse, rgba(2, 172, 234, 0.1) 0%, transparent 60%)", pointerEvents: "none", zIndex: 0 }} />
+      <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "1000px", height: "500px", background: "radial-gradient(ellipse, rgba(138, 96, 229, 0.1) 0%, transparent 60%)", pointerEvents: "none", zIndex: 0 }} />
       
       {/* Background Grid */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "radial-gradient(rgba(2, 172, 234, 0.1) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(138, 96, 229, 0.1) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
           pointerEvents: "none",
           opacity: 0.5,
@@ -28,7 +28,7 @@ export default function GuideVideoSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "30px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(2, 172, 234, 0.3)" }}
+            style={{ display: "inline-block", background: "rgba(138, 96, 229, 0.15)", color: "#8A60E5", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "30px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(138, 96, 229, 0.3)" }}
           >
             Watch the Guide
           </motion.span>
@@ -67,7 +67,7 @@ export default function GuideVideoSection() {
             borderRadius: "24px",
             padding: "8px",
             background: "linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
-            boxShadow: "0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(2, 172, 234, 0.2)",
+            boxShadow: "0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(138, 96, 229, 0.2)",
             border: "1px solid rgba(255,255,255,0.1)",
             backdropFilter: "blur(12px)"
           }}
