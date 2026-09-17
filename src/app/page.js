@@ -1,7 +1,6 @@
 import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import StatsGrid from "../components/StatsGrid";
 import GuideVideoSection from "../components/GuideVideoSection";
 import Solutions from "../components/Solutions";
 import InteractiveBenefits from "../components/InteractiveBenefits";
@@ -23,7 +22,6 @@ export default function Home() {
       <TopBar />
       <Navbar />
       <Hero />
-      <StatsGrid />
       <GuideVideoSection />
       <Solutions />
       <InteractiveBenefits />
