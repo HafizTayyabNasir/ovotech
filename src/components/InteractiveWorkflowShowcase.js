@@ -203,7 +203,7 @@ export default function InteractiveWorkflowShowcase() {
           </div>
 
         {/* Main 2-Column Layout with inner timeline */}
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center lg:items-stretch lg:justify-center w-full">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-stretch lg:justify-between w-full">
           
           {/* Left Group: Timeline + Screenshot */}
           <div className="flex gap-4 lg:gap-6 flex-1 w-full max-w-[700px]">
@@ -341,57 +341,6 @@ export default function InteractiveWorkflowShowcase() {
               </div>
             </div>
           </div>
-          </div>
-
-          {/* Middle SVG Connecting Lines (Hidden on Mobile) */}
-          <div className="hidden lg:block relative w-[120px] shrink-0 mx-2 pointer-events-none z-0" style={{ height: "600px" }}>
-            <svg viewBox="0 0 100 600" preserveAspectRatio="none" style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }}>
-              
-              {/* Start Central Dot */}
-              <circle cx="0" cy="215" r="2.5" fill="#02ACEA" style={{ filter: "drop-shadow(0 0 6px rgba(2,172,234,0.8))" }} />
-
-              {workflowSteps.map((_, i) => {
-                const isActive = i === activeIndex;
-                const startY = 215; // Vertical center of the left screenshot
-                
-                // Calculate dynamic Y position of the right cards
-                let targetY = 0;
-                for (let j = 0; j < i; j++) {
-                  targetY += (j === activeIndex ? 130 : 80) + 8;
-                }
-                targetY += (i === activeIndex ? 130 : 80) / 2;
-                targetY += 10; // offset adjustment to match visually
-
-                const d = `M 0 ${startY} C 40 ${startY}, 60 ${targetY}, 100 ${targetY}`;
-                
-                return (
-                  <g key={i}>
-                    {/* Curvy Dotted Path */}
-                    <motion.path
-                      initial={false}
-                      animate={{ d }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      fill="none"
-                      stroke={isActive ? "#02ACEA" : "rgba(255,255,255,0.25)"}
-                      strokeWidth={isActive ? 2 : 1}
-                      strokeLinecap="round"
-                      strokeDasharray={isActive ? "3 7" : "2 8"}
-                      style={isActive ? { filter: "drop-shadow(0 0 8px rgba(2,172,234,0.6))" } : {}}
-                    />
-                    {/* End Target Dot */}
-                    <motion.circle
-                      initial={false}
-                      animate={{ cy: targetY }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      cx="100"
-                      r="2.5"
-                      fill={isActive ? "#02ACEA" : "rgba(255,255,255,0.3)"}
-                      style={isActive ? { filter: "drop-shadow(0 0 6px rgba(2,172,234,0.8))" } : {}}
-                    />
-                  </g>
-                );
-              })}
-            </svg>
           </div>
 
           {/* Mobile Active Step Text (Hidden on Desktop) */}
