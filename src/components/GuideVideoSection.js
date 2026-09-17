@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ParticlesBackground from "./ParticlesBackground";
 
 export default function GuideVideoSection() {
   return (
@@ -20,6 +21,8 @@ export default function GuideVideoSection() {
           zIndex: 0
         }}
       />
+
+      <ParticlesBackground />
 
       <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8" style={{ position: "relative", zIndex: 10 }}>
         {/* Header */}
@@ -54,51 +57,54 @@ export default function GuideVideoSection() {
           </motion.p>
         </div>
 
-        {/* Video Container */}
+        {/* Video Container wrapped with Animated Border */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="animated-border-wrapper"
           style={{ 
             maxWidth: "1000px", 
             margin: "0 auto", 
-            position: "relative",
-            borderRadius: "24px",
-            padding: "8px",
-            background: "linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
-            boxShadow: "0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(138, 96, 229, 0.2)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            backdropFilter: "blur(12px)"
+            "--border-radius": "24px"
           }}
         >
-          {/* Faux Window Controls */}
-          <div style={{ display: "flex", gap: "8px", padding: "16px", background: "rgba(0,0,0,0.3)", borderRadius: "16px 16px 0 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-            <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56", boxShadow: "0 0 10px rgba(255,95,86,0.5)" }} />
-            <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e", boxShadow: "0 0 10px rgba(255,189,46,0.5)" }} />
-            <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f", boxShadow: "0 0 10px rgba(39,201,63,0.5)" }} />
-          </div>
+          <div className="animated-border-inner" style={{ 
+            background: "linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
+            boxShadow: "0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(138, 96, 229, 0.2)",
+            backdropFilter: "blur(12px)",
+            display: "flex",
+            flexDirection: "column"
+          }}>
+            {/* Faux Window Controls */}
+            <div style={{ display: "flex", gap: "8px", padding: "16px", background: "rgba(0,0,0,0.3)", borderRadius: "22px 22px 0 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56", boxShadow: "0 0 10px rgba(255,95,86,0.5)" }} />
+              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e", boxShadow: "0 0 10px rgba(255,189,46,0.5)" }} />
+              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f", boxShadow: "0 0 10px rgba(39,201,63,0.5)" }} />
+            </div>
 
-          {/* Video Player */}
-          <div style={{ position: "relative", paddingTop: "56.25%", borderRadius: "0 0 16px 16px", overflow: "hidden", background: "#000" }}>
-            <video
-              controls
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            >
-              <source src="/HomeBanner.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            {/* Video Player */}
+            <div style={{ position: "relative", paddingTop: "56.25%", borderRadius: "0 0 22px 22px", overflow: "hidden", background: "#000" }}>
+              <video
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              >
+                <source src="/HomeBanner.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </motion.div>
       </div>
