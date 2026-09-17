@@ -1,5 +1,6 @@
 "use client";
 
+// TODO: confirm with client whether ApolloIQ is a parent brand or should be Ovotech
 const testimonials = [
   {
     name: "Dr Christian Hornung",

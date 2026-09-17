@@ -2,12 +2,12 @@
 import Link from "next/link";
 
 const tags = [
-  "Prescription Automation",
-  "Referral Automation",
-  "Appointment Automation",
-  "Invoice Automation",
-  "Policy Update Automation",
-  "Admin & Document Automation",
+  "Review Queue",
+  "Clinical Review Workspace",
+  "Patient History Context",
+  "SNOMED CT Coding Support",
+  "EMIS Web Integration",
+  "Dashboard & Impact Tracking",
 ];
 
 export default function TagsInfo() {

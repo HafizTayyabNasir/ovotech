@@ -4,7 +4,7 @@ import Link from "next/link";
 const coreProductAreas = [
   {
     id: "medical-coding",
-    href: "/solutions/medical-coding",
+    href: "/solutions",
     icon: "🏷️",
     title: "Medical Coding",
     desc: "Automated concept extraction with AI-suggested SNOMED CT codes for reviewer approval.",

@@ -98,9 +98,17 @@ export default function SolutionsPage() {
   return (
     <>
       <PageHeader 
-        title="Ovotech Platform Overview" 
+        title="Medical Coding — How Ovotech Automates It" 
         description="An end-to-end clinical document processing and coding workflow platform designed specifically for UK GP practices." 
       />
+
+      <section style={{ padding: "40px 0", background: "#FFFFFF", textAlign: "center" }}>
+        <div className="site-container">
+          <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, maxWidth: "800px", margin: "0 auto" }}>
+            Medical Coding is our core tool for streamlining clinical correspondence. It automatically extracts key information and proposes SNOMED CT codes from incoming documents. Crucially, Ovotech operates on a strict human-in-the-loop model: <strong>no SNOMED code is ever written to a patient record without human reviewer sign-off.</strong>
+          </p>
+        </div>
+      </section>
 
       {/* Quick Jump Navigation Bar */}
       <section style={{ background: "#0F1E36", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "16px 0" }}>
@@ -209,7 +217,7 @@ export default function SolutionsPage() {
                     {/* Text Column */}
                     <div style={{ order: isEven ? 1 : 2 }}>
                       <span style={{ display: "inline-block", background: "rgba(2,172,234,0.12)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, padding: "5px 14px", borderRadius: "14px", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "14px", border: "1px solid rgba(2,172,234,0.3)" }}>
-                        Module 0{idx + 1} — {m.tag}
+                        Step {idx + 1} of 6 — {m.tag}
                       </span>
                       <h3 style={{ fontSize: "28px", fontWeight: 800, color: "#0A1838", marginBottom: "14px", lineHeight: 1.25 }}>
                         {m.title}
