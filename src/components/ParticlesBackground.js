@@ -10,7 +10,6 @@ export default function ParticlesBackground({ color = "#02ACEA" }) {
     let animationFrameId;
 
     let particles = [];
-    const particleCount = 80;
     const particleCount = 120;
     const connectionDistance = 150;
     const mouseDistance = 200;
@@ -84,7 +83,6 @@ export default function ParticlesBackground({ color = "#02ACEA" }) {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${rgbColor}, 0.8)`;
         ctx.fillStyle = `rgba(${rgbColor}, 1.0)`;
         ctx.fill();
       }
@@ -113,8 +111,6 @@ export default function ParticlesBackground({ color = "#02ACEA" }) {
           if (distance < connectionDistance) {
             const opacity = 1 - distance / connectionDistance;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(${rgbColor}, ${opacity * 0.5})`;
-            ctx.lineWidth = 1;
             ctx.strokeStyle = `rgba(${rgbColor}, ${opacity * 0.9})`;
             ctx.lineWidth = 1.5;
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -133,7 +129,6 @@ export default function ParticlesBackground({ color = "#02ACEA" }) {
             const opacity = 1 - distance / mouseDistance;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(${rgbColor}, ${opacity})`;
-            ctx.lineWidth = 1;
             ctx.lineWidth = 1.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouse.x, mouse.y);
