@@ -9,7 +9,6 @@ import InteractiveWorkflowShowcase from "../components/InteractiveWorkflowShowca
 import ComplianceSection from "../components/ComplianceSection";
 import BeforeAfter from "../components/BeforeAfter";
 import Testimonials from "../components/Testimonials";
-import Trusted from "../components/Trusted";
 import TagsInfo from "../components/TagsInfo";
 import SpecialtyChips from "../components/SpecialtyChips";
 import FAQ from "../components/FAQ";
@@ -30,7 +29,6 @@ export default function Home() {
       <ComplianceSection />
       <BeforeAfter />
       <Testimonials />
-      <Trusted />
       <TagsInfo />
       <SpecialtyChips />
       <FAQ />
