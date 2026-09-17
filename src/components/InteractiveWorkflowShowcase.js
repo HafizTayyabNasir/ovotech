@@ -289,9 +289,9 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Bottom Controls Bar */}
-            <div style={{ background: "rgba(179, 50, 210, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#02ACEA", display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ color: "#16a34a" }}>▶</span> {activeStep.tag}
+            <div style={{ background: "rgba(2, 172, 234, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#FFF", display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ color: "#FFF" }}>▶</span> {activeStep.tag}
               </div>
 
               {/* Prev / Next Navigation Arrows */}
