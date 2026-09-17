@@ -6,8 +6,10 @@ import ParticlesBackground from "./ParticlesBackground";
 export default function GuideVideoSection() {
   return (
     <section style={{ position: "relative", padding: "100px 0", background: "#301A65", overflow: "hidden" }}>
+    <section style={{ position: "relative", padding: "100px 0", background: "#FFFFFF", overflow: "hidden" }}>
       {/* Background Glow */}
       <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "1000px", height: "500px", background: "radial-gradient(ellipse, rgba(138, 96, 229, 0.1) 0%, transparent 60%)", pointerEvents: "none", zIndex: 0 }} />
+      <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "1000px", height: "500px", background: "radial-gradient(ellipse, rgba(48, 26, 101, 0.05) 0%, transparent 60%)", pointerEvents: "none", zIndex: 0 }} />
       
       {/* Background Grid */}
       <div
@@ -15,6 +17,7 @@ export default function GuideVideoSection() {
           position: "absolute",
           inset: 0,
           backgroundImage: "radial-gradient(rgba(138, 96, 229, 0.1) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(48, 26, 101, 0.1) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
           pointerEvents: "none",
           opacity: 0.5,
@@ -23,6 +26,7 @@ export default function GuideVideoSection() {
       />
 
       <ParticlesBackground />
+      <ParticlesBackground color="#301A65" />
 
       <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8" style={{ position: "relative", zIndex: 10 }}>
         {/* Header */}
@@ -32,6 +36,7 @@ export default function GuideVideoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             style={{ display: "inline-block", background: "rgba(138, 96, 229, 0.15)", color: "#8A60E5", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "30px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(138, 96, 229, 0.3)" }}
+            style={{ display: "inline-block", background: "rgba(48, 26, 101, 0.08)", color: "#301A65", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "30px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(48, 26, 101, 0.15)" }}
           >
             Watch the Guide
           </motion.span>
@@ -42,6 +47,7 @@ export default function GuideVideoSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", marginBottom: "16px" }}
+            style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.5px", marginBottom: "16px" }}
           >
             See Ovotech in Action
           </motion.h2>
@@ -52,6 +58,7 @@ export default function GuideVideoSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             style={{ fontSize: "16px", color: "rgba(255, 255, 255, 0.7)", maxWidth: "600px", margin: "0 auto" }}
+            style={{ fontSize: "16px", color: "#475569", maxWidth: "600px", margin: "0 auto" }}
           >
             Discover how our intelligent automation seamlessly processes clinical documents into your EMIS system in seconds.
           </motion.p>
@@ -74,6 +81,9 @@ export default function GuideVideoSection() {
             background: "linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
             boxShadow: "0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(138, 96, 229, 0.2)",
             backdropFilter: "blur(12px)",
+            background: "#FFFFFF",
+            boxShadow: "0 30px 60px rgba(0, 0, 0, 0.08), 0 0 40px rgba(48, 26, 101, 0.1)",
+            backdropFilter: "none",
             display: "flex",
             flexDirection: "column"
           }}>
@@ -82,6 +92,10 @@ export default function GuideVideoSection() {
               <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56", boxShadow: "0 0 10px rgba(255,95,86,0.5)" }} />
               <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e", boxShadow: "0 0 10px rgba(255,189,46,0.5)" }} />
               <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f", boxShadow: "0 0 10px rgba(39,201,63,0.5)" }} />
+            <div style={{ display: "flex", gap: "8px", padding: "16px", background: "#f8fafc", borderRadius: "22px 22px 0 0", borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
+              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56", boxShadow: "0 0 10px rgba(255,95,86,0.2)" }} />
+              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e", boxShadow: "0 0 10px rgba(255,189,46,0.2)" }} />
+              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f", boxShadow: "0 0 10px rgba(39,201,63,0.2)" }} />
             </div>
 
             {/* Video Player */}
