@@ -10,9 +10,7 @@ import ComplianceSection from "../components/ComplianceSection";
 import BeforeAfter from "../components/BeforeAfter";
 import Testimonials from "../components/Testimonials";
 import TagsInfo from "../components/TagsInfo";
-import SpecialtyChips from "../components/SpecialtyChips";
 import FAQ from "../components/FAQ";
-import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import FloatingElements from "../components/FloatingElements";
 export default function Home() {
@@ -30,9 +28,7 @@ export default function Home() {
       <BeforeAfter />
       <Testimonials />
       <TagsInfo />
-      <SpecialtyChips />
       <FAQ />
-      <Newsletter />
       <Footer />
       <FloatingElements />
     </>

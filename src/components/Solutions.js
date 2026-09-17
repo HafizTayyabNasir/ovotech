@@ -3,53 +3,12 @@ import Link from "next/link";
 
 const coreProductAreas = [
   {
-    id: "review-queue",
-    href: "/solutions/review-queue",
-    icon: "📋",
-    title: "Review Queue",
-    desc: "A central workspace showing clinical documents requiring review, processing status, and patient info for systematic workload management.",
-    desc: "Centralized document queue with live processing status, priority, and patient matching.",
-  },
-  {
-    id: "clinical-review",
-    href: "/solutions/clinical-review",
-    icon: "🖥️",
-    title: "Clinical Review Workspace",
-    desc: "Presents original documents, extracted clinical info, SNOMED CT suggestions, and patient context in one workspace without screen switching.",
-    desc: "Single-screen workspace presenting letter narrative, extracted facts, and SNOMED CT suggestions.",
-  },
-  {
-    id: "patient-history",
-    href: "/solutions/patient-history",
-    icon: "🩺",
-    title: "Patient History Context",
-    desc: "Provides relevant patient record context alongside documents to verify whether extracted information and coding are appropriate.",
-    desc: "Side-by-side clinical history to quickly verify diagnoses, medications, and coding suitability.",
-  },
-  {
-    id: "snomed-coding",
-    href: "/solutions/snomed-coding",
+    id: "medical-coding",
+    href: "/solutions/medical-coding",
     icon: "🏷️",
-    title: "SNOMED CT Coding Support",
-    desc: "Identifies clinical concepts in documents and proposes appropriate SNOMED CT codes for reviewer verification and approval.",
+    title: "Medical Coding",
     desc: "Automated concept extraction with AI-suggested SNOMED CT codes for reviewer approval.",
-  },
-  {
-    id: "emis-integration",
-    href: "/solutions/emis-integration",
-    icon: "🔗",
-    title: "EMIS Web Integration",
-    desc: "Supports structured write-back of approved clinical information directly into the patient's record via EMIS Web integration.",
-    desc: "Direct structured write-back of verified clinical data into patient records via EMIS Web.",
-  },
-  {
-    id: "kpi-tracking",
-    href: "/solutions/kpi-tracking",
-    icon: "📊",
-    title: "Value & KPI Tracking",
-    desc: "Demonstrates practice operational impact with estimated time saved, capacity released, and potential cost savings metrics.",
-    desc: "Real-time metrics on staff time saved, backlog reduction, and capacity released.",
-  },
+  }
 ];
 
 export default function Solutions() {
