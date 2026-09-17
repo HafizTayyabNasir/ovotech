@@ -29,16 +29,17 @@ export default function Navbar() {
     { label: "Home", href: "/", key: "home" },
     {
       label: "Solutions", href: "/solutions", key: "solutions",
+      topSection: { label: "Medical Coding", href: "/solutions", desc: "Our end-to-end clinical coding tool" },
       columns: [
-        { header: "Core Capabilities", links: [
-          { label: "Review Queue", href: "/solutions/review-queue", desc: "Workload management for incoming clinical documents" },
-          { label: "Clinical Review Workspace", href: "/solutions/clinical-review", desc: "Unified document, extracted info & SNOMED CT coding" },
-          { label: "Patient History Context", href: "/solutions/patient-history", desc: "Relevant patient records alongside documents" },
+        { header: "Inside Medical Coding", links: [
+          { label: "01 Review Queue", href: "/solutions/review-queue", desc: "Workload management for incoming clinical documents" },
+          { label: "02 Clinical Review Workspace", href: "/solutions/clinical-review", desc: "Unified document, extracted info & SNOMED CT coding" },
+          { label: "03 Patient History Context", href: "/solutions/patient-history", desc: "Relevant patient records alongside documents" },
         ]},
-        { header: "Integration & Governance", links: [
-          { label: "SNOMED CT Coding Support", href: "/solutions/snomed-coding", desc: "Assisted concept recognition & code suggestions" },
-          { label: "EMIS Web Integration", href: "/solutions/emis-integration", desc: "Structured write-back to patient clinical records" },
-          { label: "Value & KPI Tracking", href: "/solutions/kpi-tracking", desc: "Demonstrate time saved & released practice capacity" },
+        { header: "", links: [
+          { label: "04 SNOMED CT Coding Support", href: "/solutions/snomed-coding", desc: "Assisted concept recognition & code suggestions" },
+          { label: "05 EMIS Web Integration", href: "/solutions/emis-integration", desc: "Structured write-back to patient clinical records" },
+          { label: "06 Value & KPI Tracking", href: "/solutions/kpi-tracking", desc: "Demonstrate time saved & released practice capacity" },
         ]},
       ],
       promo: { title: "EMIS Web Integration", text: "Seamless structured write-back to patient clinical records.", bg: "from-primary to-primary-dark" },
@@ -133,12 +134,28 @@ export default function Navbar() {
                   }}
                 >
                   <div className="flex" style={{ minHeight: "280px" }}>
-                    <div className="flex-1 grid grid-cols-2" style={{ padding: "32px 40px", gap: "40px" }}>
-                      {item.columns.map((col, ci) => (
-                        <div key={ci}>
-                          <h3 style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#02ACEA", marginBottom: "16px", paddingBottom: "8px", borderBottom: "2px solid #02ACEA", display: "inline-block" }}>
-                            {col.header}
-                          </h3>
+                    <div className="flex-1 flex flex-col" style={{ padding: "32px 40px" }}>
+                      {item.topSection && (
+                        <div style={{ paddingBottom: "20px", borderBottom: "1px solid #E0E8F5", marginBottom: "20px" }}>
+                          <Link href={item.topSection.href} className="group/toplink flex items-center gap-3" style={{ textDecoration: "none" }}>
+                            <span className="transition-transform group-hover/toplink:translate-x-1" style={{ fontSize: "20px", fontWeight: 800, color: "#02ACEA" }}>→</span>
+                            <div>
+                              <div style={{ fontSize: "18px", fontWeight: 800, color: "#301A65" }}>{item.topSection.label}</div>
+                              <div style={{ fontSize: "13px", color: "#64748B", marginTop: "2px" }}>{item.topSection.desc}</div>
+                            </div>
+                          </Link>
+                        </div>
+                      )}
+                      <div className="grid grid-cols-2" style={{ gap: "40px" }}>
+                        {item.columns.map((col, ci) => (
+                          <div key={ci}>
+                            {col.header ? (
+                              <h3 style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", color: "#02ACEA", marginBottom: "16px", paddingBottom: "8px", borderBottom: "2px solid #02ACEA", display: "inline-block" }}>
+                                {col.header}
+                              </h3>
+                            ) : (
+                              <div style={{ height: "42px", marginBottom: "16px" }} aria-hidden="true"></div>
+                            )}
                           <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                             {col.links.map((link, li) => (
                               <Link
@@ -273,22 +290,35 @@ export default function Navbar() {
                         gap: "20px"
                       }}
                     >
+                      {item.topSection && (
+                        <div style={{ paddingBottom: "16px", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", marginBottom: "8px" }}>
+                          <Link href={item.topSection.href} onClick={() => setMenuOpen(false)} style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+                            <span style={{ fontSize: "18px", fontWeight: 800, color: "#02ACEA" }}>→</span>
+                            <div>
+                              <div style={{ fontSize: "16px", fontWeight: 800, color: "#FFFFFF" }}>{item.topSection.label}</div>
+                              <div style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.6)", marginTop: "2px" }}>{item.topSection.desc}</div>
+                            </div>
+                          </Link>
+                        </div>
+                      )}
                       {item.columns.map((col, ci) => (
                         <div key={ci}>
-                          <div
-                            style={{
-                              fontSize: "11px",
-                              fontWeight: 800,
-                              textTransform: "uppercase",
-                              letterSpacing: "1.5px",
-                              color: "#A594FF",
-                              marginBottom: "12px",
-                              paddingBottom: "4px",
-                              borderBottom: "1px solid rgba(165, 148, 255, 0.2)"
-                            }}
-                          >
-                            {col.header}
-                          </div>
+                          {col.header && (
+                            <div
+                              style={{
+                                fontSize: "11px",
+                                fontWeight: 800,
+                                textTransform: "uppercase",
+                                letterSpacing: "1.5px",
+                                color: "#A594FF",
+                                marginBottom: "12px",
+                                paddingBottom: "4px",
+                                borderBottom: "1px solid rgba(165, 148, 255, 0.2)"
+                              }}
+                            >
+                              {col.header}
+                            </div>
+                          )}
                           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                             {col.links.map((link, li) => (
                               <Link
