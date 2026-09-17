@@ -31,7 +31,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#091222", color: "#fff", paddingTop: "80px", borderTop: "1px solid rgba(255,255,255,0.08)", position: "relative", overflow: "hidden" }}>
+    <footer style={{ background: "#301A65", color: "#fff", paddingTop: "80px", borderTop: "1px solid rgba(255,255,255,0.08)", position: "relative", overflow: "hidden" }}>
       <ParticlesBackground color="#02ACEA" />
       <div className="site-container" style={{ display: "flex", flexWrap: "wrap", gap: "60px", paddingBottom: "60px", position: "relative", zIndex: 10 }}>
         {/* Brand */}

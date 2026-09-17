@@ -173,7 +173,7 @@ export default function InteractiveBenefits() {
                     alignItems: "center",
                     gap: "14px",
                     padding: "18px 24px",
-                    background: isActive ? "#091222" : "#15243C",
+                    background: isActive ? "#301A65" : "#15243C",
                     border: "none",
                     cursor: "pointer",
                     textAlign: "left",
