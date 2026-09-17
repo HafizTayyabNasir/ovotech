@@ -10,7 +10,7 @@ export default function ParticlesBackground({ color = "#02ACEA" }) {
     let animationFrameId;
 
     let particles = [];
-    const particleCount = 120;
+    const particleCount = 100;
     const connectionDistance = 150;
     const mouseDistance = 200;
 
@@ -112,7 +112,7 @@ export default function ParticlesBackground({ color = "#02ACEA" }) {
             const opacity = 1 - distance / connectionDistance;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(${rgbColor}, ${opacity * 0.9})`;
-            ctx.lineWidth = 1.5;
+            ctx.lineWidth = 1.2;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
@@ -129,7 +129,7 @@ export default function ParticlesBackground({ color = "#02ACEA" }) {
             const opacity = 1 - distance / mouseDistance;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(${rgbColor}, ${opacity})`;
-            ctx.lineWidth = 1.5;
+            ctx.lineWidth = 1.2;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
