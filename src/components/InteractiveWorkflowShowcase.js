@@ -161,21 +161,17 @@ export default function InteractiveWorkflowShowcase() {
 
   return (
     <section ref={containerRef} style={{ height: "400vh", position: "relative", background: "#091222" }}>
-    <section ref={containerRef} style={{ height: "250vh", position: "relative", background: "#091222" }}>
       <div
         style={{
           position: "sticky",
           top: 0,
           height: "100vh",
-          minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          justifyContent: "flex-start",
           background: "#091222",
           color: "#FFFFFF",
           padding: "20px 0", /* Reduced padding */
-          padding: "10vh 0 40px 0",
           overflow: "hidden"
         }}
       >
@@ -217,64 +213,6 @@ export default function InteractiveWorkflowShowcase() {
         >
           {/* Left Column: UI Workspace Screen Card */}
           <div style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "24px", border: "1px solid rgba(255, 255, 255, 0.12)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
-        {/* Main 3-Column Showcase */}
-        <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-stretch lg:justify-between w-full">
-          
-          {/* 1. Animated Vertical Timeline Bar (Hidden on Mobile) */}
-          <div className="hidden lg:flex flex-col justify-between items-center relative py-8" style={{ width: "80px", minHeight: "450px" }}>
-            {/* Background Line */}
-            <div style={{ position: "absolute", left: "50%", top: "32px", bottom: "32px", width: "2px", background: "rgba(255,255,255,0.1)", transform: "translateX(-50%)", zIndex: 0 }}>
-              {/* Glowing Active Progress Line */}
-              <motion.div
-                initial={false}
-                animate={{ height: `${(activeIndex / (workflowSteps.length - 1)) * 100}%` }}
-                style={{ width: "100%", background: "#a855f7", boxShadow: "0 0 15px #a855f7", transformOrigin: "top" }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              />
-            </div>
-
-            {/* Timeline Nodes */}
-            {workflowSteps.map((step, index) => {
-              const isActive = index === activeIndex;
-              return (
-                <div key={index} className="relative z-10 flex flex-col items-center justify-center w-full" style={{ height: `${100 / workflowSteps.length}%` }}>
-                  {/* Number */}
-                  <span style={{ 
-                    position: "absolute", left: "-5px", 
-                    color: isActive ? "#a855f7" : "rgba(255,255,255,0.3)", 
-                    fontSize: "12px", fontWeight: 700, transition: "0.3s" 
-                  }}>
-                    {step.number}
-                  </span>
-                  {/* Node Circle */}
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      scale: isActive ? 1.3 : 1,
-                      backgroundColor: isActive ? "#1e1b4b" : "#0f172a",
-                      borderColor: isActive ? "#a855f7" : "#334155"
-                    }}
-                    style={{
-                      width: "24px", height: "24px", borderRadius: "50%", border: "2px solid",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      boxShadow: isActive ? "0 0 20px 4px rgba(168,85,247,0.4)" : "none",
-                      marginLeft: "18px"
-                    }}
-                  >
-                    {isActive && (
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="7 10 12 5 17 10" />
-                        <polyline points="7 14 12 19 17 14" />
-                      </svg>
-                    )}
-                  </motion.div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* 2. Left Column: UI Workspace Screen Card */}
-          <div className="flex-1 w-full max-w-[600px]" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "24px", border: "1px solid rgba(255, 255, 255, 0.12)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
             {/* Status Bar */}
             <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "12px", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -358,14 +296,6 @@ export default function InteractiveWorkflowShowcase() {
 
           {/* Right Column: 6 Interactive Cards with scroll-driven logic */}
           <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-          {/* Mobile Active Step Text (Hidden on Desktop) */}
-          <div className="block lg:hidden text-center w-full px-4 mb-4">
-             <h3 style={{ fontSize: "20px", color: "#FFF", fontWeight: 700 }}>{activeStep.title}</h3>
-             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", marginTop: "8px" }}>{activeStep.description}</p>
-          </div>
-
-          {/* 3. Right Column: 6 Interactive Cards (Hidden on Mobile) */}
-          <div className="hidden lg:flex flex-col gap-2 flex-1 w-full max-w-[500px]">
             {workflowSteps.map((step, index) => {
               const isActive = index === activeIndex;
 
