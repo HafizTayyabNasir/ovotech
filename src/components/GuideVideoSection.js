@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ParticlesBackground from "./ParticlesBackground";
 
 export default function GuideVideoSection() {
   return (
@@ -21,8 +20,6 @@ export default function GuideVideoSection() {
           zIndex: 0
         }}
       />
-
-      <ParticlesBackground color="#301A65" />
 
       <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8" style={{ position: "relative", zIndex: 10 }}>
         {/* Header */}
