@@ -203,12 +203,12 @@ export default function InteractiveWorkflowShowcase() {
           </div>
 
         {/* Main 2-Column Layout with inner timeline */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-stretch lg:justify-between w-full">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center lg:items-stretch lg:justify-center w-full">
           
           {/* Left Group: Timeline + Screenshot */}
-          <div className="flex gap-4 lg:gap-6 flex-1 w-full max-w-[700px]">
+          <div className="flex gap-4 lg:gap-6 w-full max-w-[400px] justify-center lg:justify-end">
             {/* 1. Animated Vertical Timeline Bar (Hidden on Mobile) */}
-            <div className="hidden lg:flex flex-col justify-between items-center relative py-8" style={{ width: "60px", minHeight: "450px" }}>
+            <div className="hidden lg:flex flex-col justify-between items-center relative py-8" style={{ width: "60px", minHeight: "550px" }}>
               {/* Background Line */}
               <div style={{ position: "absolute", left: "50%", top: "32px", bottom: "32px", width: "2px", background: "rgba(255,255,255,0.1)", transform: "translateX(-50%)", zIndex: 0 }}>
                 {/* Glowing Active Progress Line */}
@@ -260,18 +260,18 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* 2. Left Column: UI Workspace Screen Card */}
-            <div className="flex-1 w-full" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "24px", border: "1px solid rgba(255, 255, 255, 0.12)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
+            <div className="flex-1 w-full max-w-[320px] shrink-0" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "32px", border: "4px solid #1e293b", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
             {/* Status Bar */}
-            <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "12px", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#16a34a" }} />
-                <span>STEP {activeStep.number} OF 06</span>
+            <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "11px", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#16a34a" }} />
+                <span>STEP {activeStep.number}</span>
               </div>
               <span style={{ color: "#02ACEA", letterSpacing: "1px", textTransform: "uppercase" }}>{activeStep.category}</span>
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
-            <div style={{ position: "relative", height: "340px", background: "#091222" }}>
+            <div style={{ position: "relative", height: "550px", background: "#091222" }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep.number}
