@@ -1,4 +1,5 @@
 "use client";
+//sample
 import Link from "next/link";
 const features = [
   { icon: "🖥️", title: "Single Clinical Workspace", desc: "Review original documents, extracted details, and SNOMED CT suggestions in one window." },
