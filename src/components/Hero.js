@@ -76,15 +76,22 @@ export default function Hero() {
           {/* Outer Translucent Wave Arc Layer */}
           <path
             d="M 0,0 L 840,0 C 530,250 530,550 840,800 L 0,800 Z"
+            d="M 0,0 L 990,0 C 680,250 680,550 990,800 L 0,800 Z"
             fill="url(#ovotechWaveArcGradient)"
           />
 
           {/* Main Solid Organic Curve Layer */}
           <path
             d="M 0,0 L 760,0 C 470,250 470,550 760,800 L 0,800 Z"
+            d="M 0,0 L 910,0 C 620,250 620,550 910,800 L 0,800 Z"
             fill="url(#ovotechMainGradient)"
           />
         </svg>
+
+        {/* Interactive Particles Background inside Blue Section */}
+        <div className="absolute inset-0 hidden md:block" style={{ zIndex: 4, maskImage: "linear-gradient(to right, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 62%)", WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 62%)" }}>
+          <ParticlesBackground color="#02ACEA" />
+        </div>
 
         {/* Mobile Full Gradient Overlay */}
         <div
