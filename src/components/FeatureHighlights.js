@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 
 export default function FeatureHighlights() {
@@ -49,17 +49,17 @@ export default function FeatureHighlights() {
 
             <div>
               <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(138,96,229,0.3)" }}>
-                Clinical Intelligence &amp; Record Integrity
+                Automated Medical Coding
               </span>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#24144B", lineHeight: 1.18, marginBottom: "20px" }}>
-                Structured Consultation Notes Ready for Action
+                Automate Your Clinical Document Processing
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
-                Ovotech parses incoming secondary care correspondence into structured clinical entities and SNOMED CT concepts. Practice reviewers get immediate side-by-side verification before committing entries directly to EMIS Web.
+                Stop wasting hours manually reading hospital letters and typing codes into EMIS Web. Ovotech's Medical Coding tool automatically reads incoming correspondence, extracts key clinical information, and suggests the right SNOMED CT codes. Your staff simply review, approve, and save directly into the patient's record.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
                 <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(138,96,229,0.35)", transition: "all 0.3s" }}>
-                  Explore Clinical Review Workspace <span>→</span>
+                  Explore Medical Coding Tool <span>→</span>
                 </Link>
               </div>
             </div>
@@ -74,17 +74,17 @@ export default function FeatureHighlights() {
           }}>
             <div style={{ order: 1 }}>
               <span style={{ display: "inline-block", background: "rgba(22,163,74,0.1)", color: "#16a34a", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px" }}>
-                Expert Primary Care Support
+                Practice Efficiency &amp; Support
               </span>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#24144B", lineHeight: 1.18, marginBottom: "20px" }}>
-                Dedicated Clinical Workflow Partnership
+                Clear Your Document Backlogs Instantly
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
-                Ovotech provides primary care practices with dedicated workflow specialists and experienced clinical coders to clear backlogs, manage staff transitions, and maintain CQC inspection readiness.
+                GP practices face overwhelming volumes of incoming clinical letters every day. Our GP automation platform does the heavy lifting by instantly processing documents and preparing them for quick review. By reducing manual data entry, your team can clear backlogs, save hours of administrative time, and stay CQC compliant.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
                 <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
-                  Talk to Our Practice Support Team <span>→</span>
+                  See How Much Time You Can Save <span>→</span>
                 </Link>
               </div>
             </div>
