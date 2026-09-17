@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import ParticlesBackground from "./ParticlesBackground";
 
 const footerLinks = {
   Platform: [
