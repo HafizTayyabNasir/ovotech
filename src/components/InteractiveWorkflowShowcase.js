@@ -105,37 +105,26 @@ export default function InteractiveWorkflowShowcase() {
     const handleScroll = () => {
       if (!containerRef.current) return;
       
-      // Calculate how far we've scrolled into the tall container
       const { top, height } = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Calculate how far we've scrolled into the 400vh container
-      // top is 0 when the top of the container hits the top of the viewport
       const scrollDistance = -top;
       const scrollableHeight = height - windowHeight;
       
-      if (scrollDistance < 0) {
+      if (scrollDistance <= 0) {
         setActiveIndex(0);
-      } else if (scrollDistance >= scrollableHeight) {
         return;
       }
       
       if (scrollDistance >= scrollableHeight) {
         setActiveIndex(workflowSteps.length - 1);
-      } else {
-        const progress = scrollDistance / scrollableHeight;
-        const newIndex = Math.min(
-          workflowSteps.length - 1,
-          Math.floor(progress * workflowSteps.length)
-        );
-        setActiveIndex(newIndex);
         return;
       }
       
       const progress = scrollDistance / scrollableHeight;
       const newIndex = Math.min(
         workflowSteps.length - 1,
-        Math.floor(progress * workflowSteps.length)
+        Math.max(0, Math.floor(progress * workflowSteps.length))
       );
       
       setActiveIndex(newIndex);
