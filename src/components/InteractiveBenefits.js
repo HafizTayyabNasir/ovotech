@@ -145,45 +145,38 @@ export default function InteractiveBenefits() {
           </p>
         </div>
 
-        {/* 6 Tabs Flow */}
-        <div className="no-scrollbar" style={{
-          display: "flex",
-          flexWrap: "nowrap",
-          alignItems: "center",
-          gap: "16px",
-          marginBottom: "40px",
-          overflowX: "auto",
-          paddingBottom: "16px"
-        }}>
+        {/* 6 Tabs 2-Row Flow */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-x-12 lg:gap-y-6 mb-10">
           {benefitsData.map((item, idx) => {
             const isActive = activeTab.id === item.id;
+            const showArrow = idx !== 2 && idx !== 5; // Arrows after col 1 and col 2
             return (
-              <React.Fragment key={item.id}>
-                <div
-                  className="animated-border-wrapper"
+              <div
+                key={item.id}
+                className="animated-border-wrapper relative"
+                style={{
+                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                  boxShadow: isActive ? "0 12px 30px rgba(138,96,229,0.25)" : "none",
+                  transform: isActive ? "translateY(-2px)" : "none",
+                  background: isActive ? "rgba(138, 96, 229, 0.5)" : "rgba(255, 255, 255, 0.1)",
+                }}
+              >
+                <button
+                  onClick={() => setActiveTab(item)}
+                  className="animated-border-inner"
                   style={{
-                    flex: "0 0 280px",
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    boxShadow: isActive ? "0 12px 30px rgba(138,96,229,0.25)" : "none",
-                    transform: isActive ? "translateY(-2px)" : "none",
-                    background: isActive ? "rgba(138, 96, 229, 0.5)" : "rgba(255, 255, 255, 0.1)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "14px",
+                    padding: "18px 24px",
+                    background: isActive ? "#301A65" : "#3E2382",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    width: "100%",
+                    height: "100%"
                   }}
                 >
-                  <button
-                    onClick={() => setActiveTab(item)}
-                    className="animated-border-inner"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "14px",
-                      padding: "18px 24px",
-                      background: isActive ? "#301A65" : "#3E2382",
-                      border: "none",
-                      cursor: "pointer",
-                      textAlign: "left",
-                      width: "100%"
-                    }}
-                  >
                   <div style={{
                     width: "42px",
                     height: "42px",
@@ -219,17 +212,16 @@ export default function InteractiveBenefits() {
                     </span>
                   </div>
                 </button>
-                </div>
 
-                {/* Arrow Connector */}
-                {idx < benefitsData.length - 1 && (
-                  <div style={{ flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 4px" }}>
+                {/* Arrow Connector (absolute positioned in the gap) */}
+                {showArrow && (
+                  <div className="hidden lg:flex absolute top-1/2 -right-12 z-10 w-12 h-12 items-center justify-center -translate-y-1/2 pointer-events-none">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#02ACEA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 8px rgba(2,172,234,0.5))" }}>
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </div>
                 )}
-              </React.Fragment>
+              </div>
             );
           })}
         </div>
