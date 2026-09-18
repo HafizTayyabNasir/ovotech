@@ -57,13 +57,27 @@ const faqs = [
 ];
 
 const coreComponents = [
+const workflowSteps = [
   {
     id: "review-queue",
     tag: "Workload Management",
     title: "Review Queue & Intake Automation",
     desc: "A unified, intelligent workspace showing all incoming clinical documents that require review. Triage documents automatically by urgency, document type, or patient risk profile while maintaining total operational clarity.",
+    id: "01",
+    tag: "DOCUMENT INTAKE",
+    title: "Clinical Correspondence Ingestion",
+    desc: "Incoming hospital correspondence (clinic letters, discharge summaries) enters the Ovotech workflow from EHR feeds or document repositories.",
     image: "/step1-intake.png",
     link: "/solutions/review-queue"
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+    )
   },
   {
     id: "clinical-review",
@@ -72,28 +86,76 @@ const coreComponents = [
     desc: "The core clinical workstation bringing together original clinical documents, extracted facts, proposed SNOMED CT codes, patient record background, and required actions in a single unified interface.",
     image: "/clinical-workspace-review.png",
     link: "/solutions/clinical-review"
+    id: "02",
+    tag: "INFORMATION EXTRACTION",
+    title: "Clinical Entity & Fact Parsing",
+    desc: "AI engine parses the text to identify key clinical facts, patient identifiers, and suggests appropriate SNOMED CT codes.",
+    image: "/step2-extraction.png",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    )
   },
   {
     id: "patient-history",
     tag: "Contextual Review",
     title: "Patient History Context",
     desc: "Surfaces relevant historical diagnoses, current medications, allergies, and previous consultations alongside the document being reviewed. Minimises clinical risk and prevents duplicate coding.",
+    id: "03",
+    tag: "REVIEW QUEUE",
+    title: "Workload Review Queue Management",
+    desc: "Documents land in the practice's prioritized, sorted review queue for efficient workload management and triage.",
+    image: "/step1-intake.png",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+    )
+  },
+  {
+    id: "04",
+    tag: "CLINICAL REVIEW",
+    title: "Clinical Review & Patient History",
+    desc: "Staff member opens the unified workspace to read the original document alongside the patient's existing active record for context.",
     image: "/step4-patient-history.png",
     link: "/solutions/patient-history"
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+      </svg>
+    )
   },
   {
     id: "snomed-coding",
     tag: "Coding Support",
     title: "SNOMED CT Coding Support",
     desc: "Automatically analyses clinical narrative text to identify medical concepts, diagnoses, procedures, and findings—proposing accurate SNOMED CT terminology for human approval.",
+    id: "05",
+    tag: "HUMAN APPROVAL",
+    title: "Authorised Reviewer Sign-Off",
+    desc: "Staff member verifies, edits, and ultimately approves the suggested codes before any data is finalised.",
     image: "/step3-snomed.png",
     link: "/solutions/snomed-coding"
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+    )
   },
   {
     id: "emis-integration",
     tag: "System Integration",
     title: "EMIS Web Integration",
     desc: "Once verified by an authorized clinician or administrative reviewer, coded data and summary notes are saved directly into the EMIS Web EPR system without manual re-keying.",
+    id: "06",
+    tag: "SYSTEM INTEGRATION",
+    title: "EMIS Web Structured Write-Back",
+    desc: "Approved data is written directly to EMIS Web with a complete audit log, eliminating manual re-keying.",
     image: "/step5-emis-writeback.png",
     link: "/solutions/emis-integration"
   },
@@ -104,6 +166,13 @@ const coreComponents = [
     desc: "Empowers practice managers and PCN clinical leads with comprehensive dashboards tracking document throughput, clinician time saved, outstanding backlogs, and CQC compliance metrics.",
     image: "/hero-tech.png",
     link: "/solutions/kpi-tracking"
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+      </svg>
+    )
   }
 ];
 
@@ -111,6 +180,8 @@ export default function SolutionsPage() {
   const [activeTab, setActiveTab] = useState(0);
   const active = tabs[activeTab];
   
+  const [activeWorkflow, setActiveWorkflow] = useState(0);
+
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
 
@@ -436,10 +507,22 @@ export default function SolutionsPage() {
         <div className="site-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px", maxWidth: "800px", margin: "0 auto", lineHeight: 1.25 }}>
+      {/* 6. WORKFLOW PREVIEW */}
+      <section className="relative w-full overflow-hidden pt-[100px] pb-[100px]" style={{ background: "#301A65" }}>
+        <ParticlesBackground color="#8A60E5" />
+        
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16 flex flex-col items-center">
+            <span style={{ display: "inline-block", background: "rgba(255,255,255,0.08)", color: "#A594FF", fontSize: "11px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", padding: "6px 20px", borderRadius: "30px", border: "1px solid rgba(165,148,255,0.2)", marginBottom: "20px" }}>
+              Ovotech Workflow : How It Works
+            </span>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#FFFFFF", maxWidth: "800px", lineHeight: 1.2, marginBottom: "16px" }}>
               From incoming document to verified EMIS record in seconds.
             </h2>
             <p style={{ fontSize: "18px", fontWeight: 500, color: "#475569", marginTop: "16px" }}>
               Scroll to explore the 6-step clinical document workflow preview
+            <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.7)", fontWeight: 500 }}>
+              Scroll to explore the 6-step clinical document workflow preview.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "60px" }}>
@@ -451,6 +534,60 @@ export default function SolutionsPage() {
                     <div style={{ order: isEven ? 1 : 2 }}>
                       <span style={{ display: "inline-block", background: "rgba(2,172,234,0.12)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, padding: "5px 14px", borderRadius: "14px", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "14px" }}>
                         Component {idx + 1} — {m.tag}
+
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            {/* Left side: Sticky Phone Mockup */}
+            <div className="w-full lg:w-[40%] lg:sticky lg:top-[120px] flex justify-center">
+              {/* Phone Mockup Frame */}
+              <div className="relative w-full max-w-[340px] aspect-[9/19] rounded-[40px] border-[8px] border-[#2A185C] bg-[#0F172A] overflow-hidden shadow-2xl flex flex-col">
+                 {/* Inner Header */}
+                 <div className="flex items-center justify-between px-6 py-4 bg-[#3E2382]">
+                   <div className="flex items-center gap-2">
+                     <div className="w-2 h-2 rounded-full bg-[#27c93f]"></div>
+                     <span className="text-white font-bold text-[11px] tracking-widest uppercase">Step {workflowSteps[activeWorkflow].id}</span>
+                   </div>
+                 </div>
+                 {/* Inner Image */}
+                 <div className="flex-1 relative bg-[#0F172A] p-2 flex flex-col items-center justify-center">
+                   <motion.img 
+                     key={activeWorkflow}
+                     initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}
+                     src={workflowSteps[activeWorkflow].image} 
+                     alt={workflowSteps[activeWorkflow].title}
+                     className="w-full object-cover rounded-xl border border-white/10"
+                   />
+                 </div>
+              </div>
+            </div>
+
+            {/* Right side: Steps List */}
+            <div className="w-full lg:w-[60%] flex flex-col gap-4">
+              {workflowSteps.map((step, idx) => {
+                const isActive = activeWorkflow === idx;
+                return (
+                  <div 
+                    key={step.id}
+                    onClick={() => setActiveWorkflow(idx)}
+                    className="cursor-pointer transition-all duration-300 rounded-2xl"
+                    style={{
+                      background: isActive ? "#FFFFFF" : "rgba(255,255,255,0.03)",
+                      border: isActive ? "1px solid #FFFFFF" : "1px solid rgba(255,255,255,0.1)",
+                      padding: isActive ? "32px" : "24px 32px",
+                      transform: isActive ? "scale(1.02)" : "scale(1)",
+                      boxShadow: isActive ? "0 20px 40px rgba(0,0,0,0.2)" : "none"
+                    }}
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div style={{ color: isActive ? "#301A65" : "#A594FF" }}>
+                          {step.icon}
+                        </div>
+                        <span style={{ fontSize: "12px", fontWeight: 800, letterSpacing: "1.5px", textTransform: "uppercase", color: isActive ? "#301A65" : "#A594FF" }}>
+                          {step.tag}
+                        </span>
+                      </div>
+                      <span style={{ fontSize: "20px", fontWeight: 800, color: isActive ? "#301A65" : "rgba(255,255,255,0.2)" }}>
+                        {step.id}
                       </span>
                       <h3 style={{ fontSize: "28px", fontWeight: 800, color: "#0A1838", marginBottom: "14px", lineHeight: 1.25 }}>{m.title}</h3>
                       <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>{m.desc}</p>
@@ -463,10 +600,24 @@ export default function SolutionsPage() {
                         <img src={m.image} alt={m.title} style={{ width: "100%", height: "360px", objectFit: "cover", display: "block" }} />
                       </div>
                     </div>
+                    <h3 style={{ fontSize: "22px", fontWeight: 800, color: isActive ? "#0A1838" : "#FFFFFF", marginBottom: isActive ? "12px" : "0" }}>
+                      {step.title}
+                    </h3>
+                    {isActive && (
+                      <motion.p 
+                        initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }}
+                        style={{ fontSize: "15px", color: "#475569", lineHeight: 1.6 }}
+                      >
+                        {step.desc}
+                      </motion.p>
+                    )}
                   </div>
                 </div>
               );
             })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
