@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import TopBar from "@/components/TopBar";
@@ -110,6 +110,27 @@ const coreComponents = [
 export default function SolutionsPage() {
   const [activeTab, setActiveTab] = useState(0);
   const active = tabs[activeTab];
+  
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = (e) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
 
   return (
     <>
@@ -117,9 +138,12 @@ export default function SolutionsPage() {
       <Navbar />
 
       {/* 1. HERO */}
-      <section style={{ position: "relative", minHeight: "600px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#301A65" }}>
+      <section style={{ position: "relative", minHeight: "800px", paddingTop: "120px", paddingBottom: "100px", overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center", background: "#301A65" }}>
         <ParticlesBackground color="#8A60E5" />
         
+        {/* Ambient Glow */}
+        <div style={{ position: "absolute", top: "20%", left: "50%", transform: "translateX(-50%)", width: "800px", height: "400px", background: "radial-gradient(ellipse, rgba(138, 96, 229, 0.25) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+
         {/* SVG Layered Organic Wave Curve Overlay */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" style={{ zIndex: 3 }} viewBox="0 0 1440 800" preserveAspectRatio="none">
           <defs>
@@ -138,26 +162,76 @@ export default function SolutionsPage() {
           <path d="M 0,0 L 760,0 C 470,250 470,550 760,800 L 0,800 Z" fill="url(#ovoGradient)" />
         </svg>
 
-        <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1480px", margin: "0 auto", padding: "0 24px" }}>
-          <div className="animate-fadeInLeft" style={{ maxWidth: "760px" }}>
+        <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(138,96,229,0.3)" }}>
               Ovotech Medical Coding Tool
             </span>
-            <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.15, marginBottom: "20px", color: "#FFFFFF" }}>
+            <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.15, marginBottom: "20px", color: "#FFFFFF", maxWidth: "900px", margin: "0 auto 20px" }}>
               Medical Coding, Handled — From Document to EMIS Web, With a Human Always in Control.
             </h1>
-            <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)", lineHeight: 1.6, marginBottom: "32px", maxWidth: "620px" }}>
+            <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)", lineHeight: 1.6, marginBottom: "32px", maxWidth: "680px", margin: "0 auto 32px" }}>
               Stop juggling paper, PDFs, and multiple screens. Ovotech is a unified workflow platform for UK GP practices that reads clinical correspondence, extracts key data, suggests SNOMED CT codes, and writes back to EMIS Web—all with your staff's final approval.
             </p>
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center", marginBottom: "60px" }}>
               <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(138, 96, 229, 0.3)", transition: "all 0.3s" }}>
                 Book a Demo
               </Link>
-              <a href="#video-guide" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#FFFFFF", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", transition: "all 0.3s" }}>
-                Watch How It Works
-              </a>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Browser Mockup Video Player (Reused Pattern) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+            className="animated-border-wrapper" style={{ maxWidth: "1000px", margin: "0 auto", "--border-radius": "24px" }}
+          >
+            <div className="animated-border-inner" style={{ background: "#FFFFFF", boxShadow: "0 30px 60px rgba(0, 0, 0, 0.2)", display: "flex", flexDirection: "column" }}>
+              {/* Browser Controls */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 16px", background: "#0F172A", borderRadius: "22px 22px 0 0", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+                <div style={{ display: "flex", gap: "8px" }}>
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56" }} />
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e" }} />
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f" }} />
+                </div>
+                <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", fontWeight: 600, letterSpacing: "1px", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "#02ACEA" }}></span>
+                  Medical Coding Workspace
+                </div>
+                <div style={{ width: "44px" }}></div>
+              </div>
+
+              {/* Video Container */}
+              <div style={{ position: "relative", paddingTop: "56.25%", borderRadius: "0 0 22px 22px", overflow: "hidden", background: "#0A1838", cursor: "pointer" }}
+                onClick={togglePlay}
+              >
+                {/* TODO: replace with real Medical Coding product walkthrough video */}
+                <video 
+                  ref={videoRef}
+                  controls={false}
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  poster="/hero-tech.png"
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover" }}
+                >
+                  <source src="/HomeBanner.mp4" type="video/mp4" />
+                </video>
+                
+                {/* Custom Play/Pause Overlay Control */}
+                <div style={{ position: "absolute", bottom: "24px", left: "24px", zIndex: 20 }}>
+                  <button 
+                    onClick={toggleMute}
+                    style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", border: "1px solid rgba(255,255,255,0.2)", color: "#FFFFFF", padding: "10px 16px", borderRadius: "30px", fontSize: "13px", fontWeight: 700, display: "flex", gap: "8px", alignItems: "center", cursor: "pointer", transition: "all 0.2s" }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(0,0,0,0.8)" }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(0,0,0,0.6)" }}
+                  >
+                    <span>{isMuted ? "🔇" : "🔊"}</span> {isMuted ? "Unmute" : "Mute"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
