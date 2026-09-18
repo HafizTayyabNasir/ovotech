@@ -14,6 +14,9 @@ const tabs = [
     id: "review-queue",
     title: "Review Queue",
     desc: "Practice staff see all incoming clinical correspondence in one prioritized list, matched to the correct NHS patient.",
+    id: "document-intake",
+    title: "Document Intake & Triage",
+    desc: "Automatically ingest and triage clinical correspondence. The system extracts key information to prioritize urgent documents and instantly matches them to the correct NHS patient record.",
     image: "/step1-intake.png",
   },
   {
@@ -21,12 +24,20 @@ const tabs = [
     title: "Clinical Review Workspace",
     desc: "The core workstation. Reviewers see the original hospital letter alongside extracted data, SNOMED CT suggestions, and relevant patient history—without juggling multiple windows.",
     image: "/clinical-workspace-review.png",
+    id: "ai-medical-coding",
+    title: "AI SNOMED CT Coding",
+    desc: "Our AI engine analyzes the clinical narrative to identify medical concepts, diagnoses, and procedures—proposing accurate SNOMED CT terminology for human verification.",
+    image: "/step3-snomed.png",
   },
   {
     id: "dashboard",
     title: "Dashboard & Impact",
     desc: "Practice managers get full visibility into document throughput, backlogs cleared, and clinical hours saved, ensuring CQC audit readiness.",
     image: "/hero-tech.png",
+    id: "clinical-review",
+    title: "Review & EMIS Write-Back",
+    desc: "Reviewers verify the proposed codes alongside the original hospital letter. Once approved, the structured clinical data is written directly to EMIS Web without manual re-keying.",
+    image: "/step5-emis-writeback.png",
   }
 ];
 
