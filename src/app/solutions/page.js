@@ -138,12 +138,12 @@ export default function SolutionsPage() {
       <Navbar />
 
       {/* 1. HERO */}
-      <section className="relative w-full overflow-hidden bg-[#FFFFFF] pt-[120px] pb-[80px] lg:pt-[160px] lg:pb-[120px]">
+      <section className="relative w-full overflow-hidden bg-[#FFFFFF] pt-[60px] pb-[60px] lg:pt-[80px] lg:pb-[100px]">
         {/* Subtle background decoration */}
         <div style={{ position: "absolute", top: "-10%", right: "-5%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(138, 96, 229, 0.05) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
         
-        <div className="site-container relative z-10 w-full max-w-[1200px] mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+        <div className="relative z-10 w-full max-w-[1350px] mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
             
             {/* LEFT COLUMN */}
             <div className="w-full lg:w-[45%] flex flex-col items-start text-left">
