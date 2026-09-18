@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import ParticlesBackground from "./ParticlesBackground";
 
@@ -149,10 +150,19 @@ export default function InteractiveBenefits() {
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        {/* 6 Tabs Flow */}
+        <div className="no-scrollbar" style={{
+          display: "flex",
+          flexWrap: "nowrap",
+          alignItems: "center",
           gap: "16px",
           marginBottom: "40px"
+          marginBottom: "40px",
+          overflowX: "auto",
+          paddingBottom: "16px"
         }}>
           {benefitsData.map((item) => {
+          {benefitsData.map((item, idx) => {
             const isActive = activeTab.id === item.id;
             return (
               <div
@@ -168,7 +178,38 @@ export default function InteractiveBenefits() {
                 <button
                   onClick={() => setActiveTab(item)}
                   className="animated-border-inner"
+              <React.Fragment key={item.id}>
+                <div
+                  className="animated-border-wrapper"
                   style={{
+                    flex: "0 0 280px",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    boxShadow: isActive ? "0 12px 30px rgba(138,96,229,0.25)" : "none",
+                    transform: isActive ? "translateY(-2px)" : "none",
+                    background: isActive ? "rgba(138, 96, 229, 0.5)" : "rgba(255, 255, 255, 0.1)",
+                  }}
+                >
+                  <button
+                    onClick={() => setActiveTab(item)}
+                    className="animated-border-inner"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "14px",
+                      padding: "18px 24px",
+                      background: isActive ? "#301A65" : "#3E2382",
+                      border: "none",
+                      cursor: "pointer",
+                      textAlign: "left",
+                      width: "100%"
+                    }}
+                  >
+                  <div style={{
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "12px",
+                    background: isActive ? "#8A60E5" : "rgba(138,96,229,0.15)",
+                    color: isActive ? "#FFFFFF" : "#8A60E5",
                     display: "flex",
                     alignItems: "center",
                     gap: "14px",
@@ -200,6 +241,9 @@ export default function InteractiveBenefits() {
                     color: "#FFFFFF",
                     display: "block",
                     lineHeight: 1.3
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    transition: "all 0.25s"
                   }}>
                     {item.title}
                   </span>
@@ -212,9 +256,42 @@ export default function InteractiveBenefits() {
                   }}>
                     {item.badge}
                   </span>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <span style={{
+                      fontSize: "15px",
+                      fontWeight: isActive ? 800 : 600,
+                      color: "#FFFFFF",
+                      display: "block",
+                      lineHeight: 1.3
+                    }}>
+                      {item.title}
+                    </span>
+                    <span style={{
+                      fontSize: "11px",
+                      color: isActive ? "#8A60E5" : "rgba(255,255,255,0.5)",
+                      fontWeight: 700,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px"
+                    }}>
+                      {item.badge}
+                    </span>
+                  </div>
+                </button>
                 </div>
               </button>
               </div>
+
+                {/* Arrow Connector */}
+                {idx < benefitsData.length - 1 && (
+                  <div style={{ flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 4px" }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#02ACEA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 8px rgba(2,172,234,0.5))" }}>
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                )}
+              </React.Fragment>
             );
           })}
         </div>
