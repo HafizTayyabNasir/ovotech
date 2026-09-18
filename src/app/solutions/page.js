@@ -190,7 +190,7 @@ export default function SolutionsPage() {
                   </div>
                 </div>
 
-                {/* 3 Buttons */}
+                {/* Action Button */}
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                   <button 
                     onClick={() => {
@@ -198,28 +198,13 @@ export default function SolutionsPage() {
                       const target = Array.from(sections).find(s => s.textContent.includes('The 8-Step Medical Coding Flow'));
                       if (target) target.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s", border: "2px solid #02ACEA" }}
+                    className="whitespace-nowrap"
+                    style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s", border: "2px solid #02ACEA" }}
                     onMouseEnter={e => { e.currentTarget.style.background = "#028bbd"; e.currentTarget.style.borderColor = "#028bbd"; }}
                     onMouseLeave={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.borderColor = "#02ACEA"; }}
                   >
                     See How It Works
                   </button>
-                  <Link 
-                    href="/contact" 
-                    style={{ background: "transparent", color: "#301A65", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", border: "2px solid rgba(48,26,101,0.2)", transition: "all 0.3s" }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = "#301A65"; e.currentTarget.style.background = "rgba(48,26,101,0.05)"; }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(48,26,101,0.2)"; e.currentTarget.style.background = "transparent"; }}
-                  >
-                    Contact Us
-                  </Link>
-                  <Link 
-                    href="/contact" 
-                    style={{ background: "transparent", color: "#301A65", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", border: "2px solid rgba(48,26,101,0.2)", transition: "all 0.3s" }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = "#301A65"; e.currentTarget.style.background = "rgba(48,26,101,0.05)"; }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(48,26,101,0.2)"; e.currentTarget.style.background = "transparent"; }}
-                  >
-                    Book a Demo
-                  </Link>
                 </div>
               </motion.div>
             </div>
