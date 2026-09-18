@@ -435,9 +435,6 @@ export default function SolutionsPage() {
       <section style={{ padding: "90px 0", background: "#F4F7FC" }}>
         <div className="site-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>Deep Dive</span>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>
-              Core Medical Coding Components
             <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px", maxWidth: "800px", margin: "0 auto", lineHeight: 1.25 }}>
               From incoming document to verified EMIS record in seconds.
             </h2>
