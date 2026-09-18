@@ -138,100 +138,147 @@ export default function SolutionsPage() {
       <Navbar />
 
       {/* 1. HERO */}
-      <section style={{ position: "relative", minHeight: "800px", paddingTop: "120px", paddingBottom: "100px", overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center", background: "#301A65" }}>
-        <ParticlesBackground color="#8A60E5" />
+      <section className="relative w-full overflow-hidden bg-[#FFFFFF] pt-[120px] pb-[80px] lg:pt-[160px] lg:pb-[120px]">
+        {/* Subtle background decoration */}
+        <div style={{ position: "absolute", top: "-10%", right: "-5%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(138, 96, 229, 0.05) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
         
-        {/* Ambient Glow */}
-        <div style={{ position: "absolute", top: "20%", left: "50%", transform: "translateX(-50%)", width: "800px", height: "400px", background: "radial-gradient(ellipse, rgba(138, 96, 229, 0.25) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+        <div className="site-container relative z-10 w-full max-w-[1200px] mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+            
+            {/* LEFT COLUMN */}
+            <div className="w-full lg:w-[45%] flex flex-col items-start text-left">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                {/* 2-line large headline */}
+                <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-8 tracking-tight">
+                  <span style={{ color: "#02ACEA", display: "block" }}>Medical Coding</span>
+                  <span style={{ color: "#0A1838", display: "block" }}>Handled End-to-End</span>
+                </h1>
 
-        {/* SVG Layered Organic Wave Curve Overlay */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" style={{ zIndex: 3 }} viewBox="0 0 1440 800" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="ovoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#301A65" />
-              <stop offset="85%" stopColor="#3E2382" />
-              <stop offset="100%" stopColor="#134074" />
-            </linearGradient>
-            <linearGradient id="ovoWave" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#301A65" />
-              <stop offset="50%" stopColor="#3E2382" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="rgba(138, 96, 229, 0.4)" stopOpacity="0.4" />
-            </linearGradient>
-          </defs>
-          <path d="M 0,0 L 840,0 C 530,250 530,550 840,800 L 0,800 Z" fill="url(#ovoWave)" />
-          <path d="M 0,0 L 760,0 C 470,250 470,550 760,800 L 0,800 Z" fill="url(#ovoGradient)" />
-        </svg>
-
-        <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(138,96,229,0.3)" }}>
-              Ovotech Medical Coding Tool
-            </span>
-            <h1 style={{ fontSize: "clamp(34px, 4.5vw, 54px)", fontWeight: 800, lineHeight: 1.15, marginBottom: "20px", color: "#FFFFFF", maxWidth: "900px", margin: "0 auto 20px" }}>
-              Medical Coding, Handled — From Document to EMIS Web, With a Human Always in Control.
-            </h1>
-            <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)", lineHeight: 1.6, marginBottom: "32px", maxWidth: "680px", margin: "0 auto 32px" }}>
-              Stop juggling paper, PDFs, and multiple screens. Ovotech is a unified workflow platform for UK GP practices that reads clinical correspondence, extracts key data, suggests SNOMED CT codes, and writes back to EMIS Web—all with your staff's final approval.
-            </p>
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center", marginBottom: "60px" }}>
-              <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(138, 96, 229, 0.3)", transition: "all 0.3s" }}>
-                Book a Demo
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Browser Mockup Video Player (Reused Pattern) */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-            className="animated-border-wrapper" style={{ maxWidth: "1000px", margin: "0 auto", "--border-radius": "24px" }}
-          >
-            <div className="animated-border-inner" style={{ background: "#FFFFFF", boxShadow: "0 30px 60px rgba(0, 0, 0, 0.2)", display: "flex", flexDirection: "column" }}>
-              {/* Browser Controls */}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 16px", background: "#0F172A", borderRadius: "22px 22px 0 0", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-                <div style={{ display: "flex", gap: "8px" }}>
-                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56" }} />
-                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e" }} />
-                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f" }} />
+                {/* 2x2 Feature Bullets */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 mb-10">
+                  {/* Bullet 1 */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <span className="text-[20px]">📋</span>
+                      <h3 className="font-bold text-[#0A1838] text-[16px]">Review Queue</h3>
+                    </div>
+                    <p className="text-[#475569] text-[14px] leading-[1.5]">See what's pending, prioritise at a glance</p>
+                  </div>
+                  {/* Bullet 2 */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <span className="text-[20px]">🔄</span>
+                      <h3 className="font-bold text-[#0A1838] text-[16px]">EMIS Web Integrated</h3>
+                    </div>
+                    <p className="text-[#475569] text-[14px] leading-[1.5]">Structured write-back to your clinical system</p>
+                  </div>
+                  {/* Bullet 3 */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <span className="text-[20px]">🛡️</span>
+                      <h3 className="font-bold text-[#0A1838] text-[16px]">Human-in-the-Loop</h3>
+                    </div>
+                    <p className="text-[#475569] text-[14px] leading-[1.5]">Every code confirmed by a reviewer before filing</p>
+                  </div>
+                  {/* Bullet 4 */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <span className="text-[20px]">📊</span>
+                      <h3 className="font-bold text-[#0A1838] text-[16px]">Full Visibility</h3>
+                    </div>
+                    <p className="text-[#475569] text-[14px] leading-[1.5]">Dashboard & impact tracking built in</p>
+                  </div>
                 </div>
-                <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", fontWeight: 600, letterSpacing: "1px", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "#02ACEA" }}></span>
-                  Medical Coding Workspace
-                </div>
-                <div style={{ width: "44px" }}></div>
-              </div>
 
-              {/* Video Container */}
-              <div style={{ position: "relative", paddingTop: "56.25%", borderRadius: "0 0 22px 22px", overflow: "hidden", background: "#0A1838", cursor: "pointer" }}
-                onClick={togglePlay}
-              >
-                {/* TODO: replace with real Medical Coding product walkthrough video */}
-                <video 
-                  ref={videoRef}
-                  controls={false}
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  poster="/hero-tech.png"
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover" }}
-                >
-                  <source src="/HomeBanner.mp4" type="video/mp4" />
-                </video>
-                
-                {/* Custom Play/Pause Overlay Control */}
-                <div style={{ position: "absolute", bottom: "24px", left: "24px", zIndex: 20 }}>
+                {/* 3 Buttons */}
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                   <button 
-                    onClick={toggleMute}
-                    style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", border: "1px solid rgba(255,255,255,0.2)", color: "#FFFFFF", padding: "10px 16px", borderRadius: "30px", fontSize: "13px", fontWeight: 700, display: "flex", gap: "8px", alignItems: "center", cursor: "pointer", transition: "all 0.2s" }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(0,0,0,0.8)" }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(0,0,0,0.6)" }}
+                    onClick={() => {
+                      const sections = document.querySelectorAll('section');
+                      const target = Array.from(sections).find(s => s.textContent.includes('The 8-Step Medical Coding Flow'));
+                      if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s", border: "2px solid #02ACEA" }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "#028bbd"; e.currentTarget.style.borderColor = "#028bbd"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.borderColor = "#02ACEA"; }}
                   >
-                    <span>{isMuted ? "🔇" : "🔊"}</span> {isMuted ? "Unmute" : "Mute"}
+                    See How It Works
                   </button>
+                  <Link 
+                    href="/contact" 
+                    style={{ background: "transparent", color: "#301A65", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", border: "2px solid rgba(48,26,101,0.2)", transition: "all 0.3s" }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = "#301A65"; e.currentTarget.style.background = "rgba(48,26,101,0.05)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(48,26,101,0.2)"; e.currentTarget.style.background = "transparent"; }}
+                  >
+                    Contact Us
+                  </Link>
+                  <Link 
+                    href="/contact" 
+                    style={{ background: "transparent", color: "#301A65", fontWeight: 700, padding: "14px 28px", borderRadius: "30px", border: "2px solid rgba(48,26,101,0.2)", transition: "all 0.3s" }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = "#301A65"; e.currentTarget.style.background = "rgba(48,26,101,0.05)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(48,26,101,0.2)"; e.currentTarget.style.background = "transparent"; }}
+                  >
+                    Book a Demo
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </motion.div>
+
+            {/* RIGHT COLUMN */}
+            <div className="w-full lg:w-[55%]">
+              <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  {/* Col 1 */}
+                  <div className="flex flex-col gap-4 flex-1">
+                    {/* Top-Left */}
+                    <div className="rounded-3xl p-7 flex flex-col justify-between shadow-xl" style={{ background: "linear-gradient(135deg, #301A65 0%, #3E2382 100%)", height: "180px" }}>
+                      <div className="text-white">
+                        <h4 className="font-bold text-[20px] xl:text-[22px] leading-[1.2] mb-2">Faster Coding<br/>Turnaround</h4>
+                      </div>
+                      <div className="flex items-end gap-2 h-8">
+                        <div className="w-2.5 bg-[#02ACEA] rounded-t-sm" style={{ height: "40%" }}></div>
+                        <div className="w-2.5 bg-[#02ACEA] rounded-t-sm" style={{ height: "70%" }}></div>
+                        <div className="w-2.5 bg-[#02ACEA] rounded-t-sm" style={{ height: "100%" }}></div>
+                      </div>
+                    </div>
+                    {/* Bottom-Left */}
+                    <div className="rounded-3xl flex items-center justify-center shadow-xl p-8" style={{ background: "#301A65", height: "240px" }}>
+                      <img src="/logo-footer.png" alt="Ovotech Logo" className="w-[140px] object-contain opacity-90" />
+                    </div>
+                  </div>
+                  {/* Col 2 */}
+                  <div className="flex flex-col gap-4 flex-[1.3]">
+                    {/* Top-Right: Laptop mockup */}
+                    <div className="rounded-3xl relative shadow-xl overflow-hidden border border-[#E0E8F5] bg-white flex flex-col" style={{ height: "280px" }}>
+                      <div className="flex justify-between items-center px-4 py-2.5 bg-[#0F172A]">
+                        <div className="flex gap-1.5">
+                          <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                        </div>
+                      </div>
+                      <div className="relative flex-1 bg-[#F4F7FC]">
+                        <img src="/clinical-workspace-review.png" alt="Clinical Review Workspace" className="w-full h-full object-cover object-top" />
+                        <Link href="/solutions/clinical-review" className="absolute top-4 right-4 w-9 h-9 bg-white/95 backdrop-blur rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#301A65" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                    {/* Bottom-Right */}
+                    <div className="rounded-3xl p-7 flex flex-col justify-center shadow-xl" style={{ background: "linear-gradient(135deg, #0A1838 0%, #1A2848 100%)", height: "140px" }}>
+                      <h4 className="font-bold text-white text-[18px] xl:text-[20px] leading-[1.2] mb-3">Trusted by GP Teams<br/>Across the UK</h4>
+                      <div className="flex gap-1 text-[#ffbd2e]">
+                        {"★★★★★".split("").map((star, i) => <span key={i} className="text-[16px]">{star}</span>)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            
+          </div>
         </div>
       </section>
 
