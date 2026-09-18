@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import InteractiveWorkflowShowcase from "@/components/InteractiveWorkflowShowcase";
 
 const tabs = [
   {
@@ -483,6 +484,7 @@ export default function SolutionsPage() {
               Scroll to explore the 6-step clinical document workflow preview.
             </p>
           </div>
+      <InteractiveWorkflowShowcase />
 
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
             {/* Left side: Sticky Phone Mockup */}
