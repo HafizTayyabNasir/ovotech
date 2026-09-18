@@ -56,19 +56,13 @@ const faqs = [
   }
 ];
 
-const coreComponents = [
 const workflowSteps = [
   {
-    id: "review-queue",
-    tag: "Workload Management",
-    title: "Review Queue & Intake Automation",
-    desc: "A unified, intelligent workspace showing all incoming clinical documents that require review. Triage documents automatically by urgency, document type, or patient risk profile while maintaining total operational clarity.",
     id: "01",
     tag: "DOCUMENT INTAKE",
     title: "Clinical Correspondence Ingestion",
     desc: "Incoming hospital correspondence (clinic letters, discharge summaries) enters the Ovotech workflow from EHR feeds or document repositories.",
     image: "/step1-intake.png",
-    link: "/solutions/review-queue"
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -80,12 +74,6 @@ const workflowSteps = [
     )
   },
   {
-    id: "clinical-review",
-    tag: "Primary Workspace",
-    title: "Clinical Review Workspace",
-    desc: "The core clinical workstation bringing together original clinical documents, extracted facts, proposed SNOMED CT codes, patient record background, and required actions in a single unified interface.",
-    image: "/clinical-workspace-review.png",
-    link: "/solutions/clinical-review"
     id: "02",
     tag: "INFORMATION EXTRACTION",
     title: "Clinical Entity & Fact Parsing",
@@ -99,10 +87,6 @@ const workflowSteps = [
     )
   },
   {
-    id: "patient-history",
-    tag: "Contextual Review",
-    title: "Patient History Context",
-    desc: "Surfaces relevant historical diagnoses, current medications, allergies, and previous consultations alongside the document being reviewed. Minimises clinical risk and prevents duplicate coding.",
     id: "03",
     tag: "REVIEW QUEUE",
     title: "Workload Review Queue Management",
@@ -123,7 +107,6 @@ const workflowSteps = [
     title: "Clinical Review & Patient History",
     desc: "Staff member opens the unified workspace to read the original document alongside the patient's existing active record for context.",
     image: "/step4-patient-history.png",
-    link: "/solutions/patient-history"
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -131,16 +114,11 @@ const workflowSteps = [
     )
   },
   {
-    id: "snomed-coding",
-    tag: "Coding Support",
-    title: "SNOMED CT Coding Support",
-    desc: "Automatically analyses clinical narrative text to identify medical concepts, diagnoses, procedures, and findings—proposing accurate SNOMED CT terminology for human approval.",
     id: "05",
     tag: "HUMAN APPROVAL",
     title: "Authorised Reviewer Sign-Off",
     desc: "Staff member verifies, edits, and ultimately approves the suggested codes before any data is finalised.",
     image: "/step3-snomed.png",
-    link: "/solutions/snomed-coding"
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -148,24 +126,11 @@ const workflowSteps = [
     )
   },
   {
-    id: "emis-integration",
-    tag: "System Integration",
-    title: "EMIS Web Integration",
-    desc: "Once verified by an authorized clinician or administrative reviewer, coded data and summary notes are saved directly into the EMIS Web EPR system without manual re-keying.",
     id: "06",
     tag: "SYSTEM INTEGRATION",
     title: "EMIS Web Structured Write-Back",
     desc: "Approved data is written directly to EMIS Web with a complete audit log, eliminating manual re-keying.",
     image: "/step5-emis-writeback.png",
-    link: "/solutions/emis-integration"
-  },
-  {
-    id: "kpi-tracking",
-    tag: "Analytics & Governance",
-    title: "Dashboard & Operational Analytics",
-    desc: "Empowers practice managers and PCN clinical leads with comprehensive dashboards tracking document throughput, clinician time saved, outstanding backlogs, and CQC compliance metrics.",
-    image: "/hero-tech.png",
-    link: "/solutions/kpi-tracking"
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -502,11 +467,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 6. CORE COMPONENTS */}
-      <section style={{ padding: "90px 0", background: "#F4F7FC" }}>
-        <div className="site-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px", maxWidth: "800px", margin: "0 auto", lineHeight: 1.25 }}>
       {/* 6. WORKFLOW PREVIEW */}
       <section className="relative w-full overflow-hidden pt-[100px] pb-[100px]" style={{ background: "#301A65" }}>
         <ParticlesBackground color="#8A60E5" />
@@ -519,21 +479,10 @@ export default function SolutionsPage() {
             <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#FFFFFF", maxWidth: "800px", lineHeight: 1.2, marginBottom: "16px" }}>
               From incoming document to verified EMIS record in seconds.
             </h2>
-            <p style={{ fontSize: "18px", fontWeight: 500, color: "#475569", marginTop: "16px" }}>
-              Scroll to explore the 6-step clinical document workflow preview
             <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.7)", fontWeight: 500 }}>
               Scroll to explore the 6-step clinical document workflow preview.
             </p>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "60px" }}>
-            {coreComponents.map((m, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <div key={m.id} style={{ background: "#FFFFFF", borderRadius: "28px", padding: "48px 40px", border: "1px solid #E0E8F5", boxShadow: "0 12px 40px rgba(10,24,56,0.04)" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "48px", alignItems: "center" }}>
-                    <div style={{ order: isEven ? 1 : 2 }}>
-                      <span style={{ display: "inline-block", background: "rgba(2,172,234,0.12)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, padding: "5px 14px", borderRadius: "14px", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "14px" }}>
-                        Component {idx + 1} — {m.tag}
 
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
             {/* Left side: Sticky Phone Mockup */}
@@ -589,16 +538,6 @@ export default function SolutionsPage() {
                       <span style={{ fontSize: "20px", fontWeight: 800, color: isActive ? "#301A65" : "rgba(255,255,255,0.2)" }}>
                         {step.id}
                       </span>
-                      <h3 style={{ fontSize: "28px", fontWeight: 800, color: "#0A1838", marginBottom: "14px", lineHeight: 1.25 }}>{m.title}</h3>
-                      <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>{m.desc}</p>
-                      <Link href={m.link} style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "12px 24px", borderRadius: "12px", boxShadow: "0 4px 14px rgba(2,172,234,0.3)", transition: "all 0.3s" }}>
-                        Read More About {m.title.split(" ")[0]} <span>→</span>
-                      </Link>
-                    </div>
-                    <div style={{ order: isEven ? 2 : 1, position: "relative" }}>
-                      <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid #E0E8F5", boxShadow: "0 16px 40px rgba(10,24,56,0.1)" }}>
-                        <img src={m.image} alt={m.title} style={{ width: "100%", height: "360px", objectFit: "cover", display: "block" }} />
-                      </div>
                     </div>
                     <h3 style={{ fontSize: "22px", fontWeight: 800, color: isActive ? "#0A1838" : "#FFFFFF", marginBottom: isActive ? "12px" : "0" }}>
                       {step.title}
@@ -612,9 +551,6 @@ export default function SolutionsPage() {
                       </motion.p>
                     )}
                   </div>
-                </div>
-              );
-            })}
                 );
               })}
             </div>
