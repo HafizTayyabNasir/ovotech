@@ -339,6 +339,7 @@ export default function SolutionsPage() {
               The Medical Coding Experience
             </h2>
           </div>
+      <InteractiveWorkflowShowcase />
 
           <div style={{ background: "#FFFFFF", borderRadius: "24px", border: "1px solid #E0E8F5", boxShadow: "0 20px 50px rgba(10,24,56,0.06)", overflow: "hidden" }}>
             <div style={{ display: "flex", overflowX: "auto", background: "#F4F7FC", borderBottom: "1px solid #E0E8F5", padding: "8px 12px", gap: "8px" }} className="no-scrollbar">
@@ -470,6 +471,7 @@ export default function SolutionsPage() {
 
       {/* 6. WORKFLOW PREVIEW */}
       <InteractiveWorkflowShowcase />
+
 
       {/* 7. HUMAN-IN-THE-LOOP CALLOUT */}
       <section style={{ padding: "64px 0", background: "#FFFFFF" }}>
