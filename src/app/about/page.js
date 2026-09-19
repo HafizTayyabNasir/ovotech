@@ -17,7 +17,7 @@ export default function AboutPage() {
         
         {/* HERO SECTION */}
         <section className="relative pt-32 pb-20 px-6 lg:px-12 z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-[1200px] mx-auto text-center">
             <span className="inline-block bg-[#02ACEA]/15 text-[#02ACEA] text-[11px] font-bold tracking-[2px] py-1 px-4 rounded-full uppercase mb-6 border border-[#02ACEA]/30">
               COMPANY OVERVIEW
             </span>
@@ -32,7 +32,7 @@ export default function AboutPage() {
 
         {/* CONTENT SECTIONS */}
         <section className="relative pb-32 px-6 lg:px-12 z-10">
-          <div className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Our Story Card */}
             <motion.div 
