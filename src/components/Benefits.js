@@ -16,18 +16,18 @@ export default function Benefits() {
           <div className="animate-fadeInLeft" style={{ flex: "1 1 380px", minWidth: "280px", position: "relative" }}>
             <div style={{ position: "relative", maxWidth: "420px" }}>
               <img src="/benefits-doctor.png" alt="Healthcare professional using Ovotech" style={{ width: "100%", borderRadius: "20px", boxShadow: "0 20px 60px rgba(0,0,0,0.1)" }} />
-              <div style={{ position: "absolute", bottom: "-16px", right: "-16px", background: "#24144B", color: "#fff", borderRadius: "16px", padding: "16px 24px", boxShadow: "0 10px 30px rgba(15,30,54,0.3)", border: "1px solid rgba(138,96,229,0.3)" }}>
+              <div style={{ position: "absolute", bottom: "-16px", right: "-16px", background: "#1A2848", color: "#fff", borderRadius: "16px", padding: "16px 24px", boxShadow: "0 10px 30px rgba(15,30,54,0.3)", border: "1px solid rgba(2, 172, 234,0.3)" }}>
                 <div style={{ fontSize: "28px", fontWeight: 800, color: "#02ACEA" }}>EMIS Web</div>
                 <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", fontWeight: 500 }}>Structured Integration</div>
               </div>
-              <div style={{ position: "absolute", top: "-16px", left: "-16px", width: "80px", height: "80px", background: "rgba(138,96,229,0.12)", borderRadius: "50%", zIndex: -1 }} />
+              <div style={{ position: "absolute", top: "-16px", left: "-16px", width: "80px", height: "80px", background: "rgba(2, 172, 234,0.12)", borderRadius: "50%", zIndex: -1 }} />
             </div>
           </div>
 
           {/* Right — Content */}
           <div className="animate-fadeInRight delay-200" style={{ flex: "1 1 420px", minWidth: "300px" }}>
             <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>Key Benefits</span>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#24144B", lineHeight: 1.15, marginBottom: "16px" }}>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#1A2848", lineHeight: 1.15, marginBottom: "16px" }}>
               More Time for Patient Care.<br />Less Manual Document Admin.
             </h2>
             <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "32px", maxWidth: "480px" }}>
@@ -36,9 +36,9 @@ export default function Benefits() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px", marginBottom: "32px" }}>
               {features.map((f, i) => (
                 <div key={i} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                  <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(138,96,229,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", flexShrink: 0 }}>{f.icon}</div>
+                  <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(2, 172, 234,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", flexShrink: 0 }}>{f.icon}</div>
                   <div>
-                    <h4 style={{ fontSize: "14px", fontWeight: 700, color: "#24144B", marginBottom: "4px" }}>{f.title}</h4>
+                    <h4 style={{ fontSize: "14px", fontWeight: 700, color: "#1A2848", marginBottom: "4px" }}>{f.title}</h4>
                     <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.5 }}>{f.desc}</p>
                   </div>
                 </div>

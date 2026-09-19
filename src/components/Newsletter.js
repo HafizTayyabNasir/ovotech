@@ -15,7 +15,7 @@ export default function Newsletter() {
     <section style={{ padding: "64px 0", background: "#f8fafc", borderTop: "1px solid #e2e8f5" }}>
       <div className="site-container">
         <div className="animate-fadeInUp" style={{ maxWidth: "560px", margin: "0 auto", textAlign: "center" }}>
-          <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#24144B", marginBottom: "8px" }}>Stay Updated</h3>
+          <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#1A2848", marginBottom: "8px" }}>Stay Updated</h3>
           <p style={{ fontSize: "14px", color: "#64748B", marginBottom: "24px" }}>Get the latest healthcare automation insights delivered to your inbox.</p>
           <form onSubmit={handleSubmit} style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
             <input

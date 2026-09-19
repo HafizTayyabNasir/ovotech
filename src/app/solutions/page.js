@@ -30,7 +30,7 @@ export default function SolutionsPage() {
       
       {/* SECTION 1 — HERO */}
       <section className="relative w-full overflow-hidden bg-[#FFFFFF] pt-[60px] pb-[60px] lg:pt-[80px] lg:pb-[100px]">
-        <div style={{ position: "absolute", top: "-10%", right: "-5%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(138, 96, 229, 0.05) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+        <div style={{ position: "absolute", top: "-10%", right: "-5%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(2, 172, 234, 0.05) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
         <div className="relative z-10 w-full max-w-[1350px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
             {/* LEFT COLUMN */}
@@ -47,10 +47,10 @@ export default function SolutionsPage() {
                 </p>
 
                 <div className="flex items-center gap-4 mb-10 flex-wrap">
-                  <div className="flex items-center gap-2 bg-[#F4F7FC] px-4 py-2 rounded-full text-[14px] font-semibold text-[#301A65] border border-[#E0E8F5]">
+                  <div className="flex items-center gap-2 bg-[#F4F7FC] px-4 py-2 rounded-full text-[14px] font-semibold text-[#0A1838] border border-[#E0E8F5]">
                     🛡️ Built for UK General Practice
                   </div>
-                  <div className="flex items-center gap-2 bg-[#F4F7FC] px-4 py-2 rounded-full text-[14px] font-semibold text-[#301A65] border border-[#E0E8F5]">
+                  <div className="flex items-center gap-2 bg-[#F4F7FC] px-4 py-2 rounded-full text-[14px] font-semibold text-[#0A1838] border border-[#E0E8F5]">
                     ⚙️ Practice-controlled workflows
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function SolutionsPage() {
                   key={idx}
                   onClick={() => setActiveTab(idx)}
                   className={`flex-1 min-w-[160px] py-3 px-4 rounded-xl font-bold text-[14px] transition-all ${
-                    activeTab === idx ? "bg-white text-[#301A65] shadow-sm" : "text-[#475569] hover:bg-gray-100"
+                    activeTab === idx ? "bg-white text-[#0A1838] shadow-sm" : "text-[#475569] hover:bg-gray-100"
                   }`}
                 >
                   {tab}
@@ -476,7 +476,7 @@ export default function SolutionsPage() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 justify-center text-[12px] font-bold text-[#301A65] mb-6">
+            <div className="flex flex-wrap gap-3 justify-center text-[12px] font-bold text-[#0A1838] mb-6">
               <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Track volume and backlog</span>
               <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Balance team workloads</span>
               <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Compare turnaround with your baseline</span>
@@ -682,7 +682,7 @@ export default function SolutionsPage() {
               <div className="absolute top-0 right-0 bg-blue-50 text-blue-700 font-bold text-[11px] px-3 py-1 rounded-bl-lg">01</div>
               <h3 className="text-[20px] font-bold text-[#0A1838] mb-4">Medical Coder / Clinical Reviewer</h3>
               <p className="text-[#475569] text-[15px] leading-relaxed mb-6">One role for reviewing source documents, checking patient context, assessing coding suggestions and approving the final selection.</p>
-              <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-lg px-4 py-2 text-[13px] font-bold text-[#301A65]">
+              <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-lg px-4 py-2 text-[13px] font-bold text-[#0A1838]">
                 Review, amend and approve coding
               </div>
             </div>
@@ -691,7 +691,7 @@ export default function SolutionsPage() {
               <div className="absolute top-0 right-0 bg-purple-50 text-purple-700 font-bold text-[11px] px-3 py-1 rounded-bl-lg">02</div>
               <h3 className="text-[20px] font-bold text-[#0A1838] mb-4">Practice Admin</h3>
               <p className="text-[#475569] text-[15px] leading-relaxed mb-6">Practice-level volumes, workload, turnaround and operational exceptions. Platform-wide user, registry and routing controls are a separate administration responsibility.</p>
-              <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-lg px-4 py-2 text-[13px] font-bold text-[#301A65]">
+              <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-lg px-4 py-2 text-[13px] font-bold text-[#0A1838]">
                 Manage the process
               </div>
             </div>

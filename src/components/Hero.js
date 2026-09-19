@@ -27,9 +27,9 @@ export default function Hero() {
 
   return (
     <>
-      <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#301A65" }}>
+      <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#0A1838" }}>
         {/* Interactive Particles Background */}
-        <ParticlesBackground color="#8A60E5" />
+        <ParticlesBackground color="#02ACEA" />
 
         {/* Background Video Autoplay */}
         <video
@@ -60,16 +60,16 @@ export default function Hero() {
         >
           <defs>
             <linearGradient id="ovotechMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#301A65" stopOpacity="1" />
-              <stop offset="50%" stopColor="#301A65" stopOpacity="1" />
-              <stop offset="85%" stopColor="#3E2382" stopOpacity="1" />
+              <stop offset="0%" stopColor="#0A1838" stopOpacity="1" />
+              <stop offset="50%" stopColor="#0A1838" stopOpacity="1" />
+              <stop offset="85%" stopColor="#2A3858" stopOpacity="1" />
               <stop offset="100%" stopColor="#134074" stopOpacity="1" />
             </linearGradient>
 
             <linearGradient id="ovotechWaveArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#301A65" stopOpacity="1" />
-              <stop offset="50%" stopColor="#3E2382" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="rgba(138, 96, 229, 0.4)" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#0A1838" stopOpacity="1" />
+              <stop offset="50%" stopColor="#2A3858" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="rgba(2, 172, 234, 0.4)" stopOpacity="0.4" />
             </linearGradient>
           </defs>
 
@@ -90,7 +90,7 @@ export default function Hero() {
 
         {/* Interactive Particles Background inside Blue Section */}
         <div className="absolute inset-0 hidden md:block" style={{ zIndex: 4, maskImage: "linear-gradient(to right, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 62%)", WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 62%)" }}>
-          <ParticlesBackground color="#8A60E5" />
+          <ParticlesBackground color="#02ACEA" />
         </div>
 
         {/* Mobile Full Gradient Overlay */}
@@ -109,7 +109,7 @@ export default function Hero() {
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
             {/* Left Content Column */}
             <div className="animate-fadeInLeft" style={{ flex: "1 1 540px", minWidth: "300px", maxWidth: "760px" }}>
-              <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(138,96,229,0.3)" }}>
+              <span style={{ display: "inline-block", background: "rgba(2, 172, 234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px", padding: "6px 16px", borderRadius: "20px", border: "1px solid rgba(2, 172, 234,0.3)" }}>
                 CLINICAL DOCUMENT PROCESSING &amp; WORKFLOW PLATFORM
               </span>
 

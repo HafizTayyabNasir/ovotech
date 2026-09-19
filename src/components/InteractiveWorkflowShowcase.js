@@ -160,7 +160,7 @@ export default function InteractiveWorkflowShowcase() {
   const activeStep = workflowSteps[activeIndex];
 
   return (
-    <section ref={containerRef} style={{ height: "250vh", position: "relative", background: "#301A65" }}>
+    <section ref={containerRef} style={{ height: "250vh", position: "relative", background: "#0A1838" }}>
       <div
         style={{
           position: "sticky",
@@ -169,19 +169,19 @@ export default function InteractiveWorkflowShowcase() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          background: "#301A65",
+          background: "#0A1838",
           color: "#FFFFFF",
           padding: "10vh 0 40px 0",
           overflow: "hidden"
         }}
       >
-        <ParticlesBackground color="#8A60E5" />
+        <ParticlesBackground color="#02ACEA" />
         {/* Background grid pattern */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "radial-gradient(rgba(138, 96, 229, 0.12) 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(rgba(2, 172, 234, 0.12) 1px, transparent 1px)",
             backgroundSize: "28px 28px",
             pointerEvents: "none",
             opacity: 0.5
@@ -191,7 +191,7 @@ export default function InteractiveWorkflowShowcase() {
         <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8" style={{ position: "relative", zIndex: 10 }}>
           {/* Section Header */}
           <div style={{ textAlign: "center", marginBottom: "3vh" }}>
-            <span style={{ display: "inline-block", background: "rgba(138, 96, 229, 0.15)", color: "#8A60E5", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "4px 16px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "8px", border: "1px solid rgba(138, 96, 229, 0.3)" }}>
+            <span style={{ display: "inline-block", background: "rgba(2, 172, 234, 0.15)", color: "#02ACEA", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "4px 16px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "8px", border: "1px solid rgba(2, 172, 234, 0.3)" }}>
               OVOTECH WORKFLOW : HOW IT WORKS
             </span>
             <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 8px" }}>
@@ -215,7 +215,7 @@ export default function InteractiveWorkflowShowcase() {
                 <motion.div
                   initial={false}
                   animate={{ height: `${(activeIndex / (workflowSteps.length - 1)) * 100}%` }}
-                  style={{ width: "100%", background: "#8A60E5", boxShadow: "0 0 15px #8A60E5", transformOrigin: "top" }}
+                  style={{ width: "100%", background: "#02ACEA", boxShadow: "0 0 15px #02ACEA", transformOrigin: "top" }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               </div>
@@ -228,7 +228,7 @@ export default function InteractiveWorkflowShowcase() {
                     {/* Number */}
                     <span style={{ 
                       position: "absolute", left: "0px", 
-                      color: isActive ? "#8A60E5" : "rgba(255,255,255,0.3)", 
+                      color: isActive ? "#02ACEA" : "rgba(255,255,255,0.3)", 
                       fontSize: "12px", fontWeight: 700, transition: "0.3s" 
                     }}>
                       {step.number}
@@ -238,17 +238,17 @@ export default function InteractiveWorkflowShowcase() {
                       initial={false}
                       animate={{
                         scale: isActive ? 1.3 : 1,
-                        backgroundColor: isActive ? "rgba(138, 96, 229, 0.15)" : "#24144B",
-                        borderColor: isActive ? "#8A60E5" : "#334155"
+                        backgroundColor: isActive ? "rgba(2, 172, 234, 0.15)" : "#1A2848",
+                        borderColor: isActive ? "#02ACEA" : "#334155"
                       }}
                       style={{
                         width: "24px", height: "24px", borderRadius: "50%", border: "2px solid",
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        boxShadow: isActive ? "0 0 20px 4px rgba(138, 96, 229, 0.4)" : "none"
+                        boxShadow: isActive ? "0 0 20px 4px rgba(2, 172, 234, 0.4)" : "none"
                       }}
                     >
                       {isActive && (
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8A60E5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#02ACEA" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="7 10 12 5 17 10" />
                           <polyline points="7 14 12 19 17 14" />
                         </svg>
@@ -260,18 +260,18 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* 2. Left Column: UI Workspace Screen Card */}
-            <div className="flex-1 w-full max-w-[320px] shrink-0" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "32px", border: "4px solid #3E2382", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
+            <div className="flex-1 w-full max-w-[320px] shrink-0" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "32px", border: "4px solid #1A2848", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
             {/* Status Bar */}
             <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "11px", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                 <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#16a34a" }} />
                 <span>STEP {activeStep.number}</span>
               </div>
-              <span style={{ color: "#8A60E5", letterSpacing: "1px", textTransform: "uppercase" }}>{activeStep.category}</span>
+              <span style={{ color: "#02ACEA", letterSpacing: "1px", textTransform: "uppercase" }}>{activeStep.category}</span>
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
-            <div style={{ position: "relative", height: "550px", background: "#301A65" }}>
+            <div style={{ position: "relative", height: "550px", background: "#0A1838" }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep.number}
@@ -291,7 +291,7 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Bottom Controls Bar */}
-            <div style={{ background: "rgba(138, 96, 229, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ background: "rgba(2, 172, 234, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#FFF", display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ color: "#FFF" }}>▶</span> {activeStep.tag}
               </div>
@@ -360,10 +360,10 @@ export default function InteractiveWorkflowShowcase() {
                   onClick={() => handleStepClick(index)}
                   style={{
                     background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
-                    color: isActive ? "#301A65" : "#FFFFFF",
+                    color: isActive ? "#0A1838" : "#FFFFFF",
                     borderRadius: "16px",
                     padding: "12px 16px",
-                    border: isActive ? "2px solid #8A60E5" : "1px solid rgba(255, 255, 255, 0.08)",
+                    border: isActive ? "2px solid #02ACEA" : "1px solid rgba(255, 255, 255, 0.08)",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
                     boxShadow: isActive ? "0 20px 40px rgba(0,0,0,0.3)" : "none",
@@ -380,8 +380,8 @@ export default function InteractiveWorkflowShowcase() {
                           width: "28px",
                           height: "28px",
                           borderRadius: "8px",
-                          background: isActive ? "#301A65" : "rgba(255,255,255,0.1)",
-                          color: isActive ? "#FFFFFF" : "#8A60E5",
+                          background: isActive ? "#0A1838" : "rgba(255,255,255,0.1)",
+                          color: isActive ? "#FFFFFF" : "#02ACEA",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center"
@@ -389,17 +389,17 @@ export default function InteractiveWorkflowShowcase() {
                       >
                         {step.icon}
                       </div>
-                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: isActive ? "#8A60E5" : "#8A60E5" }}>
+                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: isActive ? "#02ACEA" : "#02ACEA" }}>
                         {step.category}
                       </span>
                     </div>
 
-                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#8A60E5" : "rgba(255,255,255,0.3)" }}>
+                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#02ACEA" : "rgba(255,255,255,0.3)" }}>
                       {step.number}
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#301A65" : "#FFFFFF", marginBottom: "2px" }}>
+                  <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#0A1838" : "#FFFFFF", marginBottom: "2px" }}>
                     {step.title}
                   </h3>
 

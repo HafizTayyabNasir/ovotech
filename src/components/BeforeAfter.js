@@ -21,7 +21,7 @@ export default function BeforeAfter() {
       <div className="site-container">
         <div className="animate-fadeInUp" style={{ textAlign: "center", marginBottom: "60px" }}>
           <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "12px", textTransform: "uppercase" }}>The Ovotech Impact</span>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#24144B", lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, color: "#1A2848", lineHeight: 1.2 }}>
             Before vs After Ovotech Workflow
           </h2>
           <p style={{ color: "#475569", marginTop: "16px", maxWidth: "580px", marginLeft: "auto", marginRight: "auto", fontSize: "16px", lineHeight: 1.7 }}>
@@ -36,7 +36,7 @@ export default function BeforeAfter() {
               <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "#fee2e2", color: "#ef4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
-              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#24144B" }}>Without Ovotech</h3>
+              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#1A2848" }}>Without Ovotech</h3>
             </div>
             <ul style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {withoutItems.map((item, i) => (
@@ -54,7 +54,7 @@ export default function BeforeAfter() {
               <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "#dcfce7", color: "#16a34a", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
               </div>
-              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#24144B" }}>With Ovotech</h3>
+              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#1A2848" }}>With Ovotech</h3>
             </div>
             <ul style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {withItems.map((item, i) => (
@@ -68,7 +68,7 @@ export default function BeforeAfter() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(138,96,229,0.35)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "14px 32px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 6px 20px rgba(2, 172, 234,0.35)", transition: "all 0.3s" }}>
             Start Your Transformation <span>→</span>
           </Link>
         </div>

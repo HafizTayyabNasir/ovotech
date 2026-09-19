@@ -87,7 +87,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger / Close Button */}
         <button
-          className="md:hidden bg-transparent border-none text-[#301A65] cursor-pointer z-[102] p-2 flex items-center justify-center focus:outline-none"
+          className="md:hidden bg-transparent border-none text-[#0A1838] cursor-pointer z-[102] p-2 flex items-center justify-center focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -112,7 +112,7 @@ export default function Navbar() {
                   fontWeight: item.key === "home" ? 700 : 600,
                   padding: "10px 14px",
                   borderRadius: "8px",
-                  color: item.key === "home" ? "#02ACEA" : "#301A65"
+                  color: item.key === "home" ? "#02ACEA" : "#0A1838"
                 }}
               >
                 {item.label}
@@ -140,7 +140,7 @@ export default function Navbar() {
                           <Link href={item.topSection.href} className="group/toplink flex items-center gap-3" style={{ textDecoration: "none" }}>
                             <span className="transition-transform group-hover/toplink:translate-x-1" style={{ fontSize: "20px", fontWeight: 800, color: "#02ACEA" }}>→</span>
                             <div>
-                              <div style={{ fontSize: "18px", fontWeight: 800, color: "#301A65" }}>{item.topSection.label}</div>
+                              <div style={{ fontSize: "18px", fontWeight: 800, color: "#0A1838" }}>{item.topSection.label}</div>
                               <div style={{ fontSize: "13px", color: "#64748B", marginTop: "2px" }}>{item.topSection.desc}</div>
                             </div>
                           </Link>
@@ -163,7 +163,7 @@ export default function Navbar() {
                                 style={{ display: "block", padding: "10px 12px", borderRadius: "8px", transition: "background: 0.2s" }}
                                 className="hover:bg-[#F4F7FC]"
                               >
-                                <span style={{ fontSize: "14px", fontWeight: 600, color: "#301A65", display: "block" }}>{link.label}</span>
+                                <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838", display: "block" }}>{link.label}</span>
                                 <span style={{ fontSize: "12px", color: "#64748B", display: "block", marginTop: "2px" }}>{link.desc}</span>
                               </Link>
                             ))}
@@ -175,18 +175,18 @@ export default function Navbar() {
                     {item.promo && (
                       <div
                         style={{
-                          width: "300px", background: `linear-gradient(135deg, #301A65 0%, #3E2382 100%)`,
+                          width: "300px", background: `linear-gradient(135deg, #0A1838 0%, #2A3858 100%)`,
                           color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px", position: "relative", overflow: "hidden",
                         }}
                       >
-                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(138,96,229,0.15)" }} />
+                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(2, 172, 234,0.15)" }} />
                         <h4 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "10px", color: "#FFFFFF" }}>{item.promo.title}</h4>
                         <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6 }}>{item.promo.text}</p>
                       </div>
                     )}
                   </div>
                   <div style={{ background: "#F4F7FC", padding: "16px 40px", display: "flex", alignItems: "center", gap: "20px", borderTop: "1px solid #E0E8F5" }}>
-                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#301A65" }}>Ready to transform your practice?</span>
+                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#0A1838" }}>Ready to transform your practice?</span>
                     <Link href="/contact" style={{ background: "#02ACEA", color: "#fff", fontSize: "14px", fontWeight: 700, padding: "8px 20px", borderRadius: "8px" }}>
                       Let&apos;s Talk
                     </Link>
@@ -210,7 +210,7 @@ export default function Navbar() {
         <div
           className="md:hidden fixed inset-0 top-[64px] z-[101]"
           style={{
-            background: "#301A65",
+            background: "#0A1838",
             height: "calc(100vh - 64px)",
             overflowY: "auto",
             padding: "24px 20px 40px 20px"

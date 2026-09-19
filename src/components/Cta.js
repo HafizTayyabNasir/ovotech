@@ -6,9 +6,9 @@ export default function Cta() {
   return (
     <section style={{ padding: "80px 0", background: "#FFFFFF", position: "relative", overflow: "hidden" }}>
       {/* Decorative shapes */}
-      <div style={{ position: "absolute", right: 0, top: 0, width: "400px", height: "400px", borderRadius: "50%", background: "rgba(138,96,229,0.06)", transform: "translate(50%, -50%)" }} />
-      <div style={{ position: "absolute", left: "40px", bottom: 0, width: "250px", height: "250px", borderRadius: "50%", background: "rgba(138,96,229,0.04)", transform: "translateY(50%)" }} />
-      <div style={{ position: "absolute", right: "80px", bottom: "40px", width: "80px", height: "80px", borderRadius: "50%", border: "2px solid rgba(138,96,229,0.15)" }} />
+      <div style={{ position: "absolute", right: 0, top: 0, width: "400px", height: "400px", borderRadius: "50%", background: "rgba(2, 172, 234,0.06)", transform: "translate(50%, -50%)" }} />
+      <div style={{ position: "absolute", left: "40px", bottom: 0, width: "250px", height: "250px", borderRadius: "50%", background: "rgba(2, 172, 234,0.04)", transform: "translateY(50%)" }} />
+      <div style={{ position: "absolute", right: "80px", bottom: "40px", width: "80px", height: "80px", borderRadius: "50%", border: "2px solid rgba(2, 172, 234,0.15)" }} />
 
       <div className="site-container animate-fadeInUp" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>

@@ -29,16 +29,16 @@ export default function SpecialtyChips() {
         <div className="animate-fadeInUp" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "32px" }}>
           <div>
             <span style={{ display: "inline-block", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", marginBottom: "8px", textTransform: "uppercase" }}>Clinical Document Scope</span>
-            <h2 style={{ fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 800, color: "#24144B", lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 800, color: "#1A2848", lineHeight: 1.2 }}>
               Supported Correspondence &amp; Workflow Capabilities
             </h2>
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <button onClick={() => scroll(-1)} style={{ width: "40px", height: "40px", borderRadius: "50%", border: "1px solid #e2e8f5", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "background: 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f8fafc"} onMouseLeave={e => e.currentTarget.style.background = "#fff"}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#24144B" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
             <button onClick={() => scroll(1)} style={{ width: "40px", height: "40px", borderRadius: "50%", border: "1px solid #e2e8f5", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "background: 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f8fafc"} onMouseLeave={e => e.currentTarget.style.background = "#fff"}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#24144B" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2848" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
             </button>
           </div>
         </div>
@@ -52,11 +52,11 @@ export default function SpecialtyChips() {
               key={i}
               className={`animate-fadeInRight delay-${Math.min((i + 1) * 100, 800)}`}
               style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: "12px", background: "#f8fafc", borderRadius: "40px", padding: "14px 24px", border: "1px solid #e2e8f5", transition: "all 0.3s", cursor: "pointer" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(138,96,229,0.4)"; e.currentTarget.style.background = "rgba(138,96,229,0.1)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"; }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(2, 172, 234,0.4)"; e.currentTarget.style.background = "rgba(2, 172, 234,0.1)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = "#e2e8f5"; e.currentTarget.style.background = "#f8fafc"; e.currentTarget.style.boxShadow = "none"; }}
             >
               <div style={{ fontSize: "20px" }}>{s.icon}</div>
-              <span style={{ fontSize: "14px", fontWeight: 600, color: "#24144B", whiteSpace: "nowrap" }}>{s.label}</span>
+              <span style={{ fontSize: "14px", fontWeight: 600, color: "#1A2848", whiteSpace: "nowrap" }}>{s.label}</span>
             </div>
           ))}
         </div>

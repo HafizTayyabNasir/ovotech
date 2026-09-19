@@ -42,8 +42,8 @@ export default function WhatWeDo() {
           <polyline points="2 17 12 22 22 17"></polyline>
         </svg>
       ),
-      iconBg: "rgba(138, 96, 229, 0.1)",
-      iconColor: "#8A60E5",
+      iconBg: "rgba(2, 172, 234, 0.1)",
+      iconColor: "#02ACEA",
       title: "Practice Analytics",
       text: "Comprehensive real-time dashboards for practice managers, providing full visibility into document throughput, clinical hours saved, and CQC compliance metrics.",
       link: "/solutions#kpi-tracking",

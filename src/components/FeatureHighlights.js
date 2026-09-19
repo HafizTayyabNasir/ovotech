@@ -15,7 +15,7 @@ export default function FeatureHighlights() {
             alignItems: "center"
           }}>
             <div style={{ position: "relative" }}>
-              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(138,96,229,0.15)", border: "1px solid #e2e8f5" }}>
+              <div style={{ borderRadius: "28px", overflow: "hidden", boxShadow: "0 20px 50px rgba(2, 172, 234,0.15)", border: "1px solid #e2e8f5" }}>
                 <img
                   src="/gp-doctor-consultation.png"
                   alt="Structured Clinical Consultation Notes"
@@ -37,28 +37,28 @@ export default function FeatureHighlights() {
                 gap: "10px",
                 zIndex: 5
               }}>
-                <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(138,96,229,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "10px", background: "rgba(2, 172, 234,0.15)", color: "#02ACEA", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800 }}>
                   ✓
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#24144B" }}>EMIS Web Active</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#1A2848" }}>EMIS Web Active</div>
                   <div style={{ fontSize: "11px", color: "#8896AB" }}>Structured Write-Back</div>
                 </div>
               </div>
             </div>
 
             <div>
-              <span style={{ display: "inline-block", background: "rgba(138,96,229,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(138,96,229,0.3)" }}>
+              <span style={{ display: "inline-block", background: "rgba(2, 172, 234,0.15)", color: "#02ACEA", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px", border: "1px solid rgba(2, 172, 234,0.3)" }}>
                 Automated Medical Coding
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#24144B", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#1A2848", lineHeight: 1.18, marginBottom: "20px" }}>
                 Automate Your Clinical Document Processing
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
                 Stop wasting hours manually reading hospital letters and typing codes into EMIS Web. Ovotech's Medical Coding tool automatically reads incoming correspondence, extracts key clinical information, and suggests the right SNOMED CT codes. Your staff simply review, approve, and save directly into the patient's record.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(138,96,229,0.35)", transition: "all 0.3s" }}>
+                <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2, 172, 234,0.35)", transition: "all 0.3s" }}>
                   Explore Medical Coding Tool <span>→</span>
                 </Link>
               </div>
@@ -76,7 +76,7 @@ export default function FeatureHighlights() {
               <span style={{ display: "inline-block", background: "rgba(22,163,74,0.1)", color: "#16a34a", fontSize: "12px", fontWeight: 700, padding: "6px 16px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "16px" }}>
                 Practice Efficiency &amp; Support
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#24144B", lineHeight: 1.18, marginBottom: "20px" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 800, color: "#1A2848", lineHeight: 1.18, marginBottom: "20px" }}>
                 Clear Your Document Backlogs Instantly
               </h2>
               <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7, marginBottom: "28px" }}>
@@ -116,7 +116,7 @@ export default function FeatureHighlights() {
                   ★
                 </div>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#24144B" }}>CQC Ready</div>
+                  <div style={{ fontSize: "13px", fontWeight: 800, color: "#1A2848" }}>CQC Ready</div>
                   <div style={{ fontSize: "11px", color: "#8896AB" }}>Full Audit Compliance</div>
                 </div>
               </div>
