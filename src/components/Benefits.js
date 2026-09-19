@@ -4,7 +4,7 @@ const features = [
   { icon: "🖥️", title: "Single Clinical Workspace", desc: "Review original documents, extracted details, and SNOMED CT suggestions in one window." },
   { icon: "🏥", title: "EMIS Web Integration", desc: "Structured write-back of approved clinical information directly into patient records." },
   { icon: "🛡️", title: "Human Review & Governance", desc: "Authorised reviewers verify and approve every entry before committing to records." },
-  { icon: "📊", title: "Capacity & Time Released", desc: "Reducess repetitive manual entry, system switching, and administrative strain." },
+  { icon: "📊", title: "Capacity & Time Released", desc: "Reduces repetitive manual entry, system switching, and administrative strain." },
 ];
 
 export default function Benefits() {
@@ -42,6 +42,7 @@ export default function Benefits() {
                     <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.5 }}>{f.desc}</p>
                   </div>
                 </div>
+              ))}s
               ))}
             </div>
             <Link href="/how-it-works" style={{ background: "#02ACEA", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
