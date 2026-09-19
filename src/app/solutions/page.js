@@ -66,86 +66,102 @@ export default function SolutionsPage() {
               </motion.div>
             </div>
 
-            {/* RIGHT COLUMN - Coded Mockup */}
+            {/* RIGHT COLUMN - Bento Grid Layout */}
             <div className="w-full lg:w-[55%]">
-              <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="bg-[#F8FAFC] rounded-[24px] border border-[#E2E8F0] p-6 shadow-xl relative">
-                {/* 7-stage strip */}
-                <div className="flex overflow-hidden gap-3 text-[12px] font-bold text-[#4A5568] items-center mb-2">
-                  <div className="whitespace-nowrap shrink-0">01 Incoming correspondence</div>
-                  <div className="text-[#A0AEC0] font-normal">·</div>
-                  <div className="whitespace-nowrap shrink-0">02 Information extracted</div>
-                  <div className="text-[#A0AEC0] font-normal">·</div>
-                  <div className="whitespace-nowrap shrink-0">03 Clinical concepts</div>
-                  <div className="text-[#A0AEC0] font-normal">·</div>
-                  <div className="whitespace-nowrap shrink-0 text-gray-400">04 SNOMED sugg...</div>
-                </div>
-
-                {/* Custom Fake Scrollbar */}
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="text-[#A0AEC0] text-[10px] scale-y-150 scale-x-75">◀</div>
-                  <div className="flex-1 h-[8px] bg-[#E2E8F0] rounded-full relative">
-                    <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-[#A0AEC0] rounded-full"></div>
-                  </div>
-                  <div className="text-[#A0AEC0] text-[10px] scale-y-150 scale-x-75">▶</div>
-                </div>
-
-                {/* Sample Review Card */}
-                <div className="bg-white rounded-[16px] border border-[#E2E8F0] p-6 shadow-sm">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="bg-[#FEF3C7] text-[#D97706] text-[11px] font-bold px-3 py-1.5 rounded uppercase tracking-wider">REVIEWING — DISCHARGE SUMMARY</span>
-                    <span className="text-[#718096] text-[12px] font-medium">Human review</span>
-                  </div>
-                  
-                  <div className="bg-[#F7FAFC] p-4 rounded-[12px] mb-6 border border-[#EDF2F7]">
-                    <div className="flex justify-between text-[12px] text-[#718096] mb-3 font-medium">
-                      <span>Riverside Medical Practice</span>
-                      <span>Patient ref: SAMPLE-042</span>
-                    </div>
-                    <p className="text-[#2D3748] text-[14px] leading-relaxed font-serif">
-                      "Patient has a <span className="bg-[#EBF8FF] text-[#2B6CB0] px-1 rounded font-medium">history of type 2 diabetes</span>. Continue review with the practice team."
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-4 mb-6 text-[13px]">
-                    <div>
-                      <div className="text-[#718096] text-[11px] font-bold uppercase mb-1">DOCUMENT</div>
-                      <div className="font-medium text-[#2D3748]">Discharge summary</div>
-                    </div>
-                    <div>
-                      <div className="text-[#718096] text-[11px] font-bold uppercase mb-1">CLINICAL CONCEPT</div>
-                      <div className="font-medium text-[#2D3748]">Type 2 diabetes</div>
-                    </div>
-                    <div>
-                      <div className="text-[#718096] text-[11px] font-bold uppercase mb-1">FOLLOW-UP</div>
-                      <div className="font-medium text-[#2D3748]">Practice review</div>
-                    </div>
-                  </div>
-
-                  <div className="border-t border-[#E2E8F0] pt-5">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                      <div>
-                        <div className="text-[15px] font-bold text-[#2D3748]">Type 2 diabetes mellitus</div>
-                        <div className="text-[12px] text-[#718096] mt-1">SNOMED CT 44054006 • Quote: "history of type 2 diabetes"</div>
-                      </div>
-                      <div className="flex gap-3">
-                        <button className="px-6 py-2 bg-[#00A3FF] text-white text-[14px] font-bold rounded-lg hover:bg-[#008BDB] transition-colors">Accept</button>
-                        <button className="px-6 py-2 bg-white border border-[#E2E8F0] text-[#2D3748] text-[14px] font-bold rounded-lg hover:bg-gray-50 transition-colors">Amend</button>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 flex items-center gap-2 text-[11px] text-[#A0AEC0] border-t border-[#E2E8F0] pt-4 overflow-x-auto no-scrollbar whitespace-nowrap">
-                    <span className="text-[#38A169] font-bold">✓ Received</span> <span className="mx-1">→</span> 
-                    <span className="text-[#38A169] font-bold">✓ Extracted</span> <span className="mx-1">→</span> 
-                    <span className="text-[#38A169] font-bold">✓ Coded</span> <span className="mx-1">→</span> 
-                    <span className="text-[#3182CE] font-bold">○ Reviewed</span> <span className="mx-1">→</span> 
-                    <span>Approved</span> <span className="mx-1">→</span> 
-                    <span>Posted</span>
-                  </div>
-                </div>
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="grid grid-cols-1 sm:grid-cols-12 gap-4">
                 
-                <div className="mt-5 text-center text-[11px] text-[#A0AEC0]">
-                  Manual review shown. Automation follows your practice's configured policy.
+                {/* LEFT SUB-COLUMN */}
+                <div className="sm:col-span-5 flex flex-col gap-4">
+                  {/* Top Left - Proven Productivity */}
+                  <div className="bg-[#0A1838] rounded-[24px] p-6 flex flex-col items-center justify-center text-center shadow-lg h-[180px]">
+                    <h3 className="text-white font-extrabold text-[20px] leading-tight">Accelerated</h3>
+                    <h3 className="text-white font-extrabold text-[20px] leading-tight mb-4">Processing</h3>
+                    {/* Bar chart icon */}
+                    <div className="flex items-end gap-1.5 h-10 mt-2">
+                      <div className="w-4 h-4 bg-white/20 rounded-t-sm"></div>
+                      <div className="w-4 h-7 bg-white/50 rounded-t-sm"></div>
+                      <div className="w-4 h-10 bg-[#02ACEA] rounded-t-sm"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Bottom Left - Tall Icon Card */}
+                  <div className="bg-[#02ACEA] rounded-[24px] p-6 flex flex-col items-center justify-center flex-1 shadow-lg relative overflow-hidden min-h-[220px]">
+                     {/* Ovotech Themed Abstract Icon (Document/Shield) */}
+                     <svg className="w-28 h-28 text-white/95 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <path d="M9 15l2 2 4-4"></path>
+                     </svg>
+                     {/* Decorative Sparkles */}
+                     <div className="absolute top-6 left-6 text-white text-xl animate-pulse">✨</div>
+                     <div className="absolute bottom-8 right-6 text-white text-lg animate-pulse">✦</div>
+                  </div>
+                </div>
+
+                {/* RIGHT SUB-COLUMN */}
+                <div className="sm:col-span-7 flex flex-col gap-4">
+                  {/* Top Right - Laptop/Dashboard Mockup */}
+                  <div className="bg-[#E2E8F0] rounded-[24px] p-5 pt-8 flex-1 shadow-lg relative overflow-hidden min-h-[260px] flex flex-col justify-end items-center">
+                     
+                     {/* Floating arrow button */}
+                     <div className="absolute top-5 right-5 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg z-20 text-[#0A1838] hover:scale-105 transition-transform cursor-pointer">
+                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                     </div>
+
+                     {/* Laptop Screen */}
+                     <div className="w-[95%] bg-black p-1.5 rounded-t-[10px] relative z-10 shadow-2xl flex flex-col">
+                       <div className="bg-white rounded-t-[6px] h-[160px] w-full overflow-hidden flex">
+                          {/* Sidebar */}
+                          <div className="w-12 bg-[#F8FAFC] border-r border-[#E2E8F0] flex flex-col items-center py-4 gap-4">
+                             <div className="w-5 h-5 rounded bg-[#02ACEA]"></div>
+                             <div className="w-4 h-1 rounded bg-[#CBD5E1]"></div>
+                             <div className="w-4 h-1 rounded bg-[#CBD5E1]"></div>
+                             <div className="w-4 h-1 rounded bg-[#CBD5E1]"></div>
+                          </div>
+                          {/* Main Content */}
+                          <div className="flex-1 p-3 bg-[#F4F7FC]">
+                            <div className="w-24 h-2 bg-[#CBD5E1] rounded mb-4"></div>
+                            
+                            <div className="flex gap-2 mb-3">
+                              <div className="flex-1 h-14 bg-white rounded border border-[#E2E8F0] p-2 shadow-sm">
+                                <div className="w-12 h-1.5 bg-[#CBD5E1] rounded mb-2"></div>
+                                <div className="w-16 h-2 bg-[#02ACEA] rounded"></div>
+                              </div>
+                              <div className="flex-1 h-14 bg-white rounded border border-[#E2E8F0] p-2 shadow-sm">
+                                <div className="w-12 h-1.5 bg-[#CBD5E1] rounded mb-2"></div>
+                                <div className="w-10 h-2 bg-green-500 rounded"></div>
+                              </div>
+                            </div>
+                            
+                            {/* List items */}
+                            <div className="w-full h-8 bg-white rounded mb-2 border border-[#E2E8F0] shadow-sm flex items-center px-2">
+                               <div className="w-4 h-4 rounded-full bg-[#02ACEA]/20 mr-2"></div>
+                               <div className="w-20 h-1.5 bg-[#CBD5E1] rounded"></div>
+                            </div>
+                            <div className="w-full h-8 bg-white rounded border border-[#E2E8F0] shadow-sm flex items-center px-2">
+                               <div className="w-4 h-4 rounded-full bg-green-500/20 mr-2"></div>
+                               <div className="w-24 h-1.5 bg-[#CBD5E1] rounded"></div>
+                            </div>
+                          </div>
+                       </div>
+                     </div>
+                     {/* Laptop Base */}
+                     <div className="w-[105%] h-3 bg-[#CBD5E1] rounded-b-xl rounded-t-[2px] shadow-md relative z-10">
+                        <div className="w-16 h-1 bg-[#94A3B8] mx-auto rounded-b-md"></div>
+                     </div>
+                  </div>
+                  
+                  {/* Bottom Right - Trusted Network */}
+                  <div className="bg-[#0A1838] rounded-[24px] p-6 shadow-lg text-center flex flex-col justify-center h-[140px]">
+                     <h3 className="text-white font-extrabold text-[20px] mb-1">Designed For</h3>
+                     <p className="text-white font-bold text-[14px] mb-3">UK General Practice</p>
+                     {/* Stars */}
+                     <div className="flex justify-center gap-1.5">
+                        {[1,2,3,4,5].map(i => (
+                          <svg key={i} className="w-5 h-5 text-[#02ACEA]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        ))}
+                     </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
