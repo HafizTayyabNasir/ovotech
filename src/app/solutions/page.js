@@ -908,28 +908,28 @@ export default function SolutionsPage() {
               <h3 className="text-[18px] font-extrabold text-white mb-8">Estimated Impact</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-[#1A2848] rounded-xl p-5 border border-[#2A3858]">
-                  <div className="text-[12px] text-gray-400 font-bold mb-1 uppercase tracking-wide">Documents</div>
+                  <div className="text-[12px] text-white/70 font-bold mb-1 uppercase tracking-wide">Documents</div>
                   <div className="text-[28px] font-extrabold text-white">{volume.toLocaleString()}</div>
-                  <div className="text-[11px] text-gray-500 mt-1">monthly volume</div>
+                  <div className="text-[11px] text-white/60 mt-1">monthly volume</div>
                 </div>
                 <div className="bg-[#1A2848] rounded-xl p-5 border border-[#2A3858]">
-                  <div className="text-[12px] text-gray-400 font-bold mb-1 uppercase tracking-wide">Estimated time released</div>
+                  <div className="text-[12px] text-white/70 font-bold mb-1 uppercase tracking-wide">Estimated time released</div>
                   <div className="text-[28px] font-extrabold text-[#02ACEA]">{Math.max(0, Math.round(hoursReleased)).toLocaleString()} hrs</div>
-                  <div className="text-[11px] text-gray-500 mt-1">Difference from your manual baseline</div>
+                  <div className="text-[11px] text-white/60 mt-1">Difference from your manual baseline</div>
                 </div>
                 <div className="bg-[#1A2848] rounded-xl p-5 border border-[#2A3858]">
-                  <div className="text-[12px] text-gray-400 font-bold mb-1 uppercase tracking-wide">Turnaround difference</div>
+                  <div className="text-[12px] text-white/70 font-bold mb-1 uppercase tracking-wide">Turnaround difference</div>
                   <div className="text-[28px] font-extrabold text-green-400">-{Math.max(0, Math.round(turnaroundDiff * 10) / 10).toLocaleString()} hrs</div>
-                  <div className="text-[11px] text-gray-500 mt-1">Compared with example Ovotech turnaround</div>
+                  <div className="text-[11px] text-white/60 mt-1">Compared with example Ovotech turnaround</div>
                 </div>
                 <div className="bg-[#1A2848] rounded-xl p-5 border border-[#2A3858]">
-                  <div className="text-[12px] text-gray-400 font-bold mb-1 uppercase tracking-wide">Estimated value</div>
+                  <div className="text-[12px] text-white/70 font-bold mb-1 uppercase tracking-wide">Estimated value</div>
                   <div className="text-[28px] font-extrabold text-green-400">£{Math.max(0, Math.round(costImpact)).toLocaleString()}</div>
-                  <div className="text-[11px] text-gray-500 mt-1">Staff time equivalent, not cash savings</div>
+                  <div className="text-[11px] text-white/60 mt-1">Staff time equivalent, not cash savings</div>
                 </div>
               </div>
               
-              <div className="text-[10px] text-gray-500 leading-relaxed border-t border-[#2A3858] pt-6">
+              <div className="text-[10px] text-white/80 leading-relaxed border-t border-white/30 pt-6">
                 <p className="mb-2">Hours released = monthly volume × (manual minutes − Ovotech handling minutes) ÷ 60. Cost impact = hours released × hourly staff cost. Turnaround difference = current average turnaround − Ovotech average turnaround.</p>
                 <p>These performance figures are fictional, not live measurements. Automated processing time excludes human review and cannot alone establish staff hours saved. Negative results indicate additional time or cost. Turnaround measures elapsed time, not staff effort.</p>
               </div>

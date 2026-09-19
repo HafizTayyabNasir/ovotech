@@ -359,11 +359,11 @@ export default function InteractiveWorkflowShowcase() {
                   key={index}
                   onClick={() => handleStepClick(index)}
                   style={{
-                    background: isActive ? "#FFFFFF" : "rgba(0,0,0,0.15)",
+                    background: isActive ? "#FFFFFF" : "rgba(0,0,0,0.75)",
                     color: isActive ? "#0A1838" : "#FFFFFF",
                     borderRadius: "16px",
                     padding: "12px 16px",
-                    border: isActive ? "2px solid #000000" : "2px solid rgba(0,0,0,0.4)",
+                    border: isActive ? "2px solid #000000" : "2px solid rgba(0,0,0,0.9)",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
                     boxShadow: isActive ? "0 20px 40px rgba(0,0,0,0.3)" : "none",
@@ -380,7 +380,7 @@ export default function InteractiveWorkflowShowcase() {
                           width: "28px",
                           height: "28px",
                           borderRadius: "8px",
-                          background: isActive ? "#0A1838" : "rgba(0,0,0,0.2)",
+                          background: isActive ? "#0A1838" : "rgba(255,255,255,0.1)",
                           color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.7)",
                           display: "flex",
                           alignItems: "center",
@@ -394,7 +394,7 @@ export default function InteractiveWorkflowShowcase() {
                       </span>
                     </div>
 
-                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#000000" : "rgba(0,0,0,0.8)" }}>
+                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#000000" : "rgba(255,255,255,0.4)" }}>
                       {step.number}
                     </span>
                   </div>
