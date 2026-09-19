@@ -4,7 +4,7 @@ const features = [
   { icon: "🖥️", title: "Single Clinical Workspace", desc: "Review original documents, extracted details, and SNOMED CT suggestions in one window." },
   { icon: "🏥", title: "EMIS Web Integration", desc: "Structured write-back of approved clinical information directly into patient records." },
   { icon: "🛡️", title: "Human Review & Governance", desc: "Authorised reviewers verify and approve every entry before committing to records." },
-  { icon: "📊", title: "Capacity & Time Released", desc: "Reduces repetitive manual entry, system switching, and administrative strain." },
+  { icon: "📊", title: "Capacity & Time Released", desc: "Reducess repetitive manual entry, system switching, and administrative strain." },
 ];
 
 export default function Benefits() {
