@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import InteractiveWorkflowShowcase from "@/components/InteractiveWorkflowShowcase";
 
 export default function SolutionsPage() {
   const [activeTab, setActiveTab] = useState(0);
@@ -67,77 +68,83 @@ export default function SolutionsPage() {
 
             {/* RIGHT COLUMN - Coded Mockup */}
             <div className="w-full lg:w-[55%]">
-              <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="bg-[#F8FAFC] rounded-3xl border border-[#E0E8F5] p-6 shadow-xl relative">
+              <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="bg-[#F8FAFC] rounded-[24px] border border-[#E2E8F0] p-6 shadow-xl relative">
                 {/* 7-stage strip */}
-                <div className="flex overflow-x-auto gap-3 pb-4 mb-4 border-b border-[#E0E8F5] no-scrollbar text-[12px] font-bold text-[#475569]">
+                <div className="flex overflow-hidden gap-3 text-[12px] font-bold text-[#4A5568] items-center mb-2">
                   <div className="whitespace-nowrap shrink-0">01 Incoming correspondence</div>
-                  <div className="text-[#02ACEA]">→</div>
+                  <div className="text-[#A0AEC0] font-normal">·</div>
                   <div className="whitespace-nowrap shrink-0">02 Information extracted</div>
-                  <div className="text-[#02ACEA]">→</div>
+                  <div className="text-[#A0AEC0] font-normal">·</div>
                   <div className="whitespace-nowrap shrink-0">03 Clinical concepts</div>
-                  <div className="text-[#02ACEA]">→</div>
-                  <div className="whitespace-nowrap shrink-0">04 SNOMED suggestions</div>
-                  <div className="text-[#02ACEA]">→</div>
-                  <div className="whitespace-nowrap shrink-0 text-[#02ACEA] bg-blue-50 px-2 py-0.5 rounded">05 Human review</div>
-                  <div className="text-[#02ACEA]">→</div>
-                  <div className="whitespace-nowrap shrink-0">06 Approved</div>
-                  <div className="text-[#02ACEA]">→</div>
-                  <div className="whitespace-nowrap shrink-0">07 EMIS write-back</div>
+                  <div className="text-[#A0AEC0] font-normal">·</div>
+                  <div className="whitespace-nowrap shrink-0 text-gray-400">04 SNOMED sugg...</div>
+                </div>
+
+                {/* Custom Fake Scrollbar */}
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="text-[#A0AEC0] text-[10px] scale-y-150 scale-x-75">◀</div>
+                  <div className="flex-1 h-[8px] bg-[#E2E8F0] rounded-full relative">
+                    <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-[#A0AEC0] rounded-full"></div>
+                  </div>
+                  <div className="text-[#A0AEC0] text-[10px] scale-y-150 scale-x-75">▶</div>
                 </div>
 
                 {/* Sample Review Card */}
-                <div className="bg-white rounded-xl border border-[#E0E8F5] p-5 shadow-sm">
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="bg-amber-100 text-amber-800 text-[11px] font-bold px-2 py-1 rounded uppercase tracking-wider">REVIEWING — Discharge summary</span>
-                    <span className="text-[#64748B] text-[12px] font-medium">Human review</span>
+                <div className="bg-white rounded-[16px] border border-[#E2E8F0] p-6 shadow-sm">
+                  <div className="flex justify-between items-center mb-6">
+                    <span className="bg-[#FEF3C7] text-[#D97706] text-[11px] font-bold px-3 py-1.5 rounded uppercase tracking-wider">REVIEWING — DISCHARGE SUMMARY</span>
+                    <span className="text-[#718096] text-[12px] font-medium">Human review</span>
                   </div>
                   
-                  <div className="bg-[#F4F7FC] p-4 rounded-lg mb-4 border border-[#E0E8F5]">
-                    <div className="flex justify-between text-[12px] text-[#64748B] mb-3 font-semibold">
+                  <div className="bg-[#F7FAFC] p-4 rounded-[12px] mb-6 border border-[#EDF2F7]">
+                    <div className="flex justify-between text-[12px] text-[#718096] mb-3 font-medium">
                       <span>Riverside Medical Practice</span>
                       <span>Patient ref: SAMPLE-042</span>
                     </div>
-                    <p className="text-[#0A1838] text-[14px] leading-relaxed font-serif">
-                      "Patient has a <span className="bg-blue-100 text-blue-900 font-semibold px-1 rounded">history of type 2 diabetes</span>. Continue review with the practice team."
+                    <p className="text-[#2D3748] text-[14px] leading-relaxed font-serif">
+                      "Patient has a <span className="bg-[#EBF8FF] text-[#2B6CB0] px-1 rounded font-medium">history of type 2 diabetes</span>. Continue review with the practice team."
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4 mb-4 text-[13px]">
+                  <div className="grid grid-cols-3 gap-4 mb-6 text-[13px]">
                     <div>
-                      <div className="text-[#64748B] text-[11px] font-bold uppercase mb-1">Document</div>
-                      <div className="font-medium text-[#0A1838]">Discharge summary</div>
+                      <div className="text-[#718096] text-[11px] font-bold uppercase mb-1">DOCUMENT</div>
+                      <div className="font-medium text-[#2D3748]">Discharge summary</div>
                     </div>
                     <div>
-                      <div className="text-[#64748B] text-[11px] font-bold uppercase mb-1">Clinical Concept</div>
-                      <div className="font-medium text-[#0A1838]">Type 2 diabetes</div>
+                      <div className="text-[#718096] text-[11px] font-bold uppercase mb-1">CLINICAL CONCEPT</div>
+                      <div className="font-medium text-[#2D3748]">Type 2 diabetes</div>
                     </div>
                     <div>
-                      <div className="text-[#64748B] text-[11px] font-bold uppercase mb-1">Follow-up</div>
-                      <div className="font-medium text-[#0A1838]">Practice review</div>
+                      <div className="text-[#718096] text-[11px] font-bold uppercase mb-1">FOLLOW-UP</div>
+                      <div className="font-medium text-[#2D3748]">Practice review</div>
                     </div>
                   </div>
 
-                  <div className="border-t border-[#E0E8F5] pt-4">
+                  <div className="border-t border-[#E2E8F0] pt-5">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div>
-                        <div className="text-[14px] font-bold text-[#0A1838]">Type 2 diabetes mellitus</div>
-                        <div className="text-[12px] text-[#64748B] mt-1">SNOMED CT 44054006 • Quote: "history of type 2 diabetes"</div>
+                        <div className="text-[15px] font-bold text-[#2D3748]">Type 2 diabetes mellitus</div>
+                        <div className="text-[12px] text-[#718096] mt-1">SNOMED CT 44054006 • Quote: "history of type 2 diabetes"</div>
                       </div>
-                      <div className="flex gap-2">
-                        <button className="px-4 py-2 bg-[#02ACEA] text-white text-[13px] font-bold rounded-lg hover:bg-[#028bbd] transition-colors">Accept</button>
-                        <button className="px-4 py-2 bg-white border border-[#E0E8F5] text-[#0A1838] text-[13px] font-bold rounded-lg hover:bg-gray-50 transition-colors">Amend</button>
+                      <div className="flex gap-3">
+                        <button className="px-6 py-2 bg-[#00A3FF] text-white text-[14px] font-bold rounded-lg hover:bg-[#008BDB] transition-colors">Accept</button>
+                        <button className="px-6 py-2 bg-white border border-[#E2E8F0] text-[#2D3748] text-[14px] font-bold rounded-lg hover:bg-gray-50 transition-colors">Amend</button>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="mt-4 flex items-center justify-between text-[11px] text-[#64748B] border-t border-[#E0E8F5] pt-3 overflow-x-auto no-scrollbar">
-                    <div className="flex gap-2 items-center whitespace-nowrap">
-                      <span className="text-green-600 font-bold">✓ Received</span> → <span className="text-green-600 font-bold">✓ Extracted</span> → <span className="text-green-600 font-bold">✓ Coded</span> → <span className="text-[#02ACEA] font-bold">○ Reviewed</span> → <span>Approved</span> → <span>Posted</span>
-                    </div>
+                  <div className="mt-6 flex items-center gap-2 text-[11px] text-[#A0AEC0] border-t border-[#E2E8F0] pt-4 overflow-x-auto no-scrollbar whitespace-nowrap">
+                    <span className="text-[#38A169] font-bold">✓ Received</span> <span className="mx-1">→</span> 
+                    <span className="text-[#38A169] font-bold">✓ Extracted</span> <span className="mx-1">→</span> 
+                    <span className="text-[#38A169] font-bold">✓ Coded</span> <span className="mx-1">→</span> 
+                    <span className="text-[#3182CE] font-bold">○ Reviewed</span> <span className="mx-1">→</span> 
+                    <span>Approved</span> <span className="mx-1">→</span> 
+                    <span>Posted</span>
                   </div>
                 </div>
                 
-                <div className="mt-4 text-center text-[11px] text-[#94A3B8]">
+                <div className="mt-5 text-center text-[11px] text-[#A0AEC0]">
                   Manual review shown. Automation follows your practice's configured policy.
                 </div>
               </motion.div>
@@ -384,6 +391,9 @@ export default function SolutionsPage() {
           </div>
         </div>
       </section>
+
+      {/* INTERACTIVE WORKFLOW SHOWCASE (from Homepage) */}
+      <InteractiveWorkflowShowcase />
 
       {/* SECTION 4 — FOR PRACTICE MANAGERS */}
       <section className="py-20 bg-[#F4F7FC]">
