@@ -164,6 +164,9 @@ export default function InteractiveBenefits() {
                 <button
                   onClick={() => setActiveTab(item)}
                   className="animated-border-inner"
+              <div key={item.id} className="relative h-full">
+                <div
+                  className="animated-border-wrapper"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -175,6 +178,11 @@ export default function InteractiveBenefits() {
                     textAlign: "left",
                     width: "100%",
                     height: "100%"
+                    height: "100%",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    boxShadow: isActive ? "0 12px 30px rgba(138,96,229,0.25)" : "none",
+                    transform: isActive ? "translateY(-2px)" : "none",
+                    background: isActive ? "rgba(138, 96, 229, 0.5)" : "rgba(255, 255, 255, 0.1)",
                   }}
                 >
                   <div style={{
@@ -198,6 +206,33 @@ export default function InteractiveBenefits() {
                       color: "#FFFFFF",
                       display: "block",
                       lineHeight: 1.3
+                  <button
+                    onClick={() => setActiveTab(item)}
+                    className="animated-border-inner"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "14px",
+                      padding: "18px 24px",
+                      background: isActive ? "#301A65" : "#3E2382",
+                      border: "none",
+                      cursor: "pointer",
+                      textAlign: "left",
+                      width: "100%",
+                      height: "100%"
+                    }}
+                  >
+                    <div style={{
+                      width: "42px",
+                      height: "42px",
+                      borderRadius: "12px",
+                      background: isActive ? "#8A60E5" : "rgba(138,96,229,0.15)",
+                      color: isActive ? "#FFFFFF" : "#8A60E5",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      transition: "all 0.25s"
                     }}>
                       {item.title}
                     </span>
@@ -212,6 +247,30 @@ export default function InteractiveBenefits() {
                     </span>
                   </div>
                 </button>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <span style={{
+                        fontSize: "15px",
+                        fontWeight: isActive ? 800 : 600,
+                        color: "#FFFFFF",
+                        display: "block",
+                        lineHeight: 1.3
+                      }}>
+                        {item.title}
+                      </span>
+                      <span style={{
+                        fontSize: "11px",
+                        color: isActive ? "#8A60E5" : "rgba(255,255,255,0.5)",
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.5px"
+                      }}>
+                        {item.badge}
+                      </span>
+                    </div>
+                  </button>
+                </div>
 
                 {/* Arrow Connector (absolute positioned in the gap) */}
                 {showArrow && (
