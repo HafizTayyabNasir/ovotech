@@ -151,33 +151,10 @@ export default function InteractiveBenefits() {
             const isActive = activeTab.id === item.id;
             const showArrow = idx !== 2 && idx !== 5; // Arrows after col 1 and col 2
             return (
-              <div
-                key={item.id}
-                className="animated-border-wrapper relative"
-                style={{
-                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                  boxShadow: isActive ? "0 12px 30px rgba(138,96,229,0.25)" : "none",
-                  transform: isActive ? "translateY(-2px)" : "none",
-                  background: isActive ? "rgba(138, 96, 229, 0.5)" : "rgba(255, 255, 255, 0.1)",
-                }}
-              >
-                <button
-                  onClick={() => setActiveTab(item)}
-                  className="animated-border-inner"
               <div key={item.id} className="relative h-full">
                 <div
                   className="animated-border-wrapper"
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "14px",
-                    padding: "18px 24px",
-                    background: isActive ? "#301A65" : "#3E2382",
-                    border: "none",
-                    cursor: "pointer",
-                    textAlign: "left",
-                    width: "100%",
-                    height: "100%"
                     height: "100%",
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                     boxShadow: isActive ? "0 12px 30px rgba(138,96,229,0.25)" : "none",
@@ -185,27 +162,6 @@ export default function InteractiveBenefits() {
                     background: isActive ? "rgba(138, 96, 229, 0.5)" : "rgba(255, 255, 255, 0.1)",
                   }}
                 >
-                  <div style={{
-                    width: "42px",
-                    height: "42px",
-                    borderRadius: "12px",
-                    background: isActive ? "#8A60E5" : "rgba(138,96,229,0.15)",
-                    color: isActive ? "#FFFFFF" : "#8A60E5",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                    transition: "all 0.25s"
-                  }}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <span style={{
-                      fontSize: "15px",
-                      fontWeight: isActive ? 800 : 600,
-                      color: "#FFFFFF",
-                      display: "block",
-                      lineHeight: 1.3
                   <button
                     onClick={() => setActiveTab(item)}
                     className="animated-border-inner"
@@ -234,19 +190,6 @@ export default function InteractiveBenefits() {
                       flexShrink: 0,
                       transition: "all 0.25s"
                     }}>
-                      {item.title}
-                    </span>
-                    <span style={{
-                      fontSize: "11px",
-                      color: isActive ? "#8A60E5" : "rgba(255,255,255,0.5)",
-                      fontWeight: 700,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.5px"
-                    }}>
-                      {item.badge}
-                    </span>
-                  </div>
-                </button>
                       {item.icon}
                     </div>
                     <div>
