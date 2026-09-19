@@ -175,7 +175,7 @@ export default function Navbar() {
                     {item.promo && (
                       <div
                         style={{
-                          width: "300px", background: `linear-gradient(135deg, #0A1838 0%, #2A3858 100%)`,
+                          width: "300px", background: `linear-gradient(135deg, #019EE1 0%, #019EE1 100%)`,
                           color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px", position: "relative", overflow: "hidden",
                         }}
                       >
@@ -210,7 +210,7 @@ export default function Navbar() {
         <div
           className="md:hidden fixed inset-0 top-[64px] z-[101]"
           style={{
-            background: "#0A1838",
+            background: "#019EE1",
             height: "calc(100vh - 64px)",
             overflowY: "auto",
             padding: "24px 20px 40px 20px"

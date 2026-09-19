@@ -25,9 +25,9 @@ import ParticlesBackground from "./ParticlesBackground";
 
 export default function DualCta() {
   return (
-    <section style={{ padding: "80px 0", background: "#0A1838" }}>
+    <section style={{ padding: "80px 0", background: "#019EE1" }}>
       <div className="site-container">
-    <section style={{ padding: "80px 0", background: "#0A1838", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "80px 0", background: "#019EE1", position: "relative", overflow: "hidden" }}>
       <ParticlesBackground color="#02ACEA" />
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", maxWidth: "800px", margin: "0 auto" }}>

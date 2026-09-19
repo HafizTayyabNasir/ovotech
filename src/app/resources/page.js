@@ -20,7 +20,7 @@ export default function ResourcesPage() {
           
           <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/blog" style={{ background: "#02ACEA", color: "#fff", padding: "14px 28px", borderRadius: "12px", fontWeight: 600, fontSize: "14px" }}>Visit Our Blog</Link>
-            <Link href="/help-centre" style={{ background: "#0A1838", color: "#fff", padding: "14px 28px", borderRadius: "12px", fontWeight: 600, fontSize: "14px" }}>Help Centre</Link>
+            <Link href="/help-centre" style={{ background: "#019EE1", color: "#fff", padding: "14px 28px", borderRadius: "12px", fontWeight: 600, fontSize: "14px" }}>Help Centre</Link>
           </div>
         </div>
       </section>

@@ -39,7 +39,7 @@ export default function TagsInfo() {
 
           {/* Right — Stat Cards */}
           <div className="animate-fadeInRight delay-200" style={{ flex: "0 1 340px", display: "flex", flexDirection: "column", gap: "20px", width: "100%" }}>
-            <div style={{ background: "linear-gradient(135deg, #1A2848 0%, #0A1838 100%)", color: "#fff", borderRadius: "20px", padding: "32px", border: "1px solid rgba(2, 172, 234,0.3)" }}>
+            <div style={{ background: "linear-gradient(135deg, #019EE1 0%, #019EE1 100%)", color: "#fff", borderRadius: "20px", padding: "32px", border: "1px solid rgba(2, 172, 234,0.3)" }}>
               <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "12px" }}>Happiness Score</div>
               <div style={{ fontSize: "40px", fontWeight: 800, marginBottom: "4px", color: "#02ACEA" }}>96%</div>
               <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", marginBottom: "16px" }}>Client satisfaction rate</p>

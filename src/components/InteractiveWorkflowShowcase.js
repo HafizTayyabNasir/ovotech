@@ -160,7 +160,7 @@ export default function InteractiveWorkflowShowcase() {
   const activeStep = workflowSteps[activeIndex];
 
   return (
-    <section ref={containerRef} style={{ height: "250vh", position: "relative", background: "#0A1838" }}>
+    <section ref={containerRef} style={{ height: "250vh", position: "relative", background: "#019EE1" }}>
       <div
         style={{
           position: "sticky",
@@ -169,7 +169,7 @@ export default function InteractiveWorkflowShowcase() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          background: "#0A1838",
+          background: "#019EE1",
           color: "#FFFFFF",
           padding: "10vh 0 40px 0",
           overflow: "hidden"
@@ -271,7 +271,7 @@ export default function InteractiveWorkflowShowcase() {
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
-            <div style={{ position: "relative", height: "550px", background: "#0A1838" }}>
+            <div style={{ position: "relative", height: "550px", background: "#019EE1" }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep.number}

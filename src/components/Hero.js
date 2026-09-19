@@ -27,7 +27,7 @@ export default function Hero() {
 
   return (
     <>
-      <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#0A1838" }}>
+      <section style={{ position: "relative", minHeight: "700px", paddingTop: "80px", paddingBottom: "80px", overflow: "hidden", display: "flex", alignItems: "center", background: "#019EE1" }}>
         {/* Interactive Particles Background */}
         <ParticlesBackground color="#02ACEA" />
 

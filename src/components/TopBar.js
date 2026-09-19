@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TopBar() {
   return (
-    <div className="bg-[#0A1838] text-white/90 text-[13px] py-2.5 hidden md:block border-b border-white/10">
+    <div className="bg-[#019EE1] text-white/90 text-[13px] py-2.5 hidden md:block border-b border-white/10">
       <div className="site-container flex justify-between items-center">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2 font-medium">

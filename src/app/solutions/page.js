@@ -73,7 +73,7 @@ export default function SolutionsPage() {
                 {/* LEFT SUB-COLUMN */}
                 <div className="sm:col-span-5 flex flex-col gap-4">
                   {/* Top Left - Proven Productivity */}
-                  <div className="bg-[#0A1838] rounded-[24px] p-6 flex flex-col items-center justify-center text-center shadow-lg h-[180px]">
+                  <div className="bg-[#019EE1] rounded-[24px] p-6 flex flex-col items-center justify-center text-center shadow-lg h-[180px]">
                     <h3 className="text-white font-extrabold text-[20px] leading-tight">Accelerated</h3>
                     <h3 className="text-white font-extrabold text-[20px] leading-tight mb-4">Processing</h3>
                     {/* Bar chart icon */}
@@ -152,7 +152,7 @@ export default function SolutionsPage() {
                   </div>
                   
                   {/* Bottom Right - Trusted Network */}
-                  <div className="bg-[#0A1838] rounded-[24px] p-6 shadow-lg text-center flex flex-col justify-center h-[140px]">
+                  <div className="bg-[#019EE1] rounded-[24px] p-6 shadow-lg text-center flex flex-col justify-center h-[140px]">
                      <h3 className="text-white font-extrabold text-[20px] mb-1">Designed For</h3>
                      <p className="text-white font-bold text-[14px] mb-3">UK General Practice</p>
                      {/* Stars */}
@@ -275,7 +275,7 @@ export default function SolutionsPage() {
               {activeTab === 1 && (
                 <div className="animate-fade-in">
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-4 py-2 bg-[#0A1838] text-white text-[13px] font-bold rounded-lg shadow-sm">24 open items</span>
+                    <span className="px-4 py-2 bg-[#019EE1] text-white text-[13px] font-bold rounded-lg shadow-sm">24 open items</span>
                     <span className="px-4 py-2 bg-white border border-[#E0E8F5] text-[#475569] text-[13px] font-bold rounded-lg shadow-sm hover:bg-gray-50 cursor-pointer">Assigned to me (14)</span>
                     <span className="px-4 py-2 bg-white border border-[#E0E8F5] text-[#475569] text-[13px] font-bold rounded-lg shadow-sm hover:bg-gray-50 cursor-pointer">Ready for review (8)</span>
                     <span className="px-4 py-2 bg-white border border-[#E0E8F5] text-[#475569] text-[13px] font-bold rounded-lg shadow-sm hover:bg-gray-50 cursor-pointer">Needs attention (3)</span>
@@ -621,7 +621,7 @@ export default function SolutionsPage() {
                 </div>
                 <h4 className="text-[16px] font-bold text-[#0A1838]">Discharge summary <span className="text-[#64748B] font-normal">(SAMPLE-042)</span></h4>
                 <div className="text-[13px] text-[#475569] mt-1">Evidence and history available</div>
-                <button className="mt-4 w-full py-2 bg-[#0A1838] text-white text-[13px] font-bold rounded-lg hover:bg-black transition-colors">Open Document</button>
+                <button className="mt-4 w-full py-2 bg-[#019EE1] text-white text-[13px] font-bold rounded-lg hover:bg-black transition-colors">Open Document</button>
               </div>
               
               <div className="flex justify-between items-center text-[11px] font-bold text-[#64748B]">
@@ -786,7 +786,7 @@ export default function SolutionsPage() {
                   </div>
                 </div>
                 
-                <button className="w-full py-3 bg-[#0A1838] text-white text-[14px] font-bold rounded-lg hover:bg-black transition-colors flex justify-center items-center gap-2">
+                <button className="w-full py-3 bg-[#019EE1] text-white text-[14px] font-bold rounded-lg hover:bg-black transition-colors flex justify-center items-center gap-2">
                   Post approved information <span className="text-[#02ACEA]">→</span>
                 </button>
               </div>
@@ -904,7 +904,7 @@ export default function SolutionsPage() {
             </div>
             
             {/* Outputs */}
-            <div className="lg:w-1/2 p-8 lg:p-12 bg-[#0A1838] text-white">
+            <div className="lg:w-1/2 p-8 lg:p-12 bg-[#019EE1] text-white">
               <h3 className="text-[18px] font-extrabold text-white mb-8">Estimated Impact</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-[#1A2848] rounded-xl p-5 border border-[#2A3858]">
@@ -961,7 +961,7 @@ export default function SolutionsPage() {
             ))}
           </div>
 
-          <div className="bg-[#0A1838] rounded-3xl p-8 lg:p-12 mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white shadow-xl">
+          <div className="bg-[#019EE1] rounded-3xl p-8 lg:p-12 mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white shadow-xl">
             <div>
               <h3 className="text-[24px] font-extrabold mb-3">Clinical responsibility stays visible.</h3>
               <p className="text-gray-300 text-[16px] max-w-2xl">Review permissions, practice policies and recorded outcomes make responsibility visible from processing to the patient record.</p>
@@ -984,7 +984,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* SECTION 14 — FINAL CTA */}
-      <section className="py-24 bg-[#0A1838] text-center relative overflow-hidden">
+      <section className="py-24 bg-[#019EE1] text-center relative overflow-hidden">
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(2, 172, 234, 0.15) 0%, transparent 60%)", pointerEvents: "none" }} />
         <div className="relative z-10 max-w-3xl mx-auto px-6">
           <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">Request a Demo</span>

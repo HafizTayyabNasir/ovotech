@@ -16,7 +16,7 @@ export default function ROICalculator() {
   const annualSavings = Math.round(weeklyHoursSaved * 52 * 18);
 
   return (
-    <section style={{ padding: "100px 0", background: "#0A1838", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "100px 0", background: "#019EE1", color: "#FFFFFF", position: "relative", overflow: "hidden" }}>
       <div className="site-container">
       <ParticlesBackground color="#02ACEA" />
       <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
