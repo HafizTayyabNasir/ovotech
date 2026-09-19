@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import InteractiveWorkflowShowcase from "@/components/InteractiveWorkflowShowcase";
+import InteractiveWorkflowShowcaseDark from "@/components/InteractiveWorkflowShowcaseDark";
 
-export default function AboutPage() {
+export default function SecondPage() {
   const [activeTab, setActiveTab] = useState(0);
 
   // Business Value Calculator State
@@ -409,7 +409,7 @@ export default function AboutPage() {
       </section>
 
       {/* INTERACTIVE WORKFLOW SHOWCASE (from Homepage) */}
-      <InteractiveWorkflowShowcase />
+      <InteractiveWorkflowShowcaseDark />
 
       {/* SECTION 4 — FOR PRACTICE MANAGERS */}
       <section className="py-20 bg-[#F4F7FC]">
