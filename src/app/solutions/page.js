@@ -55,7 +55,7 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <Link href="/contact" className="whitespace-nowrap" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s", border: "2px solid #02ACEA" }}>
+                  <Link href="/contact" className="whitespace-nowrap" style={{ background: "#FFFFFF", color: "#0A1838", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(0, 0, 0, 0.05)", transition: "all 0.3s", border: "2px solid #E0E8F5" }}>
                     Request a Demo
                   </Link>
                   <button onClick={() => document.getElementById('workflow').scrollIntoView({ behavior: 'smooth' })} className="whitespace-nowrap" style={{ background: "transparent", color: "#0A1838", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", transition: "all 0.3s", border: "2px solid #E0E8F5" }}>
@@ -965,7 +965,7 @@ export default function SolutionsPage() {
           <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-white mt-4 mb-6">See how Ovotech could work in your practice.</h2>
           <p className="text-gray-300 text-[18px] mb-10 leading-relaxed">Explore how Ovotech can help your team process clinical correspondence, review suggested coding and maintain visibility across your practice.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-[#02ACEA] text-white font-bold rounded-full shadow-lg hover:bg-[#028bbd] transition-all transform hover:-translate-y-1">
+            <Link href="/contact" className="px-8 py-4 bg-white text-[#0A1838] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1">
               Request a Demo
             </Link>
             <Link href="/contact" className="px-8 py-4 bg-transparent border-2 border-gray-600 text-white font-bold rounded-full hover:border-white transition-all">

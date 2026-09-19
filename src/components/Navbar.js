@@ -199,7 +199,7 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontSize: "14px", fontWeight: 700, padding: "12px 26px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(138, 96, 229, 0.3)", transition: "all 0.3s" }}>
+          <Link href="/contact" style={{ background: "#FFFFFF", color: "#0A1838", border: "1px solid #E0E8F5", fontSize: "14px", fontWeight: 700, padding: "12px 26px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(0,0,0,0.05)", transition: "all 0.3s" }}>
             Request a Demo
           </Link>
         </div>
