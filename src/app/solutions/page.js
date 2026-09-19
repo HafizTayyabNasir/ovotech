@@ -1,192 +1,23 @@
 "use client";
-import { useState, useRef } from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Cta from "@/components/Cta";
-import ParticlesBackground from "@/components/ParticlesBackground";
-import InteractiveWorkflowShowcase from "@/components/InteractiveWorkflowShowcase";
-
-const tabs = [
-  {
-    id: "review-queue",
-    title: "Review Queue",
-    desc: "Practice staff see all incoming clinical correspondence in one prioritized list, matched to the correct NHS patient.",
-    id: "document-intake",
-    title: "Document Intake & Triage",
-    desc: "Automatically ingest and triage clinical correspondence. The system extracts key information to prioritize urgent documents and instantly matches them to the correct NHS patient record.",
-    image: "/step1-intake.png",
-  },
-  {
-    id: "clinical-review",
-    title: "Clinical Review Workspace",
-    desc: "The core workstation. Reviewers see the original hospital letter alongside extracted data, SNOMED CT suggestions, and relevant patient history—without juggling multiple windows.",
-    image: "/clinical-workspace-review.png",
-    id: "ai-medical-coding",
-    title: "AI SNOMED CT Coding",
-    desc: "Our AI engine analyzes the clinical narrative to identify medical concepts, diagnoses, and procedures—proposing accurate SNOMED CT terminology for human verification.",
-    image: "/step3-snomed.png",
-  },
-  {
-    id: "dashboard",
-    title: "Dashboard & Impact",
-    desc: "Practice managers get full visibility into document throughput, backlogs cleared, and clinical hours saved, ensuring CQC audit readiness.",
-    image: "/hero-tech.png",
-    id: "clinical-review",
-    title: "Review & EMIS Write-Back",
-    desc: "Reviewers verify the proposed codes alongside the original hospital letter. Once approved, the structured clinical data is written directly to EMIS Web without manual re-keying.",
-    image: "/step5-emis-writeback.png",
-  }
-];
-
-const faqs = [
-  {
-    q: "Which SNOMED CT subset does Ovotech use?",
-    a: "Ovotech aligns with the UK Primary Care SNOMED CT subset, ensuring all proposed codes are valid and relevant for general practice records."
-  },
-  {
-    q: "Can a reviewer override a suggested code?",
-    a: "Yes. Every suggested code can be edited, deleted, or replaced by the human reviewer. Nothing is finalized without manual approval."
-  },
-  {
-    q: "What happens if the system doesn't find a confident match?",
-    a: "If the text is ambiguous, the system flags it for the human reviewer to manually select the appropriate code, ensuring clinical safety is never compromised."
-  },
-  {
-    q: "Is every coding decision logged for audit?",
-    a: "Absolutely. Every transaction is logged with the approving reviewer's user ID, timestamp, and modified fields for complete CQC and IG auditability."
-  },
-  {
-    q: "Does this tool replace clinical judgment?",
-    a: "No. Ovotech is an assisted workflow tool. It handles the administrative heavy lifting of finding and organizing data, but the clinical decision remains entirely with your authorized practice staff."
-  },
-  {
-    q: "What clinical systems does Ovotech integrate with?",
-    a: "Currently, Ovotech supports direct structured write-back into EMIS Web. We are continuously evaluating other primary care EPR integrations."
-  }
-];
-
-const workflowSteps = [
-  {
-    id: "01",
-    tag: "DOCUMENT INTAKE",
-    title: "Clinical Correspondence Ingestion",
-    desc: "Incoming hospital correspondence (clinic letters, discharge summaries) enters the Ovotech workflow from EHR feeds or document repositories.",
-    image: "/step1-intake.png",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="16" y1="13" x2="8" y2="13"></line>
-        <line x1="16" y1="17" x2="8" y2="17"></line>
-        <polyline points="10 9 9 9 8 9"></polyline>
-      </svg>
-    )
-  },
-  {
-    id: "02",
-    tag: "INFORMATION EXTRACTION",
-    title: "Clinical Entity & Fact Parsing",
-    desc: "AI engine parses the text to identify key clinical facts, patient identifiers, and suggests appropriate SNOMED CT codes.",
-    image: "/step2-extraction.png",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-    )
-  },
-  {
-    id: "03",
-    tag: "REVIEW QUEUE",
-    title: "Workload Review Queue Management",
-    desc: "Documents land in the practice's prioritized, sorted review queue for efficient workload management and triage.",
-    image: "/step1-intake.png",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-        <line x1="16" y1="2" x2="16" y2="6"></line>
-        <line x1="8" y1="2" x2="8" y2="6"></line>
-        <line x1="3" y1="10" x2="21" y2="10"></line>
-      </svg>
-    )
-  },
-  {
-    id: "04",
-    tag: "CLINICAL REVIEW",
-    title: "Clinical Review & Patient History",
-    desc: "Staff member opens the unified workspace to read the original document alongside the patient's existing active record for context.",
-    image: "/step4-patient-history.png",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-      </svg>
-    )
-  },
-  {
-    id: "05",
-    tag: "HUMAN APPROVAL",
-    title: "Authorised Reviewer Sign-Off",
-    desc: "Staff member verifies, edits, and ultimately approves the suggested codes before any data is finalised.",
-    image: "/step3-snomed.png",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-      </svg>
-    )
-  },
-  {
-    id: "06",
-    tag: "SYSTEM INTEGRATION",
-    title: "EMIS Web Structured Write-Back",
-    desc: "Approved data is written directly to EMIS Web with a complete audit log, eliminating manual re-keying.",
-    image: "/step5-emis-writeback.png",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-        <line x1="12" y1="22.08" x2="12" y2="12"></line>
-      </svg>
-    )
-  }
-];
 
 export default function SolutionsPage() {
   const [activeTab, setActiveTab] = useState(0);
-  const active = tabs[activeTab];
-  
-  const [activeWorkflow, setActiveWorkflow] = useState(0);
 
-  const videoRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(true);
   // Business Value Calculator State
   const [volume, setVolume] = useState(2847);
   const [manualTime, setManualTime] = useState(6);
   const [turnaround, setTurnaround] = useState(24);
   const [hourlyRate, setHourlyRate] = useState(25);
 
-  const toggleMute = (e) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
   const ovotechHandlingTime = 2.12;
   const ovotechTurnaround = 17.8;
 
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  };
   const hoursReleased = volume * (manualTime - ovotechHandlingTime) / 60;
   const costImpact = hoursReleased * hourlyRate;
   const turnaroundDiff = turnaround - ovotechTurnaround;
@@ -195,24 +26,15 @@ export default function SolutionsPage() {
     <>
       <TopBar />
       <Navbar />
-
-      {/* 1. HERO */}
       
       {/* SECTION 1 — HERO */}
       <section className="relative w-full overflow-hidden bg-[#FFFFFF] pt-[60px] pb-[60px] lg:pt-[80px] lg:pb-[100px]">
-        {/* Subtle background decoration */}
         <div style={{ position: "absolute", top: "-10%", right: "-5%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(138, 96, 229, 0.05) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
-        
         <div className="relative z-10 w-full max-w-[1350px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
-            
             {/* LEFT COLUMN */}
             <div className="w-full lg:w-[45%] flex flex-col items-start text-left">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                {/* 2-line large headline */}
-                <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-8 tracking-tight">
-                  <span style={{ color: "#02ACEA", display: "block" }}>Medical Coding</span>
-                  <span style={{ color: "#0A1838", display: "block" }}>Handled End-to-End</span>
                 <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0A1838]">
                   Clinical correspondence. <span className="text-[#02ACEA] italic">Clearer decisions.</span>
                 </h1>
@@ -223,61 +45,15 @@ export default function SolutionsPage() {
                   Turn incoming letters into structured information, review suggested codes and keep correspondence moving. One connected workspace for UK general practice.
                 </p>
 
-                {/* 2x2 Feature Bullets */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 mb-10">
-                  {/* Bullet 1 */}
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <span className="text-[20px]">📋</span>
-                      <h3 className="font-bold text-[#0A1838] text-[16px]">Review Queue</h3>
-                    </div>
-                    <p className="text-[#475569] text-[14px] leading-[1.5]">See what's pending, prioritise at a glance</p>
                 <div className="flex items-center gap-4 mb-10 flex-wrap">
                   <div className="flex items-center gap-2 bg-[#F4F7FC] px-4 py-2 rounded-full text-[14px] font-semibold text-[#301A65] border border-[#E0E8F5]">
                     🛡️ Built for UK General Practice
                   </div>
-                  {/* Bullet 2 */}
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <span className="text-[20px]">🔄</span>
-                      <h3 className="font-bold text-[#0A1838] text-[16px]">EMIS Web Integrated</h3>
-                    </div>
-                    <p className="text-[#475569] text-[14px] leading-[1.5]">Structured write-back to your clinical system</p>
                   <div className="flex items-center gap-2 bg-[#F4F7FC] px-4 py-2 rounded-full text-[14px] font-semibold text-[#301A65] border border-[#E0E8F5]">
                     ⚙️ Practice-controlled workflows
                   </div>
-                  {/* Bullet 3 */}
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <span className="text-[20px]">🛡️</span>
-                      <h3 className="font-bold text-[#0A1838] text-[16px]">Human-in-the-Loop</h3>
-                    </div>
-                    <p className="text-[#475569] text-[14px] leading-[1.5]">Every code confirmed by a reviewer before filing</p>
-                  </div>
-                  {/* Bullet 4 */}
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <span className="text-[20px]">📊</span>
-                      <h3 className="font-bold text-[#0A1838] text-[16px]">Full Visibility</h3>
-                    </div>
-                    <p className="text-[#475569] text-[14px] leading-[1.5]">Dashboard & impact tracking built in</p>
-                  </div>
                 </div>
 
-                {/* Action Button */}
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                  <button 
-                    onClick={() => {
-                      const sections = document.querySelectorAll('section');
-                      const target = Array.from(sections).find(s => s.textContent.includes('The 8-Step Medical Coding Flow'));
-                      if (target) target.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="whitespace-nowrap"
-                    style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s", border: "2px solid #02ACEA" }}
-                    onMouseEnter={e => { e.currentTarget.style.background = "#028bbd"; e.currentTarget.style.borderColor = "#028bbd"; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.borderColor = "#02ACEA"; }}
-                  >
-                    See How It Works
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <Link href="/contact" className="whitespace-nowrap" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(2, 172, 234, 0.3)", transition: "all 0.3s", border: "2px solid #02ACEA" }}>
                     Request a Demo
@@ -289,23 +65,8 @@ export default function SolutionsPage() {
               </motion.div>
             </div>
 
-            {/* RIGHT COLUMN */}
             {/* RIGHT COLUMN - Coded Mockup */}
             <div className="w-full lg:w-[55%]">
-              <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  {/* Col 1 */}
-                  <div className="flex flex-col gap-4 flex-1">
-                    {/* Top-Left */}
-                    <div className="rounded-3xl p-7 flex flex-col justify-between shadow-xl" style={{ background: "linear-gradient(135deg, #301A65 0%, #3E2382 100%)", height: "180px" }}>
-                      <div className="text-white">
-                        <h4 className="font-bold text-[20px] xl:text-[22px] leading-[1.2] mb-2">Faster Coding<br/>Turnaround</h4>
-                      </div>
-                      <div className="flex items-end gap-2 h-8">
-                        <div className="w-2.5 bg-[#02ACEA] rounded-t-sm" style={{ height: "40%" }}></div>
-                        <div className="w-2.5 bg-[#02ACEA] rounded-t-sm" style={{ height: "70%" }}></div>
-                        <div className="w-2.5 bg-[#02ACEA] rounded-t-sm" style={{ height: "100%" }}></div>
-                      </div>
               <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="bg-[#F8FAFC] rounded-3xl border border-[#E0E8F5] p-6 shadow-xl relative">
                 {/* 7-stage strip */}
                 <div className="flex overflow-x-auto gap-3 pb-4 mb-4 border-b border-[#E0E8F5] no-scrollbar text-[12px] font-bold text-[#475569]">
@@ -336,9 +97,6 @@ export default function SolutionsPage() {
                       <span>Riverside Medical Practice</span>
                       <span>Patient ref: SAMPLE-042</span>
                     </div>
-                    {/* Bottom-Left */}
-                    <div className="rounded-3xl flex items-center justify-center shadow-xl p-8" style={{ background: "#301A65", height: "240px" }}>
-                      <img src="/logo-footer.png" alt="Ovotech Logo" className="w-[140px] object-contain opacity-90" />
                     <p className="text-[#0A1838] text-[14px] leading-relaxed font-serif">
                       "Patient has a <span className="bg-blue-100 text-blue-900 font-semibold px-1 rounded">history of type 2 diabetes</span>. Continue review with the practice team."
                     </p>
@@ -358,16 +116,6 @@ export default function SolutionsPage() {
                       <div className="font-medium text-[#0A1838]">Practice review</div>
                     </div>
                   </div>
-                  {/* Col 2 */}
-                  <div className="flex flex-col gap-4 flex-[1.3]">
-                    {/* Top-Right: Laptop mockup */}
-                    <div className="rounded-3xl relative shadow-xl overflow-hidden border border-[#E0E8F5] bg-white flex flex-col" style={{ height: "280px" }}>
-                      <div className="flex justify-between items-center px-4 py-2.5 bg-[#0F172A]">
-                        <div className="flex gap-1.5">
-                          <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                        </div>
 
                   <div className="border-t border-[#E0E8F5] pt-4">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -375,24 +123,11 @@ export default function SolutionsPage() {
                         <div className="text-[14px] font-bold text-[#0A1838]">Type 2 diabetes mellitus</div>
                         <div className="text-[12px] text-[#64748B] mt-1">SNOMED CT 44054006 • Quote: "history of type 2 diabetes"</div>
                       </div>
-                      <div className="relative flex-1 bg-[#F4F7FC]">
-                        <img src="/clinical-workspace-review.png" alt="Clinical Review Workspace" className="w-full h-full object-cover object-top" />
-                        <Link href="/solutions/clinical-review" className="absolute top-4 right-4 w-9 h-9 bg-white/95 backdrop-blur rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#301A65" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                          </svg>
-                        </Link>
                       <div className="flex gap-2">
                         <button className="px-4 py-2 bg-[#02ACEA] text-white text-[13px] font-bold rounded-lg hover:bg-[#028bbd] transition-colors">Accept</button>
                         <button className="px-4 py-2 bg-white border border-[#E0E8F5] text-[#0A1838] text-[13px] font-bold rounded-lg hover:bg-gray-50 transition-colors">Amend</button>
                       </div>
                     </div>
-                    {/* Bottom-Right */}
-                    <div className="rounded-3xl p-7 flex flex-col justify-center shadow-xl" style={{ background: "linear-gradient(135deg, #0A1838 0%, #1A2848 100%)", height: "140px" }}>
-                      <h4 className="font-bold text-white text-[18px] xl:text-[20px] leading-[1.2] mb-3">Trusted by GP Teams<br/>Across the UK</h4>
-                      <div className="flex gap-1 text-[#ffbd2e]">
-                        {"★★★★★".split("").map((star, i) => <span key={i} className="text-[16px]">{star}</span>)}
-                      </div>
                   </div>
                   
                   <div className="mt-4 flex items-center justify-between text-[11px] text-[#64748B] border-t border-[#E0E8F5] pt-3 overflow-x-auto no-scrollbar">
@@ -407,19 +142,10 @@ export default function SolutionsPage() {
                 </div>
               </motion.div>
             </div>
-            
           </div>
         </div>
       </section>
 
-      {/* 2. THE PROBLEM */}
-      <section style={{ padding: "90px 0", background: "#F4F7FC" }}>
-        <div className="site-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>The Challenge</span>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>
-              Manual Coding is Breaking GP Workflows
-            </h2>
       {/* SECTION 2 — THE OVOTECH WORKFLOW */}
       <section id="workflow" className="py-20 bg-[#F4F7FC]">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
@@ -428,19 +154,9 @@ export default function SolutionsPage() {
             <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">One controlled process from correspondence to record.</h2>
             <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Each stage stays visible, with evidence and responsibility carried forward from the original document to the reviewed patient record.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {[
-              { icon: "⏳", title: "Hours Lost to Manual Admin", desc: "Staff waste massive amounts of time reading long hospital letters and manually looking up codes." },
-              { icon: "📉", title: "Inconsistent Clinical Coding", desc: "Different reviewers apply different codes, leading to fragmented patient records and missed QOF points." },
-              { icon: "⚠️", title: "Mounting Document Backlogs", desc: "High volumes of incoming correspondence create dangerous backlogs, delaying critical patient follow-ups." },
-              { icon: "🔄", title: "Disconnected Tools", desc: "Constantly toggling between Docman, EMIS Web, and clinical lookup sites causes fatigue and errors." }
-            ].map((p, i) => (
-              <div key={i} style={{ background: "#FFFFFF", borderRadius: "20px", padding: "32px 24px", border: "1px solid #E0E8F5", transition: "transform 0.3s" }}>
-                <div style={{ fontSize: "32px", marginBottom: "16px" }}>{p.icon}</div>
-                <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0A1838", marginBottom: "10px" }}>{p.title}</h3>
-                <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6 }}>{p.desc}</p>
               { num: "01", title: "Receive", desc: "Clinical correspondence enters a visible queue." },
               { num: "02", title: "Extract", desc: "Relevant information is structured from the source." },
               { num: "03", title: "Identify", desc: "Clinical concepts are linked to supporting evidence." },
@@ -462,14 +178,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 3. PRODUCT SCREENSHOTS / VISUAL WALKTHROUGH */}
-      <section style={{ padding: "90px 0", background: "#FFFFFF" }}>
-        <div className="site-container">
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>Visual Walkthrough</span>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>
-              The Medical Coding Experience
-            </h2>
       {/* SECTION 3 — PRODUCT TOUR */}
       <section className="py-20 bg-[#FFFFFF]">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
@@ -479,23 +187,6 @@ export default function SolutionsPage() {
             <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Move from an individual workload to the review queue, then open a document and see source evidence, structured information and coding suggestions together.</p>
           </div>
 
-          <div style={{ background: "#FFFFFF", borderRadius: "24px", border: "1px solid #E0E8F5", boxShadow: "0 20px 50px rgba(10,24,56,0.06)", overflow: "hidden" }}>
-            <div style={{ display: "flex", overflowX: "auto", background: "#F4F7FC", borderBottom: "1px solid #E0E8F5", padding: "8px 12px", gap: "8px" }} className="no-scrollbar">
-              {tabs.map((tab, idx) => {
-                const isActive = idx === activeTab;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(idx)}
-                    style={{
-                      flex: "1", minWidth: "160px", padding: "14px 18px", borderRadius: "14px", border: "none",
-                      background: isActive ? "#FFFFFF" : "transparent",
-                      boxShadow: isActive ? "0 4px 14px rgba(0,0,0,0.06)" : "none",
-                      cursor: "pointer", textAlign: "center", transition: "all 0.25s ease", outline: "none"
-                    }}
-                  >
-                    <div style={{ fontSize: "14px", fontWeight: 800, color: isActive ? "#301A65" : "#475569" }}>
-                      {tab.title}
           <div className="bg-[#FFFFFF] rounded-3xl border border-[#E0E8F5] shadow-lg overflow-hidden">
             <div className="flex overflow-x-auto bg-[#F4F7FC] border-b border-[#E0E8F5] p-2 gap-2 no-scrollbar">
               {['Clinical Overview', 'Review Queue', 'Clinical Review'].map((tab, idx) => (
@@ -553,9 +244,6 @@ export default function SolutionsPage() {
                         </div>
                       ))}
                     </div>
-                  </button>
-                );
-              })}
                   </div>
                 </div>
               )}
@@ -689,8 +377,6 @@ export default function SolutionsPage() {
                 </div>
               )}
             </div>
-            <div style={{ padding: "48px 40px" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "48px", alignItems: "center" }}>
             <div className="bg-white p-4 border-t border-[#E0E8F5] text-center text-[11px] text-[#94A3B8] font-medium">
               Illustrative workflow, not a live product screen · Fictional data · No clinical systems connected
               {activeTab === 2 && " · This example follows the manual review route."}
@@ -759,12 +445,6 @@ export default function SolutionsPage() {
               
               <div className="bg-white rounded-xl border border-[#E0E8F5] p-5 flex flex-col gap-4">
                 <div>
-                  <h3 style={{ fontSize: "28px", fontWeight: 800, color: "#301A65", marginBottom: "16px", lineHeight: 1.25 }}>
-                    {active.title}
-                  </h3>
-                  <p style={{ fontSize: "16px", color: "#475569", lineHeight: 1.7 }}>
-                    {active.desc}
-                  </p>
                   <h4 className="text-[14px] font-bold text-[#0A1838] mb-3">Coder workload distribution</h4>
                   <div className="space-y-2 text-[13px]">
                     <div className="flex justify-between items-center"><span className="text-[#475569]">Jamie Davies</span><span className="font-bold text-[#0A1838]">10</span></div>
@@ -775,10 +455,6 @@ export default function SolutionsPage() {
                     <div className="w-full bg-gray-100 rounded-full h-1.5"><div className="bg-blue-300 h-1.5 rounded-full" style={{width: "25%"}}></div></div>
                   </div>
                 </div>
-                <div style={{ position: "relative" }}>
-                  <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid #E0E8F5", boxShadow: "0 16px 40px rgba(10,24,56,0.1)" }}>
-                    {/* TODO: replace with real product screenshot */}
-                    <img src={active.image} alt={active.title} style={{ width: "100%", height: "360px", objectFit: "cover", display: "block" }} />
                 <div className="border-t border-[#E0E8F5] pt-4">
                   <h4 className="text-[14px] font-bold text-[#0A1838] mb-3">Workload by status</h4>
                   <div className="flex gap-2 text-[12px] font-bold">
@@ -804,14 +480,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 4. HOW IT WORKS */}
-      <section style={{ padding: "90px 0", background: "#f8fafc" }}>
-        <div className="site-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>How It Works</span>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>
-              The 8-Step Medical Coding Flow
-            </h2>
       {/* SECTION 5 — PATIENT HISTORY */}
       <section className="py-20 bg-white">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
@@ -821,23 +489,6 @@ export default function SolutionsPage() {
             <p className="text-[#475569] text-[16px] mb-4">Coding decisions should not happen in isolation. See a timeline and summary from correspondence already processed through Ovotech. Keep the source document close while checking previous findings and coding decisions.</p>
             <p className="text-[#475569] text-[16px] font-medium bg-[#F4F7FC] p-4 rounded-xl border border-[#E0E8F5]">This is platform history, not the patient's complete GP record.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
-            {[
-              { num: 1, type: "System", icon: "📥", title: "Document Intake", desc: "System automatically ingests clinical correspondence from hospitals." },
-              { num: 2, type: "System", icon: "🔍", title: "Extraction", desc: "AI engine parses the text to find key clinical facts and patient identifiers." },
-              { num: 3, type: "System", icon: "📋", title: "Review Queue", desc: "Document lands in the practice's prioritized, sorted review queue." },
-              { num: 4, type: "Human", icon: "🖥️", title: "Clinical Review", desc: "Staff member opens the unified workspace to read the original document." },
-              { num: 5, type: "Human", icon: "📖", title: "Patient History", desc: "Staff checks the patient's existing active record for context." },
-              { num: 6, type: "System", icon: "💡", title: "Coding Support", desc: "System suggests accurate SNOMED CT codes based on the extracted text." },
-              { num: 7, type: "Human", icon: "✅", title: "Approval", desc: "Staff member verifies, edits, and ultimately approves the suggested codes." },
-              { num: 8, type: "System", icon: "🏥", title: "Write-Back", desc: "Approved data is written directly to EMIS Web with an audit log." }
-            ].map((s, i) => (
-              <div key={i} style={{ background: "#fff", borderRadius: "20px", padding: "24px 20px", border: "1px solid #e2e8f5", textAlign: "center", transition: "transform 0.3s, box-shadow 0.3s" }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
-              >
-                <div style={{ display: "inline-block", background: s.type === "System" ? "rgba(2,172,234,0.1)" : "rgba(22,163,74,0.1)", color: s.type === "System" ? "#02ACEA" : "#16a34a", fontSize: "10px", fontWeight: 800, padding: "4px 10px", borderRadius: "12px", textTransform: "uppercase", marginBottom: "12px" }}>
-                  {s.type} Action
           
           <div className="lg:w-1/2 w-full">
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E0E8F5] p-6 shadow-lg">
@@ -846,8 +497,6 @@ export default function SolutionsPage() {
                   <h3 className="font-bold text-[#0A1838] text-[16px]">Sarah Thompson — SAMPLE-042</h3>
                   <div className="text-[12px] text-[#64748B] mt-1">Fictional record — Review in progress</div>
                 </div>
-                <div style={{ width: "32px", height: "32px", background: "#0A1838", color: "#fff", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 700, margin: "0 auto 12px" }}>
-                  {s.num}
               </div>
               
               <div className="flex gap-3 mb-6 overflow-x-auto no-scrollbar pb-2">
@@ -855,9 +504,6 @@ export default function SolutionsPage() {
                   <div className="text-[10px] font-bold text-[#64748B] uppercase mb-1">Platform history</div>
                   <div className="text-[14px] font-bold text-[#0A1838]">Type 2 diabetes</div>
                 </div>
-                <div style={{ fontSize: "30px", marginBottom: "12px" }}>{s.icon}</div>
-                <h4 style={{ fontSize: "15px", fontWeight: 700, color: "#24144B", marginBottom: "6px" }}>{s.title}</h4>
-                <p style={{ fontSize: "12px", color: "#64748B", lineHeight: 1.5 }}>{s.desc}</p>
                 <div className="bg-white border border-[#E0E8F5] rounded-xl p-3 min-w-[140px] shadow-sm">
                   <div className="text-[10px] font-bold text-[#64748B] uppercase mb-1">Medication</div>
                   <div className="text-[14px] font-bold text-[#0A1838]">Metformin</div>
@@ -868,7 +514,6 @@ export default function SolutionsPage() {
                   <div className="text-[11px] text-blue-600 mt-1">Today, 09:38</div>
                 </div>
               </div>
-            ))}
               
               <div className="bg-white rounded-xl border border-[#E0E8F5] p-5 relative">
                 <div className="absolute left-7 top-5 bottom-5 w-0.5 bg-gray-200"></div>
@@ -902,29 +547,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 5. VIDEO GUIDE */}
-      <section id="video-guide" style={{ position: "relative", padding: "100px 0", background: "#FFFFFF", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "1000px", height: "500px", background: "radial-gradient(ellipse, rgba(48, 26, 101, 0.05) 0%, transparent 60%)", pointerEvents: "none", zIndex: 0 }} />
-        <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8" style={{ position: "relative", zIndex: 10 }}>
-          <div style={{ textAlign: "center", marginBottom: "40px" }}>
-            <motion.span 
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              style={{ display: "inline-block", background: "rgba(48, 26, 101, 0.08)", color: "#301A65", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", padding: "6px 20px", borderRadius: "30px", textTransform: "uppercase", marginBottom: "16px", border: "1px solid rgba(48, 26, 101, 0.15)" }}
-            >
-              Watch the Guide
-            </motion.span>
-            <motion.h2 
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-              style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.5px", marginBottom: "16px" }}
-            >
-              See Medical Coding in Action
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-              style={{ fontSize: "16px", color: "#475569", maxWidth: "600px", margin: "0 auto" }}
-            >
-              Take a 2-minute walkthrough of the complete flow—from document intake to clinical review and EMIS Web write-back.
-            </motion.p>
       {/* SECTION 6 — FOR MEDICAL CODERS */}
       <section className="py-20 bg-[#F4F7FC]">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row-reverse items-center gap-12">
@@ -948,15 +570,6 @@ export default function SolutionsPage() {
               ))}
             </ul>
           </div>
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: "easeOut" }}
-            className="animated-border-wrapper" style={{ maxWidth: "1000px", margin: "0 auto", "--border-radius": "24px" }}
-          >
-            <div className="animated-border-inner" style={{ background: "#FFFFFF", boxShadow: "0 30px 60px rgba(0, 0, 0, 0.08)", display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", gap: "8px", padding: "16px", background: "#f8fafc", borderRadius: "22px 22px 0 0", borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
-                <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56" }} />
-                <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e" }} />
-                <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f" }} />
           
           <div className="lg:w-1/2 w-full">
             <div className="bg-white rounded-2xl border border-[#E0E8F5] p-6 shadow-lg">
@@ -974,11 +587,6 @@ export default function SolutionsPage() {
                   <div className="text-[20px] font-extrabold text-red-600">3</div>
                 </div>
               </div>
-              <div style={{ position: "relative", paddingTop: "56.25%", borderRadius: "0 0 22px 22px", overflow: "hidden", background: "#000" }}>
-                {/* TODO: replace with actual product walkthrough video */}
-                <video controls autoPlay loop muted playsInline style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover" }}>
-                  <source src="/HomeBanner.mp4" type="video/mp4" />
-                </video>
               
               <div className="bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-5 mb-6">
                 <div className="flex justify-between items-start mb-2">
@@ -1000,13 +608,10 @@ export default function SolutionsPage() {
                 <span className="flex flex-col items-center gap-1"><span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center">4</span> Record decision</span>
               </div>
             </div>
-          </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 6. WORKFLOW PREVIEW */}
-      <InteractiveWorkflowShowcase />
       {/* SECTION 7 — THE PROBLEM (before/after) */}
       <section className="py-20 bg-white">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
@@ -1040,17 +645,6 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-      {/* 7. HUMAN-IN-THE-LOOP CALLOUT */}
-      <section style={{ padding: "64px 0", background: "#FFFFFF" }}>
-        <div className="site-container">
-          <div style={{ maxWidth: "920px", margin: "0 auto", background: "#301A65", color: "#FFFFFF", padding: "40px", borderRadius: "24px", boxShadow: "0 16px 40px rgba(48,26,101,0.2)" }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
-              <span style={{ fontSize: "11px", fontWeight: 800, letterSpacing: "1.5px", color: "#02ACEA", textTransform: "uppercase", background: "rgba(2,172,234,0.15)", padding: "6px 14px", borderRadius: "20px" }}>
-                Patient Safety First
-              </span>
-              <span style={{ fontSize: "12px", fontWeight: 700, color: "#86EFAC", background: "rgba(22,163,74,0.3)", padding: "6px 14px", borderRadius: "20px" }}>
-                🛡️ 100% Human-in-the-Loop Safeguard
-              </span>
           <div className="text-center">
             <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 font-bold text-[#0A1838] text-[14px] md:text-[16px] mb-6 shadow-sm">
               Document extraction <span className="text-[#02ACEA] mx-2">+</span> 
@@ -1059,11 +653,6 @@ export default function SolutionsPage() {
               Human review <span className="text-[#02ACEA] mx-2">+</span> 
               Controlled write-back
             </div>
-            <h2 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 800, marginBottom: "14px" }}>
-              Assisted, Not Autonomous.
-            </h2>
-            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "16px", lineHeight: 1.7, marginBottom: "0" }}>
-              Ovotech organizes incoming documents, extracts facts, and proposes SNOMED CT codes. However, a trained human reviewer always inspects, amends, and approves the data. Absolutely no code is written to the patient record without a human clicking "Approve".
             <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
           </div>
         </div>
@@ -1184,14 +773,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 8. ADVANTAGES */}
-      <section style={{ padding: "90px 0", background: "#F4F7FC" }}>
-        <div className="site-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>Why It Matters</span>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>
-              The Impact on Your Practice
-            </h2>
       {/* SECTION 11 — EXCEPTIONS & AUDITABILITY */}
       <section className="py-20 bg-white">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
@@ -1200,17 +781,6 @@ export default function SolutionsPage() {
             <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">When something needs attention, Ovotech surfaces it.</h2>
             <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Uncertainty, missing information and failed actions stay visible so the right person can investigate and resolve them.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
-            {[
-              { icon: "⚡", title: "Faster Processing", desc: "Reduce document turnaround time drastically, ensuring patient records are updated within hours." },
-              { icon: "🎯", title: "Consistent Coding", desc: "Eliminate human variation in coding, ensuring accurate QOF reporting and maximized practice income." },
-              { icon: "🧘", title: "Reduced Admin Burden", desc: "Free up your clinical and admin staff from tedious manual data entry to focus on patient care." },
-              { icon: "📊", title: "Complete Oversight", desc: "Dashboards provide real-time visibility into workload, helping you manage capacity and maintain CQC readiness." }
-            ].map((adv, i) => (
-              <div key={i} style={{ background: "#FFFFFF", borderRadius: "20px", padding: "32px 24px", border: "1px solid #E0E8F5", transition: "transform 0.3s" }}>
-                <div style={{ fontSize: "32px", marginBottom: "16px" }}>{adv.icon}</div>
-                <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#0A1838", marginBottom: "10px" }}>{adv.title}</h3>
-                <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6 }}>{adv.desc}</p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E0E8F5] p-6 shadow-sm">
@@ -1233,7 +803,6 @@ export default function SolutionsPage() {
                   </div>
                 ))}
               </div>
-            ))}
             </div>
             
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E0E8F5] p-6 shadow-sm flex flex-col">
@@ -1271,14 +840,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 9. THE COST OF NOT AUTOMATING */}
-      <section style={{ padding: "90px 0", background: "#FFFFFF" }}>
-        <div className="site-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#E53E3E", textTransform: "uppercase" }}>The Risk of the Status Quo</span>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>
-              What Happens When You Rely on Manual Processes?
-            </h2>
       {/* SECTION 12 — BUSINESS VALUE (interactive calculator) */}
       <section className="py-20 bg-[#F4F7FC]">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
@@ -1287,10 +848,6 @@ export default function SolutionsPage() {
             <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Measure impact using your practice's own numbers.</h2>
             <p className="text-[#475569] text-[16px] max-w-3xl mx-auto leading-relaxed">Enter your current practice baselines and compare them with Ovotech performance. This demonstration uses fictional processing data; a live comparison would use measured handling and turnaround times.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px" }}>
-            <div style={{ background: "#FFF5F5", borderRadius: "24px", padding: "40px", border: "1px solid #FED7D7" }}>
-              <div style={{ display: "inline-block", background: "#FEB2B2", color: "#9B2C2C", fontSize: "12px", fontWeight: 800, padding: "6px 16px", borderRadius: "20px", marginBottom: "20px" }}>
-                The Risk of Manual Processing
 
           <div className="bg-white rounded-3xl border border-[#E0E8F5] shadow-xl overflow-hidden flex flex-col lg:flex-row">
             {/* Inputs */}
@@ -1314,20 +871,11 @@ export default function SolutionsPage() {
                   <input type="number" value={hourlyRate} onChange={(e) => setHourlyRate(Number(e.target.value) || 0)} className="w-full bg-[#F4F7FC] border border-[#E0E8F5] rounded-xl px-4 py-3 text-[#0A1838] font-bold focus:outline-none focus:border-[#02ACEA]" />
                 </div>
               </div>
-              <ul style={{ display: "flex", flexDirection: "column", gap: "16px", color: "#9B2C2C", fontSize: "15px", lineHeight: 1.5, listStyle: "none", padding: 0 }}>
-                <li style={{ display: "flex", gap: "10px" }}>❌ <span><strong>Backlog Buildup:</strong> High volume of letters leads to days or weeks of processing delays.</span></li>
-                <li style={{ display: "flex", gap: "10px" }}>❌ <span><strong>Missed Diagnoses:</strong> Manual scanning makes it easy to overlook buried clinical facts.</span></li>
-                <li style={{ display: "flex", gap: "10px" }}>❌ <span><strong>Staff Burnout:</strong> Repetitive administrative tasks drain staff morale and capacity.</span></li>
-                <li style={{ display: "flex", gap: "10px" }}>❌ <span><strong>Compliance Risks:</strong> Poor visibility into unprocessed documents flags during CQC audits.</span></li>
-              </ul>
               <div className="mt-8 p-4 bg-blue-50 border border-blue-100 rounded-xl">
                 <div className="text-[12px] font-bold text-blue-900 mb-1">Example Ovotech performance</div>
                 <div className="text-[13px] text-blue-800">2.12 minutes of handling per document, including human review · 17.8 hours average turnaround</div>
               </div>
             </div>
-            <div style={{ background: "#F0FDF4", borderRadius: "24px", padding: "40px", border: "1px solid #BBF7D0", boxShadow: "0 16px 40px rgba(22,163,74,0.08)" }}>
-              <div style={{ display: "inline-block", background: "#86EFAC", color: "#14532D", fontSize: "12px", fontWeight: 800, padding: "6px 16px", borderRadius: "20px", marginBottom: "20px" }}>
-                Ovotech's Medical Coding Tool
             
             {/* Outputs */}
             <div className="lg:w-1/2 p-8 lg:p-12 bg-[#0A1838] text-white">
@@ -1354,12 +902,6 @@ export default function SolutionsPage() {
                   <div className="text-[11px] text-gray-500 mt-1">Staff time equivalent, not cash savings</div>
                 </div>
               </div>
-              <ul style={{ display: "flex", flexDirection: "column", gap: "16px", color: "#15803D", fontSize: "15px", lineHeight: 1.5, listStyle: "none", padding: 0 }}>
-                <li style={{ display: "flex", gap: "10px" }}>✅ <span><strong>Zero Backlog:</strong> Instant AI extraction keeps queues clear and manageable.</span></li>
-                <li style={{ display: "flex", gap: "10px" }}>✅ <span><strong>Accurate Extraction:</strong> Facts and SNOMED codes are highlighted directly from the text.</span></li>
-                <li style={{ display: "flex", gap: "10px" }}>✅ <span><strong>Empowered Staff:</strong> Reviewers simply verify suggestions, saving hours of manual labor.</span></li>
-                <li style={{ display: "flex", gap: "10px" }}>✅ <span><strong>Audit Ready:</strong> Full dashboards provide oversight and track every action for compliance.</span></li>
-              </ul>
               
               <div className="text-[10px] text-gray-500 leading-relaxed border-t border-[#2A3858] pt-6">
                 <p className="mb-2">Hours released = monthly volume × (manual minutes − Ovotech handling minutes) ÷ 60. Cost impact = hours released × hourly staff cost. Turnaround difference = current average turnaround − Ovotech average turnaround.</p>
@@ -1370,14 +912,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 10. MEDICAL-CODING-SPECIFIC FAQ */}
-      <section style={{ padding: "90px 0", background: "#F4F7FC" }}>
-        <div className="site-container" style={{ maxWidth: "880px" }}>
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#02ACEA", textTransform: "uppercase" }}>Common Questions</span>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0A1838", marginTop: "8px" }}>
-              Medical Coding FAQs
-            </h2>
       {/* SECTION 13 — SECURITY & COMPLIANCE */}
       <section className="py-20 bg-white">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
@@ -1386,11 +920,6 @@ export default function SolutionsPage() {
             <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Designed for UK healthcare environments.</h2>
             <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Security controls support the workflow around clinical correspondence, access, review and auditability.</p>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-            {faqs.map((f, i) => (
-              <div key={i} style={{ background: "#FFFFFF", borderRadius: "18px", padding: "28px 32px", border: "1px solid #E0E8F5" }}>
-                <h4 style={{ fontSize: "18px", fontWeight: 800, color: "#0A1838", marginBottom: "10px" }}>{f.q}</h4>
-                <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.7 }}>{f.a}</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
@@ -1428,8 +957,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 11. FINAL CTA */}
-      <Cta />
       {/* SECTION 14 — FINAL CTA */}
       <section className="py-24 bg-[#0A1838] text-center relative overflow-hidden">
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(2, 172, 234, 0.15) 0%, transparent 60%)", pointerEvents: "none" }} />
