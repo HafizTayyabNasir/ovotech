@@ -27,6 +27,7 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Home", href: "/", key: "home" },
+    { label: "Second", href: "/second", key: "second" },
     {
       label: "Solutions", href: "/solutions", key: "solutions",
       topSection: { label: "Medical Coding", href: "/solutions", desc: "Our end-to-end clinical coding tool" },
