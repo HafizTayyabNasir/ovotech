@@ -56,10 +56,10 @@ export default function ThirdPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <Link href="/contact" className="whitespace-nowrap" style={{ background: "#FFFFFF", color: "#0A1838", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(0, 0, 0, 0.05)", transition: "all 0.3s", border: "2px solid #E0E8F5" }}>
+                  <Link href="/contact" className="whitespace-nowrap bg-white text-[#0A1838] font-bold px-8 py-3.5 rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.05)] border-2 border-[#E0E8F5] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#02ACEA] hover:text-[#02ACEA]">
                     Request a Demo
                   </Link>
-                  <button onClick={() => document.getElementById('workflow').scrollIntoView({ behavior: 'smooth' })} className="whitespace-nowrap" style={{ background: "transparent", color: "#0A1838", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", transition: "all 0.3s", border: "2px solid #E0E8F5" }}>
+                  <button onClick={() => document.getElementById('workflow').scrollIntoView({ behavior: 'smooth' })} className="whitespace-nowrap bg-transparent text-[#0A1838] font-bold px-8 py-3.5 rounded-full border-2 border-[#E0E8F5] transition-all duration-300 hover:bg-[#F4F7FC] hover:-translate-y-1 hover:shadow-md">
                     Explore the workflow
                   </button>
                 </div>
@@ -174,73 +174,6 @@ export default function ThirdPage() {
                 </div>
               </motion.div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 7 — THE PROBLEM (before/after) */}
-      <section className="py-20 bg-white">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">The Problem</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Clinical correspondence creates more work than it should.</h2>
-            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Teams often move between documents, patient records and coding tools to find context, structure information and decide what belongs in the record.</p>
-          </div>
-
-          <div className="relative mb-12 bg-white border border-[#E0E8F5] rounded-3xl overflow-hidden shadow-lg">
-            <div className="flex flex-col md:flex-row">
-              {/* Left Side: Without connected process */}
-              <div className="flex-1 bg-[#FFF5F5] p-10 relative overflow-hidden">
-                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
-                  <path d="M 0,20 Q 50,150 100,50 T 200,80 T 300,20 T 400,100 T 500,50" stroke="#9B2C2C" strokeWidth="4" fill="none" />
-                  <path d="M 0,80 Q 80,10 150,100 T 250,50 T 350,120 T 500,80" stroke="#9B2C2C" strokeWidth="2" fill="none" strokeDasharray="5,5" />
-                </svg>
-                <div className="relative z-10">
-                  <h3 className="text-[20px] font-extrabold text-[#9B2C2C] mb-6">Without a connected process</h3>
-                  <ul className="space-y-5 text-[#9B2C2C] font-medium text-[16px]">
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">01</div> Open and read each document</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">02</div> Search for relevant patient context</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">03</div> Re-enter clinical information</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">04</div> Find and verify suitable codes</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">05</div> Track approval and posting separately</li>
-                  </ul>
-                </div>
-              </div>
-              
-              {/* Divider */}
-              <div className="w-full md:w-4 bg-gradient-to-b from-[#9B2C2C] to-[#166534] flex items-center justify-center relative">
-                <div className="absolute w-10 h-10 bg-white rounded-full shadow-lg border-2 border-gray-200 flex items-center justify-center z-20 font-bold text-gray-500 transform md:-rotate-90 text-[12px]">VS</div>
-              </div>
-              
-              {/* Right Side: With Ovotech */}
-              <div className="flex-1 bg-[#F0FDF4] p-10 relative overflow-hidden">
-                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
-                  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#166534" strokeWidth="8" strokeLinecap="round" />
-                  <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
-                  <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
-                </svg>
-                <div className="relative z-10">
-                  <h3 className="text-[20px] font-extrabold text-[#166534] mb-6">With Ovotech 2.0</h3>
-                  <ul className="space-y-5 text-[#166534] font-medium text-[16px]">
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Correspondence enters one visible queue</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Relevant information is structured</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Suggestions include source evidence</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> People review, amend and approve</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> The outcome and write-back remain traceable</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 font-bold text-[#0A1838] text-[14px] md:text-[16px] mb-6 shadow-sm">
-              Document extraction <span className="text-[#02ACEA] mx-2">+</span> 
-              Clinical structuring <span className="text-[#02ACEA] mx-2">+</span> 
-              SNOMED suggestions <span className="text-[#02ACEA] mx-2">+</span> 
-              Human review <span className="text-[#02ACEA] mx-2">+</span> 
-              Controlled write-back
-            </div>
-            <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
           </div>
         </div>
       </section>
@@ -400,7 +333,7 @@ export default function ThirdPage() {
                       <div className="flex items-center gap-3 text-[14px] font-bold text-[#0A1838]">
                         <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span> In review
                       </div>
-                      <button className="px-5 py-2 bg-[#02ACEA] text-white text-[13px] font-bold rounded-lg shadow-sm hover:bg-[#028bbd] transition-colors">
+                      <button className="px-5 py-2 bg-[#02ACEA] text-white text-[13px] font-bold rounded-lg shadow-sm hover:bg-[#028bbd] transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                         Approve review
                       </button>
                     </div>
@@ -446,9 +379,9 @@ export default function ThirdPage() {
                               "...<span className="font-bold text-[#0A1838]">Patient has a history of type 2 diabetes.</span>..."
                             </div>
                             <div className="flex gap-2">
-                              <button className="flex-1 py-2 bg-[#02ACEA] text-white text-[13px] font-bold rounded-lg shadow-sm hover:bg-[#028bbd]">Accept</button>
-                              <button className="flex-1 py-2 bg-white border border-[#E0E8F5] text-[#0A1838] text-[13px] font-bold rounded-lg hover:bg-gray-50">Amend</button>
-                              <button className="flex-1 py-2 bg-white border border-red-200 text-red-600 text-[13px] font-bold rounded-lg hover:bg-red-50">Reject</button>
+                              <button className="flex-1 py-2 bg-[#02ACEA] text-white text-[13px] font-bold rounded-lg shadow-sm hover:bg-[#028bbd] transition-all hover:-translate-y-0.5 hover:shadow-md">Accept</button>
+                              <button className="flex-1 py-2 bg-white border border-[#E0E8F5] text-[#0A1838] text-[13px] font-bold rounded-lg hover:bg-gray-50 transition-all hover:-translate-y-0.5 hover:shadow-md">Amend</button>
+                              <button className="flex-1 py-2 bg-white border border-red-200 text-red-600 text-[13px] font-bold rounded-lg hover:bg-red-50 transition-all hover:-translate-y-0.5 hover:shadow-md">Reject</button>
                             </div>
                           </div>
                         </div>
@@ -632,6 +565,73 @@ export default function ThirdPage() {
               Practice oversight is distinct from platform administration. Access to clinical content requires the relevant permission.<br/>
               Illustrative dashboard with fictional metrics, not a live product screenshot. Available reporting depends on role and deployment. Impact compares a 6-minute manual baseline with 2.12 minutes of example handling time per document, including human review, at £25 per hour. Staff time equivalent is not a cash saving.
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 — THE PROBLEM (before/after) */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">The Problem</span>
+            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Clinical correspondence creates more work than it should.</h2>
+            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Teams often move between documents, patient records and coding tools to find context, structure information and decide what belongs in the record.</p>
+          </div>
+
+          <div className="relative mb-12 bg-white border border-[#E0E8F5] rounded-3xl overflow-hidden shadow-lg">
+            <div className="flex flex-col md:flex-row">
+              {/* Left Side: Without connected process */}
+              <div className="flex-1 bg-[#FFF5F5] p-10 relative overflow-hidden">
+                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
+                  <path d="M 0,20 Q 50,150 100,50 T 200,80 T 300,20 T 400,100 T 500,50" stroke="#9B2C2C" strokeWidth="4" fill="none" />
+                  <path d="M 0,80 Q 80,10 150,100 T 250,50 T 350,120 T 500,80" stroke="#9B2C2C" strokeWidth="2" fill="none" strokeDasharray="5,5" />
+                </svg>
+                <div className="relative z-10">
+                  <h3 className="text-[20px] font-extrabold text-[#9B2C2C] mb-6">Without a connected process</h3>
+                  <ul className="space-y-5 text-[#9B2C2C] font-medium text-[16px]">
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">01</div> Open and read each document</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">02</div> Search for relevant patient context</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">03</div> Re-enter clinical information</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">04</div> Find and verify suitable codes</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">05</div> Track approval and posting separately</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Divider */}
+              <div className="w-full md:w-4 bg-gradient-to-b from-[#9B2C2C] to-[#166534] flex items-center justify-center relative">
+                <div className="absolute w-10 h-10 bg-white rounded-full shadow-lg border-2 border-gray-200 flex items-center justify-center z-20 font-bold text-gray-500 transform md:-rotate-90 text-[12px]">VS</div>
+              </div>
+              
+              {/* Right Side: With Ovotech */}
+              <div className="flex-1 bg-[#F0FDF4] p-10 relative overflow-hidden">
+                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
+                  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#166534" strokeWidth="8" strokeLinecap="round" />
+                  <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
+                  <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
+                </svg>
+                <div className="relative z-10">
+                  <h3 className="text-[20px] font-extrabold text-[#166534] mb-6">With Ovotech 2.0</h3>
+                  <ul className="space-y-5 text-[#166534] font-medium text-[16px]">
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Correspondence enters one visible queue</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Relevant information is structured</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Suggestions include source evidence</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> People review, amend and approve</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> The outcome and write-back remain traceable</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 font-bold text-[#0A1838] text-[14px] md:text-[16px] mb-6 shadow-sm">
+              Document extraction <span className="text-[#02ACEA] mx-2">+</span> 
+              Clinical structuring <span className="text-[#02ACEA] mx-2">+</span> 
+              SNOMED suggestions <span className="text-[#02ACEA] mx-2">+</span> 
+              Human review <span className="text-[#02ACEA] mx-2">+</span> 
+              Controlled write-back
+            </div>
+            <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
           </div>
         </div>
       </section>
@@ -989,7 +989,7 @@ export default function ThirdPage() {
             <div style={{ position: "absolute", top: "-50%", right: "-10%", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%)", pointerEvents: "none" }} />
             <h3 className="text-[28px] font-extrabold mb-4 relative z-10">Clinical responsibility stays visible.</h3>
             <p className="text-white/90 text-[18px] max-w-3xl mx-auto mb-8 relative z-10">Review permissions, practice policies and recorded outcomes make responsibility visible from processing to the patient record.</p>
-            <Link href="/security" className="inline-block px-8 py-4 bg-[#0A1838] text-white font-bold rounded-full hover:bg-gray-900 transition-colors shadow-md relative z-10">
+            <Link href="/security" className="inline-block px-8 py-4 bg-[#0A1838] text-white font-bold rounded-full hover:bg-gray-900 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg relative z-10">
               View the security approach →
             </Link>
           </div>
@@ -1039,7 +1039,7 @@ export default function ThirdPage() {
                 <Link href="/contact" className="px-8 py-4 bg-[#0A1838] text-white font-bold rounded-full shadow-lg hover:bg-black transition-all transform hover:-translate-y-1">
                   Request a Demo
                 </Link>
-                <Link href="/contact" className="px-8 py-4 bg-white border-2 border-[#E0E8F5] text-[#0A1838] font-bold rounded-full hover:bg-gray-50 transition-all">
+                <Link href="/contact" className="px-8 py-4 bg-white border-2 border-[#E0E8F5] text-[#0A1838] font-bold rounded-full hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#02ACEA] hover:text-[#02ACEA]">
                   Talk to Our Team
                 </Link>
               </div>
