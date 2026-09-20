@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import InteractiveWorkflowShowcaseDark from "@/components/InteractiveWorkflowShowcaseDark";
+import InteractiveWorkflowShowcaseThird from "@/components/InteractiveWorkflowShowcaseThird";
 
 export default function ThirdPage() {
   const [activeTab, setActiveTab] = useState(0);
@@ -411,7 +411,7 @@ export default function ThirdPage() {
       </section>
 
       {/* INTERACTIVE WORKFLOW SHOWCASE (from Homepage) */}
-      <InteractiveWorkflowShowcaseDark />
+      <InteractiveWorkflowShowcaseThird />
 
       {/* SECTION 4 — FOR PRACTICE MANAGERS */}
       <section className="py-20 bg-[#F4F7FC]">
