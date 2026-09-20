@@ -223,13 +223,15 @@ export default function InteractiveWorkflowShowcaseThird() {
               {/* Timeline Nodes */}
               {workflowSteps.map((step, index) => {
                 const isActive = index === activeIndex;
+                const isEven = index % 2 === 0;
+                const accentColor = isEven ? "#02ACEA" : "#A855F7";
                 return (
                   <div key={index} className="relative z-10 flex flex-col items-center justify-center w-full" style={{ height: `${100 / workflowSteps.length}%` }}>
                     {/* Number */}
                     <span style={{ 
-                      position: "absolute", left: "0px", 
-                      color: isActive ? "#000000" : "rgba(0,0,0,0.8)", 
-                      fontSize: "12px", fontWeight: 700, transition: "0.3s" 
+                      position: "absolute", left: "-10px", 
+                      color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.4)", 
+                      fontSize: "13px", fontWeight: 700, transition: "0.3s" 
                     }}>
                       {step.number}
                     </span>
@@ -238,17 +240,17 @@ export default function InteractiveWorkflowShowcaseThird() {
                       initial={false}
                       animate={{
                         scale: isActive ? 1.3 : 1,
-                        backgroundColor: isActive ? "rgba(2, 172, 234, 0.15)" : "#1A2848",
-                        borderColor: isActive ? "#000000" : "rgba(0,0,0,0.6)"
+                        backgroundColor: isActive ? accentColor : (isEven ? "rgba(2,172,234,0.2)" : "rgba(168,85,247,0.2)"),
+                        borderColor: accentColor
                       }}
                       style={{
                         width: "24px", height: "24px", borderRadius: "50%", border: "2px solid",
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        boxShadow: isActive ? "0 0 20px 4px rgba(2, 172, 234, 0.4)" : "none"
+                        boxShadow: isActive ? `0 0 20px 4px ${accentColor}80` : "none"
                       }}
                     >
                       {isActive && (
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#02ACEA" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="7 10 12 5 17 10" />
                           <polyline points="7 14 12 19 17 14" />
                         </svg>
@@ -367,8 +369,10 @@ export default function InteractiveWorkflowShowcaseThird() {
                     color: isActive ? "#0A1838" : "#FFFFFF",
                     borderRadius: "16px",
                     padding: "12px 16px",
-                    border: isActive ? `2px solid ${accentColor}` : "1px solid rgba(255, 255, 255, 0.08)",
-                    borderLeft: `4px solid ${accentColor}`,
+                    borderTop: isActive ? `2px solid ${accentColor}` : "1px solid rgba(255, 255, 255, 0.08)",
+                    borderRight: isActive ? `2px solid ${accentColor}` : "1px solid rgba(255, 255, 255, 0.08)",
+                    borderBottom: isActive ? `2px solid ${accentColor}` : "1px solid rgba(255, 255, 255, 0.08)",
+                    borderLeft: `8px solid ${accentColor}`,
                     cursor: "pointer",
                     transition: "all 0.3s ease",
                     boxShadow: isActive ? `0 20px 40px ${isEven ? 'rgba(2,172,234,0.2)' : 'rgba(168,85,247,0.2)'}` : "none",
