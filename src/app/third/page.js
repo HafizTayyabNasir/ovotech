@@ -964,42 +964,43 @@ export default function ThirdPage() {
               </div>
             </div>
             
-            {/* Audit Trail Zig-Zag */}
-            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E0E8F5] p-6 shadow-sm flex flex-col">
-              <h3 className="font-extrabold text-[#0A1838] text-[16px] mb-1">See what happened, when and by whom.</h3>
-              <div className="text-[12px] text-[#64748B] mb-8 pb-3 border-b border-[#E0E8F5]">DEMO-107</div>
+            {/* Audit Trail Vertical Timeline */}
+            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E0E8F5] p-6 lg:p-10 shadow-sm flex flex-col">
+              <h3 className="font-extrabold text-[#0A1838] text-[20px] mb-1">See what happened, when and by whom.</h3>
+              <div className="text-[14px] text-[#64748B] mb-12 pb-4 border-b border-[#E0E8F5]">DEMO-107</div>
               
-              <div className="w-full relative mx-auto max-w-4xl pt-4 pb-8">
-                {/* Connecting SVG Snake */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" style={{zIndex: 0}}>
-                   <path d="M 50% 10 L 50% 50 C 50% 100, 20% 100, 20% 150 L 20% 200 C 20% 250, 80% 250, 80% 300 L 80% 350 C 80% 400, 50% 400, 50% 450 L 50% 500" stroke="#E0E8F5" strokeWidth="4" fill="none" strokeDasharray="8 8" />
-                </svg>
+              <div className="w-full relative mx-auto max-w-3xl py-4">
+                {/* Central Vertical Line */}
+                <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 w-[2px] bg-[#E0E8F5] transform md:-translate-x-1/2"></div>
                 
                 <div className="flex flex-col gap-8 relative z-10">
                   {[
-                    { time: "09:41", action: "Correspondence received", actor: "System", pos: "md:justify-center" },
-                    { time: "09:42", action: "Information extracted", actor: "Ovotech processing", pos: "md:justify-start md:pl-20" },
-                    { time: "09:44", action: "Coding suggestion created", actor: "Ovotech processing", pos: "md:justify-start md:pl-20" },
-                    { time: "09:47", action: "Suggestion accepted", actor: "Jamie Davies", highlight: true, pos: "md:justify-end md:pr-20" },
-                    { time: "09:49", action: "Review approved", actor: "Dr A. Khan", highlight: true, pos: "md:justify-end md:pr-20" },
-                    { time: "09:53", action: "Write-back completed", actor: "EMIS Web", final: true, pos: "md:justify-center" }
+                    { time: "09:41", action: "Correspondence received", actor: "System", align: "right" },
+                    { time: "09:42", action: "Information extracted", actor: "Ovotech processing", align: "left" },
+                    { time: "09:44", action: "Coding suggestion created", actor: "Ovotech processing", align: "right" },
+                    { time: "09:47", action: "Suggestion accepted", actor: "Jamie Davies", highlight: true, align: "left" },
+                    { time: "09:49", action: "Review approved", actor: "Dr A. Khan", highlight: true, align: "right" },
+                    { time: "09:53", action: "Write-back completed", actor: "EMIS Web", final: true, align: "center" }
                   ].map((log, i) => (
-                    <div key={i} className={`flex w-full ${log.pos}`}>
-                      <div className={`bg-white p-4 rounded-xl border shadow-sm flex flex-col items-center min-w-[220px] text-center ${log.highlight ? 'border-[#02ACEA]' : log.final ? 'border-green-500' : 'border-[#E0E8F5]'}`}>
-                        <div className="text-[11px] font-bold text-[#64748B] mb-2">{log.time}</div>
-                        <div className={`w-4 h-4 rounded-full mb-3 ${log.final ? 'bg-green-500' : (log.highlight ? 'bg-[#02ACEA]' : 'bg-gray-300')}`}></div>
-                        <div className={`text-[13px] font-bold ${log.final ? 'text-green-700' : 'text-[#0A1838]'}`}>{log.action}</div>
-                        <div className="text-[11px] text-[#64748B] mt-1">{log.actor}</div>
+                    <div key={i} className={`flex w-full ${log.align === 'center' ? 'justify-center' : (log.align === 'left' ? 'md:justify-start' : 'md:justify-end')} items-center relative`}>
+                      
+                      {/* Timeline Dot */}
+                      <div className={`absolute left-[28px] md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 border-white shadow-sm z-20 ${log.final ? 'bg-green-500 w-5 h-5' : (log.highlight ? 'bg-[#02ACEA]' : 'bg-gray-300')}`}></div>
+                      
+                      {/* Timeline Card */}
+                      <div className={`bg-white p-5 rounded-xl border shadow-sm flex flex-col min-w-[240px] md:w-[42%] ml-[60px] md:ml-0 ${log.align === 'center' ? 'text-center items-center mx-auto' : (log.align === 'left' ? 'md:mr-auto text-left' : 'md:ml-auto md:text-right')} ${log.highlight ? 'border-[#02ACEA]' : log.final ? 'border-green-500' : 'border-[#E0E8F5]'}`}>
+                        <div className="text-[12px] font-bold text-[#64748B] mb-1">{log.time}</div>
+                        <div className={`text-[14px] font-extrabold mb-1 ${log.final ? 'text-green-700' : 'text-[#0A1838]'}`}>{log.action}</div>
+                        <div className="text-[12px] text-[#475569]">{log.actor}</div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
               
-              <div className="mt-4 text-center text-[11px] text-[#94A3B8]">
+              <div className="mt-8 text-center text-[11px] text-[#94A3B8]">
                 Illustrative audit trail using fictional names and data.
-              </div>
-            </div>
+              </div>       </div>
           </div>
         </div>
       </section>
