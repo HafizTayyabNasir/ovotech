@@ -100,55 +100,64 @@ export default function ThirdPage() {
 
                 {/* RIGHT SUB-COLUMN */}
                 <div className="sm:col-span-7 flex flex-col gap-4">
-                  {/* Top Right - Laptop/Dashboard Mockup */}
-                  <div className="bg-[#E2E8F0] rounded-[24px] p-5 pt-8 flex-1 shadow-lg relative overflow-hidden min-h-[260px] flex flex-col justify-end items-center">
-                     
-                     {/* Floating arrow button */}
-                     <div className="absolute top-5 right-5 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg z-20 text-[#0A1838] hover:scale-105 transition-transform cursor-pointer">
-                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                     </div>
+                  {/* Top Right - AI Extraction Visualization */}
+                  <div className="bg-white rounded-[24px] border border-[#E0E8F5] p-5 pt-6 flex-1 shadow-lg relative overflow-hidden min-h-[260px] flex flex-col justify-center">
+                    
+                    {/* Background decoration */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#02ACEA]/5 rounded-full blur-2xl"></div>
 
-                     {/* Laptop Screen */}
-                     <div className="w-[95%] bg-black p-1.5 rounded-t-[10px] relative z-10 shadow-2xl flex flex-col">
-                       <div className="bg-white rounded-t-[6px] h-[160px] w-full overflow-hidden flex">
-                          {/* Sidebar */}
-                          <div className="w-12 bg-[#F8FAFC] border-r border-[#E2E8F0] flex flex-col items-center py-4 gap-4">
-                             <div className="w-5 h-5 rounded bg-[#02ACEA]"></div>
-                             <div className="w-4 h-1 rounded bg-[#CBD5E1]"></div>
-                             <div className="w-4 h-1 rounded bg-[#CBD5E1]"></div>
-                             <div className="w-4 h-1 rounded bg-[#CBD5E1]"></div>
-                          </div>
-                          {/* Main Content */}
-                          <div className="flex-1 p-3 bg-[#F4F7FC]">
-                            <div className="w-24 h-2 bg-[#CBD5E1] rounded mb-4"></div>
-                            
-                            <div className="flex gap-2 mb-3">
-                              <div className="flex-1 h-14 bg-white rounded border border-[#E2E8F0] p-2 shadow-sm">
-                                <div className="w-12 h-1.5 bg-[#CBD5E1] rounded mb-2"></div>
-                                <div className="w-16 h-2 bg-[#02ACEA] rounded"></div>
-                              </div>
-                              <div className="flex-1 h-14 bg-white rounded border border-[#E2E8F0] p-2 shadow-sm">
-                                <div className="w-12 h-1.5 bg-[#CBD5E1] rounded mb-2"></div>
-                                <div className="w-10 h-2 bg-green-500 rounded"></div>
-                              </div>
-                            </div>
-                            
-                            {/* List items */}
-                            <div className="w-full h-8 bg-white rounded mb-2 border border-[#E2E8F0] shadow-sm flex items-center px-2">
-                               <div className="w-4 h-4 rounded-full bg-[#02ACEA]/20 mr-2"></div>
-                               <div className="w-20 h-1.5 bg-[#CBD5E1] rounded"></div>
-                            </div>
-                            <div className="w-full h-8 bg-white rounded border border-[#E2E8F0] shadow-sm flex items-center px-2">
-                               <div className="w-4 h-4 rounded-full bg-green-500/20 mr-2"></div>
-                               <div className="w-24 h-1.5 bg-[#CBD5E1] rounded"></div>
-                            </div>
-                          </div>
-                       </div>
-                     </div>
-                     {/* Laptop Base */}
-                     <div className="w-[105%] h-3 bg-[#CBD5E1] rounded-b-xl rounded-t-[2px] shadow-md relative z-10">
-                        <div className="w-16 h-1 bg-[#94A3B8] mx-auto rounded-b-md"></div>
-                     </div>
+                    <div className="flex flex-col gap-6 relative z-10">
+                      {/* Step 1: Processing Status */}
+                      <div className="flex items-center justify-between bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 shadow-sm">
+                        <div className="flex items-center gap-4">
+                           <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"></path></svg>
+                           </div>
+                           <div>
+                             <div className="text-[14px] font-extrabold text-[#0A1838]">AI Extraction Active</div>
+                             <div className="text-[11px] text-[#64748B]">Processing incoming correspondence...</div>
+                           </div>
+                        </div>
+                        <div className="text-right hidden sm:block">
+                          <div className="text-[20px] font-black text-[#02ACEA]">1.2s</div>
+                          <div className="text-[10px] text-[#64748B] uppercase font-bold tracking-wider">Turnaround</div>
+                        </div>
+                      </div>
+
+                      {/* Step 2: Source to Code Mapping */}
+                      <div className="flex items-center justify-between gap-4">
+                        {/* Source text */}
+                        <div className="flex-1 bg-white border border-[#E0E8F5] p-3 rounded-lg shadow-sm">
+                           <div className="text-[10px] text-[#64748B] font-bold uppercase mb-2 tracking-wider">Source Text</div>
+                           <div className="text-[13px] text-[#475569] leading-relaxed italic">
+                             "...patient has a history of <span className="bg-blue-100 text-blue-900 font-bold px-1 rounded">type 2 diabetes</span> and is currently taking <span className="bg-blue-100 text-blue-900 font-bold px-1 rounded">metformin</span>..."
+                           </div>
+                        </div>
+                        
+                        {/* Arrow */}
+                        <div className="text-[#CBD5E1] shrink-0 hidden lg:block">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+
+                        {/* Codes */}
+                        <div className="flex-1 flex flex-col gap-2">
+                           <div className="bg-white border border-[#E0E8F5] p-2 rounded-lg shadow-sm border-l-[3px] border-l-[#02ACEA] flex items-center justify-between">
+                             <div>
+                               <div className="text-[11px] font-bold text-[#0A1838]">Type 2 diabetes</div>
+                               <div className="text-[9px] text-[#64748B] font-mono mt-0.5">SNOMED: 44054006</div>
+                             </div>
+                             <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                           </div>
+                           <div className="bg-white border border-[#E0E8F5] p-2 rounded-lg shadow-sm border-l-[3px] border-l-[#02ACEA] flex items-center justify-between">
+                             <div>
+                               <div className="text-[11px] font-bold text-[#0A1838]">Metformin</div>
+                               <div className="text-[9px] text-[#64748B] font-mono mt-0.5">SNOMED: 372567009</div>
+                             </div>
+                             <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                           </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
                   {/* Bottom Right - Trusted Network */}
@@ -165,6 +174,73 @@ export default function ThirdPage() {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 — THE PROBLEM (before/after) */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">The Problem</span>
+            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Clinical correspondence creates more work than it should.</h2>
+            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Teams often move between documents, patient records and coding tools to find context, structure information and decide what belongs in the record.</p>
+          </div>
+
+          <div className="relative mb-12 bg-white border border-[#E0E8F5] rounded-3xl overflow-hidden shadow-lg">
+            <div className="flex flex-col md:flex-row">
+              {/* Left Side: Without connected process */}
+              <div className="flex-1 bg-[#FFF5F5] p-10 relative overflow-hidden">
+                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
+                  <path d="M 0,20 Q 50,150 100,50 T 200,80 T 300,20 T 400,100 T 500,50" stroke="#9B2C2C" strokeWidth="4" fill="none" />
+                  <path d="M 0,80 Q 80,10 150,100 T 250,50 T 350,120 T 500,80" stroke="#9B2C2C" strokeWidth="2" fill="none" strokeDasharray="5,5" />
+                </svg>
+                <div className="relative z-10">
+                  <h3 className="text-[20px] font-extrabold text-[#9B2C2C] mb-6">Without a connected process</h3>
+                  <ul className="space-y-5 text-[#9B2C2C] font-medium text-[16px]">
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">01</div> Open and read each document</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">02</div> Search for relevant patient context</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">03</div> Re-enter clinical information</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">04</div> Find and verify suitable codes</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">05</div> Track approval and posting separately</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Divider */}
+              <div className="w-full md:w-4 bg-gradient-to-b from-[#9B2C2C] to-[#166534] flex items-center justify-center relative">
+                <div className="absolute w-10 h-10 bg-white rounded-full shadow-lg border-2 border-gray-200 flex items-center justify-center z-20 font-bold text-gray-500 transform md:-rotate-90 text-[12px]">VS</div>
+              </div>
+              
+              {/* Right Side: With Ovotech */}
+              <div className="flex-1 bg-[#F0FDF4] p-10 relative overflow-hidden">
+                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
+                  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#166534" strokeWidth="8" strokeLinecap="round" />
+                  <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
+                  <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
+                </svg>
+                <div className="relative z-10">
+                  <h3 className="text-[20px] font-extrabold text-[#166534] mb-6">With Ovotech 2.0</h3>
+                  <ul className="space-y-5 text-[#166534] font-medium text-[16px]">
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Correspondence enters one visible queue</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Relevant information is structured</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Suggestions include source evidence</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> People review, amend and approve</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> The outcome and write-back remain traceable</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 font-bold text-[#0A1838] text-[14px] md:text-[16px] mb-6 shadow-sm">
+              Document extraction <span className="text-[#02ACEA] mx-2">+</span> 
+              Clinical structuring <span className="text-[#02ACEA] mx-2">+</span> 
+              SNOMED suggestions <span className="text-[#02ACEA] mx-2">+</span> 
+              Human review <span className="text-[#02ACEA] mx-2">+</span> 
+              Controlled write-back
+            </div>
+            <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
           </div>
         </div>
       </section>
@@ -627,138 +703,6 @@ export default function ThirdPage() {
         </div>
       </section>
 
-      {/* SECTION 6 — FOR MEDICAL CODERS */}
-      <section className="py-20 bg-[#F4F7FC]">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row-reverse items-center gap-12">
-          <div className="lg:w-1/2">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">For Medical Coders</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">A workspace built around the coder.</h2>
-            <p className="text-[#0A1838] font-bold text-[18px] mb-4">Less searching. Less repetitive processing. More focused review.</p>
-            <p className="text-[#475569] text-[16px] mb-6">Open assigned correspondence, review structured information, compare suggestions with their source and record a clear decision in one place.</p>
-            
-            <ul className="space-y-3 mb-8">
-              {[
-                "Personal workload and priority queue",
-                "Source evidence beside each suggestion",
-                "Accept, reject, amend or escalate",
-                "Patient context without losing the source"
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-[#475569] font-medium">
-                  <div className="w-5 h-5 rounded-full bg-[#02ACEA] text-white flex items-center justify-center text-[12px]">✓</div>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="lg:w-1/2 w-full">
-            <div className="bg-white rounded-2xl border border-[#E0E8F5] p-6 shadow-lg">
-              <div className="flex gap-4 mb-6">
-                <div className="bg-gray-50 border border-gray-100 rounded-lg p-3 flex-1 text-center">
-                  <div className="text-[11px] text-[#64748B] font-bold uppercase">Assigned</div>
-                  <div className="text-[20px] font-extrabold text-blue-600">24</div>
-                </div>
-                <div className="bg-gray-50 border border-gray-100 rounded-lg p-3 flex-1 text-center">
-                  <div className="text-[11px] text-[#64748B] font-bold uppercase">Ready</div>
-                  <div className="text-[20px] font-extrabold text-green-600">8</div>
-                </div>
-                <div className="bg-gray-50 border border-gray-100 rounded-lg p-3 flex-1 text-center">
-                  <div className="text-[11px] text-[#64748B] font-bold uppercase">Attention</div>
-                  <div className="text-[20px] font-extrabold text-red-600">3</div>
-                </div>
-              </div>
-              
-              <div className="bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-5 mb-6">
-                <div className="flex justify-between items-start mb-2">
-                  <div className="text-[12px] font-bold text-[#64748B] uppercase tracking-wide">Next priority</div>
-                  <div className="text-[11px] font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded">Ready for human review</div>
-                </div>
-                <h4 className="text-[16px] font-bold text-[#0A1838]">Discharge summary <span className="text-[#64748B] font-normal">(SAMPLE-042)</span></h4>
-                <div className="text-[13px] text-[#475569] mt-1">Evidence and history available</div>
-                <button className="mt-4 w-full py-2 bg-[#0A1838] text-white text-[13px] font-bold rounded-lg hover:bg-black transition-colors">Open Document</button>
-              </div>
-              
-              <div className="flex justify-between items-center text-[11px] font-bold text-[#64748B]">
-                <span className="flex flex-col items-center gap-1"><span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center">1</span> Open source</span>
-                <span className="text-gray-300">→</span>
-                <span className="flex flex-col items-center gap-1"><span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center">2</span> Check extraction</span>
-                <span className="text-gray-300">→</span>
-                <span className="flex flex-col items-center gap-1"><span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center">3</span> Review coding</span>
-                <span className="text-gray-300">→</span>
-                <span className="flex flex-col items-center gap-1"><span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center">4</span> Record decision</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 7 — THE PROBLEM (before/after) */}
-      <section className="py-20 bg-white">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">The Problem</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Clinical correspondence creates more work than it should.</h2>
-            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Teams often move between documents, patient records and coding tools to find context, structure information and decide what belongs in the record.</p>
-          </div>
-
-          <div className="relative mb-12 bg-white border border-[#E0E8F5] rounded-3xl overflow-hidden shadow-lg">
-            <div className="flex flex-col md:flex-row">
-              {/* Left Side: Without connected process */}
-              <div className="flex-1 bg-[#FFF5F5] p-10 relative overflow-hidden">
-                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
-                  <path d="M 0,20 Q 50,150 100,50 T 200,80 T 300,20 T 400,100 T 500,50" stroke="#9B2C2C" strokeWidth="4" fill="none" />
-                  <path d="M 0,80 Q 80,10 150,100 T 250,50 T 350,120 T 500,80" stroke="#9B2C2C" strokeWidth="2" fill="none" strokeDasharray="5,5" />
-                </svg>
-                <div className="relative z-10">
-                  <h3 className="text-[20px] font-extrabold text-[#9B2C2C] mb-6">Without a connected process</h3>
-                  <ul className="space-y-5 text-[#9B2C2C] font-medium text-[16px]">
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">01</div> Open and read each document</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">02</div> Search for relevant patient context</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">03</div> Re-enter clinical information</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">04</div> Find and verify suitable codes</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">05</div> Track approval and posting separately</li>
-                  </ul>
-                </div>
-              </div>
-              
-              {/* Divider */}
-              <div className="w-full md:w-4 bg-gradient-to-b from-[#9B2C2C] to-[#166534] flex items-center justify-center relative">
-                <div className="absolute w-10 h-10 bg-white rounded-full shadow-lg border-2 border-gray-200 flex items-center justify-center z-20 font-bold text-gray-500 transform md:-rotate-90 text-[12px]">VS</div>
-              </div>
-              
-              {/* Right Side: With Ovotech */}
-              <div className="flex-1 bg-[#F0FDF4] p-10 relative overflow-hidden">
-                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
-                  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#166534" strokeWidth="8" strokeLinecap="round" />
-                  <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
-                  <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
-                </svg>
-                <div className="relative z-10">
-                  <h3 className="text-[20px] font-extrabold text-[#166534] mb-6">With Ovotech 2.0</h3>
-                  <ul className="space-y-5 text-[#166534] font-medium text-[16px]">
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Correspondence enters one visible queue</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Relevant information is structured</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Suggestions include source evidence</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> People review, amend and approve</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> The outcome and write-back remain traceable</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 font-bold text-[#0A1838] text-[14px] md:text-[16px] mb-6 shadow-sm">
-              Document extraction <span className="text-[#02ACEA] mx-2">+</span> 
-              Clinical structuring <span className="text-[#02ACEA] mx-2">+</span> 
-              SNOMED suggestions <span className="text-[#02ACEA] mx-2">+</span> 
-              Human review <span className="text-[#02ACEA] mx-2">+</span> 
-              Controlled write-back
-            </div>
-            <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 8 — ROLE-BASED EXPERIENCE */}
       <section className="py-24 bg-[#0A1838] relative overflow-hidden">
         <div style={{ position: "absolute", top: "0%", left: "0%", width: "500px", height: "500px", background: "radial-gradient(circle, rgba(2, 172, 234, 0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
@@ -811,114 +755,6 @@ export default function ThirdPage() {
                     </div>
                   </div>
                )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 9 — HUMAN OVERSIGHT */}
-      <section className="py-20 bg-white">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 text-center">
-          <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">Human Oversight</span>
-          <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-6">Your workflow. Your rules.</h2>
-          <p className="text-[#475569] text-[16px] max-w-3xl mx-auto leading-relaxed mb-6">
-            Ovotech structures correspondence and suggests coding. Your practice configures review routes, confidence thresholds and escalation rules. Where enabled, policy-based approval and filing can automate eligible documents; teams review the work routed to them.
-          </p>
-          <Link href="/security" className="inline-block text-[#02ACEA] font-bold text-[15px] hover:underline mb-12">
-            Explore security and oversight →
-          </Link>
-          
-          <div className="relative w-full max-w-5xl mx-auto mt-12 py-8">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-[28px] left-8 right-8 h-1 bg-[#E0E8F5] z-0"></div>
-            <div className="flex flex-col md:flex-row justify-between gap-6 relative z-10">
-              {[
-                { step: "01", title: "Clinical document", sub: "source retained" },
-                { step: "02", title: "Processing", sub: "information structured" },
-                { step: "03", title: "Suggestions", sub: "evidence presented" },
-                { step: "04", title: "Human review", sub: "accept, amend or reject", highlight: "blue" },
-                { step: "05", title: "Approval", sub: "explicit authorisation", highlight: "green" },
-                { step: "06", title: "Patient record", sub: "controlled write-back" }
-              ].map((item, i) => (
-                <div key={i} className="flex flex-row md:flex-col items-center gap-4 md:gap-2 flex-1">
-                  <div className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-[14px] border-4 border-white shadow-sm shrink-0 ${
-                    item.highlight === 'blue' ? 'bg-blue-100 text-blue-900 border-blue-200' :
-                    item.highlight === 'green' ? 'bg-green-100 text-green-900 border-green-200' :
-                    'bg-[#F8FAFC] text-[#0A1838] border-[#E0E8F5]'
-                  }`}>
-                    {item.step}
-                  </div>
-                  <div className="md:text-center bg-white md:bg-transparent p-3 md:p-0 rounded-lg border md:border-none border-[#E0E8F5] shadow-sm md:shadow-none w-full md:w-auto">
-                    <div className="font-bold text-[#0A1838] text-[13px] md:text-[14px]">{item.title}</div>
-                    <div className="text-[11px] text-[#64748B] mt-0.5">{item.sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 10 — EMIS WRITE-BACK */}
-      <section className="py-20 bg-[#F4F7FC]">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">EMIS Write-Back</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">From review to patient record.</h2>
-            <p className="text-[#475569] text-[16px] mb-8 leading-relaxed">
-              In the manual review workflow, approve the reviewed selection before filing to EMIS. Eligible documents can follow configured auto-approval and auto-filing policies when enabled.
-            </p>
-            
-            <div className="flex flex-col items-center justify-center relative w-full h-[400px]">
-              {/* Funnel SVG Background */}
-              <svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full opacity-10">
-                <path d="M 0,0 L 400,0 L 250,200 L 250,400 L 150,400 L 150,200 Z" fill="#02ACEA" />
-              </svg>
-              
-              <div className="relative z-10 w-full flex flex-col items-center gap-2 text-[13px] font-bold text-[#0A1838]">
-                <div className="w-[100%] max-w-[400px] flex items-center justify-center gap-3 bg-white p-3 rounded-lg border border-[#E0E8F5] shadow-sm"><span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center">1</span> Reviewed selection <span className="text-[#64748B] font-normal">(1 accepted code)</span></div>
-                <div className="w-[10px] h-4 border-l-2 border-dashed border-[#02ACEA]"></div>
-                <div className="w-[85%] max-w-[360px] flex items-center justify-center gap-3 bg-white p-3 rounded-lg border border-[#E0E8F5] shadow-sm"><span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center">2</span> Authorised approval <span className="text-[#64748B] font-normal">(Jamie Davies · 09:49)</span></div>
-                <div className="w-[10px] h-4 border-l-2 border-dashed border-[#02ACEA]"></div>
-                <div className="w-[70%] max-w-[320px] flex items-center justify-center gap-3 bg-[#02ACEA] text-white p-3 rounded-lg shadow-md"><span className="w-6 h-6 rounded-full bg-white text-[#0A1838] flex items-center justify-center">3</span> EMIS Web write-back <span className="text-white/80 font-normal">(ready to post)</span></div>
-                <div className="w-[10px] h-4 border-l-2 border-dashed border-[#02ACEA]"></div>
-                <div className="w-[55%] max-w-[280px] flex items-center justify-center gap-3 bg-white p-3 rounded-lg border border-[#E0E8F5] shadow-sm"><span className="w-6 h-6 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center">4</span> Recorded outcome <span className="text-[#64748B] font-normal">(traceable status)</span></div>
-              </div>
-            </div>
-          </div>
-          <div className="lg:w-1/2 w-full">
-            <div className="bg-white rounded-2xl border border-[#E0E8F5] p-6 shadow-lg">
-              <div className="bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-5 mb-6">
-                <h3 className="font-bold text-[#0A1838] text-[15px] mb-1">CONTROLLED WRITE-BACK</h3>
-                <p className="text-[13px] text-[#475569] mb-4">One accepted concept is ready.</p>
-                
-                <div className="space-y-3 text-[13px] mb-6">
-                  <div className="flex justify-between items-center pb-2 border-b border-gray-100">
-                    <span className="text-[#64748B] font-bold">Destination</span>
-                    <span className="font-bold text-[#0A1838]">EMIS Web</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-gray-100">
-                    <span className="text-[#64748B] font-bold">Approval</span>
-                    <span className="font-bold text-green-700 flex items-center gap-1">✓ Authorised</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-gray-100">
-                    <span className="text-[#64748B] font-bold">Duplicate check</span>
-                    <span className="font-bold text-green-700">Clear</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#64748B] font-bold">Posting status</span>
-                    <span className="font-bold text-[#02ACEA] bg-blue-50 px-2 py-0.5 rounded">Awaiting deliberate action</span>
-                  </div>
-                </div>
-                
-                <button className="w-full py-3 bg-[#0A1838] text-white text-[14px] font-bold rounded-lg hover:bg-black transition-colors flex justify-center items-center gap-2">
-                  Post approved information <span className="text-[#02ACEA]">→</span>
-                </button>
-              </div>
-              
-              <div className="text-center text-[11px] text-[#94A3B8]">
-                Illustrative product view. No clinical system is connected.
-              </div>
             </div>
           </div>
         </div>
