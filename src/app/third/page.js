@@ -927,43 +927,7 @@ export default function ThirdPage() {
       {/* SECTION 11 — EXCEPTIONS & AUDITABILITY */}
       <section className="py-20 bg-white">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">Exceptions & Auditability</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">When something needs attention, Ovotech surfaces it.</h2>
-            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Uncertainty, missing information and failed actions stay visible so the right person can investigate and resolve them.</p>
-          </div>
-
           <div className="flex flex-col gap-12 w-full">
-            {/* Exceptions Kanban Row */}
-            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E0E8F5] p-6 shadow-sm">
-              <h3 className="font-extrabold text-[#0A1838] text-[16px] mb-4 pb-3 border-b border-[#E0E8F5]">Exceptions queue — 6 open</h3>
-              <div className="flex overflow-x-auto gap-4 pb-4">
-                <div className="min-w-[280px] bg-white rounded-xl border border-red-200 shadow-sm p-4 border-t-4 border-t-red-500">
-                   <div className="text-[12px] font-bold text-red-700 uppercase mb-3">Needs Attention (3)</div>
-                   <div className="flex flex-col gap-3">
-                     <div className="bg-gray-50 p-3 rounded border border-gray-100"><div className="font-bold text-[#0A1838] text-[13px]">Missing patient match</div><div className="text-[#64748B] text-[11px] italic mt-0.5">assign or investigate</div></div>
-                     <div className="bg-gray-50 p-3 rounded border border-gray-100"><div className="font-bold text-[#0A1838] text-[13px]">Processing error</div><div className="text-[#64748B] text-[11px] italic mt-0.5">technical attention</div></div>
-                     <div className="bg-gray-50 p-3 rounded border border-gray-100"><div className="font-bold text-[#0A1838] text-[13px]">Write-back failure</div><div className="text-[#64748B] text-[11px] italic mt-0.5">retry after resolution</div></div>
-                   </div>
-                </div>
-                
-                <div className="min-w-[280px] bg-white rounded-xl border border-orange-200 shadow-sm p-4 border-t-4 border-t-orange-500">
-                   <div className="text-[12px] font-bold text-orange-700 uppercase mb-3">Clinical Decision (2)</div>
-                   <div className="flex flex-col gap-3">
-                     <div className="bg-gray-50 p-3 rounded border border-gray-100"><div className="font-bold text-[#0A1838] text-[13px]">Low-confidence extraction</div><div className="text-[#64748B] text-[11px] italic mt-0.5">human check required</div></div>
-                     <div className="bg-gray-50 p-3 rounded border border-gray-100"><div className="font-bold text-[#0A1838] text-[13px]">Coding review required</div><div className="text-[#64748B] text-[11px] italic mt-0.5">clinical decision needed</div></div>
-                   </div>
-                </div>
-
-                <div className="min-w-[280px] bg-white rounded-xl border border-blue-200 shadow-sm p-4 border-t-4 border-t-blue-500">
-                   <div className="text-[12px] font-bold text-blue-700 uppercase mb-3">Return to Source (1)</div>
-                   <div className="flex flex-col gap-3">
-                     <div className="bg-gray-50 p-3 rounded border border-gray-100"><div className="font-bold text-[#0A1838] text-[13px]">Insufficient information</div><div className="text-[#64748B] text-[11px] italic mt-0.5">return to source</div></div>
-                   </div>
-                </div>
-              </div>
-            </div>
-            
             {/* Audit Trail Vertical Timeline */}
             <div className="bg-gradient-to-b from-white to-[#F8FAFC] rounded-2xl border border-[#E0E8F5] p-6 lg:p-10 shadow-lg flex flex-col relative overflow-hidden">
               {/* Decorative background blurs */}
