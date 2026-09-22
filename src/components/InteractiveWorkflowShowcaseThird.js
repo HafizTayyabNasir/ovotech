@@ -280,7 +280,7 @@ export default function InteractiveWorkflowShowcaseThird() {
             </div>
 
             {/* Screen Image with Framer Motion Transition */}
-            <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", background: "#0A1838" }}>
+            <div style={{ width: "100%", background: "#0A1838" }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep.number}
@@ -288,12 +288,12 @@ export default function InteractiveWorkflowShowcaseThird() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.02 }}
                   transition={{ duration: 0.35 }}
-                  style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0 }}
+                  style={{ width: "100%" }}
                 >
                   <img
                     src={activeStep.image}
                     alt={activeStep.title}
-                    style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", display: "block" }}
+                    style={{ width: "100%", height: "auto", display: "block" }}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -437,5 +437,6 @@ export default function InteractiveWorkflowShowcaseThird() {
     </section>
   );
 }
+
 
 
