@@ -81,10 +81,10 @@ const workflowSteps = [
   },
   {
     number: "06",
-    category: "EMIS WRITE-BACK",
-    title: "Structured EMIS Record Write-Back",
-    description: "Upon reviewer sign-off, approved clinical information and SNOMED CT codes write back directly into the EMIS Web patient record.",
-    tag: "STATUS 200 — COMMITTED TO EMIS WEB",
+    category: "clinical record update",
+    title: "Structured clinical record system Record Write-Back",
+    description: "Upon reviewer sign-off, approved clinical information and SNOMED CT codes write back directly into the clinical record system patient record.",
+    tag: "STATUS 200 — COMMITTED TO clinical record system",
     image: "/step5-emis-writeback.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -195,7 +195,7 @@ export default function InteractiveWorkflowShowcaseThird() {
               OVOTECH WORKFLOW : HOW IT WORKS
             </span>
             <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 8px" }}>
-              From incoming document to verified EMIS record in seconds.
+              From incoming document to verified clinical record system record in seconds.
             </h2>
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
               Scroll to explore the 6-step clinical document workflow preview.

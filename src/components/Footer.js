@@ -8,7 +8,7 @@ const footerLinks = {
     { label: "Clinical Review", href: "/solutions#clinical-review" },
     { label: "Patient History", href: "/solutions#patient-history" },
     { label: "SNOMED CT Coding", href: "/solutions#snomed-coding" },
-    { label: "EMIS Web Integration", href: "/solutions#emis-integration" },
+    { label: "Clinical System Integration", href: "/solutions#emis-integration" },
     { label: "Dashboard & KPIs", href: "/solutions#kpi-tracking" },
   ],
   "Who We Help": [

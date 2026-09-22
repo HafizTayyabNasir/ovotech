@@ -30,7 +30,7 @@ export default function Navbar() {
     { label: "Second", href: "/second", key: "second" },
     {
       label: "Solutions", href: "/solutions", key: "solutions",
-      topSection: { label: "Medical Coding", href: "/solutions", desc: "Our end-to-end clinical coding tool" },
+      topSection: { label: "Medical Coding", href: "/solutions/medical_coding", desc: "Our end-to-end clinical coding tool" },
       columns: [
         { header: "Inside Medical Coding", links: [
           { label: "01 Review Queue", href: "/solutions/review-queue", desc: "Workload management for incoming clinical documents" },
@@ -39,11 +39,11 @@ export default function Navbar() {
         ]},
         { header: "", links: [
           { label: "04 SNOMED CT Coding Support", href: "/solutions/snomed-coding", desc: "Assisted concept recognition & code suggestions" },
-          { label: "05 EMIS Web Integration", href: "/solutions/emis-integration", desc: "Structured write-back to patient clinical records" },
+          { label: "05 Clinical System Integration", href: "/solutions/emis-integration", desc: "Structured write-back to patient clinical records" },
           { label: "06 Value & KPI Tracking", href: "/solutions/kpi-tracking", desc: "Demonstrate time saved & released practice capacity" },
         ]},
       ],
-      promo: { title: "EMIS Web Integration", text: "Seamless structured write-back to patient clinical records.", bg: "from-primary to-primary-dark" },
+      promo: { title: "Clinical System Integration", text: "Seamless structured write-back to patient clinical records.", bg: "from-primary to-primary-dark" },
     },
     {
       label: "About", href: "/about", key: "about",

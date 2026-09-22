@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Ovotech - Clinical Document Processing & Coding Platform",
   description:
-    "Ovotech is a clinical document processing and coding workflow platform designed specifically for UK GP practices, from intake to EMIS Web write-back.",
+    "Ovotech is a clinical document processing and coding workflow platform designed specifically for UK GP practices, from intake to clinical record update.",
 };
 
 export default function RootLayout({ children }) {

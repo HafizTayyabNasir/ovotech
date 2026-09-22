@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InteractiveWorkflowShowcaseThird from "@/components/InteractiveWorkflowShowcaseThird";
 
+
 export default function ThirdPage() {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -202,7 +203,7 @@ export default function ThirdPage() {
                   { num: "04", title: "Suggest", desc: "SNOMED CT codes are presented for consideration." },
                   { num: "05", title: "Review", desc: "An authorised person checks context and evidence." },
                   { num: "06", title: "Approve", desc: "The final selection is explicitly approved." },
-                  { num: "07", title: "Write back", desc: "Approved information is posted to EMIS Web." }
+                  { num: "07", title: "Write back", desc: "Approved information is posted to clinical record system." }
                 ].map((step, i) => (
                   <div key={i} className="flex flex-col items-center w-32 text-center group">
                     <div className="w-20 h-20 bg-white rounded-full border-4 border-[#02ACEA] shadow-lg flex items-center justify-center font-extrabold text-[24px] text-[#0A1838] mb-4 group-hover:scale-110 transition-transform relative bg-clip-padding">
@@ -216,7 +217,7 @@ export default function ThirdPage() {
             </div>
           </div>
           <div className="text-center text-[12px] text-[#64748B]">
-            Current clinical-system scope: EMIS Web. Integration availability and deployment readiness are confirmed during evaluation.
+            Current clinical-system scope: clinical record system. Integration availability and deployment readiness are confirmed during evaluation.
           </div>
         </div>
       </section>
@@ -784,7 +785,7 @@ export default function ThirdPage() {
                     { time: "09:44", action: "Coding suggestion created", actor: "Ovotech processing", align: "right", type: "system" },
                     { time: "09:47", action: "Suggestion accepted", actor: "Jamie Davies", align: "left", type: "human" },
                     { time: "09:49", action: "Review approved", actor: "Dr A. Khan", align: "right", type: "human" },
-                    { time: "09:53", action: "Write-back completed", actor: "EMIS Web", align: "center", type: "success" }
+                    { time: "09:53", action: "Write-back completed", actor: "clinical record system", align: "center", type: "success" }
                   ].map((log, i) => {
                     
                     // Determine styles based on type
