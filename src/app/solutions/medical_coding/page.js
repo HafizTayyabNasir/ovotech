@@ -442,7 +442,7 @@ export default function ThirdPage() {
                   <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
                 </svg>
                 <div className="relative z-10">
-                  <h3 className="text-[20px] font-extrabold text-[#166534] mb-6">With Ovotech 2.0</h3>
+                  <h3 className="text-[20px] font-extrabold text-[#166534] mb-6">With Ovotech</h3>
                   <ul className="space-y-5 text-[#166534] font-medium text-[16px]">
                     <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Correspondence enters one visible queue</li>
                     <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Relevant information is structured</li>
@@ -883,4 +883,5 @@ export default function ThirdPage() {
     </>
   );
 }
+
 

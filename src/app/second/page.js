@@ -660,7 +660,7 @@ export default function SecondPage() {
             </div>
             
             <div className="bg-[#F0FDF4] rounded-3xl p-8 border border-[#BBF7D0] shadow-md">
-              <h3 className="text-[18px] font-extrabold text-[#166534] mb-6">With Ovotech 2.0</h3>
+              <h3 className="text-[18px] font-extrabold text-[#166534] mb-6">With Ovotech</h3>
               <ul className="space-y-4 text-[#166534] font-medium text-[15px]">
                 <li className="flex gap-3"><span className="text-green-500">✓</span> Correspondence enters one visible queue</li>
                 <li className="flex gap-3"><span className="text-green-500">✓</span> Relevant information is structured</li>
@@ -1005,3 +1005,4 @@ export default function SecondPage() {
     </>
   );
 }
+
