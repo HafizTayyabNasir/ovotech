@@ -266,7 +266,7 @@ export default function InteractiveWorkflowShowcaseThird() {
             </div>
 
             {/* 2. Left Column: UI Workspace Screen Card (Desktop Format) */}
-            <div className="flex-1 w-full max-w-[800px] shrink-0 flex flex-col" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
+            <div className="flex-1 w-full max-w-[800px] shrink-0 flex flex-col self-start lg:mt-8" style={{ background: "rgba(255, 255, 255, 0.04)", backdropFilter: "blur(12px)", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)" }}>
             {/* Desktop Browser Status Bar */}
             <div style={{ background: "rgba(255,255,255,0.06)", padding: "12px 16px", display: "flex", alignItems: "center", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: "11px", color: "rgba(255,255,255,0.8)", fontWeight: 600, gap: "12px" }}>
               <div style={{ display: "flex", gap: "6px" }}>
@@ -300,7 +300,7 @@ export default function InteractiveWorkflowShowcaseThird() {
             </div>
 
             {/* Bottom Controls Bar */}
-            <div style={{ background: "rgba(2, 172, 234, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
+            <div style={{ background: "rgba(2, 172, 234, 0.95)", padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ fontSize: "12px", fontFamily: "monospace", color: "#FFF", display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ color: "#FFF" }}>▶</span> {activeStep.tag}
               </div>
@@ -437,6 +437,8 @@ export default function InteractiveWorkflowShowcaseThird() {
     </section>
   );
 }
+
+
 
 
 
