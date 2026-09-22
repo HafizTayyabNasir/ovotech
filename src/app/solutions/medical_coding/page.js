@@ -193,7 +193,7 @@ export default function ThirdPage() {
             {/* Horizontal Timeline */}
             <div className="relative flex justify-between items-start w-full px-2 mt-4 mb-8">
               {/* Background Line */}
-              <div className="absolute left-[32px] right-[32px] top-6 h-[2px] bg-[#E0E8F5] -z-10">
+              <div className="absolute left-[32px] right-[32px] top-6 h-[2px] bg-[#E0E8F5] z-0">
                 {/* Progress Line */}
                 <div className="h-full bg-[#02ACEA] transition-all duration-500" style={{ width: `${(activeAccordion / 6) * 100}%` }}></div>
               </div>
