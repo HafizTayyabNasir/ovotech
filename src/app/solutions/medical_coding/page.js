@@ -858,7 +858,7 @@ export default function ThirdPage() {
                     </div>
                  </div>
                  
-                 <div className="absolute top-[260px] left-[-60px] right-[-60px] flex justify-center">
+                 <div className="absolute top-[245px] left-[-60px] right-[-60px] flex justify-center">
                     <div className="w-[110%] bg-[#02ACEA] p-5 rounded-xl border-4 border-white shadow-xl text-center transform z-10 text-white">
                        <h3 className="font-bold text-white text-[15px] mb-1">Operational controls</h3>
                        <p className="text-white/90 text-[12px]">Monitoring, environment separation and managed configuration support oversight.</p>
