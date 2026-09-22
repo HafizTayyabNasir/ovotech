@@ -9,7 +9,7 @@ import InteractiveWorkflowShowcaseThird from "@/components/InteractiveWorkflowSh
 
 
 export default function ThirdPage() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(-1);
   const [activeAccordion, setActiveAccordion] = useState(0);
 
   // Business Value Calculator State
@@ -452,18 +452,18 @@ export default function ThirdPage() {
             {/* Custom Toggle Switch */}
             <div className="flex justify-center mb-12">
               <div className="bg-[#112146] border border-[#2A3858] p-1 rounded-full inline-flex relative w-[400px]">
-                <div className={`absolute top-1 bottom-1 w-[195px] bg-[#02ACEA] rounded-full transition-transform duration-300 shadow-lg ${activeTab === 0 ? 'translate-x-0' : 'translate-x-[195px] bg-purple-500'}`}></div>
-                <button onClick={() => setActiveTab(0)} className={`flex-1 relative z-10 py-3 text-center text-[13px] font-bold rounded-full transition-colors duration-300 ${activeTab === 0 ? 'text-white' : 'text-gray-400 hover:text-white'}`}>
+                <div className={`absolute top-1 bottom-1 w-[195px] bg-[#02ACEA] rounded-full transition-all duration-300 shadow-lg ${activeTab === 0 ? 'translate-x-0 opacity-100' : activeTab === 1 ? 'translate-x-[195px] opacity-100' : 'opacity-0'}`}></div>
+                <button onClick={() => setActiveTab(activeTab === 0 ? -1 : 0)} className={`flex-1 relative z-10 py-3 text-center text-[13px] font-bold rounded-full transition-colors duration-300 ${activeTab === 0 ? 'text-white' : 'text-gray-400 hover:text-white'}`}>
                   Medical Coder / Clinical Reviewer
                 </button>
-                <button onClick={() => setActiveTab(1)} className={`flex-1 relative z-10 py-3 text-center text-[13px] font-bold rounded-full transition-colors duration-300 ${activeTab === 1 ? 'text-white' : 'text-gray-400 hover:text-white'}`}>
+                <button onClick={() => setActiveTab(activeTab === 1 ? -1 : 1)} className={`flex-1 relative z-10 py-3 text-center text-[13px] font-bold rounded-full transition-colors duration-300 ${activeTab === 1 ? 'text-white' : 'text-gray-400 hover:text-white'}`}>
                   Practice Admin
                 </button>
               </div>
             </div>
 
-            <div className="bg-[#112146] rounded-3xl border border-[#2A3858] shadow-2xl overflow-hidden relative min-h-[300px]">
-               {activeTab === 0 ? (
+            <div className={`bg-[#112146] rounded-3xl border-[#2A3858] shadow-2xl overflow-hidden relative transition-all duration-500 ${activeTab === -1 ? 'h-0 opacity-0 border-0' : 'opacity-100 border'}`}>
+               {activeTab === 0 && (
                   <div className="p-6 lg:p-10 animate-fade-in border-l-4 border-l-[#02ACEA] bg-[#F4F7FC]">
                     <div className="max-w-[1350px] mx-auto">
                       <div className="text-center mb-12">
@@ -566,7 +566,8 @@ export default function ThirdPage() {
                       </div>
                     </div>
                   </div>
-               ) : (
+               )}
+               {activeTab === 1 && (
                   <div className="p-6 lg:p-10 animate-fade-in border-l-4 border-l-[#02ACEA] bg-[#F4F7FC]">
                     <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
