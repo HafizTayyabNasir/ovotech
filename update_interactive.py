@@ -1,9 +1,17 @@
-"use client";
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import ParticlesBackground from "./ParticlesBackground";
+﻿import re
 
-const workflowSteps = [
+with open(r'd:\Ovotech\ovotech-main\ovotech-main\src\components\InteractiveWorkflowShowcaseThird.js', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# 1. Replace workflowSteps
+# Find where workflowSteps starts and ends
+start_marker = "const workflowSteps = ["
+end_marker = "];\n\nexport default function InteractiveWorkflowShowcaseThird() {"
+
+start_idx = content.find(start_marker)
+end_idx = content.find(end_marker)
+
+new_steps = """const workflowSteps = [
   {
     number: "01",
     category: "CLINICAL OVERVIEW",
@@ -97,120 +105,20 @@ const workflowSteps = [
       </svg>
     )
   }
-]];
+]"""
 
-export default function InteractiveWorkflowShowcaseThird() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const containerRef = useRef(null);
+if start_idx != -1 and end_idx != -1:
+    content = content[:start_idx] + new_steps + content[end_idx:]
 
-  // Scroll spy logic
-  // Use scroll position to determine active step
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      
-      const { top, height } = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const scrollDistance = -top;
-      const scrollableHeight = height - windowHeight;
-      
-      if (scrollDistance <= 0) {
-        setActiveIndex(0);
-        return;
-      }
-      
-      if (scrollDistance >= scrollableHeight) {
-        setActiveIndex(workflowSteps.length - 1);
-        return;
-      }
-      
-      const progress = scrollDistance / scrollableHeight;
-      const newIndex = Math.min(
-        workflowSteps.length - 1,
-        Math.max(0, Math.floor(progress * workflowSteps.length))
-      );
-      
-      setActiveIndex(newIndex);
-    };
+# 2. Update Layout code
+# We will replace the left group layout code
+layout_start = '<div className="flex gap-4 lg:gap-6 w-full max-w-[400px] justify-center lg:justify-end">'
+layout_end = '{/* Mobile Active Step Text (Hidden on Desktop) */}'
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+layout_start_idx = content.find(layout_start)
+layout_end_idx = content.find(layout_end)
 
-  const handleStepClick = (index) => {
-    setActiveIndex(index);
-    // Note: click doesn't auto-scroll the page in this simple implementation, 
-    // it just changes the state visually if they manage to click it while pinned.
-    
-    // Optional: smooth scroll the window to the corresponding chunk of the 400vh container
-    if (containerRef.current) {
-      const { top } = containerRef.current.getBoundingClientRect();
-      const scrollableHeight = containerRef.current.offsetHeight - window.innerHeight;
-      const targetScroll = window.scrollY + top + (index / workflowSteps.length) * scrollableHeight;
-      window.scrollTo({ top: targetScroll, behavior: "smooth" });
-    }
-  };
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + workflowSteps.length) % workflowSteps.length);
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % workflowSteps.length);
-  };
-
-  const activeStep = workflowSteps[activeIndex];
-
-  return (
-    <section ref={containerRef} style={{ height: "250vh", position: "relative", background: "#0A1838" }}>
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          background: "#0A1838",
-          color: "#FFFFFF",
-          padding: "10vh 0 40px 0",
-          overflow: "hidden"
-        }}
-      >
-        <ParticlesBackground color="#02ACEA" />
-        {/* Background grid pattern */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "radial-gradient(rgba(2, 172, 234, 0.12) 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-            pointerEvents: "none",
-            opacity: 0.5
-          }}
-        />
-
-        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8" style={{ position: "relative", zIndex: 10 }}>
-          {/* Section Header */}
-          <div style={{ textAlign: "center", marginBottom: "3vh" }}>
-            <span style={{ display: "inline-block", background: "rgba(0,0,0,0.8)", color: "#FFFFFF", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", padding: "4px 16px", borderRadius: "20px", textTransform: "uppercase", marginBottom: "8px", border: "2px solid #000000" }}>
-              OVOTECH WORKFLOW : HOW IT WORKS
-            </span>
-            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", lineHeight: 1.15, maxWidth: "800px", margin: "0 auto 8px" }}>
-              OvoTech | Six-step platform walkthrough
-            </h2>
-            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", maxWidth: "620px", margin: "0 auto" }}>
-              Screenshot sequence: Clinical Overview → Review Queue → Clinical Review → Patient History → Coding Review → Reviewed Documents.
-            </p>
-          </div>
-
-        {/* Main 2-Column Layout with inner timeline */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center lg:items-stretch lg:justify-center w-full">
-          
-          {/* Left Group: Timeline + Screenshot */}
-          <div className="flex gap-4 lg:gap-6 w-full lg:w-[55%] justify-center lg:justify-end">
+new_layout = """<div className="flex gap-4 lg:gap-6 w-full lg:w-[55%] justify-center lg:justify-end">
             {/* 1. Animated Vertical Timeline Bar (Hidden on Mobile) */}
             <div className="hidden lg:flex flex-col justify-between items-center relative py-8 shrink-0" style={{ width: "60px", minHeight: "450px" }}>
               {/* Background Line */}
@@ -352,88 +260,20 @@ export default function InteractiveWorkflowShowcaseThird() {
           </div>
           </div>
 
-          {/* Mobile Active Step Text (Hidden on Desktop) */}
-          <div className="block lg:hidden text-center w-full px-4 mb-4">
-             <h3 style={{ fontSize: "20px", color: "#FFF", fontWeight: 700 }}>{activeStep.title}</h3>
-             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", marginTop: "8px" }}>{activeStep.description}</p>
-          </div>
+          """
 
-          {/* 3. Right Column: 6 Interactive Cards (Hidden on Mobile) */}
-          <div className="hidden lg:flex flex-col gap-3 flex-1 w-full max-w-[45%]">
-            {workflowSteps.map((step, index) => {
-              const isActive = index === activeIndex;
-              const isEven = index % 2 === 0;
-              const accentColor = isEven ? "#02ACEA" : "#A855F7"; // Cyan for even, Purple for odd
-              const transformClass = isEven ? "-translate-x-4" : "translate-x-4";
+if layout_start_idx != -1 and layout_end_idx != -1:
+    content = content[:layout_start_idx] + new_layout + content[layout_end_idx:]
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => handleStepClick(index)}
-                  className={`transform transition-transform duration-500 hover:scale-[1.02] ${transformClass}`}
-                  style={{
-                    background: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.04)",
-                    color: isActive ? "#0A1838" : "#FFFFFF",
-                    borderRadius: "16px",
-                    padding: "12px 16px",
-                    borderTop: isActive ? `2px solid ${accentColor}` : "1px solid rgba(255, 255, 255, 0.08)",
-                    borderRight: isActive ? `2px solid ${accentColor}` : "1px solid rgba(255, 255, 255, 0.08)",
-                    borderBottom: isActive ? `2px solid ${accentColor}` : "1px solid rgba(255, 255, 255, 0.08)",
-                    borderLeft: `8px solid ${accentColor}`,
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    boxShadow: isActive ? `0 20px 40px ${isEven ? 'rgba(2,172,234,0.2)' : 'rgba(168,85,247,0.2)'}` : "none",
-                    position: "relative",
-                    overflow: "hidden"
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "4px" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <div
-                        style={{
-                          width: "28px",
-                          height: "28px",
-                          borderRadius: "8px",
-                          background: isActive ? "#0A1838" : "rgba(255,255,255,0.1)",
-                          color: isActive ? "#FFFFFF" : accentColor,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center"
-                        }}
-                      >
-                        {step.icon}
-                      </div>
-                      <span style={{ fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: isActive ? "#0A1838" : accentColor }}>
-                        {step.category}
-                      </span>
-                    </div>
+# 3. Update right column max width
+content = content.replace('<div className="hidden lg:flex flex-col gap-4 flex-1 w-full max-w-[500px]">', '<div className="hidden lg:flex flex-col gap-3 flex-1 w-full max-w-[45%]">')
 
-                    <span style={{ fontSize: "16px", fontWeight: 800, color: isActive ? "#0A1838" : "rgba(255,255,255,0.3)" }}>
-                      {step.number}
-                    </span>
-                  </div>
+# Replace section header text
+content = content.replace('From incoming document to verified clinical record system record in seconds.', 'OvoTech | Six-step platform walkthrough')
+content = content.replace('Scroll to explore the 6-step clinical document workflow preview.', 'Screenshot sequence: Clinical Overview → Review Queue → Clinical Review → Patient History → Coding Review → Reviewed Documents.')
 
-                  <h3 style={{ fontSize: "15px", fontWeight: 800, color: isActive ? "#0A1838" : "#FFFFFF", marginBottom: "2px" }}>
-                    {step.title}
-                  </h3>
 
-                  {isActive && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      transition={{ duration: 0.3 }}
-                      style={{ fontSize: "13px", color: "#555555", lineHeight: 1.5, marginTop: "6px" }}
-                    >
-                      {step.description}
-                    </motion.p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-  );
-}
+with open(r'd:\Ovotech\ovotech-main\ovotech-main\src\components\InteractiveWorkflowShowcaseThird.js', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Replacement done.")
