@@ -302,153 +302,7 @@ export default function ThirdPage() {
       <InteractiveWorkflowShowcaseThird />
 
       {/* SECTION 4 — FOR PRACTICE MANAGERS */}
-      <section className="py-20 bg-[#F4F7FC]">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">For Practice Managers</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Your practice. In one clear view.</h2>
-            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">See the work arriving, the queue moving and the pressure on your team. Bring practice activity and estimated impact into one clear operational view.</p>
-          </div>
-
-          <div className="bg-white rounded-3xl border border-[#E0E8F5] shadow-lg p-6 lg:p-10 mb-8">
-            <div className="flex justify-between items-center mb-8 pb-4 border-b border-[#E0E8F5]">
-              <h3 className="text-[18px] font-extrabold text-[#0A1838]">Riverside Practice — September</h3>
-              <span className="text-[12px] font-bold text-[#64748B] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">Fictional demonstration</span>
-            </div>
-<div className="flex flex-col gap-6 mb-8">
-              {/* Radial & Bar Gauges */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="bg-[#F8FAFC] rounded-xl border border-[#E0E8F5] p-6 flex items-center justify-around">
-                  <div className="text-center">
-                    <div className="w-24 h-24 rounded-full border-[6px] border-[#02ACEA] flex items-center justify-center mb-3 mx-auto">
-                      <span className="text-[20px] font-extrabold text-[#0A1838]">2,847</span>
-                    </div>
-                    <div className="text-[12px] font-bold text-[#64748B]">Documents received</div>
-                    <div className="text-[10px] text-[#94A3B8]">this month</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-24 h-24 rounded-full border-[6px] border-green-500 flex items-center justify-center mb-3 mx-auto">
-                      <span className="text-[20px] font-extrabold text-[#0A1838]">2,823</span>
-                    </div>
-                    <div className="text-[12px] font-bold text-[#64748B]">Processing volume</div>
-                    <div className="text-[10px] text-[#94A3B8]">completed this month</div>
-                  </div>
-                </div>
-                
-                <div className="bg-[#F8FAFC] rounded-xl border border-[#E0E8F5] p-6 flex flex-col justify-center gap-4">
-                  <div>
-                    <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
-                      <span>Awaiting review (across the team)</span>
-                      <span className="text-[#0A1838]">24</span>
-                    </div>
-                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-blue-500 h-full w-[24%]"></div></div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
-                      <span>Overdue items (beyond threshold)</span>
-                      <span className="text-red-600">6</span>
-                    </div>
-                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-red-500 h-full w-[10%]"></div></div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
-                      <span>Write-back exceptions (require attention)</span>
-                      <span className="text-orange-600">3</span>
-                    </div>
-                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-orange-500 h-full w-[5%]"></div></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Value and Charts */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="flex flex-col justify-center bg-green-50 rounded-xl border border-green-200 p-6">
-                   <div className="mb-4">
-                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Average turnaround</div>
-                    <div className="text-[24px] font-extrabold text-green-700">17.8 hrs</div>
-                    <div className="text-[11px] text-green-600">from receipt to completion</div>
-                   </div>
-                   <div className="mb-4">
-                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Estimated hours released</div>
-                    <div className="text-[24px] font-extrabold text-green-700">184 hrs</div>
-                    <div className="text-[11px] text-green-600">against manual baseline</div>
-                   </div>
-                   <div>
-                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Estimated cost impact</div>
-                    <div className="text-[24px] font-extrabold text-green-700">£4,603</div>
-                    <div className="text-[11px] text-green-600">staff time equivalent</div>
-                   </div>
-                </div>
-                
-                {/* Changed trend charts to Area Charts in SVG */}
-                <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-xl border border-[#E0E8F5] p-5">
-                  <div className="flex flex-col">
-                    <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Backlog trend <span className="text-[11px] font-normal text-[#64748B]">(open documents, weekly)</span></h4>
-                    <div className="flex-1 relative border-b border-l border-gray-200 h-32">
-                       <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full absolute bottom-0">
-                          <polygon points="0,100 0,36 33,49 66,58 100,76 100,100" fill="rgba(2, 172, 234, 0.2)" />
-                          <polyline points="0,36 33,49 66,58 100,76" fill="none" stroke="#02ACEA" strokeWidth="3" vectorEffect="non-scaling-stroke" />
-                          <circle cx="0" cy="36" r="3" fill="#02ACEA" />
-                          <circle cx="33" cy="49" r="3" fill="#02ACEA" />
-                          <circle cx="66" cy="58" r="3" fill="#02ACEA" />
-                          <circle cx="100" cy="76" r="3" fill="#02ACEA" />
-                       </svg>
-                       <div className="absolute top-1 left-2 text-[11px] font-bold text-blue-900">64</div>
-                       <div className="absolute top-4 left-[33%] text-[11px] font-bold text-blue-900">51</div>
-                       <div className="absolute top-6 left-[66%] text-[11px] font-bold text-blue-900">42</div>
-                       <div className="absolute top-10 right-2 text-[11px] font-bold text-blue-900">24</div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Processing volume trend <span className="text-[11px] font-normal text-[#64748B]">(completed, weekly)</span></h4>
-                    <div className="flex-1 relative border-b border-l border-gray-200 h-32">
-                       <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full absolute bottom-0">
-                          <polygon points="0,100 0,24 33,15 66,9 100,0 100,100" fill="rgba(34, 197, 94, 0.2)" />
-                          <polyline points="0,24 33,15 66,9 100,0" fill="none" stroke="#22C55E" strokeWidth="3" vectorEffect="non-scaling-stroke" />
-                          <circle cx="0" cy="24" r="3" fill="#22C55E" />
-                          <circle cx="33" cy="15" r="3" fill="#22C55E" />
-                          <circle cx="66" cy="9" r="3" fill="#22C55E" />
-                          <circle cx="100" cy="0" r="3" fill="#22C55E" />
-                       </svg>
-                       <div className="absolute bottom-[24%] left-2 text-[11px] font-bold text-green-900 bg-white/50 px-1">612</div>
-                       <div className="absolute bottom-[33%] left-[33%] text-[11px] font-bold text-green-900 bg-white/50 px-1">680</div>
-                       <div className="absolute bottom-[66%] left-[66%] text-[11px] font-bold text-green-900 bg-white/50 px-1">731</div>
-                       <div className="absolute top-1 right-2 text-[11px] font-bold text-green-900 bg-white/50 px-1">800</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl border border-[#E0E8F5] p-5 flex flex-col justify-center">
-                  <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Coder workload distribution</h4>
-                  <div className="flex items-center gap-4 text-[13px] mb-3"><div className="w-24 text-[#475569]">Jamie Davies</div><div className="flex-1 bg-gray-100 rounded-full h-3"><div className="bg-[#02ACEA] h-3 rounded-full" style={{width: "41%"}}></div></div><div className="font-bold w-4">10</div></div>
-                  <div className="flex items-center gap-4 text-[13px] mb-3"><div className="w-24 text-[#475569]">Alex Morgan</div><div className="flex-1 bg-gray-100 rounded-full h-3"><div className="bg-blue-400 h-3 rounded-full" style={{width: "33%"}}></div></div><div className="font-bold w-4">8</div></div>
-                  <div className="flex items-center gap-4 text-[13px]"><div className="w-24 text-[#475569]">Sam Patel</div><div className="flex-1 bg-gray-100 rounded-full h-3"><div className="bg-blue-300 h-3 rounded-full" style={{width: "25%"}}></div></div><div className="font-bold w-4">6</div></div>
-                </div>
-                <div className="bg-white rounded-xl border border-[#E0E8F5] p-5 flex flex-col justify-center">
-                  <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Workload by status</h4>
-                  <div className="flex h-12 rounded-lg overflow-hidden text-[12px] font-bold text-white shadow-sm border border-gray-100">
-                    <div className="bg-green-500 flex items-center justify-center flex-[14]">Ready (14)</div>
-                    <div className="bg-blue-500 flex items-center justify-center flex-[7]">Review (7)</div>
-                    <div className="bg-red-500 flex items-center justify-center flex-[3]">Attn (3)</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 justify-center text-[12px] font-bold text-[#0A1838] mb-6">
-              <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Track volume and backlog</span>
-              <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Balance team workloads</span>
-              <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Compare turnaround with your baseline</span>
-            </div>
-
-            <div className="text-center text-[11px] text-[#94A3B8] max-w-4xl mx-auto">
-              Practice oversight is distinct from platform administration. Access to clinical content requires the relevant permission.<br/>
-              Illustrative dashboard with fictional metrics, not a live product screenshot. Available reporting depends on role and deployment. Impact compares a 6-minute manual baseline with 2.12 minutes of example handling time per document, including human review, at £25 per hour. Staff time equivalent is not a cash saving.
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* SECTION 7 — THE PROBLEM (before/after) */}
       <section className="py-20 bg-white">
@@ -610,30 +464,255 @@ export default function ThirdPage() {
 
             <div className="bg-[#112146] rounded-3xl border border-[#2A3858] shadow-2xl overflow-hidden relative min-h-[300px]">
                {activeTab === 0 ? (
-                  <div className="p-8 lg:p-12 animate-fade-in border-l-4 border-l-[#02ACEA]">
-                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                      <div className="bg-[#1C2C54] text-[#02ACEA] font-black text-[48px] w-24 h-24 flex items-center justify-center rounded-2xl shrink-0 border border-[#2A3858]">01</div>
-                      <div>
-                        <h3 className="text-[24px] font-bold text-white mb-3">Medical Coder / Clinical Reviewer</h3>
-                        <p className="text-gray-400 text-[16px] leading-relaxed mb-6">One role for reviewing source documents, checking patient context, assessing coding suggestions and approving the final selection.</p>
-                        <div className="inline-block bg-[#02ACEA] text-white rounded-full px-6 py-2 text-[14px] font-bold shadow-lg">
-                          Review, amend and approve coding
+                  <div className="p-6 lg:p-10 animate-fade-in border-l-4 border-l-[#02ACEA] bg-[#F4F7FC]">
+                    <div className="max-w-[1350px] mx-auto">
+                      <div className="text-center mb-12">
+                        <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">For Medical Coders</span>
+                        <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Your workflow. Streamlined and focused.</h2>
+                        <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Focus on the documents that need your clinical expertise. Access patient context, extracted data and evidence-backed coding suggestions instantly.</p>
+                      </div>
+
+                      <div className="bg-white rounded-3xl border border-[#E0E8F5] shadow-lg p-6 lg:p-10 mb-8">
+                        <div className="flex justify-between items-center mb-8 pb-4 border-b border-[#E0E8F5]">
+                          <h3 className="text-[18px] font-extrabold text-[#0A1838]">Coder Workspace — Alex Morgan</h3>
+                          <span className="text-[12px] font-bold text-[#64748B] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">Fictional demonstration</span>
+                        </div>
+                        
+                        <div className="flex flex-col gap-6">
+                          {/* Radial & Bar Gauges */}
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div className="bg-[#F8FAFC] rounded-xl border border-[#E0E8F5] p-6 flex items-center justify-around">
+                              <div className="text-center">
+                                <div className="w-24 h-24 rounded-full border-[6px] border-[#02ACEA] flex items-center justify-center mb-3 mx-auto shadow-sm">
+                                  <span className="text-[24px] font-extrabold text-[#0A1838]">12</span>
+                                </div>
+                                <div className="text-[12px] font-bold text-[#64748B]">My Queue</div>
+                                <div className="text-[10px] text-[#94A3B8]">items awaiting review</div>
+                              </div>
+                              <div className="text-center">
+                                <div className="w-24 h-24 rounded-full border-[6px] border-green-500 flex items-center justify-center mb-3 mx-auto shadow-sm">
+                                  <span className="text-[24px] font-extrabold text-[#0A1838]">48</span>
+                                </div>
+                                <div className="text-[12px] font-bold text-[#64748B]">Completed Today</div>
+                                <div className="text-[10px] text-[#94A3B8]">coded and approved</div>
+                              </div>
+                            </div>
+                            
+                            <div className="bg-[#F8FAFC] rounded-xl border border-[#E0E8F5] p-6 flex flex-col justify-center gap-4">
+                              <div>
+                                <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
+                                  <span>High Priority (Urgent referrals, 2WW)</span>
+                                  <span className="text-red-600">3</span>
+                                </div>
+                                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-red-500 h-full w-[25%]"></div></div>
+                              </div>
+                              <div>
+                                <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
+                                  <span>Routine Correspondence</span>
+                                  <span className="text-[#0A1838]">9</span>
+                                </div>
+                                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-[#02ACEA] h-full w-[75%]"></div></div>
+                              </div>
+                              <div>
+                                <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
+                                  <span>Pending Clarification</span>
+                                  <span className="text-orange-600">1</span>
+                                </div>
+                                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-orange-500 h-full w-[10%]"></div></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Coding view snapshot */}
+                          <div className="bg-[#0A1838] rounded-xl border border-[#E0E8F5] overflow-hidden shadow-sm mt-4">
+                             <div className="flex border-b border-[#2A3858] bg-[#0A1838]">
+                               <div className="px-6 py-3 text-[#02ACEA] text-[13px] font-bold border-b-2 border-[#02ACEA]">Next Item in Queue</div>
+                               <div className="px-6 py-3 text-white text-[13px] font-bold border-r border-[#2A3858]">Recent Activity Log</div>
+                             </div>
+                             <div className="p-6 bg-white grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                  <div className="text-[11px] font-bold text-[#64748B] mb-2 uppercase tracking-wider">Source Document Extract</div>
+                                  <div className="bg-[#F8FAFC] p-4 rounded-lg border border-[#E0E8F5] text-[13px] text-[#475569] leading-relaxed">
+                                    "...patient presented with <span className="bg-yellow-100 text-yellow-800 px-1 rounded font-medium border border-yellow-200">acute exacerbation of asthma</span>. Prescribed <span className="bg-blue-50 text-[#02ACEA] px-1 rounded font-medium border border-blue-100">Salbutamol 100mcg inhaler</span> and advised to return if symptoms worsen..."
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="text-[11px] font-bold text-[#64748B] mb-2 uppercase tracking-wider">Suggested SNOMED Codes</div>
+                                  <div className="space-y-3">
+                                     <div className="flex justify-between items-center bg-green-50 p-3 rounded-lg border border-green-200">
+                                       <div>
+                                         <div className="text-[13px] font-bold text-green-900">Acute exacerbation of asthma</div>
+                                         <div className="text-[11px] text-green-700">Code: 391133003</div>
+                                       </div>
+                                       <div className="bg-[#166534] text-white px-3 py-1 rounded-full text-[11px] font-bold cursor-pointer hover:bg-green-700 transition-colors">Approve</div>
+                                     </div>
+                                     <div className="flex justify-between items-center bg-green-50 p-3 rounded-lg border border-green-200">
+                                       <div>
+                                         <div className="text-[13px] font-bold text-green-900">Salbutamol 100mcg inhaler</div>
+                                         <div className="text-[11px] text-green-700">Code: 320000009</div>
+                                       </div>
+                                       <div className="bg-[#166534] text-white px-3 py-1 rounded-full text-[11px] font-bold cursor-pointer hover:bg-green-700 transition-colors">Approve</div>
+                                     </div>
+                                  </div>
+                                </div>
+                             </div>
+                          </div>
+                          
+                        </div>
+                        
+                        <div className="text-center text-[11px] text-[#94A3B8] max-w-4xl mx-auto mt-6">
+                          Illustrative workspace with fictional metrics and clinical data, not a live product screenshot. The actual coding interface provides full document viewing, patient history timelines and comprehensive search capabilities.
                         </div>
                       </div>
                     </div>
                   </div>
                ) : (
-                  <div className="p-8 lg:p-12 animate-fade-in border-l-4 border-l-purple-500">
-                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                      <div className="bg-purple-900/40 text-purple-400 font-black text-[48px] w-24 h-24 flex items-center justify-center rounded-2xl shrink-0 border border-purple-800/50">02</div>
-                      <div>
-                        <h3 className="text-[24px] font-bold text-white mb-3">Practice Admin</h3>
-                        <p className="text-gray-400 text-[16px] leading-relaxed mb-6">Practice-level volumes, workload, turnaround and operational exceptions. Platform-wide user, registry and routing controls are a separate administration responsibility.</p>
-                        <div className="inline-block bg-purple-600 text-white rounded-full px-6 py-2 text-[14px] font-bold shadow-lg">
-                          Manage the process
-                        </div>
-                      </div>
+                  <div className="p-6 lg:p-10 animate-fade-in border-l-4 border-l-[#02ACEA] bg-[#F4F7FC]">
+                    <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">For Practice Managers</span>
+            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Your practice. In one clear view.</h2>
+            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">See the work arriving, the queue moving and the pressure on your team. Bring practice activity and estimated impact into one clear operational view.</p>
+          </div>
+
+          <div className="bg-white rounded-3xl border border-[#E0E8F5] shadow-lg p-6 lg:p-10 mb-8">
+            <div className="flex justify-between items-center mb-8 pb-4 border-b border-[#E0E8F5]">
+              <h3 className="text-[18px] font-extrabold text-[#0A1838]">Riverside Practice — September</h3>
+              <span className="text-[12px] font-bold text-[#64748B] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">Fictional demonstration</span>
+            </div>
+<div className="flex flex-col gap-6 mb-8">
+              {/* Radial & Bar Gauges */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="bg-[#F8FAFC] rounded-xl border border-[#E0E8F5] p-6 flex items-center justify-around">
+                  <div className="text-center">
+                    <div className="w-24 h-24 rounded-full border-[6px] border-[#02ACEA] flex items-center justify-center mb-3 mx-auto">
+                      <span className="text-[20px] font-extrabold text-[#0A1838]">2,847</span>
                     </div>
+                    <div className="text-[12px] font-bold text-[#64748B]">Documents received</div>
+                    <div className="text-[10px] text-[#94A3B8]">this month</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-24 h-24 rounded-full border-[6px] border-green-500 flex items-center justify-center mb-3 mx-auto">
+                      <span className="text-[20px] font-extrabold text-[#0A1838]">2,823</span>
+                    </div>
+                    <div className="text-[12px] font-bold text-[#64748B]">Processing volume</div>
+                    <div className="text-[10px] text-[#94A3B8]">completed this month</div>
+                  </div>
+                </div>
+                
+                <div className="bg-[#F8FAFC] rounded-xl border border-[#E0E8F5] p-6 flex flex-col justify-center gap-4">
+                  <div>
+                    <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
+                      <span>Awaiting review (across the team)</span>
+                      <span className="text-[#0A1838]">24</span>
+                    </div>
+                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-blue-500 h-full w-[24%]"></div></div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
+                      <span>Overdue items (beyond threshold)</span>
+                      <span className="text-red-600">6</span>
+                    </div>
+                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-red-500 h-full w-[10%]"></div></div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-[12px] font-bold text-[#64748B] mb-2">
+                      <span>Write-back exceptions (require attention)</span>
+                      <span className="text-orange-600">3</span>
+                    </div>
+                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden"><div className="bg-orange-500 h-full w-[5%]"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Value and Charts */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="flex flex-col justify-center bg-green-50 rounded-xl border border-green-200 p-6">
+                   <div className="mb-4">
+                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Average turnaround</div>
+                    <div className="text-[24px] font-extrabold text-green-700">17.8 hrs</div>
+                    <div className="text-[11px] text-green-600">from receipt to completion</div>
+                   </div>
+                   <div className="mb-4">
+                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Estimated hours released</div>
+                    <div className="text-[24px] font-extrabold text-green-700">184 hrs</div>
+                    <div className="text-[11px] text-green-600">against manual baseline</div>
+                   </div>
+                   <div>
+                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Estimated cost impact</div>
+                    <div className="text-[24px] font-extrabold text-green-700">£4,603</div>
+                    <div className="text-[11px] text-green-600">staff time equivalent</div>
+                   </div>
+                </div>
+                
+                {/* Changed trend charts to Area Charts in SVG */}
+                <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-xl border border-[#E0E8F5] p-5">
+                  <div className="flex flex-col">
+                    <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Backlog trend <span className="text-[11px] font-normal text-[#64748B]">(open documents, weekly)</span></h4>
+                    <div className="flex-1 relative border-b border-l border-gray-200 h-32">
+                       <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full absolute bottom-0">
+                          <polygon points="0,100 0,36 33,49 66,58 100,76 100,100" fill="rgba(2, 172, 234, 0.2)" />
+                          <polyline points="0,36 33,49 66,58 100,76" fill="none" stroke="#02ACEA" strokeWidth="3" vectorEffect="non-scaling-stroke" />
+                          <circle cx="0" cy="36" r="3" fill="#02ACEA" />
+                          <circle cx="33" cy="49" r="3" fill="#02ACEA" />
+                          <circle cx="66" cy="58" r="3" fill="#02ACEA" />
+                          <circle cx="100" cy="76" r="3" fill="#02ACEA" />
+                       </svg>
+                       <div className="absolute top-1 left-2 text-[11px] font-bold text-blue-900">64</div>
+                       <div className="absolute top-4 left-[33%] text-[11px] font-bold text-blue-900">51</div>
+                       <div className="absolute top-6 left-[66%] text-[11px] font-bold text-blue-900">42</div>
+                       <div className="absolute top-10 right-2 text-[11px] font-bold text-blue-900">24</div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Processing volume trend <span className="text-[11px] font-normal text-[#64748B]">(completed, weekly)</span></h4>
+                    <div className="flex-1 relative border-b border-l border-gray-200 h-32">
+                       <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full absolute bottom-0">
+                          <polygon points="0,100 0,24 33,15 66,9 100,0 100,100" fill="rgba(34, 197, 94, 0.2)" />
+                          <polyline points="0,24 33,15 66,9 100,0" fill="none" stroke="#22C55E" strokeWidth="3" vectorEffect="non-scaling-stroke" />
+                          <circle cx="0" cy="24" r="3" fill="#22C55E" />
+                          <circle cx="33" cy="15" r="3" fill="#22C55E" />
+                          <circle cx="66" cy="9" r="3" fill="#22C55E" />
+                          <circle cx="100" cy="0" r="3" fill="#22C55E" />
+                       </svg>
+                       <div className="absolute bottom-[24%] left-2 text-[11px] font-bold text-green-900 bg-white/50 px-1">612</div>
+                       <div className="absolute bottom-[33%] left-[33%] text-[11px] font-bold text-green-900 bg-white/50 px-1">680</div>
+                       <div className="absolute bottom-[66%] left-[66%] text-[11px] font-bold text-green-900 bg-white/50 px-1">731</div>
+                       <div className="absolute top-1 right-2 text-[11px] font-bold text-green-900 bg-white/50 px-1">800</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl border border-[#E0E8F5] p-5 flex flex-col justify-center">
+                  <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Coder workload distribution</h4>
+                  <div className="flex items-center gap-4 text-[13px] mb-3"><div className="w-24 text-[#475569]">Jamie Davies</div><div className="flex-1 bg-gray-100 rounded-full h-3"><div className="bg-[#02ACEA] h-3 rounded-full" style={{width: "41%"}}></div></div><div className="font-bold w-4">10</div></div>
+                  <div className="flex items-center gap-4 text-[13px] mb-3"><div className="w-24 text-[#475569]">Alex Morgan</div><div className="flex-1 bg-gray-100 rounded-full h-3"><div className="bg-blue-400 h-3 rounded-full" style={{width: "33%"}}></div></div><div className="font-bold w-4">8</div></div>
+                  <div className="flex items-center gap-4 text-[13px]"><div className="w-24 text-[#475569]">Sam Patel</div><div className="flex-1 bg-gray-100 rounded-full h-3"><div className="bg-blue-300 h-3 rounded-full" style={{width: "25%"}}></div></div><div className="font-bold w-4">6</div></div>
+                </div>
+                <div className="bg-white rounded-xl border border-[#E0E8F5] p-5 flex flex-col justify-center">
+                  <h4 className="text-[14px] font-bold text-[#0A1838] mb-4">Workload by status</h4>
+                  <div className="flex h-12 rounded-lg overflow-hidden text-[12px] font-bold text-white shadow-sm border border-gray-100">
+                    <div className="bg-green-500 flex items-center justify-center flex-[14]">Ready (14)</div>
+                    <div className="bg-blue-500 flex items-center justify-center flex-[7]">Review (7)</div>
+                    <div className="bg-red-500 flex items-center justify-center flex-[3]">Attn (3)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-3 justify-center text-[12px] font-bold text-[#0A1838] mb-6">
+              <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Track volume and backlog</span>
+              <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Balance team workloads</span>
+              <span className="bg-[#F4F7FC] px-4 py-2 rounded-full border border-[#E0E8F5]">Compare turnaround with your baseline</span>
+            </div>
+
+            <div className="text-center text-[11px] text-[#94A3B8] max-w-4xl mx-auto">
+              Practice oversight is distinct from platform administration. Access to clinical content requires the relevant permission.<br/>
+              Illustrative dashboard with fictional metrics, not a live product screenshot. Available reporting depends on role and deployment. Impact compares a 6-minute manual baseline with 2.12 minutes of example handling time per document, including human review, at £25 per hour. Staff time equivalent is not a cash saving.
+            </div>
+          </div>
+        </div>
                   </div>
                )}
             </div>
