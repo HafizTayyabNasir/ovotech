@@ -1,0 +1,6 @@
+﻿with open(r'd:\Ovotech\ovotech-main\ovotech-main\src\app\solutions\medical_coding\page.js', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+idx = content.find("<AnimatePresence mode=\"wait\">")
+if idx != -1:
+    print(content[idx:idx+500])

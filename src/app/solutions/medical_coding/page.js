@@ -10,7 +10,7 @@ import InteractiveWorkflowShowcaseThird from "@/components/InteractiveWorkflowSh
 
 export default function ThirdPage() {
   const [activeTab, setActiveTab] = useState(0);
-  const [activeAccordion, setActiveAccordion] = useState(-1);
+  const [activeAccordion, setActiveAccordion] = useState(0);
 
   // Business Value Calculator State
   const [volume, setVolume] = useState(2847);
@@ -195,7 +195,7 @@ export default function ThirdPage() {
               {/* Background Line */}
               <div className="absolute left-[32px] right-[32px] top-6 h-[2px] bg-[#E0E8F5] -z-10">
                 {/* Progress Line */}
-                <div className="h-full bg-[#02ACEA] transition-all duration-500" style={{ width: activeAccordion === -1 ? '0%' : `${(activeAccordion / 6) * 100}%` }}></div>
+                <div className="h-full bg-[#02ACEA] transition-all duration-500" style={{ width: `${(activeAccordion / 6) * 100}%` }}></div>
               </div>
               
               {[
@@ -207,7 +207,7 @@ export default function ThirdPage() {
                 { num: "06", title: "Approve", desc: "The final selection is explicitly approved.", expandedDesc: "Authorised personnel accept, amend, or reject the suggested codes. Explicit approval is required before any information moves forward.", image: "/clinical-review-3.png" },
                 { num: "07", title: "Write back", desc: "Approved information is posted to clinical record system.", expandedDesc: "Completed reviews and approved codes are written back to the clinical record system, with the status updated in the Reviewed Documents log.", image: "/reviewed-documents.png" }
               ].map((step, i) => (
-                <div key={i} className="flex flex-col items-center gap-3 cursor-pointer group w-16 relative" onClick={() => setActiveAccordion(activeAccordion === i ? -1 : i)}>
+                <div key={i} className="flex flex-col items-center gap-3 cursor-pointer group w-16 relative" onClick={() => setActiveAccordion(i)}>
                   {/* Circle */}
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center font-extrabold text-[15px] transition-all duration-300 z-10 ${activeAccordion === i ? 'bg-[#02ACEA] text-white shadow-lg scale-110 ring-4 ring-blue-100' : activeAccordion > i ? 'bg-[#02ACEA] text-white' : 'bg-white text-[#0A1838] border-2 border-[#E0E8F5] group-hover:border-[#02ACEA]'}`}>
                      {step.num}
@@ -221,19 +221,7 @@ export default function ThirdPage() {
             {/* Active Content Area */}
             <div className="min-h-[500px]">
               <AnimatePresence mode="wait">
-                {activeAccordion === -1 ? (
-                   <motion.div 
-                     key="empty"
-                     initial={{ opacity: 0 }}
-                     animate={{ opacity: 1 }}
-                     exit={{ opacity: 0 }}
-                     className="flex flex-col items-center justify-center py-20 text-[#64748B] border-2 border-dashed border-[#E0E8F5] rounded-2xl bg-[#F8FAFC]"
-                   >
-                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4 opacity-50"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                     <p className="text-[16px] font-medium">Click on any step in the timeline above to view details and screenshots.</p>
-                   </motion.div>
-                ) : (
-                  <motion.div 
+                <motion.div 
                     key={activeAccordion}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -301,7 +289,6 @@ export default function ThirdPage() {
                       />
                     </div>
                   </motion.div>
-                )}
               </AnimatePresence>
             </div>
           </div>
@@ -377,17 +364,17 @@ export default function ThirdPage() {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="flex flex-col justify-center bg-green-50 rounded-xl border border-green-200 p-6">
                    <div className="mb-4">
-                    <div className="text-[12px] font-bold text-green-800 mb-1">Average turnaround</div>
+                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Average turnaround</div>
                     <div className="text-[24px] font-extrabold text-green-700">17.8 hrs</div>
                     <div className="text-[11px] text-green-600">from receipt to completion</div>
                    </div>
                    <div className="mb-4">
-                    <div className="text-[12px] font-bold text-green-800 mb-1">Estimated hours released</div>
+                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Estimated hours released</div>
                     <div className="text-[24px] font-extrabold text-green-700">184 hrs</div>
                     <div className="text-[11px] text-green-600">against manual baseline</div>
                    </div>
                    <div>
-                    <div className="text-[12px] font-bold text-green-800 mb-1">Estimated cost impact</div>
+                    <div className="text-[12px] font-bold text-[#0369A1] mb-1">Estimated cost impact</div>
                     <div className="text-[24px] font-extrabold text-green-700">£4,603</div>
                     <div className="text-[11px] text-green-600">staff time equivalent</div>
                    </div>
@@ -493,25 +480,25 @@ export default function ThirdPage() {
               </div>
               
               {/* Divider */}
-              <div className="w-full md:w-4 bg-gradient-to-b from-[#9B2C2C] to-[#166534] flex items-center justify-center relative">
+              <div className="w-full md:w-4 bg-gradient-to-b from-[#9B2C2C] to-[#0369A1] flex items-center justify-center relative">
                 <div className="absolute w-10 h-10 bg-white rounded-full shadow-lg border-2 border-gray-200 flex items-center justify-center z-20 font-bold text-gray-500 transform md:-rotate-90 text-[12px]">VS</div>
               </div>
               
               {/* Right Side: With Ovotech */}
-              <div className="flex-1 bg-[#F0FDF4] p-10 relative overflow-hidden">
+              <div className="flex-1 bg-[#F0F9FF] p-10 relative overflow-hidden">
                 <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
-                  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#166534" strokeWidth="8" strokeLinecap="round" />
-                  <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
-                  <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#166534" strokeWidth="2" strokeDasharray="10,10" />
+                  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#0369A1" strokeWidth="8" strokeLinecap="round" />
+                  <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#0369A1" strokeWidth="2" strokeDasharray="10,10" />
+                  <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#0369A1" strokeWidth="2" strokeDasharray="10,10" />
                 </svg>
                 <div className="relative z-10">
-                  <h3 className="text-[20px] font-extrabold text-[#166534] mb-6">With Ovotech</h3>
-                  <ul className="space-y-5 text-[#166534] font-medium text-[16px]">
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Correspondence enters one visible queue</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Relevant information is structured</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> Suggestions include source evidence</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> People review, amend and approve</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center font-bold text-green-800 shrink-0">✓</div> The outcome and write-back remain traceable</li>
+                  <h3 className="text-[20px] font-extrabold text-[#0369A1] mb-6">With Ovotech</h3>
+                  <ul className="space-y-5 text-[#0369A1] font-medium text-[16px]">
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Correspondence enters one visible queue</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Relevant information is structured</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Suggestions include source evidence</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> People review, amend and approve</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> The outcome and write-back remain traceable</li>
                   </ul>
                 </div>
               </div>
@@ -703,7 +690,7 @@ export default function ThirdPage() {
                     } else if (log.type === "success") {
                         cardBg = "bg-green-50 border-green-300 shadow-green-100/50";
                         dotColor = "bg-green-500 border-green-100 w-6 h-6 shadow-md";
-                        titleColor = "text-green-800";
+                        titleColor = "text-[#0369A1]";
                         timeColor = "text-green-700 bg-green-100/50";
                         actorColor = "text-green-600 font-bold";
                     }
@@ -719,7 +706,7 @@ export default function ThirdPage() {
                           <div className="flex items-center gap-2 mb-2">
                              <div className={`text-[11px] font-bold px-2 py-0.5 rounded ${timeColor}`}>{log.time}</div>
                              {log.type === "human" && <span className="bg-purple-200 text-purple-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Human Review</span>}
-                             {log.type === "success" && <span className="bg-green-200 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Finalised</span>}
+                             {log.type === "success" && <span className="bg-blue-200 text-[#0369A1] text-[10px] font-bold px-2 py-0.5 rounded-full">Finalised</span>}
                           </div>
                           <div className={`text-[15px] font-extrabold mb-1 ${titleColor}`}>{log.action}</div>
                           <div className={`text-[12px] ${actorColor}`}>{log.actor}</div>
@@ -946,6 +933,7 @@ export default function ThirdPage() {
     </>
   );
 }
+
 
 
 
