@@ -97,7 +97,7 @@ const workflowSteps = [
       </svg>
     )
   }
-]];
+];
 
 export default function InteractiveWorkflowShowcaseThird() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -437,3 +437,4 @@ export default function InteractiveWorkflowShowcaseThird() {
     </section>
   );
 }
+
