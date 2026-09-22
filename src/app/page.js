@@ -2,6 +2,7 @@ import Link from "next/link";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ComplianceSection from "@/components/ComplianceSection";
 
 export const metadata = {
   title: 'Home | Ovotech',
@@ -159,101 +160,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. SIX-STEP PLATFORM WALKTHROUGH */}
-      <section id="walkthrough" className="py-20 bg-[#F4F7FC]">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">OVOTECH | SIX-STEP PLATFORM WALKTHROUGH</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Screenshot sequence: Clinical Overview → Review Queue → Clinical Review → Patient History → Coding Review → Reviewed Documents.</h2>
-          </div>
-
-          <div className="flex flex-col gap-24">
-            {[
-              {
-                step: "01",
-                title: "Clinical overview",
-                desc: "Start with the clinical review summary to see incoming documents, processing status and items awaiting review.",
-                image: "/clinical-overview.png"
-              },
-              {
-                step: "02",
-                title: "Review queue",
-                desc: "Open the Review Queue to find and prioritise the document that needs attention. Select Review to open its clinical review.",
-                image: "/review-queue.png"
-              },
-              {
-                step: "03",
-                title: "Clinical review: understand the case",
-                desc: "Review the document summary, extracted information and available patient context before deciding on coding.",
-                image: "/clinical-review-2.png"
-              },
-              {
-                step: "04",
-                title: "Patient history",
-                desc: "Open Patient History from the clinical review to see the platform's available patient timeline, active conditions and medication context. Return to the review when ready.",
-                image: "/patient-history.png"
-              },
-              {
-                step: "05",
-                title: "Clinical review: assess coding",
-                desc: "Back in Clinical Review, assess each suggested SNOMED CT code and its confidence and evidence; accept, reject or add a code as appropriate. Complete the authorised review before any record update.",
-                image: "/clinical-review-3.png"
-              },
-              {
-                step: "06",
-                title: "Reviewed documents & status",
-                desc: "Use Reviewed Documents to check completed reviews, decisions and the displayed clinical record update status.",
-                image: "/reviewed-documents.png"
-              }
-            ].map((section, idx) => (
-              <div key={idx} className="flex flex-col lg:flex-row gap-8 items-start relative">
-                <div className="lg:w-1/3 sticky top-24 z-10 pt-4 lg:pr-8">
-                  <div className="bg-white rounded-full px-4 py-2 border border-[#E0E8F5] shadow-sm inline-block font-bold text-[#02ACEA] mb-4 tracking-widest text-[12px] uppercase">
-                    Step {section.step}
-                  </div>
-                  <h3 className="text-[24px] font-extrabold text-[#0A1838] mb-4">{section.title}</h3>
-                  <p className="text-[#475569] text-[16px] leading-relaxed">{section.desc}</p>
-                </div>
-                <div className="lg:w-2/3 w-full">
-                  <div className="bg-white rounded-xl shadow-lg border border-[#E0E8F5] overflow-hidden">
-                    {/* Browser-like Top Bar */}
-                    <div className="bg-[#F4F7FC] px-4 py-3 border-b border-[#E0E8F5] flex gap-2 items-center">
-                      <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                    </div>
-                    {/* Image */}
-                    <img src={section.image} alt={section.title} className="w-full h-auto block" />
-                  </div>
-                </div>
-              </div>
-            ))}
-            
-            {/* Supporting screen */}
-            <div className="flex flex-col lg:flex-row gap-8 items-start relative pt-12 border-t border-[#E0E8F5]">
-              <div className="lg:w-1/3 sticky top-24 z-10 pt-4 lg:pr-8">
-                <div className="bg-gray-100 rounded-full px-4 py-2 border border-[#E0E8F5] shadow-sm inline-block font-bold text-[#64748B] mb-4 tracking-widest text-[12px] uppercase">
-                  Supporting screen
-                </div>
-                <h3 className="text-[20px] font-extrabold text-[#0A1838] mb-4">Notifications</h3>
-                <p className="text-[#475569] text-[15px] leading-relaxed">Notifications help users return to documents awaiting review; this is a supporting screen rather than a separate workflow step.</p>
-              </div>
-              <div className="lg:w-2/3 w-full opacity-90 scale-95 origin-top-left transition-transform hover:scale-100 hover:opacity-100">
-                <div className="bg-white rounded-xl shadow-md border border-[#E0E8F5] overflow-hidden">
-                  <div className="bg-[#F4F7FC] px-4 py-3 border-b border-[#E0E8F5] flex gap-2 items-center">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  </div>
-                  <img src="/notifications.png" alt="Notifications" className="w-full h-auto block" />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
+      <ComplianceSection />
+      
       {/* 5. FINAL CTA */}
       <section className="py-24 bg-white text-center border-t border-[#E0E8F5]">
         <div className="max-w-4xl mx-auto px-6">
@@ -280,3 +188,4 @@ export default function Home() {
     </>
   );
 }
+
