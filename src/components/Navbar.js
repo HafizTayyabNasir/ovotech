@@ -26,10 +26,8 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const navItems = [
-    { label: "Home", href: "/", key: "home" },
-    { label: "Second", href: "/second", key: "second" },
     {
-      label: "Solutions", href: "/solutions", key: "solutions",
+      label: "Solutions", href: "#", key: "solutions",
       topSection: { label: "Medical Coding", href: "/solutions/medical_coding", desc: "Our end-to-end clinical coding tool" },
       columns: [
         { header: "Inside Medical Coding", links: [
@@ -43,35 +41,9 @@ export default function Navbar() {
           { label: "06 Value & KPI Tracking", href: "/solutions/kpi-tracking", desc: "Demonstrate time saved & released practice capacity" },
         ]},
       ],
-      promo: { title: "Clinical System Integration", text: "Seamless structured write-back to patient clinical records.", bg: "from-primary to-primary-dark" },
+      promo: { title: "Clinical System Integration", text: "Seamless structured write-back to patient clinical records.", image: "/clinical-workspace-review.png", bg: "from-primary to-primary-dark" },
     },
-    {
-      label: "About", href: "/about", key: "about",
-      columns: [
-        { header: "Company", links: [
-          { label: "About Us", href: "/about", desc: "Our mission & story" },
-          { label: "Careers", href: "/careers", desc: "Join the Ovotech team" },
-          { label: "Contact Us", href: "/contact", desc: "Get in touch with our team" },
-        ]},
-        { header: "Legal & Compliance", links: [
-          { label: "Security & Compliance", href: "/security-compliance", desc: "DSPT, DTAC, ISO 27001 & Cyber Essentials" },
-          { label: "Privacy Policy", href: "/privacy-policy", desc: "How we handle patient data" },
-          { label: "Terms & Conditions", href: "/terms", desc: "Our service agreement" },
-        ]},
-      ],
-    },
-    {
-      label: "Resources", href: "/resources", key: "resources",
-      columns: [
-        { header: "Learn & Discover", links: [
-          { label: "Case Studies", href: "/case-studies", desc: "Real results from GP practice partners" },
-          { label: "Blog & Insights", href: "/blog", desc: "Latest updates on clinical document processing" },
-          { label: "Help Centre", href: "/help-centre", desc: "Guides, FAQs & support resources" },
-        ]},
-      ],
-      promo: { title: "Human Review", text: "Assisted workflow empowering authorized reviewers before record commit.", bg: "from-primary to-blue-900" },
-    },
-    { label: "Support", href: "/help-centre", key: "support" },
+    { label: "About Us", href: "/about", key: "about" },
     { label: "Contact", href: "/contact", key: "contact" },
   ];
 
@@ -176,13 +148,15 @@ export default function Navbar() {
                     {item.promo && (
                       <div
                         style={{
-                          width: "300px", background: `linear-gradient(135deg, #019EE1 0%, #019EE1 100%)`,
-                          color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px", position: "relative", overflow: "hidden",
+                          width: "360px", background: `#019EE1`,
+                          display: "flex", flexDirection: "column", position: "relative", overflow: "hidden",
                         }}
                       >
-                        <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(2, 172, 234,0.15)" }} />
-                        <h4 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "10px", color: "#FFFFFF" }}>{item.promo.title}</h4>
-                        <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6 }}>{item.promo.text}</p>
+                        {item.promo.image && (
+                          <div style={{ position: "relative", zIndex: 1, width: "100%", height: "100%", display: "flex" }}>
+                            <img src={item.promo.image} alt={item.promo.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
