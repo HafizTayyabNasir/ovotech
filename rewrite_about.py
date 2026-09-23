@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+﻿new_about = """import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
@@ -12,56 +12,23 @@ export default function About() {
     <>
       <Navbar />
       
-      {/* 1. HERO SECTION (Split Layout) */}
-      <section className="relative pt-[120px] pb-[80px] overflow-hidden bg-white border-b border-[#E0E8F5]">
-        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(2,172,234,0.05)_0%,transparent_60%)] pointer-events-none" />
-        
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            
-            {/* LEFT COLUMN */}
-            <div className="w-full lg:w-[45%] flex flex-col items-start text-left">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#E8F6FD] border border-[#019EE1]/20 text-[12px] font-extrabold tracking-[2px] text-[#019EE1] uppercase mb-6 shadow-sm">
-                About OvoTech
-              </span>
-              <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0A1838]">
-                Supporting Smarter <br/>
-                <span className="text-[#02ACEA] italic">Clinical Workflows.</span>
-              </h1>
-              <p className="text-[#475569] text-[16px] leading-[1.6] mb-8 max-w-lg">
-                OvoTech is a clinical document processing and coding workflow platform designed for UK primary care. We bring AI-assisted technology and structured workflows together to help practices manage clinical information more efficiently.
-              </p>
-              
-              <div className="flex flex-wrap gap-3">
-                <div className="bg-[#F4F7FC] px-4 py-2 rounded-full text-[13px] font-bold text-[#0A1838] border border-[#E0E8F5]">
-                  ✅ Authorised Professionals
-                </div>
-                <div className="bg-[#F4F7FC] px-4 py-2 rounded-full text-[13px] font-bold text-[#0A1838] border border-[#E0E8F5]">
-                  ✅ Centralised Review
-                </div>
-              </div>
-            </div>
+      {/* 1. HERO SECTION (Premium Dark Theme) */}
+      <section className="relative pt-32 pb-24 overflow-hidden bg-[#0A1838]">
+        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(2,172,234,0.15)_0%,transparent_60%)] pointer-events-none" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(165,148,255,0.1)_0%,transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
-            {/* RIGHT COLUMN - Graphic / Mini Bento */}
-            <div className="w-full lg:w-[55%]">
-              <div className="grid grid-cols-2 gap-4 h-[380px]">
-                <div className="col-span-1 rounded-[24px] overflow-hidden shadow-lg relative group">
-                  <img src="/gp-doctor-consultation.png" alt="GP Consultation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="col-span-1 flex flex-col gap-4">
-                  <div className="bg-[#0A1838] rounded-[24px] p-6 flex flex-col justify-center shadow-lg flex-1 relative overflow-hidden">
-                    <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-[#02ACEA]/20 rounded-full blur-xl"></div>
-                    <h3 className="text-white font-extrabold text-[24px] leading-tight mb-1">Human</h3>
-                    <h3 className="text-[#02ACEA] font-extrabold text-[24px] leading-tight">Oversight</h3>
-                  </div>
-                  <div className="bg-white rounded-[24px] overflow-hidden shadow-lg flex-1 relative border border-[#E0E8F5] group">
-                    <img src="/gp-team-support.png" alt="Team Support" className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 relative z-10 text-center">
+          <span className="inline-block py-1 px-4 rounded-full bg-[#112146] border border-[#2A3858] text-[12px] font-extrabold tracking-[2px] text-[#A594FF] uppercase mb-6 shadow-lg">
+            About OvoTech
+          </span>
+          <h1 className="text-[clamp(40px,5vw,64px)] font-extrabold text-white leading-[1.1] tracking-tight mb-8">
+            Supporting Smarter <br/>
+            <span className="text-[#02ACEA]">Clinical Workflows</span>
+          </h1>
+          <p className="text-[#94A3B8] text-[clamp(16px,2vw,20px)] leading-relaxed max-w-3xl mx-auto font-medium">
+            OvoTech is a clinical document processing and coding workflow platform designed for UK primary care. We bring AI-assisted technology and structured workflows together to help practices manage clinical information more efficiently, while keeping authorised healthcare professionals at the centre of the review process.
+          </p>
         </div>
       </section>
 
@@ -184,81 +151,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. CORE VALUES */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 text-center">
-          <span className="inline-block py-1 px-3 rounded-full bg-[#E8F6FD] text-[12px] font-extrabold tracking-[2px] text-[#019EE1] uppercase mb-4">Core Values</span>
-          <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-[#0A1838] leading-tight max-w-3xl mx-auto mb-16">
-            The principles that drive our <span className="text-[#019EE1]">technology</span>.
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Value 1 */}
-            <div className="bg-[#F8FAFC] border border-[#E0E8F5] p-10 rounded-[32px] text-left hover:shadow-xl transition-shadow duration-300 group">
-              <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 text-[#019EE1] group-hover:scale-110 transition-transform duration-300">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </div>
-              <h3 className="text-[#0A1838] font-extrabold text-[22px] mb-4">Empowering Practices</h3>
-              <p className="text-[#475569] text-[15px] leading-relaxed">
-                We build tools that give time back to clinicians and administrative staff, enabling them to focus on high-value patient care rather than manual data entry.
-              </p>
-            </div>
-            
-            {/* Value 2 */}
-            <div className="bg-[#0A1838] border border-[#2A3858] p-10 rounded-[32px] text-left hover:shadow-xl transition-shadow duration-300 group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#02ACEA]/10 rounded-full blur-2xl"></div>
-              <div className="w-16 h-16 bg-[#112146] border border-[#2A3858] rounded-2xl shadow-sm flex items-center justify-center mb-6 text-[#02ACEA] group-hover:scale-110 transition-transform duration-300 relative z-10">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              </div>
-              <h3 className="text-white font-extrabold text-[22px] mb-4 relative z-10">Uncompromising Security</h3>
-              <p className="text-[#94A3B8] text-[15px] leading-relaxed relative z-10">
-                Patient data safety is our highest priority. We adhere to strict NHS standards, including DTAC, DSPT, and ISO 27001, to ensure complete compliance.
-              </p>
-            </div>
-
-            {/* Value 3 */}
-            <div className="bg-[#F8FAFC] border border-[#E0E8F5] p-10 rounded-[32px] text-left hover:shadow-xl transition-shadow duration-300 group">
-              <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 text-[#019EE1] group-hover:scale-110 transition-transform duration-300">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              </div>
-              <h3 className="text-[#0A1838] font-extrabold text-[22px] mb-4">Intelligent Automation</h3>
-              <p className="text-[#475569] text-[15px] leading-relaxed">
-                We leverage cutting-edge AI to automate repetitive coding tasks, but always ensure there is a clear, human-in-the-loop workflow for ultimate accountability.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. FINAL CTA */}
-      <section className="py-24 bg-white text-center border-t border-[#E0E8F5]">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-[#0A1838] rounded-[40px] p-10 md:p-16 shadow-2xl relative overflow-hidden">
-            <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(2,172,234,0.2)_0%,transparent_60%)] pointer-events-none" />
-            <div className="relative z-10">
-              <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase bg-[#112146] border border-[#2A3858] px-5 py-2 rounded-full inline-block mb-6 shadow-sm">
-                Get Started
-              </span>
-              <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-white mb-6 leading-tight">
-                Ready to modernise your <br className="hidden sm:block" /> clinical workflows?
-              </h2>
-              <p className="text-[#94A3B8] text-[18px] mb-10 max-w-2xl mx-auto leading-relaxed">
-                See exactly how OvoTech can reduce administrative burden and streamline correspondence review in your GP practice.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/contact" className="px-8 py-4 bg-[#02ACEA] text-white font-bold rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.3)] hover:bg-[#0296CC] hover:shadow-[0_12px_25px_rgba(2,172,234,0.4)] transition-all duration-300 hover:-translate-y-1">
-                  Request a Demo
-                </Link>
-                <Link href="/contact" className="px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-all duration-300 hover:-translate-y-1">
-                  Contact Our Team
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </>
   );
 }
+"""
+with open(r'd:\Ovotech\ovotech-main\ovotech-main\src\app\about\page.js', 'w', encoding='utf-8') as f:
+    f.write(new_about)
+
+print("About page rewritten with ultra premium Bento Grid and animated cards.")

@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import WhatsAppWidget from "@/components/WhatsAppWidget";
+
 export const metadata = {
   title: "Ovotech - Clinical Document Processing & Coding Platform",
   description:
@@ -15,7 +17,8 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>{children}  <WhatsAppWidget />
+      </body>
     </html>
   );
 }

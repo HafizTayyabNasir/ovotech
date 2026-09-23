@@ -1,149 +1,13 @@
-"use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
+﻿import re
 
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [scrolled, setScrolled] = useState(false);
+with open(r'd:\Ovotech\ovotech-main\ovotech-main\src\components\Navbar.js', 'r', encoding='utf-8') as f:
+    content = f.read()
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+# I will just write a new MOBILE FULL-WIDTH DRAWER OVERLAY code block
+start = content.find("{/* MOBILE FULL-WIDTH DRAWER OVERLAY */}")
+end = content.find("</nav>", start)
 
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
-
-  const navItems = [
-    { label: "Home", href: "/", key: "home" },
-    {
-      label: "Solutions", href: "#", key: "solutions",
-      columns: [
-        { header: "Our Solutions", links: [
-          { label: "Medical Coding", href: "/solutions/medical_coding", desc: "Our end-to-end clinical coding tool" }
-        ]}
-      ],
-      promo: { title: "Clinical System Integration", text: "Seamless structured write-back to patient clinical records.", image: "/clinical-workspace-review.png", bg: "from-primary to-primary-dark" },
-    },
-    { label: "About Us", href: "/about", key: "about" },
-    { label: "Contact", href: "/contact", key: "contact" },
-  ];
-
-  return (
-    <nav
-      className={`sticky top-0 z-[100] transition-all duration-300 ${scrolled ? "shadow-md shadow-black/5" : ""}`}
-      style={{ background: "#FFFFFF", borderBottom: "1px solid #E0E8F5" }}
-    >
-      <div className="site-container flex items-center justify-between relative" style={{ padding: "10px 24px", minHeight: "76px" }}>
-        {/* Brand Logo */}
-        <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 shrink-0 z-[102]">
-          <img src="/logo.png" alt="Ovotech Logo" style={{ height: "52px", width: "auto" }} />
-        </Link>
-
-        {/* Mobile Hamburger / Close Button */}
-        <button
-          className="md:hidden bg-transparent border-none text-[#0A1838] cursor-pointer z-[102] p-2 flex items-center justify-center focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            {menuOpen ? (
-              <path d="M18 6L6 18M6 6l12 12" />
-            ) : (
-              <path d="M3 12h18M3 6h18M3 18h18" />
-            )}
-          </svg>
-        </button>
-
-        {/* Desktop Nav Links */}
-        <ul className="hidden md:flex md:items-center md:gap-1.5 h-full">
-          {navItems.map((item) => (
-            <li key={item.key} className="relative group h-full flex items-center">
-              <Link
-                href={item.href}
-                className="flex items-center gap-1.5 transition-all"
-                style={{
-                  fontSize: "14px",
-                  fontWeight: item.key === "home" ? 700 : 600,
-                  padding: "10px 14px",
-                  borderRadius: "8px",
-                  color: item.key === "home" ? "#02ACEA" : "#0A1838"
-                }}
-              >
-                {item.label}
-                {item.columns && (
-                  <svg width="10" height="6" viewBox="0 0 10 6" className="transition-transform duration-200 group-hover:rotate-180">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                  </svg>
-                )}
-              </Link>
-
-              {/* Desktop Mega Menu Dropdown */}
-                {item.columns && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-[14px] w-[340px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-[110]">
-                    <div
-                      style={{
-                        background: "#fff", borderRadius: "16px",
-                        boxShadow: "0 25px 50px rgba(10,24,56,0.1)",
-                        border: "1px solid #E0E8F5",
-                        overflow: "hidden"
-                      }}
-                    >
-                      <Link href={item.columns[0].links[0].href} className="flex flex-col group/card transition-colors hover:bg-[#F8FAFC]">
-                        {/* Image Preview */}
-                        <div className="w-full h-[180px] relative overflow-hidden bg-[#E8F6FD] border-b border-[#E0E8F5]">
-                          <img 
-                            src={item.promo?.image || "/clinical-workspace-review.png"} 
-                            alt="Preview" 
-                            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
-                            className="transition-transform duration-700 group-hover/card:scale-105" 
-                          />
-                        </div>
-                        
-                        {/* Text Content */}
-                        <div className="p-6">
-                          <div className="flex items-center justify-between mb-1.5">
-                            <h3 className="text-[17px] font-extrabold text-[#0A1838]">
-                              {item.columns[0].links[0].label}
-                            </h3>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#019EE1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-0 -translate-x-3 transition-all duration-300 group-hover/card:opacity-100 group-hover/card:translate-x-0">
-                              <line x1="5" y1="12" x2="19" y2="12"></line>
-                              <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                          </div>
-                          <p className="text-[14px] text-[#64748B] leading-relaxed">
-                            {item.columns[0].links[0].desc}
-                          </p>
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                )}
-  
-              </li>
-          ))}
-        </ul>
-
-        {/* Desktop CTA Button */}
-        <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#FFFFFF", color: "#0A1838", border: "1px solid #E0E8F5", fontSize: "14px", fontWeight: 700, padding: "12px 26px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(0,0,0,0.05)", transition: "all 0.3s" }}>
-            Request a Demo
-          </Link>
-        </div>
-      </div>
-
-      {/* MOBILE FULL-WIDTH DRAWER OVERLAY */}
+new_mobile_drawer = """{/* MOBILE FULL-WIDTH DRAWER OVERLAY */}
       {menuOpen && (
         <div
           className="md:hidden fixed inset-0 top-[64px] z-[101]"
@@ -316,6 +180,11 @@ export default function Navbar() {
           </div>
         </div>
       )}
-</nav>
-  );
-}
+"""
+
+content = content[:start] + new_mobile_drawer + content[end:]
+
+with open(r'd:\Ovotech\ovotech-main\ovotech-main\src\components\Navbar.js', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Updated mobile drawer to be white-themed.")
