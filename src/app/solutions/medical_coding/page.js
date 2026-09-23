@@ -8,8 +8,17 @@ import Footer from "@/components/Footer";
 import InteractiveWorkflowShowcaseThird from "@/components/InteractiveWorkflowShowcaseThird";
 
 
+const workflowSteps = [
+  { num: "01", title: "Clinical overview", desc: "Start with the clinical review summary.", expandedDesc: "Start with the clinical review summary to see incoming documents, processing status and items awaiting review.", image: "/clinical-overview.png" },
+  { num: "02", title: "Review queue", desc: "Open the Review Queue to find the document.", expandedDesc: "Open the Review Queue to find and prioritise the document that needs attention. Select Review to open its clinical review.", image: "/review-queue.png" },
+  { num: "03", title: "Understand the case", desc: "Understand the case and context.", expandedDesc: "Review the document summary, extracted information and available patient context before deciding on coding.", image: "/clinical-review-2.png" },
+  { num: "04", title: "Understand patient context", desc: "See patient timeline and context.", expandedDesc: "Open Patient History from the clinical review to see the platform's available patient timeline, active conditions and medication context. Return to the review when ready.", image: "/patient-history.png" },
+  { num: "05", title: "Coding review", desc: "Assess each suggested SNOMED CT code.", expandedDesc: "Back in Clinical Review, assess each suggested SNOMED CT code and its confidence and evidence; accept, reject or add a code as appropriate. Complete the authorised review before any record update.", image: "/clinical-review-3.png" },
+  { num: "06", title: "Reviewed documents", desc: "Check completed reviews and status.", expandedDesc: "Use Reviewed Documents to check completed reviews, decisions and the displayed clinical record update status.", image: "/reviewed-documents.png" }
+];
+
 export default function ThirdPage() {
-  const [activeTab, setActiveTab] = useState(-1);
+  const [activeTab, setActiveTab] = useState(0);
   const [activeAccordion, setActiveAccordion] = useState(0);
 
   // Business Value Calculator State
@@ -38,6 +47,9 @@ export default function ThirdPage() {
             {/* LEFT COLUMN */}
             <div className="w-full lg:w-[45%] flex flex-col items-start text-left">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <span className="inline-block py-1 px-3 rounded-full bg-white border border-[#E0E8F5] text-[13px] font-black tracking-[2px] text-[#019EE1] uppercase mb-6 shadow-sm">
+                  Medical Coding
+                </span>
                 <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0A1838]">
                   Clinical correspondence. <span className="text-[#02ACEA] italic">Clearer decisions.</span>
                 </h1>
@@ -58,7 +70,7 @@ export default function ThirdPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <Link href="/contact" className="whitespace-nowrap bg-white text-[#0A1838] font-bold px-8 py-3.5 rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.05)] border-2 border-[#E0E8F5] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#02ACEA] hover:text-[#02ACEA]">
+                  <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
                     Request a Demo
                   </Link>
                   <button onClick={() => document.getElementById('workflow').scrollIntoView({ behavior: 'smooth' })} className="whitespace-nowrap bg-transparent text-[#0A1838] font-bold px-8 py-3.5 rounded-full border-2 border-[#E0E8F5] transition-all duration-300 hover:bg-[#F4F7FC] hover:-translate-y-1 hover:shadow-md">
@@ -68,111 +80,101 @@ export default function ThirdPage() {
               </motion.div>
             </div>
 
-            {/* RIGHT COLUMN - Bento Grid Layout */}
-            <div className="w-full lg:w-[55%]">
-              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="grid grid-cols-1 sm:grid-cols-12 gap-4">
+            {/* RIGHT COLUMN - Product UI Mockup */}
+            <div className="w-full lg:w-[55%] relative">
+              
+              {/* Soft Background Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[600px] max-h-[600px] bg-[radial-gradient(circle,rgba(2,172,234,0.1)_0%,transparent_60%)] -z-10 rounded-full blur-3xl" />
+
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="w-full">
                 
-                {/* LEFT SUB-COLUMN */}
-                <div className="sm:col-span-5 flex flex-col gap-4">
-                  {/* Top Left - Proven Productivity */}
-                  <div className="bg-[#0A1838] rounded-[24px] p-6 flex flex-col items-center justify-center text-center shadow-lg h-[180px]">
-                    <h3 className="text-white font-extrabold text-[20px] leading-tight">Accelerated</h3>
-                    <h3 className="text-white font-extrabold text-[20px] leading-tight mb-4">Processing</h3>
-                    {/* Bar chart icon */}
-                    <div className="flex items-end gap-1.5 h-10 mt-2">
-                      <div className="w-4 h-4 bg-white/20 rounded-t-sm"></div>
-                      <div className="w-4 h-7 bg-white/50 rounded-t-sm"></div>
-                      <div className="w-4 h-10 bg-[#02ACEA] rounded-t-sm"></div>
+                {/* Product Mockup Container */}
+                <div className="bg-white rounded-[24px] shadow-[0_20px_60px_rgba(10,24,56,0.08)] border border-[#E0E8F5] overflow-hidden flex flex-col relative z-10">
+                  
+                  {/* Top Bar */}
+                  <div className="flex justify-between items-center px-6 py-4 border-b border-[#F1F5F9]">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-[#10B981]"></div>
+                      <span className="text-[10px] font-bold tracking-widest text-[#64748B] uppercase">Ovotech 2.0 - Clinical Review</span>
+                    </div>
+                    <span className="text-[10px] font-bold tracking-widest text-[#94A3B8] uppercase">Fictional Product View</span>
+                  </div>
+
+                  {/* Header Area */}
+                  <div className="px-8 pt-8 pb-6 border-b border-[#F1F5F9] relative">
+                    <span className="text-[11px] font-bold tracking-widest text-[#02ACEA] uppercase mb-2 block">Reviewing</span>
+                    <div className="flex justify-between items-end">
+                      <h2 className="text-[28px] font-extrabold text-[#0A1838] leading-none">Discharge summary</h2>
+                      <span className="bg-[#FFF8E6] text-[#D97706] text-[11px] font-bold px-3 py-1 rounded-md border border-[#FDE68A]">Human review</span>
                     </div>
                   </div>
-                  
-                  {/* Bottom Left - Tall Icon Card */}
-                  <div className="bg-[#02ACEA] rounded-[24px] p-6 flex flex-col items-center justify-center flex-1 shadow-lg relative overflow-hidden min-h-[220px]">
-                     {/* Ovotech Themed Abstract Icon (Document/Shield) */}
-                     <svg className="w-28 h-28 text-white/95 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <path d="M9 15l2 2 4-4"></path>
-                     </svg>
-                     {/* Decorative Sparkles */}
-                     <div className="absolute top-6 left-6 text-white text-xl animate-pulse">✨</div>
-                     <div className="absolute bottom-8 right-6 text-white text-lg animate-pulse">✦</div>
-                  </div>
-                </div>
 
-                {/* RIGHT SUB-COLUMN */}
-                <div className="sm:col-span-7 flex flex-col gap-4">
-                  {/* Top Right - AI Extraction Visualization */}
-                  <div className="bg-white rounded-[24px] border border-[#E0E8F5] p-5 pt-6 flex-1 shadow-lg relative overflow-hidden min-h-[260px] flex flex-col justify-center">
+                  {/* Main Content Split */}
+                  <div className="flex flex-col sm:flex-row border-b border-[#F1F5F9]">
+                    {/* Left Side: Source */}
+                    <div className="flex-1 p-8 sm:border-r border-[#F1F5F9]">
+                      <span className="text-[10px] font-bold tracking-widest text-[#94A3B8] uppercase mb-4 block">Source Correspondence</span>
+                      <h3 className="text-[16px] font-bold text-[#0A1838] mb-1">Riverside Medical Practice</h3>
+                      <p className="text-[#64748B] text-[12px] mb-8">Patient ref: SAMPLE-042</p>
+
+                      <p className="text-[#334155] text-[14px] leading-[1.8]">
+                        Patient has a history of <span className="bg-[#E0F2FE] text-[#0369A1] font-semibold px-1 rounded inline-block mx-0.5">type 2 diabetes</span>. Continue review with the practice team.
+                      </p>
+                    </div>
                     
-                    {/* Background decoration */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#02ACEA]/5 rounded-full blur-2xl"></div>
+                    {/* Right Side: SNOMED */}
+                    <div className="flex-1 p-8">
+                      <span className="text-[10px] font-bold tracking-widest text-[#94A3B8] uppercase mb-4 block">SNOMED CT Suggestion</span>
+                      <h3 className="text-[16px] font-bold text-[#0A1838] mb-1">Type 2 diabetes mellitus</h3>
+                      <p className="text-[#02ACEA] text-[13px] mb-6">44054006</p>
 
-                    <div className="flex flex-col gap-6 relative z-10">
-                      {/* Step 1: Processing Status */}
-                      <div className="flex items-center justify-between bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 shadow-sm">
-                        <div className="flex items-center gap-4">
-                           <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"></path></svg>
-                           </div>
-                           <div>
-                             <div className="text-[14px] font-extrabold text-[#0A1838]">AI Extraction Active</div>
-                             <div className="text-[11px] text-[#64748B]">Processing incoming correspondence...</div>
-                           </div>
-                        </div>
-                        <div className="text-right hidden sm:block">
-                          <div className="text-[20px] font-black text-[#02ACEA]">1.2s</div>
-                          <div className="text-[10px] text-[#64748B] uppercase font-bold tracking-wider">Turnaround</div>
-                        </div>
+                      <div className="bg-[#F8FAFC] border border-[#E0E8F5] rounded-lg p-4 mb-6">
+                        <p className="text-[#475569] text-[13px] italic">"history of type 2 diabetes"</p>
                       </div>
 
-                      {/* Step 2: Source to Code Mapping */}
-                      <div className="flex items-center justify-between gap-4">
-                        {/* Source text */}
-                        <div className="flex-1 bg-white border border-[#E0E8F5] p-3 rounded-lg shadow-sm">
-                           <div className="text-[10px] text-[#64748B] font-bold uppercase mb-2 tracking-wider">Source Text</div>
-                           <div className="text-[13px] text-[#475569] leading-relaxed italic">
-                             "...patient has a history of <span className="bg-blue-100 text-blue-900 font-bold px-1 rounded">type 2 diabetes</span> and is currently taking <span className="bg-blue-100 text-blue-900 font-bold px-1 rounded">metformin</span>..."
-                           </div>
-                        </div>
-                        
-                        {/* Arrow */}
-                        <div className="text-[#CBD5E1] shrink-0 hidden lg:block">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-
-                        {/* Codes */}
-                        <div className="flex-1 flex flex-col gap-2">
-                           <div className="bg-white border border-[#E0E8F5] p-2 rounded-lg shadow-sm border-l-[3px] border-l-[#02ACEA] flex items-center justify-between">
-                             <div>
-                               <div className="text-[11px] font-bold text-[#0A1838]">Type 2 diabetes</div>
-                               <div className="text-[9px] text-[#64748B] font-mono mt-0.5">SNOMED: 44054006</div>
-                             </div>
-                             <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                           </div>
-                           <div className="bg-white border border-[#E0E8F5] p-2 rounded-lg shadow-sm border-l-[3px] border-l-[#02ACEA] flex items-center justify-between">
-                             <div>
-                               <div className="text-[11px] font-bold text-[#0A1838]">Metformin</div>
-                               <div className="text-[9px] text-[#64748B] font-mono mt-0.5">SNOMED: 372567009</div>
-                             </div>
-                             <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                           </div>
-                        </div>
+                      <div className="flex gap-3">
+                        <button className="bg-[#3B82F6] hover:bg-[#2563EB] text-white text-[13px] font-bold px-5 py-2.5 rounded shadow-sm transition-colors">
+                          Accept
+                        </button>
+                        <button className="bg-white hover:bg-gray-50 text-[#334155] border border-[#CBD5E1] text-[13px] font-bold px-5 py-2.5 rounded shadow-sm transition-colors">
+                          Amend
+                        </button>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Bottom Right - Trusted Network */}
-                  <div className="bg-[#0A1838] rounded-[24px] p-6 shadow-lg text-center flex flex-col justify-center h-[140px]">
-                     <h3 className="text-white font-extrabold text-[20px] mb-1">Designed For</h3>
-                     <p className="text-white font-bold text-[14px] mb-3">UK General Practice</p>
-                     {/* Stars */}
-                     <div className="flex justify-center gap-1.5">
-                        {[1,2,3,4,5].map(i => (
-                          <svg key={i} className="w-5 h-5 text-[#02ACEA]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        ))}
-                     </div>
+
+                  {/* Stepper Footer */}
+                  <div className="px-8 py-6">
+                    <div className="relative flex justify-between items-center w-full max-w-lg mx-auto">
+                      {/* Connecting Line */}
+                      <div className="absolute top-1/2 left-4 right-4 h-[2px] bg-[#E2E8F0] -translate-y-1/2 z-0">
+                        <div className="h-full bg-[#3B82F6] w-[75%]"></div>
+                      </div>
+                      
+                      {[
+                        { label: 'Received', status: 'done' },
+                        { label: 'Extracted', status: 'done' },
+                        { label: 'Coded', status: 'done' },
+                        { label: 'Reviewed', status: 'done' },
+                        { label: 'Approved', status: 'current' },
+                        { label: 'Posted', status: 'pending' },
+                      ].map((step, i) => (
+                        <div key={i} className="relative z-10 flex flex-col items-center gap-2">
+                          <div className={`w-3 h-3 rounded-full flex items-center justify-center
+                            ${step.status === 'done' ? 'bg-[#3B82F6]' : step.status === 'current' ? 'bg-white border-2 border-[#3B82F6]' : 'bg-white border-2 border-[#CBD5E1]'}
+                          `}></div>
+                          <span className={`text-[9px] font-bold tracking-wide uppercase ${step.status === 'pending' ? 'text-[#94A3B8]' : 'text-[#3B82F6]'}`}>{step.label}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+
+                  {/* Blue Disclaimer Banner */}
+                  <div className="bg-[#334155] px-6 py-3 flex items-center gap-3">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/70"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span className="text-[11px] text-white/90">Manual review shown. Automation follows your practice's configured policy.</span>
+                  </div>
+
                 </div>
               </motion.div>
             </div>
@@ -195,18 +197,10 @@ export default function ThirdPage() {
               {/* Background Line */}
               <div className="absolute left-[32px] right-[32px] top-6 h-[2px] bg-[#E0E8F5] z-0">
                 {/* Progress Line */}
-                <div className="h-full bg-[#02ACEA] transition-all duration-500" style={{ width: `${(activeAccordion / 6) * 100}%` }}></div>
+                <div className="h-full bg-[#02ACEA] transition-all duration-500" style={{ width: `${(activeAccordion / 5) * 100}%` }}></div>
               </div>
               
-              {[
-                { num: "01", title: "Receive", desc: "Clinical correspondence enters a visible queue.", expandedDesc: "Documents arrive securely and are immediately visible in the platform. The clinical overview provides an at-a-glance summary of incoming volumes and processing status.", image: "/clinical-overview.png" },
-                { num: "02", title: "Extract", desc: "Relevant information is structured from the source.", expandedDesc: "Ovotech identifies and extracts key clinical information from the unstructured text, presenting it clearly alongside the original document for easy verification.", image: "/clinical-review-2.png" },
-                { num: "03", title: "Identify", desc: "Clinical concepts are linked to supporting evidence.", expandedDesc: "Extracted concepts are highlighted within the source text, maintaining a clear link between the structured data and the original evidence.", image: "/clinical-review-2.png" },
-                { num: "04", title: "Suggest", desc: "SNOMED CT codes are presented for consideration.", expandedDesc: "The platform suggests appropriate SNOMED CT codes based on the extracted information, complete with confidence indicators.", image: "/clinical-review-3.png" },
-                { num: "05", title: "Review", desc: "An authorised person checks context and evidence.", expandedDesc: "Reviewers can access patient history processed through Ovotech to understand the broader clinical context before making coding decisions.", image: "/patient-history.png" },
-                { num: "06", title: "Approve", desc: "The final selection is explicitly approved.", expandedDesc: "Authorised personnel accept, amend, or reject the suggested codes. Explicit approval is required before any information moves forward.", image: "/clinical-review-3.png" },
-                { num: "07", title: "Write back", desc: "Approved information is posted to clinical record system.", expandedDesc: "Completed reviews and approved codes are written back to the clinical record system, with the status updated in the Reviewed Documents log.", image: "/reviewed-documents.png" }
-              ].map((step, i) => (
+              {workflowSteps.map((step, i) => (
                 <div key={i} className="flex flex-col items-center gap-3 cursor-pointer group w-16 relative" onClick={() => setActiveAccordion(i)}>
                   {/* Circle */}
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center font-extrabold text-[15px] transition-all duration-300 z-10 ${activeAccordion === i ? 'bg-[#02ACEA] text-white shadow-lg scale-110 ring-4 ring-blue-100' : activeAccordion > i ? 'bg-[#02ACEA] text-white' : 'bg-white text-[#0A1838] border-2 border-[#E0E8F5] group-hover:border-[#02ACEA]'}`}>
@@ -231,37 +225,13 @@ export default function ThirdPage() {
                   >
                     <div className="mb-8 text-center max-w-3xl mx-auto">
                       <h3 className="text-[24px] font-extrabold text-[#0A1838] mb-3">
-                        {[
-                          { title: "Receive", desc: "Clinical correspondence enters a visible queue.", expandedDesc: "Documents arrive securely and are immediately visible in the platform. The clinical overview provides an at-a-glance summary of incoming volumes and processing status.", image: "/clinical-overview.png" },
-                          { title: "Extract", desc: "Relevant information is structured from the source.", expandedDesc: "Ovotech identifies and extracts key clinical information from the unstructured text, presenting it clearly alongside the original document for easy verification.", image: "/clinical-review-2.png" },
-                          { title: "Identify", desc: "Clinical concepts are linked to supporting evidence.", expandedDesc: "Extracted concepts are highlighted within the source text, maintaining a clear link between the structured data and the original evidence.", image: "/clinical-review-2.png" },
-                          { title: "Suggest", desc: "SNOMED CT codes are presented for consideration.", expandedDesc: "The platform suggests appropriate SNOMED CT codes based on the extracted information, complete with confidence indicators.", image: "/clinical-review-3.png" },
-                          { title: "Review", desc: "An authorised person checks context and evidence.", expandedDesc: "Reviewers can access patient history processed through Ovotech to understand the broader clinical context before making coding decisions.", image: "/patient-history.png" },
-                          { title: "Approve", desc: "The final selection is explicitly approved.", expandedDesc: "Authorised personnel accept, amend, or reject the suggested codes. Explicit approval is required before any information moves forward.", image: "/clinical-review-3.png" },
-                          { title: "Write back", desc: "Approved information is posted to clinical record system.", expandedDesc: "Completed reviews and approved codes are written back to the clinical record system, with the status updated in the Reviewed Documents log.", image: "/reviewed-documents.png" }
-                        ][activeAccordion].title}
+                        {workflowSteps[activeAccordion].title}
                       </h3>
                       <p className="text-[18px] text-[#02ACEA] font-bold mb-4">
-                        {[
-                          { title: "Receive", desc: "Clinical correspondence enters a visible queue.", expandedDesc: "Documents arrive securely and are immediately visible in the platform. The clinical overview provides an at-a-glance summary of incoming volumes and processing status.", image: "/clinical-overview.png" },
-                          { title: "Extract", desc: "Relevant information is structured from the source.", expandedDesc: "Ovotech identifies and extracts key clinical information from the unstructured text, presenting it clearly alongside the original document for easy verification.", image: "/clinical-review-2.png" },
-                          { title: "Identify", desc: "Clinical concepts are linked to supporting evidence.", expandedDesc: "Extracted concepts are highlighted within the source text, maintaining a clear link between the structured data and the original evidence.", image: "/clinical-review-2.png" },
-                          { title: "Suggest", desc: "SNOMED CT codes are presented for consideration.", expandedDesc: "The platform suggests appropriate SNOMED CT codes based on the extracted information, complete with confidence indicators.", image: "/clinical-review-3.png" },
-                          { title: "Review", desc: "An authorised person checks context and evidence.", expandedDesc: "Reviewers can access patient history processed through Ovotech to understand the broader clinical context before making coding decisions.", image: "/patient-history.png" },
-                          { title: "Approve", desc: "The final selection is explicitly approved.", expandedDesc: "Authorised personnel accept, amend, or reject the suggested codes. Explicit approval is required before any information moves forward.", image: "/clinical-review-3.png" },
-                          { title: "Write back", desc: "Approved information is posted to clinical record system.", expandedDesc: "Completed reviews and approved codes are written back to the clinical record system, with the status updated in the Reviewed Documents log.", image: "/reviewed-documents.png" }
-                        ][activeAccordion].desc}
+                        {workflowSteps[activeAccordion].desc}
                       </p>
                       <p className="text-[#475569] text-[15px] leading-relaxed">
-                        {[
-                          { title: "Receive", desc: "Clinical correspondence enters a visible queue.", expandedDesc: "Documents arrive securely and are immediately visible in the platform. The clinical overview provides an at-a-glance summary of incoming volumes and processing status.", image: "/clinical-overview.png" },
-                          { title: "Extract", desc: "Relevant information is structured from the source.", expandedDesc: "Ovotech identifies and extracts key clinical information from the unstructured text, presenting it clearly alongside the original document for easy verification.", image: "/clinical-review-2.png" },
-                          { title: "Identify", desc: "Clinical concepts are linked to supporting evidence.", expandedDesc: "Extracted concepts are highlighted within the source text, maintaining a clear link between the structured data and the original evidence.", image: "/clinical-review-2.png" },
-                          { title: "Suggest", desc: "SNOMED CT codes are presented for consideration.", expandedDesc: "The platform suggests appropriate SNOMED CT codes based on the extracted information, complete with confidence indicators.", image: "/clinical-review-3.png" },
-                          { title: "Review", desc: "An authorised person checks context and evidence.", expandedDesc: "Reviewers can access patient history processed through Ovotech to understand the broader clinical context before making coding decisions.", image: "/patient-history.png" },
-                          { title: "Approve", desc: "The final selection is explicitly approved.", expandedDesc: "Authorised personnel accept, amend, or reject the suggested codes. Explicit approval is required before any information moves forward.", image: "/clinical-review-3.png" },
-                          { title: "Write back", desc: "Approved information is posted to clinical record system.", expandedDesc: "Completed reviews and approved codes are written back to the clinical record system, with the status updated in the Reviewed Documents log.", image: "/reviewed-documents.png" }
-                        ][activeAccordion].expandedDesc}
+                        {workflowSteps[activeAccordion].expandedDesc}
                       </p>
                     </div>
                     
@@ -274,15 +244,7 @@ export default function ThirdPage() {
                       </div>
                       <img 
                         src={
-                          [
-                            { title: "Receive", desc: "Clinical correspondence enters a visible queue.", expandedDesc: "Documents arrive securely and are immediately visible in the platform. The clinical overview provides an at-a-glance summary of incoming volumes and processing status.", image: "/clinical-overview.png" },
-                            { title: "Extract", desc: "Relevant information is structured from the source.", expandedDesc: "Ovotech identifies and extracts key clinical information from the unstructured text, presenting it clearly alongside the original document for easy verification.", image: "/clinical-review-2.png" },
-                            { title: "Identify", desc: "Clinical concepts are linked to supporting evidence.", expandedDesc: "Extracted concepts are highlighted within the source text, maintaining a clear link between the structured data and the original evidence.", image: "/clinical-review-2.png" },
-                            { title: "Suggest", desc: "SNOMED CT codes are presented for consideration.", expandedDesc: "The platform suggests appropriate SNOMED CT codes based on the extracted information, complete with confidence indicators.", image: "/clinical-review-3.png" },
-                            { title: "Review", desc: "An authorised person checks context and evidence.", expandedDesc: "Reviewers can access patient history processed through Ovotech to understand the broader clinical context before making coding decisions.", image: "/patient-history.png" },
-                            { title: "Approve", desc: "The final selection is explicitly approved.", expandedDesc: "Authorised personnel accept, amend, or reject the suggested codes. Explicit approval is required before any information moves forward.", image: "/clinical-review-3.png" },
-                            { title: "Write back", desc: "Approved information is posted to clinical record system.", expandedDesc: "Completed reviews and approved codes are written back to the clinical record system, with the status updated in the Reviewed Documents log.", image: "/reviewed-documents.png" }
-                          ][activeAccordion].image
+                          workflowSteps[activeAccordion].image
                         } 
                         alt="Screenshot" 
                         className="w-full h-auto block" 
@@ -364,7 +326,7 @@ export default function ThirdPage() {
               Clinical structuring <span className="text-[#02ACEA] mx-2">+</span> 
               SNOMED suggestions <span className="text-[#02ACEA] mx-2">+</span> 
               Human review <span className="text-[#02ACEA] mx-2">+</span> 
-              Controlled write-back
+              Patient record updated
             </div>
             <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
           </div>
@@ -731,7 +693,7 @@ export default function ThirdPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-40 transform translate-x-1/2 -translate-y-1/2"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-40 transform -translate-x-1/2 translate-y-1/2"></div>
 
-              <h3 className="font-extrabold text-[#0A1838] text-[20px] mb-1 relative z-10">See what happened, when and by whom.</h3>
+              <h3 className="font-extrabold text-[#0A1838] text-[20px] mb-1 relative z-10">Activity and Audit trail: See what happened, when and by whom.</h3>
               <div className="text-[14px] text-[#64748B] mb-12 pb-4 border-b border-[#E0E8F5] relative z-10">DEMO-107</div>
               
               <div className="w-full relative mx-auto max-w-3xl py-4 z-10">
@@ -997,7 +959,7 @@ export default function ThirdPage() {
               <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-[#0A1838] mb-6">See how Ovotech could work in your practice.</h2>
               <p className="text-[#475569] text-[18px] mb-10 max-w-2xl mx-auto leading-relaxed">Explore how Ovotech can help your team process clinical correspondence, review suggested coding and maintain visibility across your practice.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/contact" className="px-8 py-4 bg-[#0A1838] text-white font-bold rounded-full shadow-lg hover:bg-black transition-all transform hover:-translate-y-1">
+                <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
                   Request a Demo
                 </Link>
                 <Link href="/contact" className="px-8 py-4 bg-white border-2 border-[#E0E8F5] text-[#0A1838] font-bold rounded-full hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#02ACEA] hover:text-[#02ACEA]">

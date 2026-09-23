@@ -254,11 +254,11 @@ export default function Home() {
                 <div className="relative z-10">
                   <h3 className="text-[20px] font-extrabold text-[#9B2C2C] mb-6">Without a connected process</h3>
                   <ul className="space-y-5 text-[#9B2C2C] font-medium text-[16px]">
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">01</div> Open and read each document</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">02</div> Search for relevant patient context</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">03</div> Re-enter clinical information</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">04</div> Find and verify suitable codes</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">05</div> Track approval and posting separately</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">01</div> Process documents across disconnected systems</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">02</div> Manually search for patient context</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">03</div> Duplicate data entry across platforms</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">04</div> Inconsistent review and coding processes</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">05</div> Fragmented workflow tracking</li>
                   </ul>
                 </div>
               </div>
@@ -278,11 +278,11 @@ export default function Home() {
                 <div className="relative z-10">
                   <h3 className="text-[20px] font-extrabold text-[#0369A1] mb-6">With Ovotech</h3>
                   <ul className="space-y-5 text-[#0369A1] font-medium text-[16px]">
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Correspondence enters one visible queue</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Relevant information is structured</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Suggestions include source evidence</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> People review, amend and approve</li>
-                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> The outcome and write-back remain traceable</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Centralised, visible document queue</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Automated data extraction and structuring</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> AI-assisted actionable insights</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Streamlined human-in-the-loop review</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Full audit trail and direct write-back</li>
                   </ul>
                 </div>
               </div>
@@ -290,13 +290,13 @@ export default function Home() {
           </div>
           <div className="text-center">
             <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 font-bold text-[#0A1838] text-[14px] md:text-[16px] mb-6 shadow-sm">
-              Document extraction <span className="text-[#02ACEA] mx-2">+</span> 
-              Clinical structuring <span className="text-[#02ACEA] mx-2">+</span> 
-              SNOMED suggestions <span className="text-[#02ACEA] mx-2">+</span> 
-              Human review <span className="text-[#02ACEA] mx-2">+</span> 
-              Controlled write-back
+              Document intelligence <span className="text-[#02ACEA] mx-2">+</span> 
+              Automated workflows <span className="text-[#02ACEA] mx-2">+</span> 
+              Decision support <span className="text-[#02ACEA] mx-2">+</span> 
+              Authorised review <span className="text-[#02ACEA] mx-2">+</span> 
+              Seamless integration
             </div>
-            <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
+            <p className="text-[#0A1838] font-bold text-[18px]">More than just automation. One connected Ovotech process.</p>
           </div>
         </div>
       </section>
@@ -310,7 +310,7 @@ export default function Home() {
               <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-[#0A1838] mb-6">See how Ovotech could work in your practice.</h2>
               <p className="text-[#475569] text-[18px] mb-10 max-w-2xl mx-auto leading-relaxed">Explore how Ovotech can help your team process clinical correspondence, review suggested coding and maintain visibility across your practice.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/contact" className="px-8 py-4 bg-[#0A1838] text-white font-bold rounded-full shadow-lg hover:bg-black transition-all transform hover:-translate-y-1">
+                <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
                   Request a Demo
                 </Link>
                 <Link href="/contact" className="px-8 py-4 bg-white border-2 border-[#E0E8F5] text-[#0A1838] font-bold rounded-full hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#02ACEA] hover:text-[#02ACEA]">

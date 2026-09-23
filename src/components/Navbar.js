@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -75,10 +77,10 @@ export default function Navbar() {
                 className="flex items-center gap-1.5 transition-all"
                 style={{
                   fontSize: "14px",
-                  fontWeight: item.key === "home" ? 700 : 600,
+                  fontWeight: (pathname === item.href || (item.key === "solutions" && pathname.startsWith("/solutions"))) ? 700 : 600,
                   padding: "10px 14px",
                   borderRadius: "8px",
-                  color: item.key === "home" ? "#02ACEA" : "#0A1838"
+                  color: (pathname === item.href || (item.key === "solutions" && pathname.startsWith("/solutions"))) ? "#02ACEA" : "#0A1838"
                 }}
               >
                 {item.label}
@@ -137,7 +139,7 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" style={{ background: "#FFFFFF", color: "#0A1838", border: "1px solid #E0E8F5", fontSize: "14px", fontWeight: 700, padding: "12px 26px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(0,0,0,0.05)", transition: "all 0.3s" }}>
+          <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-6 py-2.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-0.5">
             Request a Demo
           </Link>
         </div>

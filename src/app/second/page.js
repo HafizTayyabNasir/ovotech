@@ -56,7 +56,7 @@ export default function SecondPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <Link href="/contact" className="whitespace-nowrap" style={{ background: "#FFFFFF", color: "#0A1838", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(0, 0, 0, 0.05)", transition: "all 0.3s", border: "2px solid #E0E8F5" }}>
+                  <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105" style={{ background: "#FFFFFF", color: "#0A1838", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", boxShadow: "0 4px 14px rgba(0, 0, 0, 0.05)", transition: "all 0.3s", border: "2px solid #E0E8F5" }}>
                     Request a Demo
                   </Link>
                   <button onClick={() => document.getElementById('workflow').scrollIntoView({ behavior: 'smooth' })} className="whitespace-nowrap" style={{ background: "transparent", color: "#0A1838", fontWeight: 700, padding: "14px 32px", borderRadius: "30px", transition: "all 0.3s", border: "2px solid #E0E8F5" }}>
@@ -991,7 +991,7 @@ export default function SecondPage() {
           <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-white mt-4 mb-6">See how Ovotech could work in your practice.</h2>
           <p className="text-gray-300 text-[18px] mb-10 leading-relaxed">Explore how Ovotech can help your team process clinical correspondence, review suggested coding and maintain visibility across your practice.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-white text-[#0A1838] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1">
+            <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
               Request a Demo
             </Link>
             <Link href="/contact" className="px-8 py-4 bg-transparent border-2 border-gray-600 text-white font-bold rounded-full hover:border-white transition-all">

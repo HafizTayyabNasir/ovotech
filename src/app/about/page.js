@@ -13,7 +13,7 @@ export default function About() {
       <Navbar />
       
       {/* 1. HERO SECTION (Split Layout) */}
-      <section className="relative pt-[120px] pb-[80px] overflow-hidden bg-white border-b border-[#E0E8F5]">
+      <section className="relative pt-[30px] lg:pt-[50px] pb-[60px] lg:pb-[80px] overflow-hidden bg-white border-b border-[#E0E8F5]">
         <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(2,172,234,0.05)_0%,transparent_60%)] pointer-events-none" />
         
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12 relative z-10">
@@ -21,24 +21,29 @@ export default function About() {
             
             {/* LEFT COLUMN */}
             <div className="w-full lg:w-[45%] flex flex-col items-start text-left">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#E8F6FD] border border-[#019EE1]/20 text-[12px] font-extrabold tracking-[2px] text-[#019EE1] uppercase mb-6 shadow-sm">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#E8F6FD] border border-[#019EE1]/20 text-[13px] font-black tracking-[2px] text-[#019EE1] uppercase mb-6 shadow-sm">
                 About OvoTech
               </span>
               <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0A1838]">
                 Supporting Smarter <br/>
                 <span className="text-[#02ACEA] italic">Clinical Workflows.</span>
               </h1>
-              <p className="text-[#475569] text-[16px] leading-[1.6] mb-8 max-w-lg">
-                OvoTech is a clinical document processing and coding workflow platform designed for UK primary care. We bring AI-assisted technology and structured workflows together to help practices manage clinical information more efficiently.
+              <p className="text-[#475569] text-[16px] leading-[1.6] mb-8 max-w-xl">
+                OvoTech is an AI-assisted clinical document processing and coding platform designed for UK primary care. It supports practices in managing incoming clinical correspondence by bringing document review, relevant patient context and AI-assisted coding recommendations into one streamlined workflow. With confidence scores and authorised human review built into the process, OvoTech helps teams process clinical information more efficiently while maintaining control over coding and record updates.
               </p>
               
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mb-8">
                 <div className="bg-[#F4F7FC] px-4 py-2 rounded-full text-[13px] font-bold text-[#0A1838] border border-[#E0E8F5]">
                   ✅ Authorised Professionals
                 </div>
                 <div className="bg-[#F4F7FC] px-4 py-2 rounded-full text-[13px] font-bold text-[#0A1838] border border-[#E0E8F5]">
                   ✅ Centralised Review
                 </div>
+              </div>
+              <div className="flex">
+                <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
+                  Book a Demo
+                </Link>
               </div>
             </div>
 
@@ -66,7 +71,7 @@ export default function About() {
       </section>
 
       {/* 2. OUR APPROACH (Bento Grid Style) */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-16 lg:py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(2,172,234,0.08)_0%,transparent_70%)] pointer-events-none" />
         
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
@@ -128,7 +133,7 @@ export default function About() {
       </section>
 
       {/* 3. BUILT FOR PRIMARY CARE (Comparison / Split Layout Style) */}
-      <section className="py-24 bg-[#F4F7FC] relative overflow-hidden border-t border-[#E0E8F5]">
+      <section className="py-16 lg:py-20 bg-[#F4F7FC] relative overflow-hidden border-t border-[#E0E8F5]">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2">
             <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">Built for Primary Care</span>
@@ -185,7 +190,7 @@ export default function About() {
       </section>
 
       {/* 4. CORE VALUES */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-16 lg:py-20 bg-white relative overflow-hidden">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12 text-center">
           <span className="inline-block py-1 px-3 rounded-full bg-[#E8F6FD] text-[12px] font-extrabold tracking-[2px] text-[#019EE1] uppercase mb-4">Core Values</span>
           <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-[#0A1838] leading-tight max-w-3xl mx-auto mb-16">
@@ -231,7 +236,7 @@ export default function About() {
       </section>
 
       {/* 5. FINAL CTA */}
-      <section className="py-24 bg-white text-center border-t border-[#E0E8F5]">
+      <section className="py-16 lg:py-20 bg-white text-center border-t border-[#E0E8F5]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-[#0A1838] rounded-[40px] p-10 md:p-16 shadow-2xl relative overflow-hidden">
             <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(2,172,234,0.2)_0%,transparent_60%)] pointer-events-none" />
@@ -240,13 +245,13 @@ export default function About() {
                 Get Started
               </span>
               <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-white mb-6 leading-tight">
-                Ready to modernise your <br className="hidden sm:block" /> clinical workflows?
+                Spend less time processing <br className="hidden sm:block" /> clinical correspondence.
               </h2>
               <p className="text-[#94A3B8] text-[18px] mb-10 max-w-2xl mx-auto leading-relaxed">
-                See exactly how OvoTech can reduce administrative burden and streamline correspondence review in your GP practice.
+                Streamline document review and coding with OvoTech, while keeping your team in control of every clinical record update.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/contact" className="px-8 py-4 bg-[#02ACEA] text-white font-bold rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.3)] hover:bg-[#0296CC] hover:shadow-[0_12px_25px_rgba(2,172,234,0.4)] transition-all duration-300 hover:-translate-y-1">
+                <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
                   Request a Demo
                 </Link>
                 <Link href="/contact" className="px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-all duration-300 hover:-translate-y-1">

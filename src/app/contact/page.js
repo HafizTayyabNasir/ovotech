@@ -13,7 +13,7 @@ export default function Contact() {
       <Navbar />
       
       {/* 1. HERO SECTION (Split Layout) */}
-      <section className="relative pt-[120px] pb-[80px] overflow-hidden bg-[#F4F7FC] border-b border-[#E0E8F5]">
+      <section className="relative pt-[30px] lg:pt-[50px] pb-[60px] lg:pb-[80px] overflow-hidden bg-[#F4F7FC] border-b border-[#E0E8F5]">
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(2,172,234,0.05)_0%,transparent_70%)] pointer-events-none" />
         
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12 relative z-10">
@@ -21,7 +21,7 @@ export default function Contact() {
             
             {/* LEFT COLUMN */}
             <div className="w-full lg:w-[45%] flex flex-col items-start text-left">
-              <span className="inline-block py-1 px-3 rounded-full bg-white border border-[#E0E8F5] text-[12px] font-extrabold tracking-[2px] text-[#019EE1] uppercase mb-6 shadow-sm">
+              <span className="inline-block py-1 px-3 rounded-full bg-white border border-[#E0E8F5] text-[13px] font-black tracking-[2px] text-[#019EE1] uppercase mb-6 shadow-sm">
                 Contact Us
               </span>
               <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0A1838]">

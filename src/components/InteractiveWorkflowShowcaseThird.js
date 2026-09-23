@@ -57,7 +57,7 @@ const workflowSteps = [
   {
     number: "04",
     category: "PATIENT HISTORY",
-    title: "Patient history",
+    title: "Understand patient context",
     description: "Open Patient History from the clinical review to see the platform’s available patient timeline, active conditions and medication context. Return to the review when ready.",
     tag: "PATIENT HISTORY CONTEXT DISPLAYED",
     image: "/patient-history.png",
