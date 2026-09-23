@@ -1,3 +1,4 @@
+import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -10,6 +11,7 @@ export const metadata = {
 export default function About() {
   return (
     <>
+      <TopBar />
       <Navbar />
       
       {/* 1. HERO SECTION (Split Layout) */}
