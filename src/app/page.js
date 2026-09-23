@@ -147,11 +147,7 @@ export default function Home() {
       
       <section className="py-20 bg-white">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">The Problem</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Clinical correspondence creates more work than it should.</h2>
-            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Teams often move between documents, patient records and coding tools to find context, structure information and decide what belongs in the record.</p>
-          </div>
+          
 
           <div className="relative mb-12 bg-white border border-[#E0E8F5] rounded-3xl overflow-hidden shadow-lg">
             <div className="flex flex-col md:flex-row">
@@ -229,7 +225,7 @@ export default function Home() {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#02ACEA] opacity-10 rounded-bl-full"></div>
                   <h3 className="text-[16px] font-extrabold text-[#0A1838] uppercase tracking-widest mb-4">Our Purpose</h3>
                   <p className="text-[#0A1838] text-[24px] font-bold leading-relaxed">
-                    "To simplify clinical document processing and reduce the administrative burden on GP practices, giving healthcare professionals more time to focus on what matters most: <span className="text-[#02ACEA]">patient care.</span>"
+                    To simplify clinical document processing and reduce the administrative burden on GP practices, giving healthcare professionals more time to focus on what matters most: <span className="text-[#02ACEA]">patient care.</span>
                   </p>
                </div>
             </div>
