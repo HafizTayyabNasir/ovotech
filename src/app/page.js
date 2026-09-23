@@ -129,32 +129,109 @@ export default function Home() {
       </section>
 
       {/* 2. WHAT IS OVOTECH? */}
-      <section className="py-20 bg-[#F4F7FC]">
-        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-24 bg-[#0A1838] relative overflow-hidden">
+        <div style={{ position: "absolute", top: "0%", left: "0%", width: "500px", height: "500px", background: "radial-gradient(circle, rgba(2, 172, 234, 0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
+        <div className="max-w-[1350px] mx-auto px-6 lg:px-12 relative z-10 text-center">
           <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">WHAT IS OVOTECH?</span>
-          <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">A Smarter Way to Manage Clinical Correspondence</h2>
-          <p className="text-[#475569] text-[16px] max-w-3xl mx-auto leading-relaxed">
-            Ovotech brings clinical document processing, information extraction, coding recommendations, and authorised human review into one connected workflow. Using AI, the platform identifies relevant clinical information from incoming correspondence and suggests SNOMED CT codes for review before approved information is added to the patient's clinical record. Designed to work alongside existing clinical systems, Ovotech helps practices manage clinical information more efficiently without replacing the systems they already use.
-          </p>
+          <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-white mt-2 mb-6">A Smarter Way to Manage Clinical Correspondence</h2>
+          
+          <div className="bg-[#112146] rounded-3xl border border-[#2A3858] shadow-2xl p-8 lg:p-12 max-w-4xl mx-auto">
+             <p className="text-gray-300 text-[18px] leading-relaxed">
+               Ovotech brings clinical document processing, information extraction, coding recommendations, and authorised human review into one connected workflow. Using AI, the platform identifies relevant clinical information from incoming correspondence and suggests SNOMED CT codes for review before approved information is added to the patient's clinical record. Designed to work alongside existing clinical systems, Ovotech helps practices manage clinical information more efficiently without replacing the systems they already use.
+             </p>
+          </div>
         </div>
       </section>
 
       {/* 3. WHY WAS OVOTECH BUILT? */}
+      
       <section className="py-20 bg-white">
         <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
-            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">WHY WAS OVOTECH BUILT?</span>
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Because Clinical Teams Have More Important Things to Focus On.</h2>
-            <p className="text-[#475569] text-[16px] max-w-3xl mx-auto leading-relaxed mb-10">
-              Every day, GP practices receive large volumes of clinical correspondence that need to be reviewed, interpreted, coded, and recorded. This often involves switching between systems, manually extracting information, identifying appropriate clinical codes, and updating patient records. These repetitive tasks consume valuable time and can contribute to administrative backlogs. Ovotech was built to simplify this process. By combining AI-assisted processing with authorised human review, the platform helps reduce repetitive administrative work, improve workflow efficiency, and support more consistent clinical coding.
-            </p>
-            
-            {/* Our Purpose Callout */}
-            <div className="bg-[#F8FAFC] border border-[#E0E8F5] rounded-3xl p-8 max-w-4xl mx-auto shadow-sm">
-              <h3 className="text-[14px] font-extrabold text-[#0A1838] uppercase tracking-wider mb-3">Our Purpose</h3>
-              <p className="text-[#02ACEA] text-[20px] font-bold leading-relaxed">
-                To simplify clinical document processing and reduce the administrative burden on GP practices, giving healthcare professionals more time to focus on what matters most: patient care.
-              </p>
+          <div className="text-center mb-16">
+            <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">The Problem</span>
+            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-4">Clinical correspondence creates more work than it should.</h2>
+            <p className="text-[#475569] text-[16px] max-w-2xl mx-auto">Teams often move between documents, patient records and coding tools to find context, structure information and decide what belongs in the record.</p>
+          </div>
+
+          <div className="relative mb-12 bg-white border border-[#E0E8F5] rounded-3xl overflow-hidden shadow-lg">
+            <div className="flex flex-col md:flex-row">
+              {/* Left Side: Without connected process */}
+              <div className="flex-1 bg-[#FFF5F5] p-10 relative overflow-hidden">
+                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
+                  <path d="M 0,20 Q 50,150 100,50 T 200,80 T 300,20 T 400,100 T 500,50" stroke="#9B2C2C" strokeWidth="4" fill="none" />
+                  <path d="M 0,80 Q 80,10 150,100 T 250,50 T 350,120 T 500,80" stroke="#9B2C2C" strokeWidth="2" fill="none" strokeDasharray="5,5" />
+                </svg>
+                <div className="relative z-10">
+                  <h3 className="text-[20px] font-extrabold text-[#9B2C2C] mb-6">Without a connected process</h3>
+                  <ul className="space-y-5 text-[#9B2C2C] font-medium text-[16px]">
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">01</div> Open and read each document</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">02</div> Search for relevant patient context</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">03</div> Re-enter clinical information</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">04</div> Find and verify suitable codes</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-800 shrink-0">05</div> Track approval and posting separately</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Divider */}
+              <div className="w-full md:w-4 bg-gradient-to-b from-[#9B2C2C] to-[#0369A1] flex items-center justify-center relative">
+                <div className="absolute w-10 h-10 bg-white rounded-full shadow-lg border-2 border-gray-200 flex items-center justify-center z-20 font-bold text-gray-500 transform md:-rotate-90 text-[12px]">VS</div>
+              </div>
+              
+              {/* Right Side: With Ovotech */}
+              <div className="flex-1 bg-[#F0F9FF] p-10 relative overflow-hidden">
+                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="none">
+                  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#0369A1" strokeWidth="8" strokeLinecap="round" />
+                  <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#0369A1" strokeWidth="2" strokeDasharray="10,10" />
+                  <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#0369A1" strokeWidth="2" strokeDasharray="10,10" />
+                </svg>
+                <div className="relative z-10">
+                  <h3 className="text-[20px] font-extrabold text-[#0369A1] mb-6">With Ovotech</h3>
+                  <ul className="space-y-5 text-[#0369A1] font-medium text-[16px]">
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Correspondence enters one visible queue</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Relevant information is structured</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> Suggestions include source evidence</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> People review, amend and approve</li>
+                    <li className="flex gap-4 items-center"><div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-[#0369A1] shrink-0">✓</div> The outcome and write-back remain traceable</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="inline-block bg-[#F8FAFC] border border-[#E0E8F5] rounded-xl p-4 font-bold text-[#0A1838] text-[14px] md:text-[16px] mb-6 shadow-sm">
+              Document extraction <span className="text-[#02ACEA] mx-2">+</span> 
+              Clinical structuring <span className="text-[#02ACEA] mx-2">+</span> 
+              SNOMED suggestions <span className="text-[#02ACEA] mx-2">+</span> 
+              Human review <span className="text-[#02ACEA] mx-2">+</span> 
+              Controlled write-back
+            </div>
+            <p className="text-[#0A1838] font-bold text-[18px]">More than document extraction. One connected Ovotech process.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-[#F4F7FC]">
+        <div className="max-w-[1350px] mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="w-full lg:w-1/2">
+               <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">WHY WAS OVOTECH BUILT?</span>
+               <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-[#0A1838] mt-2 mb-6">Because Clinical Teams Have More Important Things to Focus On.</h2>
+               <p className="text-[#475569] text-[16px] leading-relaxed mb-6">
+                 Every day, GP practices receive large volumes of clinical correspondence that need to be reviewed, interpreted, coded, and recorded. This often involves switching between systems, manually extracting information, identifying appropriate clinical codes, and updating patient records. These repetitive tasks consume valuable time and can contribute to administrative backlogs. 
+               </p>
+               <p className="text-[#475569] text-[16px] leading-relaxed">
+                 Ovotech was built to simplify this process. By combining AI-assisted processing with authorised human review, the platform helps reduce repetitive administrative work, improve workflow efficiency, and support more consistent clinical coding.
+               </p>
+            </div>
+            <div className="w-full lg:w-1/2">
+               <div className="bg-white border-2 border-[#02ACEA] rounded-3xl p-10 shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#02ACEA] opacity-10 rounded-bl-full"></div>
+                  <h3 className="text-[16px] font-extrabold text-[#0A1838] uppercase tracking-widest mb-4">Our Purpose</h3>
+                  <p className="text-[#0A1838] text-[24px] font-bold leading-relaxed">
+                    "To simplify clinical document processing and reduce the administrative burden on GP practices, giving healthcare professionals more time to focus on what matters most: <span className="text-[#02ACEA]">patient care.</span>"
+                  </p>
+               </div>
             </div>
           </div>
         </div>
