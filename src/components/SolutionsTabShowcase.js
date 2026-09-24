@@ -9,7 +9,7 @@ const modulesData = [
     title: "Review Queue & Intake Automation",
     subtitle: "Centralised incoming correspondence triage and prioritization",
     desc: "A unified, intelligent workspace showing all incoming clinical documents that require review. Triage documents automatically by urgency, document type, or patient risk profile while maintaining total operational clarity.",
-    image: "/step1-intake.png",
+    image: "/clinical-overview.png",
     highlights: [
       "Real-time document status tracking",
       "Prioritised workload queue with smart tagging",
@@ -39,7 +39,7 @@ const modulesData = [
     title: "Patient History Context",
     subtitle: "Instant clinical background for accurate decision-making",
     desc: "Surfaces relevant historical diagnoses, current medications, allergies, and previous consultations alongside the document being reviewed. Minimises clinical risk and prevents duplicate coding.",
-    image: "/step4-patient-history.png",
+    image: "/patient-history.png",
     highlights: [
       "Instant record context display alongside document",
       "Historical diagnosis comparison & cross-referencing",
@@ -54,7 +54,7 @@ const modulesData = [
     title: "SNOMED CT Coding Support",
     subtitle: "Precision AI concept recognition with full human oversight",
     desc: "Automatically analyses clinical narrative text to identify medical concepts, diagnoses, procedures, and findings—proposing accurate SNOMED CT terminology for human approval.",
-    image: "/step3-snomed.png",
+    image: "/clinical-review-3.png",
     highlights: [
       "Automated clinical concept & term recognition",
       "SNOMED CT code suggestions with confidence scores",
@@ -69,7 +69,7 @@ const modulesData = [
     title: "EMIS Web Integration",
     subtitle: "Direct, audited write-back into patient clinical records",
     desc: "Once verified by an authorized clinician or administrative reviewer, coded data and summary notes are saved directly into the EMIS Web EPR system without manual re-keying.",
-    image: "/step5-emis-writeback.png",
+    image: "/reviewed-documents.png",
     highlights: [
       "Supported EMIS Web integration framework",
       "Structured clinical record write-back",

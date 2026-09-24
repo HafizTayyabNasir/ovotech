@@ -37,7 +37,7 @@ const complianceData = [
     title: "ISO 27001",
     desc: "Certified Information Security Management System standards ensuring systematic encryption, access controls, and data integrity.",
     icon: "🔒",
-    image: "/step5-emis-writeback.png",
+    image: "/reviewed-documents.png",
     metric: "ISO Certified Security",
     bullets: [
       "Certified Information Security Management System",

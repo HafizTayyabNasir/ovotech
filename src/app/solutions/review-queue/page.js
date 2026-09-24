@@ -93,7 +93,7 @@ export default function ReviewQueuePage() {
                 <Link href="/contact" style={{ background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "15px", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 6px 20px rgba(2,172,234,0.3)" }}>
                   Book a Queue Demo
                 </Link>
-                <Link href="/solutions" style={{ border: "2px solid #E0E8F5", color: "#0A1838", fontWeight: 700, fontSize: "15px", padding: "14px 28px", borderRadius: "12px", background: "#F4F7FC" }}>
+                <Link href="/solutions/medical_coding" style={{ border: "2px solid #E0E8F5", color: "#0A1838", fontWeight: 700, fontSize: "15px", padding: "14px 28px", borderRadius: "12px", background: "#F4F7FC" }}>
                   Back to Solutions Overview
                 </Link>
               </div>
@@ -101,7 +101,7 @@ export default function ReviewQueuePage() {
 
             <div style={{ position: "relative" }}>
               <div style={{ borderRadius: "24px", overflow: "hidden", border: "1px solid #E0E8F5", boxShadow: "0 20px 50px rgba(10,24,56,0.12)" }}>
-                <img src="/step1-intake.png" alt="Review Queue Dashboard" style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }} />
+                <img src="/review-queue.png" alt="Review Queue Dashboard" style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }} />
               </div>
               <div style={{ position: "absolute", bottom: "24px", right: "-12px", background: "#FFFFFF", padding: "16px 24px", borderRadius: "18px", boxShadow: "0 12px 35px rgba(0,0,0,0.12)", border: "1px solid #E0E8F5", maxWidth: "260px" }}>
                 <div style={{ fontSize: "12px", fontWeight: 700, color: "#02ACEA", textTransform: "uppercase" }}>Live Queue Status</div>
@@ -163,7 +163,7 @@ export default function ReviewQueuePage() {
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", maxWidth: "560px", margin: "0 auto 28px" }}>
             See how Ovotech combines document text, extracted facts, and SNOMED CT suggestions into a unified reviewer interface.
           </p>
-          <Link href="/solutions/clinical-review" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "12px 24px", borderRadius: "10px" }}>
+          <Link href="/solutions/medical_coding" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "12px 24px", borderRadius: "10px" }}>
             View Clinical Review Workspace <span>→</span>
           </Link>
         </div>

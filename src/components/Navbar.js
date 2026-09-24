@@ -139,7 +139,7 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-6 py-2.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-0.5">
+          <Link href="/contact?type=demo" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-6 py-2.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-0.5">
             Request a Demo
           </Link>
         </div>
@@ -297,7 +297,7 @@ export default function Navbar() {
             {/* Mobile CTA Button */}
             <div style={{ marginTop: "20px" }}>
               <Link
-                href="/contact"
+                href="/contact?type=demo"
                 onClick={() => setMenuOpen(false)}
                 style={{
                   display: "block",

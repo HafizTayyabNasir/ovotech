@@ -78,7 +78,7 @@ export default function PatientHistoryPage() {
 
             <div style={{ position: "relative" }}>
               <div style={{ borderRadius: "24px", overflow: "hidden", border: "1px solid #E0E8F5", boxShadow: "0 20px 50px rgba(10,24,56,0.12)" }}>
-                <img src="/step4-patient-history.png" alt="Patient History Display" style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }} />
+                <img src="/patient-history.png" alt="Patient History Display" style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }} />
               </div>
               <div style={{ position: "absolute", bottom: "24px", left: "-12px", background: "#FFFFFF", padding: "14px 20px", borderRadius: "16px", boxShadow: "0 12px 35px rgba(0,0,0,0.12)", border: "1px solid #E0E8F5" }}>
                 <div style={{ fontSize: "12px", fontWeight: 800, color: "#02ACEA" }}>Clinical Safety</div>

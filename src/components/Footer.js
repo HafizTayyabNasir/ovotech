@@ -4,11 +4,11 @@ import ParticlesBackground from "./ParticlesBackground";
 
 const footerLinks = {
   Platform: [
-    { label: "Review Queue", href: "/solutions/review-queue" },
-    { label: "Clinical Review", href: "/solutions/clinical-review" },
-    { label: "Patient History", href: "/solutions/patient-history" },
-    { label: "SNOMED CT Coding", href: "/solutions/snomed-coding" },
-    { label: "Clinical System Integration", href: "/solutions/emis-integration" },
+    { label: "Review Queue", href: "/solutions/medical_coding" },
+    { label: "Clinical Review", href: "/solutions/medical_coding" },
+    { label: "Patient History", href: "/solutions/medical_coding" },
+    { label: "SNOMED CT Coding", href: "/solutions/medical_coding" },
+    { label: "Clinical System Integration", href: "/solutions/medical_coding" },
     { label: "Dashboard & KPIs", href: "/solutions/medical_coding" },
   ],
   "Who We Help": [
@@ -44,9 +44,9 @@ export default function Footer() {
           </p>
           <div style={{ display: "flex", gap: "12px" }}>
             {[
-              { label: "LinkedIn", path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 012.063-2.065 2.064 2.064 0 012.063 2.065 2.064 2.064 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" },
+              { label: "LinkedIn", url: "https://www.linkedin.com/company/ovotechh/home/?viewAsMember=true", path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 012.063-2.065 2.064 2.064 0 012.063 2.065 2.064 2.064 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" },
             ].map((s, i) => (
-              <a key={i} href="#" aria-label={s.label} style={{ width: "36px", height: "36px", background: "rgba(255,255,255,0.08)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", transition: "background: 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#02ACEA"} onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.08)"}>
+              <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{ width: "36px", height: "36px", background: "rgba(255,255,255,0.08)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", transition: "background: 0.3s" }} onMouseEnter={e => e.currentTarget.style.background = "#02ACEA"} onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.08)"}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d={s.path} /></svg>
               </a>
             ))}

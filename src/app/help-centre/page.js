@@ -1,3 +1,4 @@
+"use client";
 import InnerPageLayout from "@/components/InnerPageLayout";
 
 export default function HelpCentrePage() {
@@ -6,14 +7,17 @@ export default function HelpCentrePage() {
       title="Help Centre" 
       description="Find answers to common questions, technical documentation, and support resources."
     >
-      <div style={{ display: "flex", gap: "20px", marginBottom: "40px" }}>
+      <form 
+        onSubmit={(e) => { e.preventDefault(); alert('Search is currently unavailable.'); }} 
+        style={{ display: "flex", gap: "20px", marginBottom: "40px" }}
+      >
         <input 
           type="text" 
           placeholder="Search for articles, guides, or FAQs..." 
           style={{ flex: 1, padding: "16px", borderRadius: "12px", border: "1px solid #E0E8F5", fontSize: "16px", outline: "none" }}
         />
-        <button style={{ background: "#02ACEA", color: "#fff", padding: "16px 28px", borderRadius: "12px", border: "none", fontWeight: 700, cursor: "pointer" }}>Search</button>
-      </div>
+        <button type="submit" style={{ background: "#02ACEA", color: "#fff", padding: "16px 28px", borderRadius: "12px", border: "none", fontWeight: 700, cursor: "pointer" }}>Search</button>
+      </form>
 
       <h2 style={{ fontSize: "24px", color: "#0A1838", marginBottom: "20px" }}>Popular Categories</h2>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>

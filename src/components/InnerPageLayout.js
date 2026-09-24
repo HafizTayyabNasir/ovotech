@@ -7,7 +7,7 @@ export default function InnerPageLayout({ title, description, children }) {
     <>
       <PageHeader title={title} description={description} />
       
-      <section className="container" style={{ padding: "80px 24px" }}>
+      <section className="site-container" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto", fontSize: "16px", color: "#555", lineHeight: "1.8" }}>
           {children}
         </div>

@@ -10,7 +10,7 @@ const workflowSteps = [
     title: "Clinical Correspondence Ingestion",
     description: "Incoming hospital correspondence (clinic letters, discharge summaries) enters the Ovotech workflow from EHR feeds or document repositories.",
     tag: "DOCUMENT RECEIVED — PDF / HL7 / FHIR",
-    image: "/step1-intake.png",
+    image: "/clinical-overview.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -26,7 +26,7 @@ const workflowSteps = [
     title: "Clinical Entity & Fact Parsing",
     description: "The platform reads and parses incoming correspondence to extract diagnoses, medications, procedures, and patient NHS identification.",
     tag: "ENTITIES MATCHED — DIAGNOSES & DRUGS",
-    image: "/step2-extraction.png",
+    image: "/clinical-review-2.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="11" cy="11" r="8"/>
@@ -58,7 +58,7 @@ const workflowSteps = [
     title: "Clinical Review & Patient History",
     description: "Single workspace presenting original letter, extracted facts, proposed SNOMED CT codes, and contextual Patient History side-by-side.",
     tag: "PATIENT HISTORY CONTEXT DISPLAYED",
-    image: "/step4-patient-history.png",
+    image: "/patient-history.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -71,7 +71,7 @@ const workflowSteps = [
     title: "Authorised Reviewer Sign-Off",
     description: "Assisted workflow where authorized practice staff verify, adjust, and explicitly approve extracted data before any system commit.",
     tag: "REVIEWER SIGN-OFF PENDING",
-    image: "/step3-snomed.png",
+    image: "/clinical-review-3.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
@@ -85,7 +85,7 @@ const workflowSteps = [
     title: "Structured EMIS Record Write-Back",
     description: "Upon reviewer sign-off, approved clinical information and SNOMED CT codes write back directly into the EMIS Web patient record.",
     tag: "STATUS 200 — COMMITTED TO EMIS WEB",
-    image: "/step5-emis-writeback.png",
+    image: "/reviewed-documents.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>

@@ -27,19 +27,22 @@ export default function About() {
                 About OvoTech
               </span>
               <h1 className="text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0A1838]">
-                Supporting Smarter <br/>
-                <span className="text-[#02ACEA] italic">Clinical Workflows.</span>
+                The AI Operating Layer <br/>
+                <span className="text-[#02ACEA] italic">for UK Primary Care.</span>
               </h1>
               <p className="text-[#475569] text-[16px] leading-[1.6] mb-8 max-w-xl">
-                OvoTech is an AI-assisted clinical document processing and coding platform designed for UK primary care. It supports practices in managing incoming clinical correspondence by bringing document review, relevant patient context and AI-assisted coding recommendations into one streamlined workflow. With confidence scores and authorised human review built into the process, OvoTech helps teams process clinical information more efficiently while maintaining control over coding and record updates.
+                OvoTech is an AI Operating Layer designed for UK Primary Care, bringing intelligent automation, connected workflows and human oversight together to support the administrative and operational work behind patient care.
               </p>
               
               <div className="flex flex-wrap gap-3 mb-8">
                 <div className="bg-[#F4F7FC] px-4 py-2 rounded-full text-[13px] font-bold text-[#0A1838] border border-[#E0E8F5]">
-                  ✅ Authorised Professionals
+                  Intelligent Automation
                 </div>
                 <div className="bg-[#F4F7FC] px-4 py-2 rounded-full text-[13px] font-bold text-[#0A1838] border border-[#E0E8F5]">
-                  ✅ Centralised Review
+                  Connected Workflows
+                </div>
+                <div className="bg-[#F4F7FC] px-4 py-2 rounded-full text-[13px] font-bold text-[#0A1838] border border-[#E0E8F5]">
+                  Human in Control
                 </div>
               </div>
               <div className="flex">
@@ -80,7 +83,7 @@ export default function About() {
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 rounded-full bg-[#E8F6FD] text-[12px] font-extrabold tracking-[2px] text-[#019EE1] uppercase mb-4">Our Approach</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-[#0A1838] leading-tight max-w-3xl mx-auto">
-              Technology that supports <span className="text-[#019EE1]">clinical expertise</span>, not replaces it.
+              Technology that supports <span className="text-[#019EE1]">healthcare teams</span>, not replaces them.
             </h2>
           </div>
 
@@ -93,7 +96,7 @@ export default function About() {
                 </div>
                 <h3 className="text-[24px] font-extrabold text-[#0A1838] mb-3">Human Oversight</h3>
                 <p className="text-[#475569] text-[16px] leading-relaxed max-w-md">
-                  OvoTech is designed around human oversight and transparency, ensuring that authorised professionals remain in complete control of clinical records and coding decisions.
+                  OvoTech is designed around human oversight and transparency. AI assists and recommends, while authorised professionals remain in control of actions and decisions.
                 </p>
               </div>
             </div>
@@ -105,9 +108,9 @@ export default function About() {
                   <div className="w-12 h-12 rounded-xl bg-[#F8FAFC] flex items-center justify-center mb-6 text-[#019EE1]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                   </div>
-                  <h3 className="text-[20px] font-bold text-[#0A1838] mb-3">Structured Workflow</h3>
+                  <h3 className="text-[20px] font-bold text-[#0A1838] mb-3">Connected Workflows</h3>
                   <p className="text-[#475569] text-[15px] leading-relaxed">
-                    From clinical correspondence to patient context and coding recommendations, everything is unified in one simple, structured process.
+                    OvoTech brings information, processes and actions together into connected workflows, helping teams manage administrative and operational work more efficiently.
                   </p>
                 </div>
               </div>
@@ -121,7 +124,7 @@ export default function About() {
                   <div className="inline-block py-1 px-3 rounded-full bg-[#112146] border border-[#2A3858] text-[11px] font-bold text-[#A594FF] uppercase tracking-wider mb-4">Integration</div>
                   <h3 className="text-[24px] font-extrabold text-white mb-3">Practical Integration</h3>
                   <p className="text-gray-300 text-[15px] leading-relaxed max-w-2xl">
-                    Seamless integration with existing clinical workflows. We don't want to replace your systems; we want to make managing clinical information across them easier and more efficient.
+                    Designed to work alongside existing healthcare systems, OvoTech connects information and workflows without requiring practices to replace the systems they already use.
                   </p>
                 </div>
                 <div className="relative z-10 w-24 h-24 shrink-0 bg-white/10 rounded-2xl border border-white/20 backdrop-blur flex items-center justify-center text-[#02ACEA]">
@@ -141,12 +144,12 @@ export default function About() {
             <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">Built for Primary Care</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-[#0A1838] mt-3 mb-6 leading-tight">Designed around your day-to-day needs.</h2>
             <p className="text-[18px] text-[#475569] leading-relaxed mb-6">
-              OvoTech is designed around the day-to-day needs of GP practices and the teams responsible for managing clinical information. 
+              OvoTech is designed around the day-to-day realities of UK primary care, supporting teams with the administrative and operational work that sits behind patient care.
             </p>
             <div className="bg-white p-5 rounded-2xl border border-[#E0E8F5] shadow-sm mb-8 relative">
               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#02ACEA] rounded-l-2xl"></div>
               <p className="text-[#0A1838] font-bold text-[16px]">
-                "Our goal is to provide technology that fits naturally into existing ways of working while making clinical administration more manageable."
+                “Our goal is to make everyday workflows more connected, manageable and efficient — giving healthcare teams more time to focus on care.”
               </p>
             </div>
             
@@ -207,7 +210,7 @@ export default function About() {
               </div>
               <h3 className="text-[#0A1838] font-extrabold text-[22px] mb-4">Empowering Practices</h3>
               <p className="text-[#475569] text-[15px] leading-relaxed">
-                We build tools that give time back to clinicians and administrative staff, enabling them to focus on high-value patient care rather than manual data entry.
+                We build technology that reduces administrative burden, connects workflows and supports more efficient ways of working, helping primary care teams spend more time where it matters.
               </p>
             </div>
             
@@ -230,7 +233,7 @@ export default function About() {
               </div>
               <h3 className="text-[#0A1838] font-extrabold text-[22px] mb-4">Intelligent Automation</h3>
               <p className="text-[#475569] text-[15px] leading-relaxed">
-                We leverage cutting-edge AI to automate repetitive coding tasks, but always ensure there is a clear, human-in-the-loop workflow for ultimate accountability.
+                OvoTech uses AI to assist with repetitive, process-heavy administrative and operational work, while maintaining clear human oversight, transparency and accountability.
               </p>
             </div>
           </div>
@@ -247,14 +250,14 @@ export default function About() {
                 Get Started
               </span>
               <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-white mb-6 leading-tight">
-                Spend less time processing <br className="hidden sm:block" /> clinical correspondence.
+                Ready to spend less <br className="hidden sm:block" /> time on admin?
               </h2>
               <p className="text-[#94A3B8] text-[18px] mb-10 max-w-2xl mx-auto leading-relaxed">
-                Streamline document review and coding with OvoTech, while keeping your team in control of every clinical record update.
+                See how OvoTech can support more connected, efficient workflows across your practice while keeping your team in control.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/contact" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
-                  Request a Demo
+                <Link href="/solutions/medical_coding" className="whitespace-nowrap bg-gradient-to-r from-[#02ACEA] to-[#019EE1] text-white font-extrabold px-8 py-3.5 rounded-full shadow-[0_8px_20px_rgba(2,172,234,0.4)] border border-[#02ACEA] transition-all duration-300 hover:shadow-[0_12px_25px_rgba(2,172,234,0.6)] hover:-translate-y-1 hover:scale-105">
+                  Explore Solutions
                 </Link>
                 <Link href="/contact" className="px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-all duration-300 hover:-translate-y-1">
                   Contact Our Team

@@ -1,14 +1,24 @@
+"use client";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Contact Us | Ovotech",
-  description: "Get in touch with the OvoTech team.",
-};
+function ContactContent() {
+  const searchParams = useSearchParams();
+  const type = searchParams.get("type");
 
-export default function Contact() {
+  let formTitle = "Send us a message";
+  let buttonText = "Submit Request";
+  
+  if (type === "apply") {
+    formTitle = "Apply for a Position";
+    buttonText = "Submit Application";
+  } else if (type === "demo") {
+    formTitle = "Book a Platform Demo";
+  }
   return (
     <>
       <TopBar />
@@ -73,39 +83,39 @@ export default function Contact() {
               <span className="text-[12px] font-bold tracking-[2px] text-[#02ACEA] uppercase">Get in Touch</span>
               <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-[#0A1838] mt-3 mb-8 leading-tight">We are here to help.</h2>
               
-              <div className="flex flex-col gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E0E8F5] shadow-sm flex items-center justify-center shrink-0 text-[#02ACEA]">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div className="flex flex-col gap-6 w-full">
+                
+                <div className="w-full">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-[#E0E8F5] shadow-sm flex items-center justify-center shrink-0 text-[#02ACEA]">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <h3 className="text-[#0A1838] font-extrabold text-[18px]">Email Us</h3>
                   </div>
-                  <div>
-                    <h3 className="text-[#0A1838] font-extrabold text-[18px] mb-1">Email Us</h3>
-                    <p className="text-[#475569] text-[16px]">support@ovotech.co.uk</p>
-                  </div>
+                  <p className="text-[#475569] text-[16px] w-full">
+                    support@ovotech.co.uk
+                  </p>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E0E8F5] shadow-sm flex items-center justify-center shrink-0 text-[#02ACEA]">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <div className="w-full">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-[#E0E8F5] shadow-sm flex items-center justify-center shrink-0 text-[#02ACEA]">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <h3 className="text-[#0A1838] font-extrabold text-[18px]">Our Office</h3>
                   </div>
-                  <div>
-                    <h3 className="text-[#0A1838] font-extrabold text-[18px] mb-1">Our Office</h3>
-                    <p className="text-[#475569] text-[16px] leading-relaxed max-w-[280px]">
-                      223-225 Stockport Road,<br />
-                      Ashton-Under-Lyne,<br />
-                      Lancashire, England,<br />
-                      OL7 0NT
-                    </p>
-                  </div>
+                  <p className="text-[#475569] text-[16px] leading-relaxed w-full">
+                    223-225 Stockport Road, Ashton-Under-Lyne, Lancashire, England, OL7 0NT
+                  </p>
                 </div>
+
               </div>
             </div>
 
             {/* Google Map */}
-            <div className="w-full h-[320px] rounded-3xl overflow-hidden shadow-lg border border-[#E0E8F5] relative z-10 bg-white">
+            <div className="w-full flex-1 rounded-3xl overflow-hidden shadow-lg border border-[#E0E8F5] relative z-10 bg-white min-h-[320px]">
               <iframe
-                width="100%"
-                height="100%"
+                className="absolute inset-0 w-full h-full"
                 frameBorder="0"
                 scrolling="no"
                 marginHeight="0"
@@ -122,7 +132,7 @@ export default function Contact() {
             <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-2xl border border-[#E0E8F5] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#02ACEA]/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
               
-              <h3 className="text-[24px] font-extrabold text-[#0A1838] mb-8 relative z-10">Send us a message</h3>
+              <h3 className="text-[24px] font-extrabold text-[#0A1838] mb-8 relative z-10">{formTitle}</h3>
               
               <form className="relative z-10 flex flex-col gap-6">
                 <div>
@@ -142,7 +152,7 @@ export default function Contact() {
                   <textarea rows="4" className="w-full p-4 rounded-xl border border-[#E0E8F5] bg-[#F8FAFC] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#02ACEA]/30 focus:border-[#02ACEA] transition-all resize-none" placeholder="How can we help?"></textarea>
                 </div>
                 <button type="button" className="w-full mt-2 bg-[#02ACEA] text-white font-extrabold text-[16px] py-4 rounded-xl shadow-[0_8px_20px_rgba(2,172,234,0.3)] hover:bg-[#0296CC] hover:shadow-[0_12px_25px_rgba(2,172,234,0.4)] hover:-translate-y-1 transition-all">
-                  Submit Request
+                  {buttonText}
                 </button>
               </form>
             </div>
@@ -153,5 +163,13 @@ export default function Contact() {
 
       <Footer />
     </>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContactContent />
+    </Suspense>
   );
 }

@@ -24,11 +24,11 @@ export default function HowItWorks() {
             <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>
               Ovotech brings the entire clinical document lifecycle into one structured workflow—giving GP practice teams visibility, consistency, and control.
             </p>
-            <Link href="/how-it-works" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#02ACEA"; e.currentTarget.style.color = "#fff"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#02ACEA"; }}
+            <Link href="/solutions/medical_coding" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#02ACEA", color: "#FFFFFF", fontWeight: 700, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s", boxShadow: "0 6px 20px rgba(2,172,234,0.3)" }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#028EC7"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "#02ACEA"; }}
             >
-              Detailed Workflow Guide <span>→</span>
+              Detailed Workflow Guide <span style={{ marginLeft: "4px" }}>→</span>
             </Link>
           </div>
 

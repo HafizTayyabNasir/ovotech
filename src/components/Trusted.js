@@ -64,7 +64,7 @@ export default function Trusted() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <Link href="/solutions" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
+          <Link href="/solutions/medical_coding" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "2px solid #02ACEA", color: "#02ACEA", fontWeight: 600, fontSize: "14px", padding: "14px 28px", borderRadius: "12px", transition: "all 0.3s" }}>
             Explore Platform Solutions <span>→</span>
           </Link>
         </div>
