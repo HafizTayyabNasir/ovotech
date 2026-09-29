@@ -1,0 +1,89 @@
+/* ---------- Certification & partner badge strip ---------- */
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;align-items:stretch}
+.badge{min-height:112px;border:1px solid #22406E;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:18px 14px;text-align:center}
+.badge img{max-width:100%;max-height:64px;object-fit:contain;display:block}
+.badge .fb{display:none;flex-direction:column;align-items:center;gap:6px}
+.badge.nologo .fb{display:flex}
+.badge .fb b{font-size:19px;font-weight:700;color:#FFFFFF;letter-spacing:-.01em;line-height:1.1}
+.badge .fb small{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#B0BECF}
+.badge .fb svg{width:26px;height:26px;color:#55CBE8}
+.badges.light .badge{border-color:#E2E8F0;background:#FFFFFF}
+.badges.light .badge .fb b{color:#081B3C}
+.badges.light .badge .fb small{color:#56606E}
+.badges.light .badge .fb svg{color:#2F6BE0}
+
+/* ---------- Back to top (sits above the chat launcher) ---------- */
+#toTop{bottom:104px !important}
+
+/* ---------- Help & chat widget ---------- */
+.ovc-launch{position:fixed;right:28px;bottom:28px;z-index:70;width:60px;height:60px;border-radius:50%;border:none;background:#2F6BE0;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 14px 34px rgba(8,27,60,.38);transition:transform .2s}
+.ovc-launch:hover{transform:scale(1.06)}
+.ovc-launch svg{width:28px;height:28px}
+.ovc-launch .dot{position:absolute;top:6px;right:6px;width:12px;height:12px;border-radius:50%;background:#45B0E5;border:2px solid #2F6BE0}
+.ovc-panel{position:fixed;right:28px;bottom:104px;z-index:71;width:390px;height:min(640px,calc(100vh - 140px));background:#fff;border-radius:22px;box-shadow:0 30px 80px rgba(8,27,60,.35);display:flex;flex-direction:column;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#17212F;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .22s,transform .22s}
+.ovc-panel.open{opacity:1;transform:none;pointer-events:auto}
+.ovc-body{flex:1;overflow-y:auto;background:#F8FAFC}
+.ovc-hero{position:relative;background:#081B3C;color:#fff;padding:22px 24px 64px;overflow:hidden}
+.ovc-hero .top{display:flex;justify-content:space-between;align-items:center;position:relative}
+.ovc-hero .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
+.ovc-hero .brand img{height:26px}
+.ovc-x{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ovc-x:hover{background:rgba(255,255,255,.16)}
+.ovc-hero h3{margin:34px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:34px;line-height:1.1;position:relative}
+.ovc-hero h3 span{color:#55CBE8}
+.ovc-hero .thr{position:absolute;left:0;bottom:6px;opacity:.55}
+.ovc-cards{padding:0 16px 18px;margin-top:-44px;position:relative;display:flex;flex-direction:column;gap:12px}
+.ovc-card{background:#fff;border-radius:16px;box-shadow:0 6px 22px rgba(8,27,60,.09);border:1px solid #E8EEF5}
+.ovc-row{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;background:none;border:none;text-align:left;font:inherit;cursor:pointer;color:#081B3C}
+.ovc-row:hover{background:#F8FAFC}
+.ovc-row b{font-size:15px}
+.ovc-row small{display:block;font-size:13px;color:#56606E;margin-top:2px;font-weight:400}
+.ovc-row svg{width:18px;height:18px;flex-shrink:0;color:#2F6BE0}
+.ovc-search{margin:10px;display:flex;align-items:center;gap:8px;background:#EFF6FF;border-radius:12px;padding:0 12px}
+.ovc-search input{flex:1;border:none;background:transparent;font:inherit;font-size:14px;padding:12px 0;color:#081B3C;outline:none}
+.ovc-search svg{width:18px;height:18px;color:#2458C7}
+.ovc-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px;background:none;border:none;border-radius:10px;text-align:left;font:inherit;font-size:14px;color:#17212F;cursor:pointer}
+.ovc-q:hover{background:#EFF6FF;color:#081B3C}
+.ovc-q svg{width:16px;height:16px;flex-shrink:0;color:#667080}
+.ovc-list{padding:0 6px 8px}
+.ovc-head{background:#081B3C;color:#fff;padding:18px 20px;display:flex;align-items:center;gap:10px}
+.ovc-head h4{margin:0;font-size:17px;font-weight:700;flex:1}
+.ovc-back{width:34px;height:34px;border-radius:50%;border:none;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ovc-art{padding:22px 22px 26px}
+.ovc-art h5{margin:0 0 12px;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:26px;line-height:1.15;color:#081B3C}
+.ovc-art p{margin:0;font-size:15px;line-height:1.7;color:#17212F}
+.ovc-help{margin-top:22px;padding-top:18px;border-top:1px solid #E8EEF5;display:flex;align-items:center;gap:10px;font-size:13px;color:#56606E}
+.ovc-help button{border:1px solid #D5DEE8;background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;color:#17212F}
+.ovc-help button:hover{border-color:#2F6BE0;color:#2458C7}
+.ovc-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;background:#2F6BE0;color:#fff;font:inherit;font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;cursor:pointer;text-decoration:none}
+.ovc-btn:hover{filter:brightness(1.1);color:#fff}
+.ovc-btn.ghost{background:#fff;color:#081B3C;border:1px solid #D5DEE8}
+.ovc-form{padding:18px 20px 22px;display:flex;flex-direction:column;gap:12px}
+.ovc-form label{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600;color:#17212F}
+.ovc-form input,.ovc-form textarea{font:inherit;font-size:14px;padding:11px 12px;border:1px solid #D5DEE8;border-radius:10px;color:#081B3C;background:#fff}
+.ovc-form input:focus,.ovc-form textarea:focus{outline:2px solid #2F6BE0;outline-offset:0;border-color:transparent}
+.ovc-form textarea{resize:none;min-height:96px}
+.ovc-form .note{font-size:12px;color:#56606E;line-height:1.5}
+.ovc-empty{padding:48px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.ovc-empty .ic{width:56px;height:56px;border-radius:16px;background:#EAF2FF;color:#2458C7;display:flex;align-items:center;justify-content:center}
+.ovc-empty b{font-size:17px;color:#081B3C}
+.ovc-empty span{font-size:14px;color:#56606E;line-height:1.6}
+.ovc-thread{padding:18px 16px;display:flex;flex-direction:column;gap:10px}
+.ovc-msg{max-width:82%;padding:11px 14px;border-radius:16px;font-size:14px;line-height:1.55}
+.ovc-msg.me{align-self:flex-end;background:#2F6BE0;color:#fff;border-bottom-right-radius:4px}
+.ovc-msg.them{align-self:flex-start;background:#fff;border:1px solid #E8EEF5;color:#17212F;border-bottom-left-radius:4px}
+.ovc-msg .who{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#2458C7;margin-bottom:4px}
+.ovc-msg .who img{height:14px}
+.ovc-time{align-self:center;font-size:11px;color:#667080;margin:4px 0}
+.ovc-reply{border-top:1px solid #E8EEF5;background:#fff;padding:10px 12px;display:flex;gap:8px;align-items:flex-end}
+.ovc-reply textarea{flex:1;font:inherit;font-size:14px;border:1px solid #D5DEE8;border-radius:12px;padding:10px 12px;resize:none;height:44px;color:#081B3C}
+.ovc-reply button{width:44px;height:44px;border-radius:50%;border:none;background:#2F6BE0;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ovc-reply button svg{width:18px;height:18px}
+.ovc-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #E8EEF5;background:#fff}
+.ovc-tab{border:none;background:none;font:inherit;font-size:12px;font-weight:600;color:#667080;padding:10px 0 12px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer}
+.ovc-tab svg{width:22px;height:22px}
+.ovc-tab.on{color:#081B3C}
+.ovc-tab.on svg{color:#2F6BE0}
+.ovc-foot{text-align:center;font-size:11px;color:#667080;padding:10px 0 2px}
+@media (max-width:480px){.ovc-panel{right:8px;left:8px;width:auto;bottom:96px}}
+.ovc-panel *,.ovc-panel{box-sizing:border-box}
